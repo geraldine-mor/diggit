@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-*As a **** I can **** so that ****
+_As a **** I can **** so that ****_
 
 **Acceptance Criteria:**
 - [ ] 
