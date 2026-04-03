@@ -16,59 +16,49 @@ diggit is a gardening forum aimed at gardeners of all levels, from first-time gr
 
 During project idea discussions with my course facilitator, Tindy, we segued into general garden chat which gave me the idea to create a garden tips/questions sharing platform. This idea grew in my mind over the following days and became diggit: Ask what you need, sow a few seeds.⚠️ - decide tagline wording
 
-
-
-
-
-🛑 README NOTES 🛑
-
-Do not add a **Table of Contents** to your Markdown files. GitHub has these built-in automatically using the headers/hashtags.
-
-Don't add screenshots for the README/TESTING into your `assets` or `static` folders. Create a new folder at the root-level called `documentation`. Consider creating sub-directories within `documentation` to handle things like `wireframes`, `features`, `validation`, `responsiveness`, etc.
-
-Learn about Markdown Alerts (aka Callouts), a fairly new feature for GitHub Markdown files.
-https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts
-Note: these are not visible within your README Previewer, and are only visible once you push the code to GitHub.
-
 **Site Mockups**
-*([amiresponsive](https://ui.dev/amiresponsive?url=https://gm-codestar-blog-fd27c1e92e9f.herokuapp.com), [techsini](https://techsini.com/multi-mockup), etc.)*
-Having issues generating site mockups? This is likely due to security policies with your deployed site.
-If you open up your DevTools, there may be an error referencing `X-Frame-Options`.
 
-For Chrome users, head over to http://bit.ly/3iRPn4u and install the extension within your browser. Once installed, navigate back to the mockup site of your choice. You should find your site rendering in the various devices now.
+⚠️![screenshot](documentation/mockup.png)
 
-Alternatively, open your project in Gitpod and run the server. Once the site is running, click the `Ports` tab from your Gitpod Terminal. Click the padlock on the appropriate port for your project (`Flask: 5000`, `Django: 8000`). This will make your local page public temporarily. Now, copy the URL of your live-preview page into the responsive tool above. You should find your site rendering in the various devices.
-
-🛑 --- END ---- 🛑
-
-![screenshot](documentation/mockup.png)
-
-source: [codestar_blog amiresponsive](https://ui.dev/amiresponsive?url=https://gm-codestar-blog-fd27c1e92e9f.herokuapp.com)
-
-> [!IMPORTANT]  
-> The examples in these templates are strongly influenced by the Code Institute walkthrough project called "I Think Therefore I Blog".
+source: [diggit amiresponsive](https://ui.dev/amiresponsive?url=https://⚠️ Add url.herokuapp.com)
 
 ## UX
 
 ### The 5 Planes of UX
 
-⚠️ NOTE: make sure to update the text below to match your own project! ⚠️
-
 #### 1. Strategy
 
 **Purpose**
-- Provide blog owners with tools to create, manage, and moderate engaging blog content and user interactions.
-- Offer users and guests an intuitive platform to explore, engage, and contribute to blog discussions.
+
+diggit exists to give gardeners of all levels a dedicated, visually engaging space 
+to share knowledge, ask questions and access expert advice — free from the noise 
+of general social media platforms.
 
 **Primary User Needs**
-- Blog owners need seamless tools for publishing and managing posts and comments.
-- Registered users need the ability to engage with blog content through comments and account features.
-- Guests need the ability to browse and enjoy blog content without registration.
+- Site owners need a simple and intuitive way of maintaining high quality gardening content and moderating user generated content to ensure a welcoming, secure and trusted experience for their target users.
+- Registered users need an intuitive way to share gardening knowledge, ask questions of a like-minded community and engage with the responses and expertise of fellow gardeners.
+- Guests need an attractive and user friendly site to explore gardening questions and tips without the need to register but delivered in a manner designed to induce a desire to join in the discussion.
 
 **Business Goals**
-- Foster a dynamic blogging platform with active user participation.
-- Build a sense of community through discussions and user engagement.
-- Ensure easy blog content management for owners.
+- Establish diggit as the primary resource for gardeners looking for peer advice and expert guidance in one place.
+- Grow an active community where user generated content reduces the burden on the site owner to produce all the content.
+- Convert guest browsers into registered members through a compelling and welcoming user experience.
+- Maintain editorial standards through Digging Deeper expert advice to differentiate diggit from generic social media gardening groups.
+
+**Needs-objectives mapping**
+| User Need | Business Goal | Alignment | Resolution | 
+| --- | --- | --- | --- |
+| Guests want to browse the site content without the need to register | Convert guest users into registered users | Conflict | High quality user experiences encourages registration as a desire not a necessity | 
+| Registered users need a quick and easy way to ask questions or share advice | Maintain high content standards to ensure trust | Conflict | Introduce community guidelines at registration to allow instant posting. Admin action is on violation rather than approving each post | 
+| Users want trusted expert advice | Stand out from generic social media groups | Full | Digging Deeper provides both expert advice for the user and a USP for the site |
+| Users want safe and appropriate content | User generated content reduces burden on site admins | Partial Conflict | Enable user reporting of unsafe or inappropriate content |
+| Users want to feel heard and receive responses | Build a self-sustaining community | Full | Likes and comments build a strong community environment while providing timely feedback to users | 
+| Users want intuitive site navigation | Reduce bounce rate | Full | Intuitive navigation design directly reduces bounce rate |
+| Admin users need a simple and intuitive way of managing content | Maintain high content standards | Full | Django's built in admin panel provides an accessible management interface | 
+
+_As an owner-operated platform, the business goals and admin user's needs are largely the same_
+
+⚠️ Work in progress ⚠️
 
 #### 2. Scope
 
@@ -1403,3 +1393,4 @@ Use this space to provide attribution and acknowledgement to any supports that h
 - I would like to thank my partner, for believing in me, and allowing me to make this transition into software development.
 - I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
 
+ 
