@@ -44,6 +44,7 @@ of general social media platforms.
 - Grow an active community where user generated content reduces the burden on the site owner to produce all the content.
 - Convert guest browsers into registered members through a compelling and welcoming user experience.
 - Maintain editorial standards through Digging Deeper expert advice to differentiate diggit from generic social media gardening groups.
+<br><br>
 
 **Needs-objectives mapping**
 | User Need | Business Goal | Alignment | Resolution | 
@@ -58,19 +59,42 @@ of general social media platforms.
 
 _As an owner-operated platform, the business goals and admin user's needs are largely the same_
 
-⚠️ Work in progress ⚠️
-
 #### 2. Scope
 
 **[Features](#features)** (see below)
 
 **Content Requirements**
-- Blog post management (create, update, delete, and preview).
-- Comment moderation and management tools.
-- User account features (register, log in, edit/delete comments).
-- Notification system for comment approval status.
-- 404 error page for lost users.
 
+Static content — hardcoded, requires development to update:
+- Brand identity, navigation, footer
+- Community guidelines and code of conduct
+- About section and contact information
+- User interaction forms
+
+Admin managed — maintained via Django admin panel:
+- Digging Deeper blog posts
+- Categories (names, colours, images)
+
+User generated — created dynamically by registered users:
+- Posts (text, optional image, categories)
+- Comments and replies
+- Likes and reactions
+
+System generated:
+- User feedback messages
+- Like counts and post ordering
+- Form validation errors
+
+**Content Constraints**
+ - Title length: Post titles restricted to 200 characters
+ - Images: Images only accepted in ⚠️ .png or .jpg ⚠️ format ⚠️ and are limited to 1MB in size ⚠️
+ - Categories: Limited to 20 in order to provide colour options that are guaranteed to meet accessibility contrast requirements
+ - Language: Currently only english language supported.
+ - Content moderation: Reactive content moderation allows for fast posting but opens the site to damaging content. Report button and a list of excluded words and phrases will try to control this.
+ - Media types: Audio and video files are not currently supported.
+ - ⚠️ External links: Users are encouraged to share brand and supplier names rather than links in the community guidelines. ⚠️  
+
+⚠️ Work in progress ⚠️
 #### 3. Structure
 
 **Information Architecture**
@@ -151,44 +175,70 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 
 ## User Stories
 
-⚠️ INSTRUCTIONS ⚠️
+| Target | Expectation | Outcome | Prority |
+| --- | --- | --- | --- |
+| As a guest | I can view Digging Deeper posts | so that I can access professional gardening advice | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a site admin | I can create Digging Deeper posts | so that I can share professional advice with the community | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a site admin | I can edit and delete the Digging Deeper posts | so that I can keep the content accurate and up to date | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) | 
+| As a registered user | I can comment on Digging Deeper posts | so that I can join the conversation | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) | 
+| As a guest | I can register for an account | so that I can participate in the community | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a registering user | I can read and acknowledge the community guidelines | so that I understand the rules before posting | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a registered user | I can log in to my account | so that I can access my personalised content and actions | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a logged in user | I can log out of my account | so that my account stays secure | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a user | I can see my current login state | so that I always know whether I am logged in or out | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a guest | I can browse user's posts | so that I can read community tips and decide whether to join | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a user | I can view an individual post and its comments | so that I can read the full content and discussion | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000)|
+| As a logged in user | I can create a post | so that I can ask questions or share tips with the gardening community | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a logged in user | I can edit or delete my posts | so that I have full control of the content I created | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a site admin | I can access an admin panel | so that I can control the content across the site | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a site admin | I can delete user content | so that I can ensure community guidelines are adhered to | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a logged in user | I can comment on posts | so that I can contribute to the discussion or answer a question | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) | 
+| As a site admin | I can upload and change the default and blog images | so that I can keep the site fresh and attractive | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a guest | I can read comments | so that I can benefit from user's experience and decide if I want to join | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a user | I can contact the site admin | so that I can report an issue or ask a question | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a logged in user | I can edit or delete my comments | so that I can correct or remove comments that no longer represent me | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a logged in user | I can react to comments | so that I can help the community identify the most helpful answers | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
+| As a post author | I can upload an image | so that I can ask questions or give advice about my own experiences | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
+| As a user | I can filter posts by category | so that I can find relevant content faster | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
+| As a user | I can report harmful content | so that site moderators can review and take action | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
+| As a logged in user | I can reply to comments | so that I can add more insight to the conversation | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
+| As a user | I can see the most popular comments first | so that the most helpful answers are easy to find | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
+| As a user | I can sort posts by date or popularity | so that I can find the most recent or most engaging content easily | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
+| As a logged in user | I can react to posts | so that I can quickly share my feelings without needing to comment | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
+| As a user | I can expect that multiple posts will spread over several pages | so that I can maintain a clean easy to use interface | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
+| As a user | I can signup to the newsletter | so that keep up to date with community news | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
+| As a user | I can search the site content by keyword | so that I can quickly find what I'm looking for | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
 
-In this section, list all of your possible user stories for the project. Samples have been provided below using the example walkthrough project for your inspiration. Make sure to adjust to match your own project features!
-
-⚠️ --- END --- ⚠️
-
-| Target | Expectation | Outcome |
-| --- | --- | --- |
-| As a blog owner | I would like to create new blog posts with a title, featured image, and content | so that I can share my experiences with my audience. |
-| As a blog owner | I would like to update existing blog posts | so that I can correct or add new information to my previous stories. |
-| As a blog owner | I would like to delete blog posts | so that I can remove outdated or irrelevant content from my blog. |
-| As a blog owner | I would like to retrieve a list of all my published blog posts | so that I can manage them from a central dashboard. |
-| As a blog owner | I would like to preview a post as draft before publishing it | so that I can ensure formatting and content appear correctly. |
-| As a blog owner | I would like to review comments before they are published | so that I can filter out spam or inappropriate content. |
-| As a blog owner | I would like to approve or reject comments from users | so that I can maintain control over the discussion on my posts. |
-| As a blog owner | I would like to view a list of all comments (both approved and pending) | so that I can manage user engagement effectively. |
-| As a blog owner | I would like to edit or delete user comments | so that I can clean up or remove inappropriate responses after they've been posted. |
-| As a registered user | I would like to log in to the site | so that I can leave comments on blog posts. |
-| As a registered user | I would like to register for an account | so that I can become part of the community and engage with the blog. |
-| As a registered user | I would like to leave a comment on a blog post | so that I can share my thoughts or ask questions about the owner's experiences. |
-| As a registered user | I would like my comment to show my name and the timestamp | so that others can see who I am and when I left the comment. |
-| As a registered user | I would like to receive a notification or message saying my comment is pending approval | so that I understand it hasn't been posted immediately. |
-| As a registered user | I would like to edit or delete my own comments | so that I can fix mistakes or retract my statement. |
-| As a guest user | I would like to read blog posts without registering | so that I can enjoy the content without needing to log in. |
-| As a guest user | I would like to browse past posts | so that I can explore the blog's full content history. |
-| As a guest user | I would like to register for an account | so that I can participate in the community by leaving comments on posts. |
-| As a guest user | I would like to see the names of other commenters on posts | so that I can get a sense of community interaction before registering. |
-| As a user | I would like to see a 404 error page if I get lost | so that it's obvious that I've stumbled upon a page that doesn't exist. |
+⚠️ ![Won't Have](https://img.shields.io/badge/Won't_Have-6e6e6e)⚠️
 
 ## Features
 
-⚠️ INSTRUCTIONS ⚠️
+⚠️ --- Work in Progress --- ⚠️
 
-In this section, you should go over the different parts of your project, and describe each feature. You should explain what value each of the features provides for the user, focusing on your target audience, what they want to achieve, and how your project can help them achieve these things.
+Digging Deeper blog page
+Comments and replies
+* Edit/delete own comments
+User registration
+* Code of conduct modal
+User login & log out
+Visible login state
+Open individual posts (either own page view or expand to fill)
+User post creation form
+* Post edit and delete buttons
+Post filters
+Post Search
+Feedback messages, delete confirmation and clear instructions throughout
+Admin Panel (handled by django)
+Fully responsive design
+Bespoke 404 page with home and/or back button
+Image upload
+Comment likes
+Like counter
+Order comments / posts by like count
+Pagination
+Newsletter sign up 
+Content report button
 
-**IMPORTANT**: Remember to always include a screenshot of each individual feature!
-
-⚠️ --- END --- ⚠️
 
 ### Existing Features
 
