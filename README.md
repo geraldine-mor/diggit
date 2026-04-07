@@ -63,6 +63,15 @@ _As an owner-operated platform, the business goals and admin user's needs are la
 
 **[Features](#features)** (see below)
 
+**Functional Requirements**
+- Authentication and access control: registration, login, logout, login state, guest restrictions
+- CRUD for posts: create, read, update, delete 
+- CRUD for comments: create, read, update, delete
+- Role-based permissions: guest, registered user, admin
+- Admin functionality: admin panel, content deletion, image management, Digging Deeper blog
+- User feedback: confirmation prior to and after deletion, confirmation or error messages for post and comment saves, visual distinction for clickable items
+- Data validation: user-facing forms include input validation and clear error messaging
+
 **Content Requirements**
 
 Static content — hardcoded, requires development to update:
@@ -94,22 +103,38 @@ System generated:
  - Media types: Audio and video files are not currently supported.
  - ⚠️ External links: Users are encouraged to share brand and supplier names rather than links in the community guidelines. ⚠️  
 
-⚠️ Work in progress ⚠️
 #### 3. Structure
 
 **Information Architecture**
 - **Navigation Menu**:
-  - Links to Home, Blog Posts, Login/Register, and Dashboard (for blog owners).
+  - Links to Home, Digging Deeper, Community Posts, Register and login/logout (⚠️Contact⚠️).
 - **Hierarchy**:
-  - Blog content displayed prominently for easy browsing.
+  - Homepage offers a brief welcoming introduction with options to continue as guest or login.
+  - Community posts are displayed clearly in reverse chronological and popularity order, filterable by category tag. Each posts shows title, image (if used), author, category labels and created date 
+  - Digging Deeper posts are displayed clearly with prominent filtering or search options.
   - Clear call-to-action buttons for account creation and engagement (e.g., commenting).
 
-**User Flow**
-1. Guest users browse blog content → read posts and see commenter names.
-2. Guest users register for an account → log in to leave comments.
-3. Registered users leave comments → receive a pending approval notification.
-4. Blog owners create, update, and manage posts → moderate comments.
-5. Blog owners approve or reject comments → manage user interactions.
+**User Flow**<br>
+Guest users:
+1. Guest users land on homepage, continue to browse posts → browse community posts and comments.
+2. Navigate to Digging Deeper posts for more expert advice.
+3. Report offensive content by registering for and account or through admin contact.
+4. Create account to leave a comment or post → accept community guidelines and login.
+
+Registeres users:
+1. Registerered users land on homepage, login to account → browse community posts and comments.
+2. React to posts and comments. 
+3. Navigate to Digging Deeper posts for more expert advice.
+4. Report offensive content through report button.
+5. Create, update or delete posts, comments and replies → receive confirmation messages throughout.
+6. Log out to protect account.
+
+Admin users:
+1. Login as admin → browse community posts to ensure guidelines are met.
+2. Navigate to the admin panel → create, update or delete Digging Deeper articles.
+3. Manage users → delete any in breach of community rules
+4. Manage user content → review reported content, delete any inappropriate content.
+5. Manage post categories → create, update and delete categories as needed.
 
 #### 4. Skeleton
 
