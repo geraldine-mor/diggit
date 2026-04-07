@@ -140,9 +140,13 @@ Admin users:
 
 **[Wireframes](#wireframes)** (see below)
 
+**[Modals](#modals)** (see below)
+
 **Navigation Design** 
 
-Navigation bar will contain links to all pages and the login state of users. All users will see the options to login or register. Logged in users will see "Logged in as: 'Username'" and the log out link.
+The navigation bar contains links to all pages as well as information about the user's login state. All users can see  options to login or register. When a user is logged in, a message reading "Logged in as: 'Username'" displays immediately below the navbar and the login link is replaced with a logout link. 
+
+Admin users also have access to an additional link to the admin panel alongside the logout option. The navigation menu collapses on mobile and tablet for better usability but the login/logout links and status remain visible when the menu is collapsed.
 
 #### 5. Surface
 
@@ -152,23 +156,22 @@ Navigation bar will contain links to all pages and the login state of users. All
 
 ### Colour Scheme
 
-⚠️INSTRUCTIONS ⚠️
+For this project I wanted an earthy overall feeling to emulate the soil and growth nature of gardening with an electric green bright highlight for visual interest.
 
-Explain your colors and color scheme. Consider adding a link and screenshot for your color scheme using [coolors](https://coolors.co/generate).
+I used [coolors.co](https://coolors.co/dce0d9-261617-002500-52e620) to generate my color palette.
 
-When you add a color to the palette, the URL is dynamically updated, making it easier for you to return back to your color palette later if needed. See example below:
+- ![#261617](https://img.shields.io/badge/%23261617-261617) primary colour.
+- ![#DCE0D9](https://img.shields.io/badge/%23DCE0D9-dce0d9) secondary colour.
+- ![#002500](https://img.shields.io/badge/%23002500-002500) alternative dark shade.
+- ![#52E620](https://img.shields.io/badge/%2352E620-52e620) bright highlights.
 
-⚠️ --- END --- ⚠️
+![screenshot of colour palette](documentation/diggit-palette.png)
 
-I used [coolors.co](https://coolors.co/080708-3772ff-df2935-fdca40-e6e8e6) to generate my color palette.
+I had [claude.ai](https://claude.ai/new) run a contrast check on all colours and provide me with a table. As expected the only issues the light/bright and dark/dark combinations.
 
-- `#000000` primary text.
-- `#3772FF` primary highlights.
-- `#DF2935` secondary text.
-- `#FDCA40` secondary highlights.
+![screenshot of colour contrast table](documentation/contrast-table.png)
 
-![screenshot](documentation/coolors.png)
-
+A fixed palette of 2o colours was created for the category labels, to ensure high contrast is maintained.
 ### Typography
 
 ⚠️ INSTRUCTIONS ⚠️
@@ -196,7 +199,7 @@ I used [Whimsical](https://whimsical.com/ger-s-workspace48/diggit-Kj1maBK5a39CKj
 | Contact | ![screenshot of contact form on mobile](documentation/wireframes/contact-mobile.png) | ![screenshot of contact form on tablet](documentation/wireframes/contact-tablet.png) | ![screenshot of contact form on desktop](documentation/wireframes/contact-desktop.png) |
 | 404 | ![screenshot of 404 page on mobile](documentation/wireframes/404-mobile.png) | ![screenshot of 404 page on tablet](documentation/wireframes/404-tablet.png) | ![screenshot of 404 page on desktop](documentation/wireframes/404-desktop.png) |
 
-**Modals**
+### Modals
 This project uses a number of modals for various authentication and CRUD functions.
 
 | Modal | Mockup |
