@@ -140,6 +140,10 @@ Admin users:
 
 **[Wireframes](#wireframes)** (see below)
 
+**Navigation Design** 
+
+Navigation bar will contain links to all pages and the login state of users. All users will see the options to login or register. Logged in users will see "Logged in as: 'Username'" and the log out link.
+
 #### 5. Surface
 
 **Visual Design Elements**
@@ -179,24 +183,34 @@ Explain any fonts and icon libraries used, like **Google Fonts**, **Font Awesome
 
 ## Wireframes
 
-⚠️ INSTRUCTIONS ⚠️
-
-If you've created wireframes or mock-ups, use this section to display screenshots of your wireframes. The example table below uses sample pages from the walkthrough project to give you some inspiration for your own project, so please adjust accordingly.
-
-⚠️ --- END --- ⚠️
-
 To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
-I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wireframes.
+I used [Whimsical](https://whimsical.com/ger-s-workspace48/diggit-Kj1maBK5a39CKjbMMnXobr) to design my site wireframes.
 
 | Page | Mobile | Tablet | Desktop |
 | --- | --- | --- | --- |
-| Register | ![screenshot](documentation/wireframes/mobile-register.png) | ![screenshot](documentation/wireframes/tablet-register.png) | ![screenshot](documentation/wireframes/desktop-register.png) |
-| Login | ![screenshot](documentation/wireframes/mobile-login.png) | ![screenshot](documentation/wireframes/tablet-login.png) | ![screenshot](documentation/wireframes/desktop-login.png) |
-| Home | ![screenshot](documentation/wireframes/mobile-home.png) | ![screenshot](documentation/wireframes/tablet-home.png) | ![screenshot](documentation/wireframes/desktop-home.png) |
-| Add Blog | ![screenshot](documentation/wireframes/mobile-add-blog.png) | ![screenshot](documentation/wireframes/tablet-add-blog.png) | ![screenshot](documentation/wireframes/desktop-add-blog.png) |
-| Edit Blog | ![screenshot](documentation/wireframes/mobile-edit-blog.png) | ![screenshot](documentation/wireframes/tablet-edit-blog.png) | ![screenshot](documentation/wireframes/desktop-edit-blog.png) |
-| Blog Post | ![screenshot](documentation/wireframes/mobile-blog-post.png) | ![screenshot](documentation/wireframes/tablet-blog-post.png) | ![screenshot](documentation/wireframes/desktop-blog-post.png) |
-| 404 | ![screenshot](documentation/wireframes/mobile-404.png) | ![screenshot](documentation/wireframes/tablet-404.png) | ![screenshot](documentation/wireframes/desktop-404.png) |
+| Home | ![screenshot of homepage on mobile](documentation/wireframes/home-mobile.png) | ![screenshot of homepage on tablet](documentation/wireframes/home-tablet.png) | ![screenshot of homepage on desktop](documentation/wireframes/home-desktop.png) |
+| Digging Deeper Blog | ![screenshot of blog page on mobile](documentation/wireframes/blog-mobile.png) | ![screenshot of blog page on tablet](documentation/wireframes/blog-tablet.png) | ![screenshot of blog page on desktop](documentation/wireframes/blog-desktop.png) |
+| Diggit Forum | ![screenshot of Forum on mobile](documentation/wireframes/forum-mobile.png) | ![screenshot of Forum on tablet](documentation/wireframes/forum-tablet.png) | ![screenshot of Forum on desktop](documentation/wireframes/forum-desktop.png) |
+| Expanded View | ![screenshot of expanded view on mobile](documentation/wireframes/expanded-mobile.png) | ![screenshot of expanded view on tablet](documentation/wireframes/expanded-tablet.png) | ![screenshot of expanded view on desktop](documentation/wireframes/expanded-desktop.png) |
+| Create Post | ![screenshot of create post on mobile](documentation/wireframes/create-post-mobile.png) | ![screenshot of create post on tablet](documentation/wireframes/create-post-tablet.png) | ![screenshot of create post on desktop](documentation/wireframes/create-post-desktop.png) |
+| Contact | ![screenshot of contact form on mobile](documentation/wireframes/contact-mobile.png) | ![screenshot of contact form on tablet](documentation/wireframes/contact-tablet.png) | ![screenshot of contact form on desktop](documentation/wireframes/contact-desktop.png) |
+| 404 | ![screenshot of 404 page on mobile](documentation/wireframes/404-mobile.png) | ![screenshot of 404 page on tablet](documentation/wireframes/404-tablet.png) | ![screenshot of 404 page on desktop](documentation/wireframes/404-desktop.png) |
+
+**Modals**
+This project uses a number of modals for various authentication and CRUD functions.
+
+| Modal | Mockup |
+| --- | --- |
+| Register | ![screenshot of registration modal](documentation/modals/register.png) |
+| Login | ![screenshot of login modal](documentation/modals/login.png) |
+| Log out | ![screenshot of log out modal](documentation/modals/log-out.png) |
+| Edit post | ![screenshot of edit post modal](documentation/modals/update-post.png) |
+| Delete post | ![screenshot of delete post modal](documentation/modals/delete-post.png) |
+| Comment | ![screenshot of comment modal](documentation/modals/comment.png) |
+| Edit comment | ![screenshot of edit comment modal](documentation/modals/update-comment.png) |
+| Delete comment | ![screenshot of delete comment modal](documentation/modals/delete-comment.png) |
+| Report post | ![screenshot of report post modal](documentation/modals/report-post.png) |
+| Report comment | ![screenshot of report comment modal](documentation/modals/report-comment.png) |
 
 ## User Stories
 
@@ -222,12 +236,13 @@ I've used [Balsamiq](https://balsamiq.com/wireframes) to design my site wirefram
 | As a guest | I can read comments | so that I can benefit from user's experience and decide if I want to join | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
 | As a user | I can contact the site admin | so that I can report an issue or ask a question | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
 | As a logged in user | I can edit or delete my comments | so that I can correct or remove comments that no longer represent me | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a guest | I can read a brief introduction to the site | so that I can decide to browse as a guest or signup | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
 | As a logged in user | I can react to comments | so that I can help the community identify the most helpful answers | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
 | As a post author | I can upload an image | so that I can ask questions or give advice about my own experiences | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
 | As a user | I can filter posts by category | so that I can find relevant content faster | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
 | As a user | I can report harmful content | so that site moderators can review and take action | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
-| As a logged in user | I can reply to comments | so that I can add more insight to the conversation | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
 | As a user | I can see the most popular comments first | so that the most helpful answers are easy to find | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
+| As a logged in user | I can reply to comments | so that I can add more insight to the conversation | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
 | As a user | I can sort posts by date or popularity | so that I can find the most recent or most engaging content easily | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
 | As a logged in user | I can react to posts | so that I can quickly share my feelings without needing to comment | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
 | As a user | I can expect that multiple posts will spread over several pages | so that I can maintain a clean easy to use interface | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
