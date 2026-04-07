@@ -171,17 +171,39 @@ I had [claude.ai](https://claude.ai/new) run a contrast check on all colours and
 
 ![screenshot of colour contrast table](documentation/contrast-table.png)
 
-A fixed palette of 2o colours was created for the category labels, to ensure high contrast is maintained.
+A fixed palette of 20 colours was created for the category labels, to ensure high contrast is maintained. A dark charcoal grey was chosen for the text ![#13171C](https://img.shields.io/badge/%2313171C-13171C) and the 20 shades were tested to ensure they meet WCAG AAA contrast standards.
+
+| Colour | Hex Code | Contrast | Sample|
+| --- | --- | --- | --- | 
+| Beige | D9BAAF | 9.94 | ![Swatch of beige](documentation/colours/beige.png) |
+| Grey | C3C2C2 | 10.13 | ![Swatch of grey](documentation/colours/grey.png) |
+| Blue | A7CFFF | 11.16 | ![Swatch of blue](documentation/colours/blue.png) |
+| Mint | B6E2CF | 12.67 | ![Swatch of mint](documentation/colours/mint.png) |
+| Duckegg | 77CCBB | 9.55 | ![Swatch of duckegg](documentation/colours/duckegg.png) |
+| Turquoise | 26C6DA | 8.72 | ![Swatch of turquoise](documentation/colours/turquoise.png) |
+| Teal | 0CCABA | 8.72 | ![Swatch of teal](documentation/colours/teal.png) |
+| Jade | 2ECC70 | 8.57 | ![Swatch of jade](documentation/colours/jade.png) |
+| Green | 33FF55 | 13.36 | ![Swatch of green](documentation/colours/green.png) |
+| Lime | A3D977 | 10.93 | ![Swatch of lime](documentation/colours/lime.png) |
+| Lemon | FFF0A7 | 15.67 | ![Swatch of lemon](documentation/colours/lemon.png) |
+| Yellow | FFD54F | 12.76 | ![Swatch of yellow](documentation/colours/yellow.png) |
+| Amber | FFC107 | 11.05 | ![Swatch of amber](documentation/colours/amber.png) |
+| Orange | FF9800 | 8.36 | ![Swatch of orange](documentation/colours/orange.png) |
+| Salmon | FEAA8C | 9.73 | ![Swatch of salmon](documentation/colours/salmon.png) |
+| Rose | FF8AB3 | 8.18 | ![Swatch of rose](documentation/colours/rose.png) |
+| Bubblegum | FF7DAF | 7.55 | ![Swatch of bubblegum](documentation/colours/bubblegum.png) |
+| Pink | FF78FF | 8.05 | ![Swatch of pink](documentation/colours/pink.png) |
+| Lilac | FFA8FF | 10.55 | ![Swatch of lilac](documentation/colours/lilac.png) |
+| Mauve | C7B6E2 | 9.62 | ![Swatch of mauve](documentation/colours/mauve.png) |
+
 ### Typography
 
-⚠️ INSTRUCTIONS ⚠️
+I used [Google Fonts](https://fonts.google.com/)to select a monospace font for the diggit branding and used [Fontjoy](https://fontjoy.com/) to find pairings that I liked.
 
-Explain any fonts and icon libraries used, like **Google Fonts**, **Font Awesome**, etc. Consider adding a link to each font used, the Font Awesome site (if used), or similar icon library.
-
-⚠️ --- END --- ⚠️
-
-- [Montserrat](https://fonts.google.com/specimen/Montserrat) was used for the primary headers and titles.
-- [Lato](https://fonts.google.com/specimen/Lato) was used for all other secondary text.
+- [PT Mono](https://fonts.google.com/specimen/PT+Mono) was used for the branding and main headings.
+- [Italiana](https://fonts.google.com/specimen/Italiana?preview.script=Latn) was used for all other headings.
+- [Slabo 27px](https://fonts.google.com/specimen/Slabo+27px?preview.script=Latn) was used for main content.
+- ⚠️ --- May need another font for comments etc --- ⚠️
 - [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
 
 ## Wireframes
