@@ -167,11 +167,11 @@ I used [coolors.co](https://coolors.co/dce0d9-261617-002500-52e620) to generate 
 
 ![screenshot of colour palette](documentation/diggit-palette.png)
 
-I had [claude.ai](https://claude.ai/new) run a contrast check on all colours and provide me with a table. As expected the only issues the light/bright and dark/dark combinations.
+I had [claude.ai](https://claude.ai/new) run a contrast check on all colours and provide me with a table. As expected the only issues are the light/bright and dark/dark combinations.
 
 ![screenshot of colour contrast table](documentation/contrast-table.png)
 
-A fixed palette of 20 colours was created for the category labels, to ensure high contrast is maintained. A dark charcoal grey was chosen for the text ![#13171C](https://img.shields.io/badge/%2313171C-13171C) and the 20 shades were tested to ensure they meet WCAG AAA contrast standards.
+A fixed palette of 20 colours was created for the category labels, to ensure high contrast is maintained throughout. A dark charcoal grey was chosen for the text ![#13171C](https://img.shields.io/badge/%2313171C-13171C) and the 20 shades were tested to ensure they meet WCAG AAA contrast standards.
 
 | Colour | Hex Code | Contrast | Sample|
 | --- | --- | --- | --- | 
@@ -280,29 +280,29 @@ This project uses a number of modals for various authentication and CRUD functio
 
 ⚠️ --- Work in Progress --- ⚠️
 
-Digging Deeper blog page
-Comments and replies
-* Edit/delete own comments
-User registration
-* Code of conduct modal
-User login & log out
-Visible login state
-Open individual posts (either own page view or expand to fill)
-User post creation form
-* Post edit and delete buttons
-Post filters
-Post Search
-Feedback messages, delete confirmation and clear instructions throughout
-Admin Panel (handled by django)
-Fully responsive design
-Bespoke 404 page with home and/or back button
-Image upload
-Comment likes
-Like counter
-Order comments / posts by like count
-Pagination
-Newsletter sign up 
-Content report button
+- Digging Deeper blog page
+- Comments and replies
+    * Edit/delete own comments
+- User registration
+    * Code of conduct modal
+- User login & log out
+- Visible login state
+- Open individual posts (either own page view or expand to fill)
+- User post creation form
+    * Post edit and delete buttons
+- Post filters
+- Post Search
+- Feedback messages, delete confirmation and clear instructions throughout
+- Admin Panel (handled by django)
+- Fully responsive design
+- Bespoke 404 page with home and/or back button
+- Image upload
+- Comment likes
+- Like counter
+- Order comments / posts by like count
+- Pagination
+- Newsletter sign up 
+- Content report button
 
 
 ### Existing Features
@@ -382,69 +382,20 @@ Want to add more?
 
 🛑 --- END --- 🛑
 
+⚠️ --- Work in Progress --- ⚠️
+
 ## Database Design
 
 ### Data Model
 
-Entity Relationship Diagrams (ERD) help to visualize database architecture before creating models. Understanding the relationships between different tables can save time later in the project.
+The main model for this project is the post - either admin created blogs or user created forum posts. Five other models interact with the post model in the form of User, Reactions, Comments, Comment Reactions and Categories.
+
+There is also a model for messaging the site admin so that user messages are visible and actionable directly from the admin panel.
+
+I used [dbdiagram.io](https://dbdiagram.io/d/diggit-69cf9ba58089629684134784) to create the ERD.
 
 ![screenshot](documentation/erd.png)
 
-⚠️ INSTRUCTIONS ⚠️
-
-Using your defined models, create an ERD with the relationships identified. A couple of recommendations for building your own free ERDs:
-- [Lucidchart](https://www.lucidchart.com/pages/ER-diagram-symbols-and-meaning)
-- [Draw.io](https://draw.io)
-
-Looking for an interactive version of your ERD? Consider using a [`Mermaid flowchart`](https://mermaid.live). To simplify the process, you can ask ChatGPT (or similar) the following prompt:
-
-> ChatGPT Prompt:  
-> "Generate a Markdown syntax Mermaid ERD using my Django models"  
-> [paste-your-django-models-into-ChatGPT]
-
-The "I Think Therefore I Blog" sample ERD in Markdown syntax using Mermaid can be seen below as an example.
-
-**NOTE**: A Markdown Preview tool doesn't show the interactive ERD; you must first commit/push the code to your GitHub repository in order to see it live in action.
-
-⚠️ --- END --- ⚠️
-
-I have used `Mermaid` to generate an interactive ERD of my project.
-
-```mermaid
-erDiagram
-    USER ||--o{ POST : "authors"
-    USER ||--o{ COMMENT : "commenters"
-    POST ||--o{ COMMENT : "has"
-    POST {
-        string title
-        string slug
-        cloudinary featured_image
-        text content
-        text excerpt
-        datetime created_on
-        datetime updated_on
-        int status
-    }
-    COMMENT {
-        text body
-        datetime created_on
-        bool approved
-    }
-    ABOUT {
-        string title
-        cloudinary profile_image
-        text content
-        datetime updated_on
-    }
-    COLLABORATEREQUEST {
-        string name
-        string email
-        text message
-        bool read
-    }
-```
-
-source: [Mermaid](https://mermaid.live/edit#pako:eNqNUstuwjAQ_BVrz6EiVIiSG21zg9LyuFSRkImXxGpsR45TkQb-vU4C5REq4Yut2dnZnfWWECqG4AHqV04jTUUgiT3LuT8ju12no0ryPp0viEcCoLmJlc4CaHNeppOJ_9bQQiUESoMnZq1wgxnTS0rZvKuTGc1lRAw3CbbQLMmjExgmKmdcUl2QDVKTa2QrLmh0lmdwa0iobFPSXKG4DVGnZyijBg0XSEJt1ayWkjeCecpaQS6N7dB2kDXYvrmOjsurymvFijvLrpVKCE1Trb6RXYiPnqfLOwZ3NiMrsuEJ3jeif_3-eRuPbQuz0cKf-R9L_-YnSiraf4iC8uSqvMAsu2iq9m3ncfQMDgjUNpPZla0LBWBitPJQ7ROj-qtaqIpnl1XNCxmCZ3SODjQGDksO3oYmmUVTKsErYQue-zR8cN2B2-t3h73BY2_Qd6AAr7t34Ecpm-HW7M_63UhqlUfxQWr_C_zI_7I)
 
 ⚠️ RECOMMENDED ⚠️
 
@@ -492,12 +443,12 @@ Consider adding screenshots of your Projects Board(s), Issues (open and closed),
 
 ### GitHub Issues
 
-[GitHub Issues](https://www.github.com/geraldine-mor/codestar_blog/issues) served as an another Agile tool. There, I managed my User Stories and Milestone tasks, and tracked any issues/bugs.
+[GitHub Issues](https://www.github.com/geraldine-mor/diggit/issues) served as an another Agile tool. There, I managed my User Stories and Milestone tasks, and tracked any issues/bugs.
 
 | Link | Screenshot |
 | --- | --- |
-| [![GitHub issues](https://img.shields.io/github/issues-search/geraldine-mor/codestar_blog?query=is%3Aissue%20is%3Aopen%20-label%3Abug&label=Open%20Issues&color=yellow)](https://www.github.com/geraldine-mor/codestar_blog/issues?q=is%3Aissue%20is%3Aopen%20-label%3Abug) | ![screenshot](documentation/gh-issues-open.png) |
-| [![GitHub closed issues](https://img.shields.io/github/issues-search/geraldine-mor/codestar_blog?query=is%3Aissue%20is%3Aclosed%20-label%3Abug&label=Closed%20Issues&color=green)](https://www.github.com/geraldine-mor/codestar_blog/issues?q=is%3Aissue%20is%3Aclosed%20-label%3Abug) | ![screenshot](documentation/gh-issues-closed.png) |
+| [![GitHub issues](https://img.shields.io/github/issues-search/geraldine-mor/diggit?query=is%3Aissue%20is%3Aopen%20-label%3Abug&label=Open%20Issues&color=yellow)](https://www.github.com/geraldine-mor/diggit/issues?q=is%3Aissue%20is%3Aopen%20-label%3Abug) | ![screenshot](documentation/gh-issues-open.png) |
+| [![GitHub closed issues](https://img.shields.io/github/issues-search/geraldine-mor/diggit?query=is%3Aissue%20is%3Aclosed%20-label%3Abug&label=Closed%20Issues&color=green)](https://www.github.com/geraldine-mor/codestar_blog/issues?q=is%3Aissue%20is%3Aclosed%20-label%3Abug) | ![screenshot](documentation/gh-issues-closed.png) |
 
 ### MoSCoW Prioritization
 
