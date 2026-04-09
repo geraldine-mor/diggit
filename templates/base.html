@@ -6,19 +6,57 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description"
+            content="Diggit is a community-driven gardening blog and forum where growers of all levels ask questions, share advice, and inspiration for plants and gardens.">
+        <meta name="keywords"
+            content="gardening, gardening blog, gardening forum, plant care, plants, flowers, garden, community gardening, vegetables, fruit, plant tips, gardening community, diggit">
 
+        <!--Favicon-->
         <link rel="icon" type="image/x-icon" href="{% static 'favicon/favicon.ico' %}">
+
         <!--Bootstrap CSS-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        <title>diggit</title>
+
+        <!--Custom CSS-->
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+        <title>diggit {% block page_title %}{% endblock %}</title>
     </head>
 
-    <body>
+    <body class="d-flex flex-column">
+
+        <header>
+            <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">
+                        <img id="logo" src="{% static 'images/green-logo.png' %}" alt="Diggit logo">
+                        diggit
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto">
+                            <li class="nav-item px-2 ms-auto"><a href="#" class="nav-link">Home</a></li>
+                            <li class="nav-item px-2 ms-auto"><a href="#" class="nav-link">Diggit Forum</a></li>
+                            <li class="nav-item px-2 ms-auto"><a href="#" class="nav-link">Digging Deeper</a></li>
+                            <li class="nav-item px-2 ms-auto"><a href="#" class="nav-link">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
 
         {% block content %}
         <!--Content goes here-->
         {% endblock %}
+
+        </main>
 
         <!--Bootstrap JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

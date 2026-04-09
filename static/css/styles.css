@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Italiana&family=PT+Mono&family=Slabo+27px&display=swap');
+
+/*CSS Variables*/
+:root {
+    --brown: #261617;
+    --forest: #002500;
+    --light-grey: #DCE0D9;
+    --dark-grey: #13171C;
+    --green: #52E620;
+    --brand-font: "PT mono", monospace;
+    --heading-font: "Italiana", sans-serif;
+    --body-font: "Slabo 27px", serif;
+}
+
+.navbar {
+    background-color: var(--brown);
+    color: var(--light-grey);
+    font-family: var(--brand-font);
+}
+
+.navbar-brand {
+    font-family: var(--brand-font);
+    color: var(--light-grey);
+}
+
+.navbar-brand:hover {
+    color: var(--green);
+}
+
+#logo {
+    max-height: 40px;
+}
+
+.navbar-toggler {
+    border: none;
+    color: var(--light-grey);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.nav-link {
+    color: var(--light-grey);
+}
+
+.nav-link:hover, .active {
+    color: var(--green);
+}
