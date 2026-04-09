@@ -284,7 +284,7 @@ This project uses a number of modals for various authentication and CRUD functio
 - Comments and replies
     * Edit/delete own comments
 - User registration
-    * Code of conduct modal
+    * Code of conduct 
 - User login & log out
 - Visible login state
 - Open individual posts (either own page view or expand to fill)
@@ -292,9 +292,7 @@ This project uses a number of modals for various authentication and CRUD functio
     * Post edit and delete buttons
 - Post filters
 - Post Search
-- Feedback messages, delete confirmation and clear instructions throughout
 - Admin Panel (handled by django)
-- Fully responsive design
 - Bespoke 404 page with home and/or back button
 - Image upload
 - Comment likes

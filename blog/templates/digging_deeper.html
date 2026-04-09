@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!--Digging Deeper content-->
+<div class="container">
+    <div class="row">
+
+        {% for post in post_list %}
+        <div class="col">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">{{ post.title }}</h2>
+                    <p class="card-text">{{ post.content }}</p>
+                    <hr>
+                    <p><span class="author">{{ post.author }}</span>
+                        <span class="date">{{ post.created_on }}</span></p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+{% endblock %}
