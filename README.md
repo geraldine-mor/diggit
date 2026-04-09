@@ -198,7 +198,7 @@ A fixed palette of 20 colours was created for the category labels, to ensure hig
 
 ### Typography
 
-I used [Google Fonts](https://fonts.google.com/)to select a monospace font for the diggit branding and used [Fontjoy](https://fontjoy.com/) to find pairings that I liked.
+I used [Google Fonts](https://fonts.google.com/)to select a monospace font for the diggit branding and used [Fontjoy](https://fontjoy.com/) to find pairings that I liked. The same dark charcoal grey was chosen for the body text ![#13171C](https://img.shields.io/badge/%2313171C-13171C)
 
 - [PT Mono](https://fonts.google.com/specimen/PT+Mono) was used for the branding and main headings.
 - [Italiana](https://fonts.google.com/specimen/Italiana?preview.script=Latn) was used for all other headings.
