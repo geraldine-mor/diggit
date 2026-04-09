@@ -12,6 +12,10 @@
     --body-font: "Slabo 27px", serif;
 }
 
+body {
+    min-height: 100vh;
+}
+
 .navbar {
     background-color: var(--brown);
     color: var(--light-grey);
@@ -46,4 +50,14 @@
 
 .nav-link:hover, .active {
     color: var(--green);
+}
+
+footer {
+    height: 40px;
+    background-color: var(--brown);
+}
+
+main {
+    background-color: var(--light-grey);
+    color: var(--dark-grey);
 }
