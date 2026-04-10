@@ -1,5 +1,6 @@
 {% load static %}
-{% url 'admin' as admin_url %}
+{% url 'digging_deeper' as blog_url %}
+{% url 'home' as home_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -44,9 +45,9 @@
                             {% if user.is_superuser %}
                             <li class="nav-item px-2 ms-auto"><a id="admin-link" class="nav-link" href="{% url 'admin:index' %}">Admin</a></li>
                             {% endif %}
-                            <li class="nav-item px-2 ms-auto"><a href="#" class="nav-link">Home</a></li>
+                            <li class="nav-item px-2 ms-auto"><a href="{% url 'home' %}" class="nav-link {% if request.path == home_url %}active{% endif %}">Home</a></li>
                             <li class="nav-item px-2 ms-auto"><a href="#" class="nav-link">Diggit Forum</a></li>
-                            <li class="nav-item px-2 ms-auto"><a href="#" class="nav-link">Digging Deeper</a></li>
+                            <li class="nav-item px-2 ms-auto"><a href="{% url 'digging_deeper' %}" class="nav-link {% if request.path == blog_url %}active{% endif %}">Digging Deeper</a></li>
                             <li class="nav-item px-2 ms-auto"><a href="#" class="nav-link">Contact</a></li>
                         </ul>
                     </div>

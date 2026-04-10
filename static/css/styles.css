@@ -48,8 +48,12 @@ body {
     color: var(--light-grey);
 }
 
-.nav-link:hover, .active {
+.nav-link:hover {
     color: var(--green);
+}
+
+.active {
+    border-bottom: 1px solid var(--green);
 }
 
 #admin-link {

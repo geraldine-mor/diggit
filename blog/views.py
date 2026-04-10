@@ -8,3 +8,7 @@ class PostList (generic.ListView):
     # posts only when Forum posts are an option
     queryset = Post.objects.filter(status=1)
     template_name = "digging_deeper.html"
+
+
+def home_page(request):
+    return render(request, 'home.html')
