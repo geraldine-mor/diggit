@@ -52,12 +52,21 @@ body {
     color: var(--green);
 }
 
-footer {
-    height: 40px;
-    background-color: var(--brown);
+#admin-link {
+    color: var(--green);
+}
+
+#admin-link:hover {
+    color: var(--light-grey);
 }
 
 main {
+    margin-top: 66px;
     background-color: var(--light-grey);
     color: var(--dark-grey);
+}
+
+footer {
+    height: 40px;
+    background-color: var(--brown);
 }

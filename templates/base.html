@@ -1,4 +1,5 @@
 {% load static %}
+{% url 'admin' as admin_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +28,7 @@
     <body class="d-flex flex-column">
 
         <header>
-            <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+            <nav class="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
                         <img id="logo" src="{% static 'images/green-logo.png' %}" alt="Diggit logo">
@@ -40,6 +41,9 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto">
+                            {% if user.is_superuser %}
+                            <li class="nav-item px-2 ms-auto"><a id="admin-link" class="nav-link" href="{% url 'admin:index' %}">Admin</a></li>
+                            {% endif %}
                             <li class="nav-item px-2 ms-auto"><a href="#" class="nav-link">Home</a></li>
                             <li class="nav-item px-2 ms-auto"><a href="#" class="nav-link">Diggit Forum</a></li>
                             <li class="nav-item px-2 ms-auto"><a href="#" class="nav-link">Digging Deeper</a></li>
@@ -52,14 +56,14 @@
 
         <main class="flex-fill">
 
-        {% block content %}
-        <!--Content goes here-->
-        {% endblock %}
+            {% block content %}
+            <!--Content goes here-->
+            {% endblock %}
 
         </main>
 
         <footer class="fixed-bottom">
-            
+
         </footer>
 
         <!--Bootstrap JS-->
