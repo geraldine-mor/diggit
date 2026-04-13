@@ -10,12 +10,14 @@
         {% for post in post_list %}
         <div class="col-12">
             <div class="card mt-2">
+                <div class="card-title">
+                    <h2 >{{ post.title }}</h2>
+                </div>
                 <div class="card-body">
-                    <h2 class="card-title">{{ post.title }}</h2>
                     <p class="card-text">{{ post.content }}</p>
                     <hr>
-                    <p><span class="author">{{ post.author }}</span>
-                        <span class="date">{{ post.created_on }}</span></p>
+                    <div id="card-footer" class="d-flex"><span class="author">{% if post.author.is_superuser %}Claude Digsby {% else %} {{ post.author }} {% endif %}</span>
+                        <span class="date ms-auto">{{ post.created_on | date }}</span></div>
                 </div>
             </div>
         </div>
