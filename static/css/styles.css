@@ -91,7 +91,7 @@ main {
     font-size: 1.1rem;
 }
 
-#card-footer {
+#card-footer, #details {
     color: rgba(0, 37, 0, 0.7);
     font-family: var(--body-font);
     font-size: 0.9rem;
@@ -102,13 +102,41 @@ main {
     color: var(--brown);
 }
 
-.card > a {
+.plain {
     text-decoration: none;
+    color: inherit;
 }
 
 .date {
-    display: inline-block;
-    
+    display: inline-block; 
+}
+
+/*Single post view*/
+.single-post {
+    max-width: 90%;
+    margin: 10px auto 0;
+    font-family: inherit;
+}
+
+#post-title{
+    font-family: var(--heading-font);
+}
+
+.back-btn {
+    background-color: var(--forest);
+    color: var(--light-grey);
+    display: block;
+    max-width: 150px;
+}
+
+.back-btn:hover {
+    color: var(--green);
+    background-color: var(--forest);
+    font-weight: bold;
+}
+
+#post-content {
+    font-family: var(--body-font);
 }
 
 /*Footer*/

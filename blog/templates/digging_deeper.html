@@ -11,7 +11,7 @@
         <div class="col-12">
             <div class="card mt-2">
                 {% if "..." in post.excerpt %}
-                <a href="{% url 'read_post' post.slug %}">{% endif %}
+                <a class="plain" href="{% url 'read_post' post.slug %}">{% endif %}
                 <div class="card-title">
                     <h2 >{{ post.title }}</h2>
                 </div>
