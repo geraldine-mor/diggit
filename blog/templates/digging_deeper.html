@@ -14,7 +14,7 @@
                     <h2 >{{ post.title }}</h2>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">{{ post.content }}</p>
+                    <p class="card-text">{{ post.excerpt }}</p>
                     <hr>
                     <div id="card-footer" class="d-flex"><span class="author">{% if post.author.is_superuser %}Claude Digsby {% else %} {{ post.author }} {% endif %}</span>
                         <span class="date ms-auto">{{ post.created_on | date }}</span></div>
