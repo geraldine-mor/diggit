@@ -1,4 +1,4 @@
-# ⚠️[diggit](Link to deployed site)⚠️
+# [diggit](https://diggit-938ea2f476b2.herokuapp.com/)
 >⚠️(insert logo) *Ask what you need or sow a few seeds*
 
 Developer: Geraldine Morey ([geraldine-mor](https://www.github.com/geraldine-mor))
@@ -6,7 +6,7 @@ Developer: Geraldine Morey ([geraldine-mor](https://www.github.com/geraldine-mor
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/t/geraldine-mor/diggit)](https://www.github.com/geraldine-mor/diggit/commits/main)
 [![GitHub last commit](https://img.shields.io/github/last-commit/geraldine-mor/diggit)](https://www.github.com/geraldine-mor/diggit/commits/main)
 [![GitHub repo size](https://img.shields.io/github/repo-size/geraldine-mor/diggit)](https://www.github.com/geraldine-mor/diggit)
-[![badge](https://img.shields.io/badge/deployment-Heroku-purple)]⚠️(deployed_link)⚠️
+[![badge](https://img.shields.io/badge/deployment-Heroku-purple)](https://diggit-938ea2f476b2.herokuapp.com/)
 
 ⚠️ PROJECT INTRODUCTION AND RATIONALE⚠️
 
@@ -20,8 +20,7 @@ During project idea discussions with my course facilitator, Tindy, we segued int
 
 ⚠️![screenshot](documentation/mockup.png)
 
-source: [diggit amiresponsive](https://ui.dev/amiresponsive?url=https://⚠️ Add url.herokuapp.com)
-
+source: [diggit amiresponsive](https://ui.dev/amiresponsive?url=https://diggit-938ea2f476b2.herokuapp.com/)
 ## UX
 
 ### The 5 Planes of UX
@@ -201,10 +200,10 @@ A fixed palette of 20 colours was created for the category labels, to ensure hig
 I used [Google Fonts](https://fonts.google.com/)to select a monospace font for the diggit branding and used [Fontjoy](https://fontjoy.com/) to find pairings that I liked. The same dark charcoal grey was chosen for the body text ![#13171C](https://img.shields.io/badge/%2313171C-13171C)
 
 - [PT Mono](https://fonts.google.com/specimen/PT+Mono) was used for the branding and main headings.
-- [Italiana](https://fonts.google.com/specimen/Italiana?preview.script=Latn) was used for all other headings.
-- [Slabo 27px](https://fonts.google.com/specimen/Slabo+27px?preview.script=Latn) was used for main content.
+- [Dosis](https://fonts.google.com/specimen/Dosis?preview.script=Latn) was used for the main content.
+- [Slabo 27px](https://fonts.google.com/specimen/Slabo+27px?preview.script=Latn) was used for headings and emphasis.
 - ⚠️ --- May need another font for comments etc --- ⚠️
-- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the social media icons in the footer.
+- [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the burger menu icon in the navbar.
 
 ## Wireframes
 

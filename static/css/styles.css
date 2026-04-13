@@ -77,7 +77,8 @@ main {
 .card {
     color: var(--dark-grey);
     background-color: #f2f4f1;
-    border-radius: 0;
+    border-radius: 15px;
+    border-color: var(--brown);
 }
 
 .card-title {
@@ -98,6 +99,11 @@ main {
 
 .card hr {
     margin: 0.5rem 0;
+    color: var(--brown);
+}
+
+.card > a {
+    text-decoration: none;
 }
 
 .date {

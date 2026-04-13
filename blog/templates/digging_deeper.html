@@ -10,11 +10,13 @@
         {% for post in post_list %}
         <div class="col-12">
             <div class="card mt-2">
+                {% if "..." in post.excerpt %}
+                <a href="{% url 'read_post' post.slug %}">{% endif %}
                 <div class="card-title">
                     <h2 >{{ post.title }}</h2>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">{{ post.excerpt }}</p>
+                    <p class="card-text">{{ post.excerpt }}</p>{% if "..." in post.excerpt %}</a>{% endif %}
                     <hr>
                     <div id="card-footer" class="d-flex"><span class="author">{% if post.author.is_superuser %}Claude Digsby {% else %} {{ post.author }} {% endif %}</span>
                         <span class="date ms-auto">{{ post.created_on | date }}</span></div>
