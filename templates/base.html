@@ -1,6 +1,9 @@
 {% load static %}
 {% url 'digging_deeper' as blog_url %}
 {% url 'home' as home_url %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
+{% url 'account_logout' as logout_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -64,7 +67,14 @@
         </main>
 
         <footer class="fixed-bottom">
-
+            <ul class="user-auth">
+                {% if user.is_authenticated %}
+                <li class="ms-auto auth-item"><a href="{% url 'account_logout' %}" class="auth-link">Logout</a></li>
+                {% else %}
+                <li class="ms-auto auth-item"><a href="{% url 'account_login' %}" class="auth-link">Login</a></li>
+                <li class="ms-auto auth-item"><a href="{% url 'account_signup' %}" class="auth-link">Create Account</a></li>
+                {% endif %}
+            </ul>
         </footer>
 
         <!--Bootstrap JS-->
