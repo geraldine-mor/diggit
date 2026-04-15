@@ -162,19 +162,21 @@ main {
 #form-card {
     max-width: 600px;
     margin: auto;
-    border-radius: 0;
+    border-radius: 5px;
 }
 
-.form-field {
-    margin: 3px 5px;;
+.form-field > input {
+    min-width: 90%;
 }
+
 #terms {
     max-height: 200px;
     overflow-y: auto;
     background-color: rgba(255, 255, 255, 0.9);
     border: 0.5px solid var(--brown);
     padding: 5px;
-    margin-top: 3px;
+    margin: 3px 10px;
+    border-radius: 5px;
 }
 
 #terms h2 {
@@ -226,6 +228,19 @@ footer {
 
 footer ul {
     margin-bottom: 0;
+}
+
+/*Buttons*/
+.submit-btn {
+    background-color: var(--green);
+    border: none;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background-color: transparent;
+    border: 2px solid var(--green);
+    padding: 4px 10px;
 }
 
 /*Medium screens and up*/

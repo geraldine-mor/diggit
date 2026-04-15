@@ -15,25 +15,51 @@
             </div>
             <form method="post" action="{% url 'account_signup' %}">
                 {% csrf_token %}
-                <div class="card-text form-field">
-                    {{ form.first_name.label_tag}}
-                    {{ form.first_name }}
-                    <span class="small red">{{ form.first_name.errors}}</span>
-                </div>
-                <div class="card-text form-field">
-                    {{ form.last_name.label_tag}}
-                    {{ form.last_name }}
-                    <span class="small red">{{ form.last_name.errors}}</span> 
-                </div>
-                <div class="card-text form-field">
-                    {{ form.username.label_tag}}
-                    {{ form.username }}
-                    <span class="small red">{{ form.username.errors}}</span>
-                </div>
-                <div class="card-text form-field">
-                    {{ form.email.label_tag}}
-                    {{ form.email }}
-                    <span class="small red">{{ form.email.errors}}</span>
+                <div class="container">
+                    <div class="row mb-2">
+                        <div class="col-12 col-sm-6">
+                            <div class="card-text form-field">
+                                {{ form.first_name.label_tag}}<br>
+                                {{ form.first_name }}
+                                <span class="small red">{{ form.first_name.errors}}</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="card-text form-field">
+                                {{ form.last_name.label_tag}}<br>
+                                {{ form.last_name }}
+                                <span class="small red">{{ form.last_name.errors}}</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="card-text form-field">
+                                {{ form.username.label_tag}}<br>
+                                {{ form.username }}
+                                <span class="small red">{{ form.username.errors}}</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="card-text form-field">
+                                {{ form.email.label_tag}}<br>
+                                {{ form.email }}
+                                <span class="small red">{{ form.email.errors}}</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="card-text form-field">
+                                {{ form.password1.label_tag}}<br>
+                                {{ form.password1 }}
+                                <span class="small red">{{ form.password1.errors}}</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="card-text form-field">
+                                {{ form.password2.label_tag}}<br>
+                                {{ form.password2 }}
+                                <span class="small red">{{ form.password2.errors}}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div id="terms" class="card-text">
                     <h2>Diggit Community Guidelines</h2>
@@ -81,22 +107,12 @@
                     <p>By signing up, you confirm that you have read and agree to these guidelines.</p>
 
                 </div>
-                <div class="card-text form-field form-check form-switch">
+                <div class="mb-3 card-text form-check form-switch">
                     {{ form.accept_terms }}
                     {{ form.accept_terms.label_tag }}
                     <span class="small red">{{ form.accept_terms.errors}}</span>
                 </div>
-                <div class="card-text form-field">
-                    {{ form.password1.label_tag}}
-                    {{ form.password1 }}
-                    <span class="small red">{{ form.password1.errors}}</span>
-                </div>
-                <div class="card-text form-field">
-                    {{ form.password2.label_tag}}
-                    {{ form.password2 }}
-                    <span class="small red">{{ form.password2.errors}}</span>
-                </div>
-               <button type="submit">Sign Up</button>
+                <button class="btn submit-btn" type="submit">Sign Up</button>
             </form>
         </div>
     </div>
