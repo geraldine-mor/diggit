@@ -8,7 +8,7 @@
 {% block content %}
 <div id="signup-backdrop">
     <div class="overlay">
-        <div id="form-card" class="card p-3 mx-2">
+        <div id="form-card" class="card p-3 mx-2 my-5">
             <div class="card-text">
                 <h1 class="text-center">Sign Up</h1>
                 <p>Already have an account? Then please<a class="link" href="{% url 'account_login' %}"> sign in</a></p>
@@ -33,16 +33,16 @@
                         </div>
                         <div class="col-12 col-sm-6">
                             <div class="card-text form-field">
-                                {{ form.username.label_tag}}<br>
-                                {{ form.username }}
-                                <span class="small red">{{ form.username.errors}}</span>
+                                {{ form.email.label_tag}}<br>
+                                {{ form.email }}
+                                <span class="small red">{{ form.email.errors}}</span>
                             </div>
                         </div>
                         <div class="col-12 col-sm-6">
                             <div class="card-text form-field">
-                                {{ form.email.label_tag}}<br>
-                                {{ form.email }}
-                                <span class="small red">{{ form.email.errors}}</span>
+                                {{ form.username.label_tag}}<br>
+                                {{ form.username }}
+                                <span class="small red">{{ form.username.errors}}</span>
                             </div>
                         </div>
                         <div class="col-12 col-sm-6">
