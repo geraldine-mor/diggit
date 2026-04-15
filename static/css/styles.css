@@ -12,8 +12,9 @@
     --body-font: "Dosis", sans-serif;
 }
 
-body {
-    min-height: 100vh;
+.link {
+    text-decoration: none;
+    color: inherit;
 }
 
 /*Navigation Menu*/
@@ -68,9 +69,11 @@ body {
 
 /*Main Content*/
 main {
-    margin-top: 66px;
+    padding-top: 66px;
+    padding-bottom: 48px;
     background-color: var(--light-grey);
     color: var(--dark-grey);
+    height: 100vh;
 }
 
 /*Blog Cards*/
@@ -139,10 +142,61 @@ main {
     font-family: var(--body-font);
 }
 
+/*Signup Form*/
+#signup-backdrop {
+    background: url(../images/signup.webp) no-repeat center center / cover ;
+    height: 100%;
+    width: 100%;
+}
+
+.overlay {
+    background-color: rgba(220, 224, 217, 0.5);
+    height: 100%;
+    width: 100%;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#form-card {
+    max-width: 600px;
+    margin: auto;
+    border-radius: 0;
+}
+
+.form-field {
+    margin: 3px 5px;;
+}
+#terms {
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 0.5px solid var(--brown);
+    padding: 5px;
+    margin-top: 3px;
+}
+
+#terms h2 {
+    font-size: 18px;
+}
+
+#terms h3 {
+    font-size: 16px;
+}
+
+#terms p, #terms li {
+    font-size: 14px;
+}
+
 /*Footer*/
 footer {
-    height: 40px;
+    min-height: 40px;
     background-color: var(--brown);
+    color: var(--light-grey);
+}
+
+footer ul {
+    margin-bottom: 0;
 }
 
 /*Medium screens and up*/
@@ -157,5 +211,9 @@ footer {
 @media screen and (min-width: 1200px) {
     .card {
         max-width: 60%;
+    }
+
+    #terms {
+        max-height: 260px;
     }
 }

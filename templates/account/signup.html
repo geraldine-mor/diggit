@@ -5,16 +5,99 @@
 {% block head_title %}{% trans "Signup" %}{% endblock head_title %}
 
 {% block content %}
-    <div id="signup-backdrop" class="container">
-        <div class="row">
-            <div class="card">
-                <h1>Sign Up</h1>
-                <p>Already have an account? Then please<a href="{% url 'account_login' %}"> sign in</a></p>
+<div id="signup-backdrop">
+    <div class="overlay">
+        <div id="form-card" class="card p-3 mx-1">
+            <div class="card-text">
+                <h1 class="text-center">Sign Up</h1>
+                <p>Already have an account? Then please<a class="link" href="{% url 'account_login' %}"> sign in</a></p>
+            </div>
+            <div class="card-text form-field">
+                {{ form.first_name.label_tag}}
+                {{ form.first_name }}
+                {{ form.first_name.errors}}
+            </div>
+            <div class="card-text form-field">
+                {{ form.last_name.label_tag}}
+                {{ form.last_name }}
+                {{ form.last_name.errors}}
+            </div>
+            <div class="card-text form-field">
+                {{ form.username.label_tag}}
+                {{ form.username }}
+                {{ form.username.errors}}
+            </div>
+            <div class="card-text form-field">
+                {{ form.email.label_tag}}
+                {{ form.email }}
+                {{ form.email.errors}}
+            </div>
+            <div id="terms" class="card-text">
+                <h2>Diggit Community Guidelines</h2>
+                <p>Welcome to Diggit. This is a space for sharing ideas, discussion, and community.
+                    By creating an account, you agree to follow these guidelines.</p>
+
+                <h3>1. Be Respectful</h3>
+                <p>You agree to engage respectfully with others at all times.</p>
+                <ul>
+                    <li>No offensive, abusive, or hateful language</li>
+                    <li>No harassment, threats, or intimidation</li>
+                    <li>No deliberately provocative or disruptive behaviour</li>
+                </ul>
+
+                <h3>2. No Harmful or Inappropriate Content</h3>
+                <ul>
+                    <li>No obscene or offensive content</li>
+                    <li>No misleading or defamatory content</li>
+                    <li>No illegal content or promotion of illegal activity</li>
+                </ul>
+
+                <h3>3. No External Links</h3>
+                <p>To help keep Diggit safe and free from spam, external links are not permitted at this time.</p>
+                <ul>
+                    <li>No posting links in content, comments, or profiles</li>
+                </ul>
+
+                <h3>4. Account Responsibility</h3>
+                <ul>
+                    <li>You are responsible for your account and its activity</li>
+                    <li>You must keep your login details secure</li>
+                </ul>
+
+                <h3>5. Enforcement</h3>
+                <p>We may take action if these guidelines are violated, including:</p>
+                <ul>
+                    <li>Removing content</li>
+                    <li>Suspending or banning accounts</li>
+                </ul>
+
+                <h3>6. Updates</h3>
+                <p>These guidelines may change over time. Continued use of Diggit means you accept any updates.</p>
+
+                <h3>7. Agreement</h3>
+                <p>By signing up, you confirm that you have read and agree to these guidelines.</p>
+
+            </div>
+            <div class="card-text form-field form-check form-switch">
+                {{ form.accept_terms }}
+                {{ form.accept_terms.label_tag }}
+                {{ form.accept_terms.errors}}
+            </div>
+            <div class="card-text form-field">
+                {{ form.password1.label_tag}}
+                {{ form.password1 }}
+                {{ form.password1.errors}}
+            </div>
+            <div class="card-text form-field">
+                {{ form.password2.label_tag}}
+                {{ form.password2 }}
+                {{ form.password2.errors}}
             </div>
         </div>
     </div>
-    
-        {% if not SOCIALACCOUNT_ONLY %}
+</div>
+
+<!-- {% if not SOCIALACCOUNT_ONLY %}
         {% url 'account_signup' as action_url %}
         {% element form form=form method="post" action=action_url tags="entrance,signup" %}
             {% slot body %}
@@ -36,6 +119,6 @@
         {% element button href=signup_by_passkey_url tags="prominent,signup,outline,primary" %}
             {% trans "Sign up using a passkey" %}
         {% endelement %}
-    {% endif %}
-    
+    {% endif %} -->
+
 {% endblock content %}
