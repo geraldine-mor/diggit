@@ -12,10 +12,22 @@
     --body-font: "Dosis", sans-serif;
 }
 
+/*General styles*/
+.login-state {
+    text-align: center;
+    padding: 10px;
+    font-family: var(--brand-font);
+}
+
+/*Helper classes*/
 .link {
     text-decoration: none;
     color: inherit;
     font-weight: bold;
+}
+
+.hidden {
+    display: none;
 }
 
 /*Navigation Menu*/
@@ -88,6 +100,18 @@ main {
 .card-title {
     font-family: var(--heading-font);
     padding: 1rem 1rem 0;
+}
+
+.post-image, .post-image-feature {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+}
+
+.post-image img, .post-image-feature img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
 }
 
 .card-text {
@@ -252,8 +276,17 @@ footer ul {
         padding: 0;
     }
 
-    .body-container {
-        padding-top: 66px;
+    .body-container { 
+        padding-top: 66px; /*Pushes content below navbar */
+    }
+
+    .login-state { 
+        margin-top: 66px; /*Pushes content below navbar */
+        text-align: end;
+    }
+
+        .post-image-feature {
+        max-height: 350px;
     }
 
 }
@@ -261,7 +294,7 @@ footer ul {
 /*Medium screens and up*/
 @media screen and (min-width: 768px) {
     .card {
-        max-width: 80%;
+        max-width: 700px;
         margin: 0 auto 0;
     }
 }
@@ -274,5 +307,11 @@ footer ul {
 
     #terms {
         max-height: 260px;
+    }
+
+    .post-image-feature {
+        max-width: 80%;
+        max-height: 550px;
+        margin: auto;
     }
 }
