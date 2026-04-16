@@ -102,6 +102,18 @@ main {
     padding: 1rem 1rem 0;
 }
 
+.post-image, .post-image-feature {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+}
+
+.post-image img, .post-image-feature img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
 .card-text {
     font-family: var(--body-font);
     font-size: 1.1rem;
@@ -273,12 +285,16 @@ footer ul {
         text-align: end;
     }
 
+        .post-image-feature {
+        max-height: 350px;
+    }
+
 }
 
 /*Medium screens and up*/
 @media screen and (min-width: 768px) {
     .card {
-        max-width: 80%;
+        max-width: 700px;
         margin: 0 auto 0;
     }
 }
@@ -291,5 +307,11 @@ footer ul {
 
     #terms {
         max-height: 260px;
+    }
+
+    .post-image-feature {
+        max-width: 80%;
+        max-height: 550px;
+        margin: auto;
     }
 }

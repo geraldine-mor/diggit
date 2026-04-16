@@ -4,7 +4,7 @@
 {% block content %}
 
 <!--Single post-->
-<div class="single-post body-container">
+<div class="single-post">
     <div>
         <h1 id="post-title">{{ post.title }}</h1>
         <div id="details" class="d-flex">
@@ -12,6 +12,11 @@
                 Digsby {% else %} {{ post.author }} {% endif %} | {{ post.created_on | date }}</p>
         </div>
     </div>
+    {% if post.featured_image %}
+    <div class="post-image-feature">
+        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+    </div>
+    {% endif %}
     <div class="content">
         <p id="post-content">{{ post.content }}</p>
     </div>

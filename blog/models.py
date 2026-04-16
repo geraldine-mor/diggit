@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django_extensions.db.fields import AutoSlugField
+from cloudinary.models import CloudinaryField
 from .utils import excerpt_generator
 
 STATUS = ((0, "Draft"), (1, "Published"))    
@@ -13,6 +14,7 @@ class Post(models.Model):
     )
     title = models.CharField(max_length=200)
     slug = AutoSlugField(populate_from=['title'])
+    featured_image = CloudinaryField('image', null=True)
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
