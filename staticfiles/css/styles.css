@@ -12,8 +12,10 @@
     --body-font: "Dosis", sans-serif;
 }
 
-body {
-    min-height: 100vh;
+.link {
+    text-decoration: none;
+    color: inherit;
+    font-weight: bold;
 }
 
 /*Navigation Menu*/
@@ -68,16 +70,19 @@ body {
 
 /*Main Content*/
 main {
-    margin-top: 66px;
+    padding-top: 66px;
+    padding-bottom: 48px;
     background-color: var(--light-grey);
     color: var(--dark-grey);
+    min-height: 100vh;
 }
 
 /*Blog Cards*/
 .card {
     color: var(--dark-grey);
     background-color: #f2f4f1;
-    border-radius: 0;
+    border-radius: 15px;
+    border-color: var(--brown);
 }
 
 .card-title {
@@ -90,7 +95,7 @@ main {
     font-size: 1.1rem;
 }
 
-#card-footer {
+#card-footer, #details {
     color: rgba(0, 37, 0, 0.7);
     font-family: var(--body-font);
     font-size: 0.9rem;
@@ -98,17 +103,159 @@ main {
 
 .card hr {
     margin: 0.5rem 0;
+    color: var(--brown);
+}
+
+.plain {
+    text-decoration: none;
+    color: inherit;
 }
 
 .date {
-    display: inline-block;
-    
+    display: inline-block; 
+}
+
+/*Single post view*/
+.single-post {
+    max-width: 90%;
+    margin: 10px auto 0;
+    font-family: inherit;
+}
+
+#post-title{
+    font-family: var(--heading-font);
+}
+
+.back-btn {
+    background-color: var(--forest);
+    color: var(--light-grey);
+    display: block;
+    max-width: 150px;
+}
+
+.back-btn:hover {
+    color: var(--green);
+    background-color: var(--forest);
+    font-weight: bold;
+}
+
+#post-content {
+    font-family: var(--body-font);
+}
+
+/*Signup Form*/
+#signup-backdrop {
+    background: url(../images/signup.webp) no-repeat center center / cover ;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.overlay {
+    background-color: rgba(220, 224, 217, 0.5);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#form-card {
+    max-width: 600px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.form-field > input {
+    min-width: 90%;
+}
+
+#terms {
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 0.5px solid var(--brown);
+    padding: 5px;
+    margin: 3px 10px;
+    border-radius: 5px;
+}
+
+#terms h2 {
+    font-size: 18px;
+}
+
+#terms h3 {
+    font-size: 16px;
+}
+
+#terms p, #terms li {
+    font-size: 14px;
+}
+
+.form-check-input:checked, .form-check-input:checked:focus {
+    background-color: var(--forest);
+    border-color: var(--forest);
+}
+
+.form-check-input {
+    border-color: var(--forest);
+}
+
+.form-check-input:focus {
+    border-color: var(--forest);
+    outline: 0;
+    box-shadow: none;
+    background-color: rgba(0, 37, 0, 0.2);
+}
+
+.form-switch .form-check-input:focus {
+    --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
+}
+
+.form-switch .form-check-input:focus {
+    --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.small {
+    font-size: 14px;
+}
+
+.red {
+    color: red;
 }
 
 /*Footer*/
 footer {
-    height: 40px;
+    min-height: 40px;
     background-color: var(--brown);
+    color: var(--light-grey);
+}
+
+footer ul {
+    margin-bottom: 0;
+}
+
+/*Buttons*/
+.submit-btn {
+    background-color: var(--green);
+    border: none;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background-color: transparent;
+    border: 2px solid var(--green);
+    padding: 4px 10px;
+}
+/*Small screens 576px an up*/
+@media screen and (min-width: 576px) {
+    main {
+        padding: 0;
+    }
+
+    .body-container {
+        padding-top: 66px;
+    }
+
 }
 
 /*Medium screens and up*/
@@ -123,5 +270,9 @@ footer {
 @media screen and (min-width: 1200px) {
     .card {
         max-width: 60%;
+    }
+
+    #terms {
+        max-height: 260px;
     }
 }
