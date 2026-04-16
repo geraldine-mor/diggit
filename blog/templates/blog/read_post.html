@@ -4,10 +4,11 @@
 {% block content %}
 
 <!--Single post-->
-<div class="single-post">
+<div class="single-post body-container">
     <div>
         <h1 id="post-title">{{ post.title }}</h1>
-        <div id="details" class="d-flex"><p>{% if post.author.is_superuser %}Claude
+        <div id="details" class="d-flex">
+            <p>{% if post.author.is_superuser %}Claude
                 Digsby {% else %} {{ post.author }} {% endif %} | {{ post.created_on | date }}</p>
         </div>
     </div>

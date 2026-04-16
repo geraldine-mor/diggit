@@ -196,6 +196,10 @@ main {
     border-color: var(--forest);
 }
 
+.form-check-input {
+    border-color: var(--forest);
+}
+
 .form-check-input:focus {
     border-color: var(--forest);
     outline: 0;
@@ -247,7 +251,13 @@ footer ul {
     main {
         padding: 0;
     }
+
+    .body-container {
+        padding-top: 66px;
+    }
+
 }
+
 /*Medium screens and up*/
 @media screen and (min-width: 768px) {
     .card {

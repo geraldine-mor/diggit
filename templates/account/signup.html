@@ -3,7 +3,7 @@
 {% load allauth i18n %}
 {% url 'account_signup' as action_url %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock head_title %}
+{% block head_title %}{% trans " | Signup" %}{% endblock head_title %}
 
 {% block content %}
 <div id="signup-backdrop">
@@ -16,7 +16,7 @@
             <form method="post" action="{% url 'account_signup' %}">
                 {% csrf_token %}
                 <div class="container">
-                    <div class="row mb-2">
+                    <div class="row">
                         <div class="col-12 col-sm-6">
                             <div class="card-text form-field">
                                 {{ form.first_name.label_tag}}<br>
@@ -58,6 +58,14 @@
                                 {{ form.password2 }}
                                 <span class="small red">{{ form.password2.errors}}</span>
                             </div>
+                        </div>
+                        <div class="mt-2">
+                            <ul>
+                                <li class="small">Your password can’t be too similar to your other personal information.</li>
+                                <li class="small">Your password must contain at least 8 characters.</li>
+                                <li class="small">Your password can’t be a commonly used password.</li>
+                                <li class="small">Your password can’t be entirely numeric.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
