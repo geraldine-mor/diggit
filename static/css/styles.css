@@ -12,10 +12,22 @@
     --body-font: "Dosis", sans-serif;
 }
 
+/*General styles*/
+.login-state {
+    text-align: center;
+    padding: 10px;
+    font-family: var(--brand-font);
+}
+
+/*Helper classes*/
 .link {
     text-decoration: none;
     color: inherit;
     font-weight: bold;
+}
+
+.hidden {
+    display: none;
 }
 
 /*Navigation Menu*/
@@ -252,8 +264,13 @@ footer ul {
         padding: 0;
     }
 
-    .body-container {
-        padding-top: 66px;
+    .body-container { 
+        padding-top: 66px; /*Pushes content below navbar */
+    }
+
+    .login-state { 
+        margin-top: 66px; /*Pushes content below navbar */
+        text-align: end;
     }
 
 }
