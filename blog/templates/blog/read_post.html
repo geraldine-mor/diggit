@@ -18,7 +18,7 @@
     </div>
     {% endif %}
     <div class="content">
-        <p id="post-content">{{ post.content }}</p>
+        <p id="post-content">{{ post.content | linebreaks }}</p>
     </div>
     <a class="btn back-btn" href="{% url 'digging_deeper' %}">Back</a>
 </div>
