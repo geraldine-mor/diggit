@@ -20,13 +20,27 @@
     <div class="content">
         <p id="post-content">{{ post.content | linebreaks }}</p>
         {% if post.comments %}
+        <button id="{% if user.is_authenticated %}comment-btn{% else %}signin-btn{% endif %}" class="btn"
+            type="button">{% if user.is_authenticated %}Comment</button>
+            {% else %}<a class="btn" href="{% url 'account_signup' %}">Sign in to Comment</a>{% endif %}
         <h2>Comments:</h2>
         {% for comment in post.comments.all %}
-        <span class="comment-details small">On {{ comment.created_on | date }}, {{ comment.author.username }} wrote:</span>
+        <span class="comment-details small">On {{ comment.created_on | date }}, {{ comment.author.username }}
+            wrote:</span>
         <p class="comment-body">{{ comment.content | linebreaks }}</p>
         {% endfor %}{% endif %}
     </div>
     <a class="btn back-btn" href="{% url 'digging_deeper' %}">Back</a>
+</div>
+
+<div id="comment-form" class="hidden">
+    <form method="post" action="{% url 'read_post' post.slug %}">
+        {% csrf_token %}
+        <h3>Leave a comment on {{ post.title }}</h3>
+        <p>You are commenting as {{ user.username }}</p>
+        <textarea class="comment-box" maxlength="1000" name="content"></textarea>
+        <button class="btn submit-btn" type="submit">Comment</button>
+    </form>
 </div>
 
 

@@ -1,4 +1,5 @@
 from django import forms
+from .models import Comment
 
 class SignupForm(forms.Form):
     first_name = forms.CharField(max_length=30, label='First Name')
@@ -14,3 +15,9 @@ class SignupForm(forms.Form):
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
         user.save()
+
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = ('content',)

@@ -11,32 +11,36 @@
             <div class="card mt-2">
                 {% if "..." in post.excerpt or post.comment_count > 1 %}
                 <a class="plain" href="{% url 'read_post' post.slug %}">{% endif %}
-                <div class="card-title">
-                    <h2>{{ post.title }}</h2>
-                </div>
-                {% if post.featured_image %}
-                <div class="post-image">
-                    <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
-                </div>
-                {% endif %}
-                <div class="card-body">
-                    <p class="card-text">{{ post.excerpt }}</p>
-                    {% if post.comments %}
-                    <div class="comment">
-                        <p class="small">{{ post.comment_count }} Comments</p>
-                        <p class="small">On {{ post.first_comment.created_on | date }} {{ post.first_comment.author.username }} wrote:</p>
-                        <p class="comment-body">{{ post.first_comment.content }}</p>
-                    </div>{% if "..." in post.excerpt or post.comment_count > 1 %}</a>{% endif %}
+                    <div class="card-title">
+                        <h2>{{ post.title }}</h2>
+                    </div>
+                    {% if post.featured_image %}
+                    <div class="post-image">
+                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                    </div>
                     {% endif %}
-                    <hr>
-                    <div id="card-footer" class="d-flex"><span class="author">{% if post.author.is_superuser %}Claude Digsby {% else %} {{ post.author }} {% endif %}</span>
-                        <span class="date ms-auto">{{ post.created_on | date }}</span></div>
-                </div>
+                    <div class="card-body">
+                        <p class="card-text">{{ post.excerpt }}</p>
+                        <div id="card-footer" class="d-flex"><span class="author">{% if post.author.is_superuser %}
+                            Claude Digsby {% else %} {{ post.author }} {% endif %}</span>
+                            <span class="date ms-auto">{{ post.created_on | date }}</span>
+                        </div>
+                        <hr>
+                        {% if post.comments %}
+                        <div class="comment">
+                            <p class="small">{{ post.comment_count }} Comments</p>
+                            <p class="small">On {{ post.first_comment.created_on | date }} 
+                                {{ post.first_comment.author.username }} wrote:</p>
+                            <p class="comment-body">{{ post.first_comment.content }}</p>
+                        </div>{% if "..." in post.excerpt or post.comment_count > 1 %}
+                </a>{% endif %}
+                {% endif %}
             </div>
         </div>
-        {% endfor %}
-
     </div>
+    {% endfor %}
+
+</div>
 </div>
 
 {% endblock %}
