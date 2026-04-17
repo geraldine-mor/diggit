@@ -19,6 +19,12 @@
     {% endif %}
     <div class="content">
         <p id="post-content">{{ post.content | linebreaks }}</p>
+        {% if post.comments %}
+        <h2>Comments:</h2>
+        {% for comment in post.comments.all %}
+        <span class="comment-details small">On {{ comment.created_on | date }}, {{ comment.author.username }} wrote:</span>
+        <p class="comment-body">{{ comment.content | linebreaks }}</p>
+        {% endfor %}{% endif %}
     </div>
     <a class="btn back-btn" href="{% url 'digging_deeper' %}">Back</a>
 </div>

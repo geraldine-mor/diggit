@@ -32,6 +32,9 @@ class Post(models.Model):
         return self.comments.first()
          
     
+    def comment_count(self):
+        return self.comments.count()
+
 
     def save(self, *args, **kwargs):
         self.excerpt = excerpt_generator(self.content)
