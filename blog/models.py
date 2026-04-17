@@ -29,8 +29,8 @@ class Post(models.Model):
     
 
     def first_comment(self):
-        return self.comments.first()
-         
+         return self.comments.filter(parent=None).first()
+        
     
     def comment_count(self):
         return self.comments.count()
