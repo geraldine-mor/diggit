@@ -28,6 +28,11 @@ class Post(models.Model):
         return f"{self.title}"
     
 
+    def first_comment(self):
+        return self.comments.first()
+         
+    
+
     def save(self, *args, **kwargs):
         self.excerpt = excerpt_generator(self.content)
         super().save(*args, **kwargs)
