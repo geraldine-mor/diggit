@@ -26,7 +26,7 @@
                             <span class="date ms-auto">{{ post.created_on | date }}</span>
                         </div>
                         <hr>
-                        {% if post.comments %}
+                        {% if post.comment_count != 0 %}
                         <div class="comment">
                             <p class="small">{{ post.comment_count }} Comments</p>
                             <p class="small">On {{ post.first_comment.created_on | date }} 
