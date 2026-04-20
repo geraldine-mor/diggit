@@ -27,9 +27,11 @@
                     <span class="small red">{{ post_form.featured_image.errors }}</span>
                 </div>
                 <button class="btn btn-primary" type="submit">Save</button>
-                <button class="btn btn-primary" popovertarget="post-form" popovertargetaction="hide" type="button">Cancel</button>               
+                <button id="post-form-cancel" class="btn btn-primary" popovertarget="post-form" popovertargetaction="hide" type="button">Cancel</button>               
             </form>
         </div>
+        {% else %}
+        <a class="btn btn-primary" href="{% url account_login %}">Sign in to contribute</a> 
         {% endif %}
 
         {% for post in post_list %}

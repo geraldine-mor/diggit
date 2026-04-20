@@ -7,4 +7,8 @@ $(document).ready(function(){
     $("#comment-close").click(function(){
         $("#comment-form").hide();
     });
+
+    $("#post-form-cancel").click(function(){
+        $("#post-form>form")[0].reset();
+    });
 });
