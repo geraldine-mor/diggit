@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
+from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import CommentForm, PostForm
 
@@ -46,6 +47,24 @@ def forum_list (request):
         { "post_list": post_list,
          "post_form": post_form }
     )
+
+
+def edit_post(request, slug):
+    """
+    Allow users to edit posts created by themselves
+    """
+    if request.method == "POST":
+        post = get_object_or_404(Post, slug=slug)
+        post_form = PostForm(data=request.POST, instance=post)
+
+        if post.author == request.user and post_form.is_valid():
+            post = post_form.save()
+            messages.add_message(request, messages.SUCCESS,  'Post Updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Update unsuccessful')
+
+    return HttpResponseRedirect(reverse('read_post', args=[slug]))
+
 
 def home_page(request):
     return render(request, 'home.html')

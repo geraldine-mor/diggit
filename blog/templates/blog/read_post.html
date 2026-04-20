@@ -45,7 +45,8 @@
         <p class="comment-body">{{ comment.content | linebreaks }}</p>
         {% endfor %}{% endif %}
     </div>
-    <a class="btn back-btn" href="{% url 'digging_deeper' %}">Back</a>
+    <a class="btn back-btn" href="{% if post.post_type == 0 %}{% url 'digging_deeper' %}
+    {% elif post.post_type == 1 %}{% url 'diggit_forum' %}{% endif %}">Back</a>
 </div>
 
 
