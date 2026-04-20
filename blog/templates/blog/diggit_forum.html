@@ -3,71 +3,81 @@
 {% block content %}
 
 <!--Digging Deeper content-->
-<div class="container">
-    <div class="row">
-        {% if user.is_authenticated %}
-        <button class="btn btn-primary" popovertarget="post-form">Create Post</button>
-        <div id="post-form" popover="auto">
-            <form method="POST" action="{% url 'diggit_forum' %}">
-                {% csrf_token %}
-                <h3>Create post</h3>
-                <p>You are posting as {{ user.username }}</p>
-                <div class="form-field">
-                    {{ post_form.title.label_tag }}
-                    {{ post_form.title }}
-                <span class="small red">{{ post_form.title.errors }}</span></div>
-                <div class="form-field">
-                    {{ post_form.content.label_tag }}
-                    {{ post_form.content }}
-                    <span class="small red">{{ post_form.content.errors }}</span>
-                </div>
-                <div class="form-field">
+<div id="forum-backdrop">
+    <div class="container">
+        <div class="row">
+
+            <div class="page-title">
+                <h1>Welcome to Diggit Forum</h1>
+                <p class="lead">Ask what you need or sow a few seeds</p>
+            </div>
+
+            {% if user.is_authenticated %}
+            <button class="btn btn-primary" popovertarget="post-form">Create Post</button>
+            <div id="post-form" popover="auto">
+                <form method="POST" action="{% url 'diggit_forum' %}">
+                    {% csrf_token %}
+                    <h3>Create post</h3>
+                    <p>You are posting as {{ user.username }}</p>
+                    <div class="form-field">
+                        {{ post_form.title.label_tag }}
+                        {{ post_form.title }}
+                        <span class="small red">{{ post_form.title.errors }}</span>
+                    </div>
+                    <div class="form-field">
+                        {{ post_form.content.label_tag }}
+                        {{ post_form.content }}
+                        <span class="small red">{{ post_form.content.errors }}</span>
+                    </div>
+                    <!-- <div class="form-field">
                     {{ post_form.featured_image.label_tag }}
                     {{ post_form.featured_image }}
                     <span class="small red">{{ post_form.featured_image.errors }}</span>
-                </div>
-                <button class="btn btn-primary" type="submit">Save</button>
-                <button id="post-form-cancel" class="btn btn-primary" popovertarget="post-form" popovertargetaction="hide" type="button">Cancel</button>               
-            </form>
-        </div>
-        {% else %}
-        <a class="btn btn-primary" href="{% url account_login %}">Sign in to contribute</a> 
-        {% endif %}
+                </div> -->
+                    <button class="btn btn-primary" type="submit">Save</button>
+                    <button id="post-form-cancel" class="btn btn-primary" popovertarget="post-form"
+                        popovertargetaction="hide" type="button">Cancel</button>
+                </form>
+            </div>
+            {% else %}
+            <a class="btn btn-primary" href="{% url 'account_login' %}">Sign in to contribute</a>
+            {% endif %}
 
-        {% for post in post_list %}
-        <div class="col-12">
-            <div class="card mt-2">
-                {% if "..." in post.excerpt or post.comment_count > 1 %}
-                <a class="plain" href="{% url 'read_post' post.slug %}">{% endif %}
-                    <div class="card-title">
-                        <h2>{{ post.title }}</h2>
-                    </div>
-                    {% if post.featured_image %}
-                    <div class="post-image">
-                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
-                    </div>
-                    {% endif %}
-                    <div class="card-body">
-                        <p class="card-text">{{ post.excerpt | linebreaks }}</p>
-                        <div id="card-footer" class="d-flex"><span class="author">{% if post.author.is_superuser %}
-                                Claude Digsby {% else %} {{ post.author }} {% endif %}</span>
-                            <span class="date ms-auto">{{ post.created_on | date }}</span>
+            {% for post in post_list %}
+            <div class="col-12">
+                <div class="card mt-2">
+                    {% if "..." in post.excerpt or post.comment_count > 1 %}
+                    <a class="plain" href="{% url 'read_post' post.slug %}">{% endif %}
+                        <div class="card-title">
+                            <h2>{{ post.title }}</h2>
                         </div>
-                        <hr>
-                        {% if post.comment_count != 0 %}
-                        <div class="comment">
-                            <p class="small">{{ post.comment_count }} Comments</p>
-                            <p class="small">On {{ post.first_comment.created_on | date }}
-                                {{ post.first_comment.author.username }} wrote:</p>
-                            <p class="comment-body">{{ post.first_comment.content }}</p>
-                        </div>{% if "..." in post.excerpt or post.comment_count > 1 %}
-                </a>{% endif %}
-                {% endif %}
+                        {% if post.featured_image %}
+                        <div class="post-image">
+                            <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                        </div>
+                        {% endif %}
+                        <div class="card-body">
+                            <p class="card-text">{{ post.excerpt | linebreaks }}</p>
+                            <div class="d-flex card-footer"><span class="author">{% if post.author.is_superuser %}
+                                    Claude Digsby {% else %} {{ post.author }} {% endif %}</span>
+                                <span class="date ms-auto">{{ post.created_on | date }}</span>
+                            </div>
+                            <hr>
+                            {% if post.comment_count != 0 %}
+                            <div class="comment">
+                                <p class="small">{{ post.comment_count }} Comments</p>
+                                <p class="small">On {{ post.first_comment.created_on | date }}
+                                    {{ post.first_comment.author.username }} wrote:</p>
+                                <p class="comment-body">{{ post.first_comment.content }}</p>
+                            </div>{% if "..." in post.excerpt or post.comment_count > 1 %}
+                    </a>{% endif %}
+                    {% endif %}
+                </div>
             </div>
         </div>
-    </div>
-    {% endfor %}
+        {% endfor %}
 
+    </div>
 </div>
 
 {% endblock %}
