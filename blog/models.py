@@ -4,7 +4,8 @@ from django_extensions.db.fields import AutoSlugField
 from cloudinary.models import CloudinaryField
 from .utils import excerpt_generator
 
-STATUS = ((0, "Draft"), (1, "Published"))    
+STATUS = ((0, "Draft"), (1, "Published"), (2, "Hidden")) 
+POST_TYPE = ((0, "Blog"), (1, "Forum"))   
 
 # Create your models here.
 class Post(models.Model):
@@ -17,6 +18,7 @@ class Post(models.Model):
     featured_image = CloudinaryField('image', null=True, blank=True)
     content = models.TextField()
     status = models.IntegerField(choices=STATUS, default=0)
+    post_type = models.IntegerField(choices=POST_TYPE, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     excerpt = models.TextField(default="")
 

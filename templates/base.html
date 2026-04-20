@@ -1,5 +1,6 @@
 {% load static %}
 {% url 'digging_deeper' as blog_url %}
+{% url 'diggit_forum' as forum_url %}
 {% url 'home' as home_url %}
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
@@ -51,7 +52,8 @@
                             {% endif %}
                             <li class="nav-item ms-auto"><a href="{% url 'home' %}"
                                     class="nav-link {% if request.path == home_url %}active{% endif %}">Home</a></li>
-                            <li class="nav-item ms-auto"><a href="#" class="nav-link">Diggit Forum</a></li>
+                            <li class="nav-item ms-auto"><a href="{% url 'diggit_forum' %}" 
+                                class="nav-link {% if request.path == forum_url %}active{% endif %}">Diggit Forum</a></li>
                             <li class="nav-item ms-auto"><a href="{% url 'digging_deeper' %}"
                                     class="nav-link {% if request.path == blog_url %}active{% endif %}">Digging
                                     Deeper</a></li>

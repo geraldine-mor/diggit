@@ -22,14 +22,14 @@
                     <div class="card-body">
                         <p class="card-text">{{ post.excerpt }}</p>
                         <div id="card-footer" class="d-flex"><span class="author">{% if post.author.is_superuser %}
-                            Claude Digsby {% else %} {{ post.author }} {% endif %}</span>
+                                Claude Digsby {% else %} {{ post.author }} {% endif %}</span>
                             <span class="date ms-auto">{{ post.created_on | date }}</span>
                         </div>
                         <hr>
                         {% if post.comment_count != 0 %}
                         <div class="comment">
                             <p class="small">{{ post.comment_count }} Comments</p>
-                            <p class="small">On {{ post.first_comment.created_on | date }} 
+                            <p class="small">On {{ post.first_comment.created_on | date }}
                                 {{ post.first_comment.author.username }} wrote:</p>
                             <p class="comment-body">{{ post.first_comment.content }}</p>
                         </div>{% if "..." in post.excerpt or post.comment_count > 1 %}
@@ -40,7 +40,6 @@
     </div>
     {% endfor %}
 
-</div>
 </div>
 
 {% endblock %}

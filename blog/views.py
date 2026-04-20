@@ -6,10 +6,13 @@ from .forms import CommentForm
 
 # Create your views here.
 class PostList (generic.ListView):
-    # Need to filter this to blog 
-    # posts only when Forum posts are an option
-    queryset = Post.objects.filter(status=1)
-    template_name = "digging_deeper.html"
+    queryset = Post.objects.filter(status=1, post_type=0)
+    template_name = "blog/digging_deeper.html"
+
+
+class ForumList (generic.ListView):
+    queryset = Post.objects.filter(status=1, post_type=1)
+    template_name = "blog/diggit_forum.html"    
 
 
 def home_page(request):
