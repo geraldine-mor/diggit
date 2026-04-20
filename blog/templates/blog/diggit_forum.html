@@ -5,6 +5,32 @@
 <!--Digging Deeper content-->
 <div class="container">
     <div class="row">
+        {% if user.is_authenticated %}
+        <button class="btn btn-primary" popovertarget="post-form">Create Post</button>
+        <div id="post-form" popover="auto">
+            <form method="POST" action="{% url 'diggit_forum' %}">
+                {% csrf_token %}
+                <h3>Create post</h3>
+                <p>You are posting as {{ user.username }}</p>
+                <div class="form-field">
+                    {{ post_form.title.label_tag }}
+                    {{ post_form.title }}
+                <span class="small red">{{ post_form.title.errors }}</span></div>
+                <div class="form-field">
+                    {{ post_form.content.label_tag }}
+                    {{ post_form.content }}
+                    <span class="small red">{{ post_form.content.errors }}</span>
+                </div>
+                <div class="form-field">
+                    {{ post_form.featured_image.label_tag }}
+                    {{ post_form.featured_image }}
+                    <span class="small red">{{ post_form.featured_image.errors }}</span>
+                </div>
+                <button class="btn btn-primary" type="submit">Save</button>
+                <button class="btn btn-primary" popovertarget="post-form" popovertargetaction="hide" type="button">Cancel</button>               
+            </form>
+        </div>
+        {% endif %}
 
         {% for post in post_list %}
         <div class="col-12">
@@ -20,7 +46,7 @@
                     </div>
                     {% endif %}
                     <div class="card-body">
-                        <p class="card-text">{{ post.excerpt }}</p>
+                        <p class="card-text">{{ post.excerpt | linebreaks }}</p>
                         <div id="card-footer" class="d-flex"><span class="author">{% if post.author.is_superuser %}
                                 Claude Digsby {% else %} {{ post.author }} {% endif %}</span>
                             <span class="date ms-auto">{{ post.created_on | date }}</span>

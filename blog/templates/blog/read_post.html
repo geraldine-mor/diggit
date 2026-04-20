@@ -22,14 +22,14 @@
         {% if post.comments %}
         <button id="{% if user.is_authenticated %}comment-btn{% else %}signin-btn{% endif %}" class="btn"
             type="button">{% if user.is_authenticated %}Comment</button>
-        {% else %}<a class="btn" href="{% url 'account_signup' %}">Sign in to Comment</a>{% endif %}
+        {% else %}<a class="btn" href="{% url 'account_login' %}">Sign in to Comment</a>{% endif %}
         {% if post.comment_count != 0 %}
         <h2 class="comment-heading">Comments:</h2>
         {% else %}
         <h2 class="comment-heading">Be the first to comment</h2>
         {% endif %}
         <div id="comment-form" class="hidden">
-            <form method="post" action="{% url 'read_post' post.slug %}">
+            <form method="POST" action="{% url 'read_post' post.slug %}">
                 {% csrf_token %}
                 <h3>Leave a comment on {{ post.title }}</h3>
                 <p>You are commenting as {{ user.username }}</p>

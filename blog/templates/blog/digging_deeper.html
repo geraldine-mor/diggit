@@ -20,7 +20,7 @@
                     </div>
                     {% endif %}
                     <div class="card-body">
-                        <p class="card-text">{{ post.excerpt }}</p>
+                        <p class="card-text">{{ post.excerpt | linebreaks }}</p>
                         <div id="card-footer" class="d-flex"><span class="author">{% if post.author.is_superuser %}
                                 Claude Digsby {% else %} {{ post.author }} {% endif %}</span>
                             <span class="date ms-auto">{{ post.created_on | date }}</span>
