@@ -36,7 +36,7 @@ function postEdit(editButtons){
             postTitle.value = e.target.getAttribute("data-title");
             postContent.value = e.target.getAttribute("data-content");
             postSave.innerText = "Update";
-            postForm.setAttribute("action", `/${postSlug}/edit_post/`);
+            postForm.setAttribute("action", `${postSlug}/edit_post/`);
         });
     };
 }
@@ -47,7 +47,7 @@ function postDelete(deleteButtons) {
     for (let button of deleteButtons) {
         button.addEventListener("click", (e) => {
             let postSlug = e.target.getAttribute("data-post-slug");
-            postDelete.setAttribute("href", `/${postSlug}/delete_post/`);
+            postDelete.setAttribute("href", `${postSlug}/delete_post/`);
         });
     };
 }

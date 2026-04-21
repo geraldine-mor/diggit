@@ -126,3 +126,34 @@ def read_post(request, slug):
         {"post": post,
          "comment_form": comment_form}
     )
+
+def edit_comment(request, slug, comment_id):
+    """
+    Allow users to edit posts created by themselves
+    """
+    if request.method == "POST":
+        comment = get_object_or_404(Comment, pk=comment_id) 
+        comment_form = CommentForm(data=request.POST, instance=comment)
+
+        if comment.author == request.user and comment_form.is_valid():
+            comment = comment_form.save()
+            messages.add_message(request, messages.SUCCESS,  'Comment Updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Update unsuccessful')
+
+    return HttpResponseRedirect(reverse('read_post', args=[slug]))
+
+
+def delete_comment(request, slug, comment_id):
+    """
+    view to delete user's own post
+    """
+    comment = get_object_or_404(Comment, pk=comment_id)
+
+    if comment.author == request.user:
+        comment.delete()
+        messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You cannot delete this comment!')
+
+    return HttpResponseRedirect(reverse('read_post', args=[slug]))
