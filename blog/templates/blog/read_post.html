@@ -21,33 +21,51 @@
         <p id="post-content">{{ post.content | linebreaks }}</p>
         {% if post.comments %}
         {% if user.is_authenticated %}
-        <button id="comment-btn" class="btn" type="button">Comment</button>
+        <button id="comment-btn" popovertarget="comment-form" class="btn" type="button">Comment</button>
         {% else %}<a id="signin-btn" class="btn" href="{% url 'account_login' %}">Sign in to Comment</a>{% endif %}
         {% if post.comment_count != 0 %}
         <h2 class="comment-heading">Comments:</h2>
         {% else %}
         <h2 class="comment-heading">Be the first to comment</h2>
         {% endif %}
-        <div id="comment-form" class="hidden">
-            <form method="POST" action="{% url 'read_post' post.slug %}">
-                {% csrf_token %}
-                <h3>Leave a comment on {{ post.title }}</h3>
-                <p>You are commenting as {{ user.username }}</p>
-                {{ comment_form.content }}
-                <input type="hidden" name="parent_id" value="">
-                <button class="btn submit-btn" type="submit">Comment</button>
-                <button id="comment-close" class="btn btn-primary" type="button">Cancel</button>
-            </form>
-        </div>
+
         {% for comment in post.comments.all %}
-        <span class="comment-details small">On {{ comment.created_on | date }}, {{ comment.author.username }}
-            wrote:</span>
-        <p class="comment-body">{{ comment.content | linebreaks }}</p>
-        {% endfor %}{% endif %}
+        <div class="each-comment">
+            <span class="comment-details small">On {{ comment.created_on | date }}, {{ comment.author.username }}
+                wrote:</span>
+            <p class="comment-body">{{ comment.content | linebreaks }}</p>
+            {% if user.is_authenticated and comment.author == user %}
+            <span><button class="comment-edit-btn" type="button" popovertarget="comment-form"
+                    data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id }}"
+                    data-comment="{{ comment.content }}">Edit Comment</button></span>
+            <span><button class="comment-delete-btn" type="button" popovertarget="comment-delete"
+                    data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id}}">Delete Comment</button></span>
+            {% endif %}
+            {% endfor %}{% endif %}
+        </div>
     </div>
     <a class="btn back-btn" href="{% if post.post_type == 0 %}{% url 'digging_deeper' %}
     {% elif post.post_type == 1 %}{% url 'diggit_forum' %}{% endif %}">Back</a>
 </div>
 
+<div id="comment-form" popover="auto">
+    <form id="edit-create-comment" method="POST" action="{% url 'read_post' post.slug %}">
+        {% csrf_token %}
+        <h3>Leave a comment on {{ post.title }}</h3>
+        <p>You are commenting as {{ user.username }}</p>
+        {{ comment_form.content }}
+        <input type="hidden" name="parent_id" value="">
+        <button id="comment-save" class="btn submit-btn" type="submit">Comment</button>
+        <button popovertarget="comment-form" popovertargetaction="hide" class="btn btn-primary"
+            type="button">Cancel</button>
+    </form>
+</div>
 
+<div id="comment-delete" popover="auto">
+    <h3>Are you sure you want to delete this comment?</h3>
+    <p><span class="red">Caution</span> this action cannot be reversed</p>
+    <button id="comment-delete-cancel" class="btn btn-primary" popovertarget="comment-delete" popovertargetaction="hide"
+        type="button">Cancel</button>
+    <a id="confirm-comment-delete" class="btn btn-primary" href="#">Delete</a>
+</div>
 {% endblock %}
