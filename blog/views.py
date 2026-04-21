@@ -66,6 +66,21 @@ def edit_post(request, slug):
     return HttpResponseRedirect(reverse('read_post', args=[slug]))
 
 
+def delete_post(request, slug):
+    """
+    view to delete user's own post
+    """
+    post = get_object_or_404(Post, slug=slug)
+
+    if post.author == request.user:
+        post.delete()
+        messages.add_message(request, messages.SUCCESS, 'Post deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You cannot delete this post!')
+
+    return HttpResponseRedirect(reverse('diggit_forum'))
+
+
 def home_page(request):
     return render(request, 'home.html')
 

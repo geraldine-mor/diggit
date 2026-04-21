@@ -12,7 +12,19 @@ $(document).ready(function(){
         $("#post-form>form")[0].reset();
     });
 
-    const editButtons = document.getElementsByClassName("edit-btn");
+    const editButtons = document.getElementsByClassName("post-edit-btn");
+    if (editButtons.length > 0) {
+        postEdit(editButtons);
+    };
+
+    const deleteButtons = document.getElementsByClassName("post-delete-btn");
+    if (deleteButtons.length > 0) {
+        postDelete(deleteButtons);
+    };
+
+});
+
+function postEdit(editButtons){
     const postTitle = document.getElementById("id_title");
     const postContent = document.getElementById("id_content");
     const postSave = document.getElementById("post-save");
@@ -26,5 +38,16 @@ $(document).ready(function(){
             postSave.innerText = "Update";
             postForm.setAttribute("action", `/${postSlug}/edit_post/`);
         });
-    }
-});
+    };
+}
+
+function postDelete(deleteButtons) {
+    const postDelete = document.getElementById("confirm-post-delete");
+
+    for (let button of deleteButtons) {
+        button.addEventListener("click", (e) => {
+            let postSlug = e.target.getAttribute("data-post-slug");
+            postDelete.setAttribute("href", `/${postSlug}/delete_post/`);
+        });
+    };
+}
