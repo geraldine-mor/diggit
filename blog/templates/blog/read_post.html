@@ -20,9 +20,9 @@
     <div class="content">
         <p id="post-content">{{ post.content | linebreaks }}</p>
         {% if post.comments %}
-        <button id="{% if user.is_authenticated %}comment-btn{% else %}signin-btn{% endif %}" class="btn"
-            type="button">{% if user.is_authenticated %}Comment</button>
-        {% else %}<a class="btn" href="{% url 'account_login' %}">Sign in to Comment</a>{% endif %}
+        {% if user.is_authenticated %}
+        <button id="comment-btn" class="btn" type="button">Comment</button>
+        {% else %}<a id="signin-btn" class="btn" href="{% url 'account_login' %}">Sign in to Comment</a>{% endif %}
         {% if post.comment_count != 0 %}
         <h2 class="comment-heading">Comments:</h2>
         {% else %}
