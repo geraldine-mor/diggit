@@ -34,12 +34,14 @@
             <span class="comment-details small">On {{ comment.created_on | date }}, {{ comment.author.username }}
                 wrote:</span>
             <p class="comment-body">{{ comment.content | linebreaks }}</p>
-            <span>{% if user.is_authenticated %}<form id="comment-likes" method="POST" action="#">
-                {% csrf_token %}
-                <button class="like-btn"
-                        data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id }}" type="submit"><i
-                            class="fa-solid fa-thumbs-up"></i></button></form>{% else %}<i class="fa-solid fa-thumbs-up"></i>{% endif %}
-                        </span>
+            <span class="small">{% if user.is_authenticated %}<form class="comment-likes" method="POST" action="#">
+                    {% csrf_token %}
+                    <button class="like-btn" data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id }}"
+                        type="submit"><i class="fa-solid fa-thumbs-up"></i> {% if comment.like_count != 0 %}
+                        {{comment.like_count }}{% endif %}</button>
+                </form>{% else %}<i class="fa-solid fa-thumbs-up"></i> {% if comment.like_count != 0 %}
+                {{ comment.like_count }}{% endif %}{% endif %}
+            </span>
             {% if user.is_authenticated and comment.author == user %}
             <span><button class="comment-edit-btn" type="button" popovertarget="comment-form"
                     data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id }}"

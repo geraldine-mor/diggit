@@ -98,13 +98,13 @@ function commentDelete(deleteButtons) {
 }
 
 function commentLike(commentLikeButtons) {
-    const commentLike = document.getElementById("comment-likes");
+    // const commentLike = document.getElementById("comment-likes");
 
     for (let button of commentLikeButtons) {
         button.addEventListener("click", (e) => {
             let postSlug = e.target.closest(".like-btn").getAttribute("data-post-slug");
             let commentId = e.target.closest(".like-btn").getAttribute("data-comment-id");
-            commentLike.setAttribute("action", `/${postSlug}/like_comment/${commentId}`);
+            e.target.closest(".comment-likes").setAttribute("action", `/${postSlug}/like_comment/${commentId}`);
         });
     };
 }

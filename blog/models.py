@@ -67,6 +67,9 @@ class Comment(models.Model):
     def __str__(self):
         return f"{self.content}"
     
+    def like_count(self):
+        return self.likes.count()
+    
 
 class CommentLike(models.Model):
     comment = models.ForeignKey(
