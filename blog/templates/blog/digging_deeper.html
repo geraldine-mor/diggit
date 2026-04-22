@@ -21,7 +21,9 @@
                     </div>
                     {% if post.featured_image %}
                     <div class="post-image">
-                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                        {% load cloudinary %}
+                        {% cloudinary post.featured_image quality='auto' crop='pad' background='gen_fill:ignore-foreground_true' %}
+                        <!-- <img src="{{ post.featured_image.url }}" alt="{{ post.title }}"> -->
                     </div>
                     {% endif %}
                     <div class="card-body">
