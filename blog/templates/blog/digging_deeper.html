@@ -41,6 +41,8 @@
                             <p class="small">On {{ post.first_comment.created_on | date }}
                                 {{ post.first_comment.author.username }} wrote:</p>
                             <p class="comment-body">{{ post.first_comment.content }}</p>
+                            <span><i class="fa-solid fa-thumbs-up"></i> {% if post.first_comment.like_count != 0 %}
+                        {{ post.first_comment.like_count }}{% endif %}</span>
                         </div>{% if "..." in post.excerpt or post.comment_count > 1 %}
                 </a>{% endif %}
                 {% elif user.is_authenticated %}
