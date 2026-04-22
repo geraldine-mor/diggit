@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .models import Post, Comment
+from .models import Post, Comment, CommentLike
 from .forms import CommentForm, PostForm
 
 # Create your views here.
@@ -161,5 +161,21 @@ def delete_comment(request, slug, comment_id):
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
     else:
         messages.add_message(request, messages.ERROR, 'You cannot delete this comment!')
+
+    return HttpResponseRedirect(reverse('read_post', args=[slug]))
+
+def like_comment(request, slug, comment_id):
+    """
+    View to add or remove a like on a comment
+    """
+    comment = get_object_or_404(Comment, pk=comment_id)
+    queryset = CommentLike.objects.filter(comment=comment, liked_by=request.user)
+
+    if request.method == "POST":
+        if queryset.exists():
+            queryset.delete()
+        else:
+            queryset.create(comment=comment, liked_by=request.user)
+            print("comment added")
 
     return HttpResponseRedirect(reverse('read_post', args=[slug]))
