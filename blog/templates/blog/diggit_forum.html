@@ -27,7 +27,9 @@
                     </div>
                     {% if post.featured_image %}
                     <div class="post-image">
-                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                        {% load cloudinary %}
+                        {% cloudinary post.featured_image quality='auto' crop='pad' background='gen_fill:ignore-foreground_true' %}
+                        <!-- <img src="{{ post.featured_image.url }}" alt="{{ post.title }}"> -->
                     </div>
                     {% endif %}
                     <div class="card-body">
@@ -72,7 +74,7 @@
 
     <!--Popover Forms-->
     <div id="post-form" popover="auto">
-        <form id="edit-create-post" method="POST" action="{% url 'diggit_forum' %}">
+        <form id="edit-create-post" method="POST" action="{% url 'diggit_forum' %}" enctype="multipart/form-data">
             {% csrf_token %}
             <h3>Create post</h3>
             <p>You are posting as {{ user.username }}</p>
@@ -86,11 +88,11 @@
                 {{ post_form.content }}
                 <span class="small red">{{ post_form.content.errors }}</span>
             </div>
-            <!-- <div class="form-field">
-                        {{ post_form.featured_image.label_tag }}
-                        {{ post_form.featured_image }}
-                        <span class="small red">{{ post_form.featured_image.errors }}</span>
-                    </div> -->
+            <div class="form-field">
+                {{ post_form.featured_image.label_tag }}
+                {{ post_form.featured_image }}
+                <span class="small red">{{ post_form.featured_image.errors }}</span>
+            </div>
             <button id="post-save" class="btn btn-primary" type="submit">Save</button>
             <button id="post-form-cancel" class="btn btn-primary" popovertarget="post-form" popovertargetaction="hide"
                 type="button">Cancel</button>

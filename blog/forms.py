@@ -1,4 +1,5 @@
 from django import forms
+from cloudinary.forms import CloudinaryFileField
 from .models import Post, Comment
 
 class SignupForm(forms.Form):
@@ -24,6 +25,8 @@ class CommentForm(forms.ModelForm):
 
 
 class PostForm(forms.ModelForm):
+    featured_image = CloudinaryFileField()
+
     class Meta:
         model = Post
         fields = ('title', 'content', 'featured_image')

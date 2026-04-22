@@ -12,7 +12,7 @@
 </div>
 
 <div id="contact-form">
-    <form method="POST" action="{% url 'contact' %}">
+    <form method="POST" action="{% url 'contact' %}" enctype="multipart/form-data">
         {% csrf_token %}
         {{ contact_form.as_p }}
         <button type="submit">Send Message</button>

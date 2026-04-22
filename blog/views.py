@@ -27,16 +27,22 @@ def forum_list (request):
     post_list = Post.objects.filter(status=1, post_type=1)
 
     if request.method == "POST":
-        post_form = PostForm(data=request.POST)
+        post_form = PostForm(request.POST, request.FILES)
         if post_form.is_valid():
             new_post = post_form.save(commit=False)
             new_post.author = request.user
             new_post.status = 1
-            new_post.post_type =1
+            new_post.post_type = 1
             new_post.save()
             messages.add_message(
                 request, messages.SUCCESS,
                 "Post created"
+            )
+        else:
+            print(post_form.errors)
+            messages.add_message(
+                request, messages.ERROR,
+                "Something went wrong, please contact admin"
             )
 
     post_form = PostForm()
