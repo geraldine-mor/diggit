@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import UniqueConstraint
 from django.contrib.auth.models import User
 from django_extensions.db.fields import AutoSlugField
 from cloudinary.models import CloudinaryField
@@ -61,7 +62,25 @@ class Comment(models.Model):
 
     class Meta:
         ordering = ["-created_on"]
+        
 
     def __str__(self):
         return f"{self.content}"
     
+
+class CommentLike(models.Model):
+    comment = models.ForeignKey(
+        Comment, on_delete=models.CASCADE, 
+        related_name="likes"
+    )
+    liked_by = models.ForeignKey(
+        User, on_delete=models.CASCADE,
+        related_name="liked"
+    )
+
+    class Meta:
+        constraints = [
+            UniqueConstraint(
+                fields=["comment", "liked_by"], 
+                name="unique_comment_like")
+        ]
