@@ -37,7 +37,7 @@
             <span class="small">{% if user.is_authenticated %}<form class="comment-likes" method="POST" action="#">
                     {% csrf_token %}
                     <button class="like-btn" data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id }}"
-                        type="submit"><i class="fa-solid fa-thumbs-up"></i> {% if comment.like_count != 0 %}
+                        type="submit"><i class="fa-solid fa-thumbs-up {% if comment.id in liked_comments %}green{% endif %}"></i> {% if comment.like_count != 0 %}
                         {{comment.like_count }}{% endif %}</button>
                 </form>{% else %}<i class="fa-solid fa-thumbs-up"></i> {% if comment.like_count != 0 %}
                 {{ comment.like_count }}{% endif %}{% endif %}
