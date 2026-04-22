@@ -29,7 +29,7 @@
         <h2 class="comment-heading">Be the first to comment</h2>
         {% endif %}
 
-        {% for comment in post.comments.all %}
+        {% for comment in comments %}
         <div class="each-comment">
             <span class="comment-details small">On {{ comment.created_on | date }}, {{ comment.author.username }}
                 wrote:</span>

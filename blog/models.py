@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import UniqueConstraint
+from django.db.models import UniqueConstraint, Count
 from django.contrib.auth.models import User
 from django_extensions.db.fields import AutoSlugField
 from cloudinary.models import CloudinaryField
@@ -32,7 +32,7 @@ class Post(models.Model):
     
 
     def first_comment(self):
-         return self.comments.filter(parent=None).first()
+         return self.comments.top_level().ordered_by_likes().first()
         
     
     def comment_count(self):
@@ -43,6 +43,19 @@ class Post(models.Model):
         self.excerpt = excerpt_generator(self.content)
         super().save(*args, **kwargs)
 
+
+class CommentQuerySet(models.QuerySet):
+    def with_like_count(self):
+        return self.annotate(
+            like_count=Count('likes')
+        )
+    
+    def ordered_by_likes(self):
+        return self.with_like_count().order_by('-like_count', '-created_on')
+    
+    def top_level(self):
+        return self.filter(parent=None)
+    
 
 class Comment(models.Model):
     post = models.ForeignKey(
@@ -60,15 +73,14 @@ class Comment(models.Model):
     )
     created_on = models.DateTimeField(auto_now_add=True)
 
-    class Meta:
-        ordering = ["-created_on"]
-        
+    objects = CommentQuerySet.as_manager()
 
+    # class Meta:
+    #     ordering = ["-created_on"]
+        
     def __str__(self):
         return f"{self.content}"
     
-    def like_count(self):
-        return self.likes.count()
     
 
 class CommentLike(models.Model):
@@ -87,3 +99,5 @@ class CommentLike(models.Model):
                 fields=["comment", "liked_by"], 
                 name="unique_comment_like")
         ]
+
+

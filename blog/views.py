@@ -108,6 +108,7 @@ def read_post(request, slug):
     post = get_object_or_404(queryset, slug=slug)
     liked_comments = CommentLike.objects.filter(
         liked_by=request.user).values_list('comment_id', flat=True)
+    comments = Comment.objects.filter(post=post).top_level().ordered_by_likes()
 
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
@@ -133,7 +134,8 @@ def read_post(request, slug):
         "blog/read_post.html",
         {"post": post,
          "comment_form": comment_form,
-         "liked_comments": liked_comments}
+         "liked_comments": liked_comments,
+         "comments": comments}
     )
 
 def edit_comment(request, slug, comment_id):
