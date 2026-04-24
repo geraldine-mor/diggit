@@ -89,6 +89,39 @@ main {
     min-height: 100vh;
 }
 
+h1 {
+    font-family: var(--brand-font);
+}
+
+/*Homepage*/
+.diggit-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+}
+
+.diggit-wordmark > img {
+    max-height: 60px;
+}
+
+.diggit-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.diggit-name {
+    color: var(--brown);
+    margin: 0;
+}
+
+.diggit-tagline {
+  font-size: 16px;
+  color: var(--dark-grey);
+  letter-spacing: 0.1px;
+}
+
 /*Blog Cards*/
 .card {
     color: var(--dark-grey);

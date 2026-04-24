@@ -1,2 +1,38 @@
 {% extends "base.html" %}
+{% load static %}
 
+{% block content %}
+<div class="container">
+    <div id="home-banner" class="row">
+        <div class="col-12">
+            <div class="diggit-wordmark">
+                <img src="{% static 'images/diggit-logo.png' %}" alt="diggit logo">
+                <div class="diggit-text">
+                    <h1 class="diggit-name">diggit</h1>
+                    <div class="diggit-tagline">ask what you need · sow a few seeds</div>
+                </div>
+            </div>
+            <p class="lead">Your online potting shed. Ask questions, share tips, brag about your best harvest, or just
+                dig through what other growers are up to.</p>
+            <p>Whether you're nursing your first pot plant or managing a full allotment, there's a spot here for you. No
+                green fingers required — just curiosity.</p>
+        </div>
+        <div id="user-actions">
+            <a href="{% url 'account_login' %}" class="btn btn-primary">Login to your account</a>
+            <a href="{% url 'account_signup' %}" class="btn btn-primary">Join the community</a>
+            <a href="{% url 'diggit_forum' %}" class="btn btn-primary">Browse posts</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-4 card higlight-card">
+
+        </div>
+        <div class="col-12 col-md-4 card higlight-card">
+
+        </div>
+        <div class="col-12 col-md-4 card higlight-card">
+
+        </div>
+    </div>
+</div>
+{% endblock %}
