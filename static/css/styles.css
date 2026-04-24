@@ -53,7 +53,7 @@
 .navbar-toggler {
     border: none;
     color: var(--green);
-    font-size: 1.8rem;
+    font-size: 1.2rem;
 }
 
 .navbar-toggler:focus {
@@ -70,6 +70,20 @@
 
 .active {
     border-bottom: 1px solid var(--green);
+}
+
+.user-auth-desktop{
+    display: none;
+}
+
+.user-auth-footer {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+}
+
+.auth-item {
+    margin: 4px 8px;
 }
 
 #admin-link {
@@ -343,6 +357,14 @@ footer ul {
     .card {
         max-width: 700px;
         margin: 0 auto 0;
+    }
+
+    .user-auth-desktop {
+        display: flex;
+    }
+
+    .user-auth-footer {
+        display: none;
     }
 }
 
