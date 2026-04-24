@@ -106,8 +106,13 @@ def read_post(request, slug):
     """
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
-    liked_comments = CommentLike.objects.filter(
-        liked_by=request.user).values_list('comment_id', flat=True)
+    
+    if request.user.is_authenticated:
+        liked_comments = CommentLike.objects.filter(
+            liked_by=request.user).values_list('comment_id', flat=True)
+    else:
+        liked_comments = []
+
     comments = Comment.objects.filter(post=post).top_level().ordered_by_likes()
 
     if request.method == "POST":

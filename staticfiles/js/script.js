@@ -34,6 +34,11 @@ $(document).ready(function () {
         commentDelete(commentDeleteButtons);
     };
 
+    const commentLikeButtons = document.getElementsByClassName("like-btn");
+    if (commentLikeButtons.length > 0) {
+        commentLike(commentLikeButtons);
+    };
+
 });
 
 function postEdit(editButtons) {
@@ -88,6 +93,18 @@ function commentDelete(deleteButtons) {
             let postSlug = e.target.getAttribute("data-post-slug");
             let commentId = e.target.getAttribute("data-comment-id");
             commentDelete.setAttribute("href", `/${postSlug}/delete_comment/${commentId}`);
+        });
+    };
+}
+
+function commentLike(commentLikeButtons) {
+    // const commentLike = document.getElementById("comment-likes");
+
+    for (let button of commentLikeButtons) {
+        button.addEventListener("click", (e) => {
+            let postSlug = e.target.closest(".like-btn").getAttribute("data-post-slug");
+            let commentId = e.target.closest(".like-btn").getAttribute("data-comment-id");
+            e.target.closest(".comment-likes").setAttribute("action", `/${postSlug}/like_comment/${commentId}`);
         });
     };
 }
