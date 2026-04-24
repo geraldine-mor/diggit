@@ -53,7 +53,7 @@
 .navbar-toggler {
     border: none;
     color: var(--green);
-    font-size: 1.8rem;
+    font-size: 1.2rem;
 }
 
 .navbar-toggler:focus {
@@ -72,6 +72,20 @@
     border-bottom: 1px solid var(--green);
 }
 
+.user-auth-desktop{
+    display: none;
+}
+
+.user-auth-footer {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+}
+
+.auth-item {
+    margin: 4px 8px;
+}
+
 #admin-link {
     color: var(--green);
 }
@@ -87,6 +101,39 @@ main {
     background-color: var(--light-grey);
     color: var(--dark-grey);
     min-height: 100vh;
+}
+
+h1 {
+    font-family: var(--brand-font);
+}
+
+/*Homepage*/
+.diggit-wordmark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+}
+
+.diggit-wordmark > img {
+    max-height: 60px;
+}
+
+.diggit-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.diggit-name {
+    color: var(--brown);
+    margin: 0;
+}
+
+.diggit-tagline {
+  font-size: 16px;
+  color: var(--dark-grey);
+  letter-spacing: 0.1px;
 }
 
 /*Blog Cards*/
@@ -257,6 +304,10 @@ main {
     color: red;
 }
 
+.green {
+    color: var(--green);
+}
+
 /*Footer*/
 footer {
     min-height: 40px;
@@ -306,6 +357,14 @@ footer ul {
     .card {
         max-width: 700px;
         margin: 0 auto 0;
+    }
+
+    .user-auth-desktop {
+        display: flex;
+    }
+
+    .user-auth-footer {
+        display: none;
     }
 }
 
