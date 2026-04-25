@@ -22,7 +22,7 @@
         {% if post.comments %}
         {% if user.is_authenticated %}
         <button id="comment-btn" popovertarget="comment-form" class="btn" type="button">Comment</button>
-        {% else %}<a id="signin-btn" class="btn" href="{% url 'account_login' %}">Sign in to Comment</a>{% endif %}
+        {% else %}<a id="signin-btn" class="btn" href="{% url 'account_login' %}">Sign in to Comment or Like</a>{% endif %}
         {% if post.comment_count != 0 %}
         <h2 class="comment-heading">Comments:</h2>
         {% else %}
@@ -39,8 +39,8 @@
                     <button class="like-btn" data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id }}"
                         type="submit"><i class="fa-solid fa-thumbs-up {% if comment.id in liked_comments %}green{% endif %}"></i> {% if comment.like_count != 0 %}
                         {{comment.like_count }}{% endif %}</button>
-                </form>{% else %}<i class="fa-solid fa-thumbs-up"></i> {% if comment.like_count != 0 %}
-                {{ comment.like_count }}{% endif %}{% endif %}
+                </form>{% elif comment.like_count != 0 %}<i class="fa-solid fa-thumbs-up"></i> 
+                {{ comment.like_count }}{% endif %}
             </span>
             {% if user.is_authenticated and comment.author == user %}
             <span><button class="comment-edit-btn" type="button" popovertarget="comment-form"

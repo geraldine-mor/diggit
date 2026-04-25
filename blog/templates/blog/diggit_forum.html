@@ -60,7 +60,7 @@
                                     {{ post.first_comment.author.username }} wrote:</p>
                                 <p class="comment-body">{{ post.first_comment.content }}</p>
                             </a>
-                            <span><i class="fa-solid fa-thumbs-up"></i> {% if post.first_comment.like_count != 0 %}
+                            <span>{% if post.first_comment.like_count != 0 %}<i class="fa-solid fa-thumbs-up"></i>
                         {{ post.first_comment.like_count }}{% endif %}</span>
                         </div>
                         {% elif user.is_authenticated %}
