@@ -52,6 +52,27 @@
             <span><button class="comment-delete-btn" type="button"
                     data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id}}">Delete Comment</button></span>
             {% endif %}
+            {% for reply in comment.replies.all.ordered_by_likes %}
+            <div class="each-reply">
+                <span class="comment-details small">On {{ reply.created_on | date }}, {{ reply.author.username }} replied to {{ reply.parent.author.username }}:</span>
+                <p class="reply-body">{{ reply.content | linebreaks }}</p>
+                <span class="small">{% if user.is_authenticated %}<form class="comment-likes" method="POST" action="#">
+                    {% csrf_token %}
+                    <button class="like-btn" data-post-slug="{{ post.slug }}" data-comment-id="{{ reply.id }}"
+                        type="submit"><i class="fa-solid fa-thumbs-up {% if reply.id in liked_comments %}green{% endif %}"></i> {% if reply.like_count != 0 %}
+                        {{ reply.like_count }}{% endif %}</button>
+                </form>{% elif reply.like_count != 0 %}<i class="fa-solid fa-thumbs-up"></i> 
+                {{ reply.like_count }}{% endif %}
+            </span>
+            {% if user.is_authenticated and reply.author == user %}
+            <span><button class="comment-edit-btn" type="button"
+                    data-post-slug="{{ post.slug }}" data-comment-id="{{ reply.id }}"
+                    data-comment="{{ reply.content }}">Edit Reply</button></form></span>
+            <span><button class="comment-delete-btn" type="button"
+                    data-post-slug="{{ post.slug }}" data-comment-id="{{ reply.id}}">Delete reply</button></span>
+            {% endif %}
+            </div>
+            {% endfor %}
             {% endfor %}{% endif %}
         </div>
     </div>
