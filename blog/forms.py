@@ -30,7 +30,6 @@ class PostForm(forms.ModelForm):
         Category.objects.all(), 
         widget=forms.CheckboxSelectMultiple,
         required=True,
-        label='Please select one or more of the following categories'
     )
 
     class Meta:

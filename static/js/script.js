@@ -14,6 +14,12 @@ $(document).ready(function () {
         $("#post-form>form")[0].reset();
     });
 
+    const formErrors = document.querySelectorAll('[data-has-errors="true"]');
+    if (formErrors.length > 0) {
+        errorPopover = formErrors[0];
+        errorPopover.showPopover();
+    };
+
     const editButtons = document.getElementsByClassName("post-edit-btn");
     if (editButtons.length > 0) {
         postEdit(editButtons);

@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -45,8 +45,9 @@ def forum_list (request):
                 request, messages.SUCCESS,
                 "Post created"
             )
+            return redirect(f"/{new_post.slug}")
         else:
-            return render (
+            return render(
                 request,
                 "blog/diggit_forum.html",
                 { "post_form": post_form,
