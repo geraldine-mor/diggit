@@ -39,6 +39,11 @@ $(document).ready(function () {
         commentLike(commentLikeButtons);
     };
 
+    const commentReplyButtons = document.getElementsByClassName("comment-reply-btn");
+    if (commentReplyButtons.length > 0) {
+        commentReply(commentReplyButtons);
+    }
+
 });
 
 function postEdit(editButtons) {
@@ -108,3 +113,26 @@ function commentLike(commentLikeButtons) {
         });
     };
 }
+
+function commentReply(replyButtons) {
+    const commentParent = document.getElementById("parent-id");
+    const commentForm = document.getElementById("edit-create-comment");
+    const commentCancel = document.getElementById("comment-cancel");
+    const commentSave = document.getElementById("comment-save"); 
+    const commentParagraph = document.getElementById("author-name-comment");
+    const replyParagraph = document.getElementById("author-name-reply");
+    
+    for (let button of replyButtons) {
+        button.addEventListener("click", (e) => {
+            let parentId = e.target.getAttribute("data-comment-id");
+            commentParent.setAttribute("value", parentId)
+            commentSave.innerText = "Reply";
+            commentParagraph.classList.add("hidden");
+            replyParagraph.classList.remove("hidden");
+        })
+    }
+
+    commentCancel.addEventListener("click", ()=> {
+        commentParent.setAttribute("value", "")
+    })
+}   

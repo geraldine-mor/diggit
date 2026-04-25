@@ -42,6 +42,9 @@
                 </form>{% elif comment.like_count != 0 %}<i class="fa-solid fa-thumbs-up"></i> 
                 {{ comment.like_count }}{% endif %}
             </span>
+            {% if user.is_authenticated %}
+            <span><button class="comment-reply-btn" type="button" popovertarget="comment-form"
+                    data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id }}">Reply</button></span>{% endif %}
             {% if user.is_authenticated and comment.author == user %}
             <span><button class="comment-edit-btn" type="button" popovertarget="comment-form"
                     data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id }}"
@@ -60,11 +63,12 @@
     <form id="edit-create-comment" method="POST" action="{% url 'read_post' post.slug %}">
         {% csrf_token %}
         <h3>Leave a comment on {{ post.title }}</h3>
-        <p>You are commenting as {{ user.username }}</p>
+        <p id="author-name-comment">You are commenting as {{ user.username }}</p>
+        <p id="author-name-reply" class="hidden">You are replying as {{ user.username }}</p>
         {{ comment_form.content }}
-        <input type="hidden" name="parent_id" value="">
+        <input id="parent-id" type="hidden" name="parent_id" value="">
         <button id="comment-save" class="btn submit-btn" type="submit">Comment</button>
-        <button popovertarget="comment-form" popovertargetaction="hide" class="btn btn-primary"
+        <button id="comment-cancel" popovertarget="comment-form" popovertargetaction="hide" class="btn btn-primary"
             type="button">Cancel</button>
     </form>
 </div>
