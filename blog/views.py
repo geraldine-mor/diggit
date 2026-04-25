@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
 from .models import Post, Comment, CommentLike
 from .forms import CommentForm, PostForm
@@ -26,7 +27,7 @@ def forum_list (request):
     """
     post_list = Post.objects.filter(status=1, post_type=1)
 
-    if request.method == "POST":
+    if request.user.is_authenticated and request.method == "POST":
         post_form = PostForm(request.POST, request.FILES)
         if post_form.is_valid():
             new_post = post_form.save(commit=False)
@@ -55,6 +56,7 @@ def forum_list (request):
     )
 
 
+@login_required
 def edit_post(request, slug):
     """
     Allow users to edit posts created by themselves
@@ -72,6 +74,7 @@ def edit_post(request, slug):
     return HttpResponseRedirect(reverse('read_post', args=[slug]))
 
 
+@login_required
 def delete_post(request, slug):
     """
     view to delete user's own post
@@ -106,7 +109,7 @@ def read_post(request, slug):
     """
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
-    
+
     if request.user.is_authenticated:
         liked_comments = CommentLike.objects.filter(
             liked_by=request.user).values_list('comment_id', flat=True)
@@ -115,7 +118,7 @@ def read_post(request, slug):
 
     comments = Comment.objects.filter(post=post).top_level().ordered_by_likes()
 
-    if request.method == "POST":
+    if request.user.is_authenticated and request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
             parent_id = request.POST.get('parent_id')
@@ -143,6 +146,8 @@ def read_post(request, slug):
          "comments": comments}
     )
 
+
+@login_required
 def edit_comment(request, slug, comment_id):
     """
     Allow users to edit posts created by themselves
@@ -160,6 +165,8 @@ def edit_comment(request, slug, comment_id):
     return HttpResponseRedirect(reverse('read_post', args=[slug]))
 
 
+
+@login_required
 def delete_comment(request, slug, comment_id):
     """
     view to delete user's own post
@@ -174,6 +181,8 @@ def delete_comment(request, slug, comment_id):
 
     return HttpResponseRedirect(reverse('read_post', args=[slug]))
 
+
+@login_required
 def like_comment(request, slug, comment_id):
     """
     View to add or remove a like on a comment
@@ -186,6 +195,5 @@ def like_comment(request, slug, comment_id):
             queryset.delete()
         else:
             queryset.create(comment=comment, liked_by=request.user)
-            print("comment added")
 
     return HttpResponseRedirect(reverse('read_post', args=[slug]))
