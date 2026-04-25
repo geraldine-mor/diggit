@@ -214,6 +214,10 @@ h1 {
     font-family: var(--body-font);
 }
 
+.each-reply {
+    margin-left: 2rem;
+}
+
 /*Forum Page*/
 #forum-backdrop .card {
     background-color: rgba(0, 37, 0, 0.7);
