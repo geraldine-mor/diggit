@@ -15,7 +15,7 @@
             {% if user.is_authenticated %}
             <button class="btn btn-primary" popovertarget="post-form">Create Post</button>
             {% else %}
-            <a class="btn btn-primary" href="{% url 'account_login' %}">Sign in to contribute</a>
+            <a class="btn btn-primary" href="{% url 'account_login' %}?next={{ request.path }}">Sign in to contribute</a>
             {% endif %}
 
             {% for post in post_list %}

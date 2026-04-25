@@ -22,7 +22,7 @@
         {% if post.comments %}
         {% if user.is_authenticated %}
         <button id="comment-btn" popovertarget="comment-form" class="btn" type="button">Comment</button>
-        {% else %}<a id="signin-btn" class="btn" href="{% url 'account_login' %}">Sign in to Comment or Like</a>{% endif %}
+        {% else %}<a id="signin-btn" class="btn" href="{% url 'account_login' %}?next={{ request.path }}">Sign in to Comment or Like</a>{% endif %}
         {% if post.comment_count != 0 %}
         <h2 class="comment-heading">Comments:</h2>
         {% else %}

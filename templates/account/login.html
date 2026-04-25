@@ -11,7 +11,7 @@
     {% endelement %}
     {% if not SOCIALACCOUNT_ONLY %}
         {% setvar link %}
-            <a href="{{ signup_url }}">
+            <a href="{{ signup_url }}?next={{ request.GET.next }}">
             {% endsetvar %}
             {% setvar end_link %}
             </a>

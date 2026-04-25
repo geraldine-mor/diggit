@@ -11,9 +11,9 @@
         <div id="form-card" class="card p-3 mx-2 my-5">
             <div class="card-text">
                 <h1 class="text-center">Sign Up</h1>
-                <p>Already have an account? Then please<a class="link" href="{% url 'account_login' %}"> sign in</a></p>
+                <p>Already have an account? Then please<a class="link" href="{% url 'account_login' %}?next={{ request.GET.next }}"> sign in</a></p>
             </div>
-            <form method="post" action="{% url 'account_signup' %}">
+            <form method="post">
                 {% csrf_token %}
                 <div class="container">
                     <div class="row">

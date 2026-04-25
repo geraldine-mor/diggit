@@ -42,10 +42,10 @@
                 </a>
                 <ul class="user-auth-desktop me-auto navbar-nav flex-row">
                     {% if user.is_authenticated %}
-                    <li class="auth-item"><a href="{% url 'account_logout' %}" class="auth-link">Logout</a></li>
+                    <li class="auth-item"><a href="{% url 'account_logout' %}?next={{ request.path }}" class="auth-link">Logout</a></li>
                     {% else %}
-                    <li class="nav-item"><a href="{% url 'account_login' %}" class="nav-link">Login</a></li>
-                    <li class="nav-item"><a href="{% url 'account_signup' %}" class="nav-link">Join</a>
+                    <li class="nav-item"><a href="{% url 'account_login' %}?next={{ request.path }}" class="nav-link">Login</a></li>
+                    <li class="nav-item"><a href="{% url 'account_signup' %}?next={{ request.path }}" class="nav-link">Join</a>
                     </li>
                     {% endif %}
                 </ul>
@@ -80,8 +80,8 @@
         <div
             class="login-state {% if request.resolver_match.url_name in 'home account_signup account_login account_logout' %}hidden{% endif %}">
             {% if user.is_authenticated %}Welcome back {{ user.first_name }}
-            {% else %}Welcome Guest, please <a href="{% url 'account_login' %}" class="link">login</a> or <a
-                href="{% url 'account_signup' %}" class="link">register</a> to join the conversation {% endif %}
+            {% else %}Welcome Guest, please <a href="{% url 'account_login' %}?next={{ request.path }}" class="link">login</a> or <a
+                href="{% url 'account_signup' %}?next={{ request.path }}" class="link">register</a> to join the conversation {% endif %}
         </div>
         <div class="system-messages">
             <!--Taken directly from codestar walkthrough-->
@@ -103,10 +103,10 @@
     <footer class="sticky-bottom">
         <ul class="user-auth-footer">
                     {% if user.is_authenticated %}
-                    <li class="auth-item"><a href="{% url 'account_logout' %}" class="auth-link">Logout</a></li>
+                    <li class="auth-item"><a href="{% url 'account_logout' %}?next={{ request.path }}" class="auth-link">Logout</a></li>
                     {% else %}
-                    <li class="auth-item"><a href="{% url 'account_login' %}" class="auth-link plain">Login</a></li>
-                    <li class="auth-item"><a href="{% url 'account_signup' %}" class="auth-link plain">Register</a>
+                    <li class="auth-item"><a href="{% url 'account_login' %}?next={{ request.path }}" class="auth-link plain">Login</a></li>
+                    <li class="auth-item"><a href="{% url 'account_signup' %}?next={{ request.path }}" class="auth-link plain">Register</a>
                     </li>
                     {% endif %}
                 </ul>
