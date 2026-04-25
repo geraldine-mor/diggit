@@ -3,6 +3,7 @@ from django.views import generic
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect
+from django.core.paginator import Paginator
 from .models import Post, Comment, CommentLike
 from .forms import CommentForm, PostForm
 
@@ -10,6 +11,7 @@ from .forms import CommentForm, PostForm
 class PostList (generic.ListView):
     queryset = Post.objects.filter(status=1, post_type=0)
     template_name = "blog/digging_deeper.html"
+    paginate_by = 4
 
 
 def forum_list (request):
@@ -26,6 +28,10 @@ def forum_list (request):
     :template: blog/diggit_forum.html
     """
     post_list = Post.objects.filter(status=1, post_type=1)
+    paginator = Paginator(post_list, 4)
+
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
 
     if request.user.is_authenticated and request.method == "POST":
         post_form = PostForm(request.POST, request.FILES)
@@ -45,14 +51,14 @@ def forum_list (request):
                 request, messages.ERROR,
                 "Something went wrong, please contact admin"
             )
-
-    post_form = PostForm()
+    else:
+        post_form = PostForm()
 
     return render(
         request,
         "blog/diggit_forum.html",
-        { "post_list": post_list,
-         "post_form": post_form }
+        { "post_form": post_form,
+          "page_obj": page_obj }
     )
 
 
