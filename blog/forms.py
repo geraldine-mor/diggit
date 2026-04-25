@@ -1,6 +1,6 @@
 from django import forms
 from cloudinary.forms import CloudinaryFileField
-from .models import Post, Comment
+from .models import Post, Comment, Category
 
 class SignupForm(forms.Form):
     first_name = forms.CharField(max_length=30, label='First Name')
@@ -25,8 +25,15 @@ class CommentForm(forms.ModelForm):
 
 
 class PostForm(forms.ModelForm):
-    featured_image = CloudinaryFileField()
+    featured_image = CloudinaryFileField(required=False)
+    categories = forms.ModelMultipleChoiceField(
+        Category.objects.all(), 
+        widget=forms.CheckboxSelectMultiple,
+        required=True,
+        label='Please select one or more of the following categories'
+    )
 
     class Meta:
         model = Post
-        fields = ('title', 'content', 'featured_image')
+        fields = ('title', 'content', 'featured_image', 'categories')
+

@@ -46,10 +46,11 @@ def forum_list (request):
                 "Post created"
             )
         else:
-            print(post_form.errors)
-            messages.add_message(
-                request, messages.ERROR,
-                "Something went wrong, please contact admin"
+            return render (
+                request,
+                "blog/diggit_forum.html",
+                { "post_form": post_form,
+                "page_obj": page_obj }
             )
     else:
         post_form = PostForm()

@@ -4,11 +4,21 @@ from django.contrib.auth.models import User
 from django_extensions.db.fields import AutoSlugField
 from cloudinary.models import CloudinaryField
 from .utils import excerpt_generator
-
-STATUS = ((0, "Draft"), (1, "Published"), (2, "Hidden")) 
-POST_TYPE = ((0, "Blog"), (1, "Forum"))   
+from .choices import STATUS, POST_TYPE, COLOUR_CHOICES
 
 # Create your models here.
+class Category(models.Model):
+    name = models.CharField(max_length=30, unique=True)
+    label_colour = models.CharField(choices=COLOUR_CHOICES, default="#D9BAAF", unique=True)
+
+    class Meta:
+        verbose_name_plural = "categories"
+        ordering = ["name"]
+
+    def __str__(self):
+        return f"{self.name}"
+
+
 class Post(models.Model):
     author = models.ForeignKey(
         User, on_delete=models.CASCADE,
@@ -22,6 +32,7 @@ class Post(models.Model):
     post_type = models.IntegerField(choices=POST_TYPE, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     excerpt = models.TextField(default="")
+    categories = models.ManyToManyField(Category, related_name="posts", blank=True)
 
     class Meta:
         ordering = ["-created_on"]
@@ -99,5 +110,4 @@ class CommentLike(models.Model):
                 fields=["comment", "liked_by"], 
                 name="unique_comment_like")
         ]
-
-
+   

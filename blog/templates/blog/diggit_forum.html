@@ -113,6 +113,11 @@
                 {{ post_form.featured_image }}
                 <span class="small red">{{ post_form.featured_image.errors }}</span>
             </div>
+            <div class="form-field">
+                {{ post_form.categories.label_tag }}<br>
+                {{ post_form.categories }}
+                <span class="small red">{{ post_form.categories.errors }}</span>
+            </div>
             <button id="post-save" class="btn btn-primary" type="submit">Save</button>
             <button id="post-form-cancel" class="btn btn-primary" popovertarget="post-form" popovertargetaction="hide"
                 type="button">Cancel</button>
