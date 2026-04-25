@@ -21,7 +21,7 @@
         <p id="post-content">{{ post.content | linebreaks }}</p>
         {% if post.comments %}
         {% if user.is_authenticated %}
-        <button id="comment-btn" popovertarget="comment-form" class="btn" type="button">Comment</button>
+        <button id="comment-btn" class="btn" type="button">Comment</button>
         {% else %}<a id="signin-btn" class="btn" href="{% url 'account_login' %}?next={{ request.path }}">Sign in to Comment or Like</a>{% endif %}
         {% if post.comment_count != 0 %}
         <h2 class="comment-heading">Comments:</h2>
@@ -43,13 +43,13 @@
                 {{ comment.like_count }}{% endif %}
             </span>
             {% if user.is_authenticated %}
-            <span><button class="comment-reply-btn" type="button" popovertarget="comment-form"
+            <span><button class="comment-reply-btn" type="button"
                     data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id }}">Reply</button></span>{% endif %}
             {% if user.is_authenticated and comment.author == user %}
-            <span><button class="comment-edit-btn" type="button" popovertarget="comment-form"
+            <span><button class="comment-edit-btn" type="button"
                     data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id }}"
                     data-comment="{{ comment.content }}">Edit Comment</button></form></span>
-            <span><button class="comment-delete-btn" type="button" popovertarget="comment-delete"
+            <span><button class="comment-delete-btn" type="button"
                     data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id}}">Delete Comment</button></span>
             {% endif %}
             {% endfor %}{% endif %}

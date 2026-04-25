@@ -44,6 +44,11 @@ $(document).ready(function () {
         commentReply(commentReplyButtons);
     }
 
+    const commentButton = document.getElementById("comment-btn");
+    if (commentButton) {
+        comment(commentButton);
+    }
+
 });
 
 function postEdit(editButtons) {
@@ -74,65 +79,120 @@ function postDelete(deleteButtons) {
     };
 }
 
+function comment(button) {
+    const commentPopover = document.getElementById("comment-form");
+    const deletePopover = document.getElementById("comment-delete");
+
+    button.addEventListener("click", () => {
+        deletePopover.hidePopover();
+        commentPopover.hidePopover();
+        setCommentMode("create");
+        commentPopover.showPopover();
+    });
+}
+
 function commentEdit(commentEditButtons) {
-    const commentContent = document.getElementById("id_content");
-    const commentSave = document.getElementById("comment-save");
-    const commentForm = document.getElementById("edit-create-comment");
 
     for (let button of commentEditButtons) {
         button.addEventListener("click", (e) => {
-            let postSlug = e.target.getAttribute("data-post-slug");
-            let commentId = e.target.getAttribute("data-comment-id")
-            commentContent.value = e.target.getAttribute("data-comment");
-            commentSave.innerText = "Update";
-            commentForm.setAttribute("action", `/${postSlug}/edit_comment/${commentId}`);
+            const postSlug = e.currentTarget.getAttribute("data-post-slug");
+            const commentId = e.currentTarget.getAttribute("data-comment-id");
+            const content = e.currentTarget.getAttribute("data-comment");
+            const commentPopover = document.getElementById("comment-form");
+            const deletePopover = document.getElementById("comment-delete");
+
+            deletePopover.hidePopover();
+            commentPopover.hidePopover();
+
+            setCommentMode("edit", {
+                commentId: commentId,
+                content: content,
+                slug: `/${postSlug}/edit_comment/${commentId}`
+            });
+            commentPopover.showPopover();
         })
     };
 }
 
 function commentDelete(deleteButtons) {
     const commentDelete = document.getElementById("confirm-comment-delete");
+    const commentPopover = document.getElementById("comment-form");
+    const deletePopover = document.getElementById("comment-delete");
 
     for (let button of deleteButtons) {
         button.addEventListener("click", (e) => {
             let postSlug = e.target.getAttribute("data-post-slug");
             let commentId = e.target.getAttribute("data-comment-id");
+            commentPopover.hidePopover();
+            deletePopover.showPopover();
             commentDelete.setAttribute("href", `/${postSlug}/delete_comment/${commentId}`);
         });
     };
 }
 
 function commentLike(commentLikeButtons) {
-    // const commentLike = document.getElementById("comment-likes");
+    const commentPopover = document.getElementById("comment-form");
+    const deletePopover = document.getElementById("comment-delete");
 
     for (let button of commentLikeButtons) {
         button.addEventListener("click", (e) => {
             let postSlug = e.target.closest(".like-btn").getAttribute("data-post-slug");
             let commentId = e.target.closest(".like-btn").getAttribute("data-comment-id");
+            commentPopover.hidePopover();
+            deletePopover.hidePopover();
             e.target.closest(".comment-likes").setAttribute("action", `/${postSlug}/like_comment/${commentId}`);
         });
     };
 }
 
 function commentReply(replyButtons) {
-    const commentParent = document.getElementById("parent-id");
-    const commentForm = document.getElementById("edit-create-comment");
-    const commentCancel = document.getElementById("comment-cancel");
-    const commentSave = document.getElementById("comment-save"); 
-    const commentParagraph = document.getElementById("author-name-comment");
-    const replyParagraph = document.getElementById("author-name-reply");
-    
+    const commentPopover = document.getElementById("comment-form");
+    const deletePopover = document.getElementById("comment-delete");
+
     for (let button of replyButtons) {
         button.addEventListener("click", (e) => {
-            let parentId = e.target.getAttribute("data-comment-id");
-            commentParent.setAttribute("value", parentId)
-            commentSave.innerText = "Reply";
-            commentParagraph.classList.add("hidden");
-            replyParagraph.classList.remove("hidden");
-        })
+            const parentId = e.currentTarget.getAttribute("data-comment-id");
+
+            deletePopover.hidePopover();
+            commentPopover.hidePopover();
+
+            setCommentMode("reply", {
+                parentId: parentId
+            });
+            commentPopover.showPopover();
+        });
+    };
+}
+
+function setCommentMode(mode, data = {}) {
+    const commentForm = document.getElementById("edit-create-comment");
+    const parentField = document.getElementById("parent-id");
+    const content = document.getElementById("id_content");
+    const saveBtn = document.getElementById("comment-save");
+    const commentText = document.getElementById("author-name-comment");
+    const replyText = document.getElementById("author-name-reply");
+
+    // Default settings (create form)
+    parentField.value = "";
+    content.value = "";
+    commentText.classList.remove("hidden");
+    replyText.classList.add("hidden");
+    saveBtn.innerText = "Comment";
+
+    commentForm.dataset.mode = mode;
+
+    // For replies
+    if (mode === "reply") {
+        parentField.value = data.parentId;
+        saveBtn.innerText = "Reply";
+        commentText.classList.add("hidden");
+        replyText.classList.remove("hidden");
     }
 
-    commentCancel.addEventListener("click", ()=> {
-        commentParent.setAttribute("value", "")
-    })
-}   
+    // For edits
+    if (mode === "edit") {
+        content.value = data.content;
+        saveBtn.innerText = "Update";
+        commentForm.setAttribute("action", data.slug)
+    }
+}
