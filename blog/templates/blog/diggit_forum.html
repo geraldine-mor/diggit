@@ -33,6 +33,11 @@
                         <!-- <img src="{{ post.featured_image.url }}" alt="{{ post.title }}"> -->
                     </div>
                     {% endif %}
+                    <div class="category-labels">
+                        {% for category in post.categories.all %}
+                        <span style="background-color: {{ category.label_colour }};">{{ category.name }}</span>
+                        {% endfor %}
+                    </div>
                     <div class="card-body">
                         {% if "..." in post.excerpt or post.comment_count > 1 %}
                         <a class="plain" href="{% url 'read_post' post.slug %}">{% endif %}

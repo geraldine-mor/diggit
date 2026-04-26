@@ -41,6 +41,7 @@ def forum_list (request):
             new_post.status = 1
             new_post.post_type = 1
             new_post.save()
+            post_form.save_m2m()
             messages.add_message(
                 request, messages.SUCCESS,
                 "Post created"

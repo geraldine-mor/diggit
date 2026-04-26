@@ -26,6 +26,11 @@
                         <!-- <img src="{{ post.featured_image.url }}" alt="{{ post.title }}"> -->
                     </div>
                     {% endif %}
+                    <div class="category-labels">
+                        {% for category in post.categories.all %}
+                        <span style="background-color: {{ category.label_colour }};">{{ category.name }}</span>
+                        {% endfor %}
+                    </div>
                     <div class="card-body">
                         <p class="card-text">{{ post.excerpt | linebreaks }}</p>
                         <div id="card-footer" class="d-flex"><span class="author">{% if post.author.is_superuser %}

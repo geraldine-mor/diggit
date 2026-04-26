@@ -17,12 +17,18 @@
         <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
     </div>
     {% endif %}
+    <div class="category-labels">
+        {% for category in post.categories.all %}
+        <span style="background-color: {{ category.label_colour }};">{{ category.name }}</span>
+        {% endfor %}
+    </div>
     <div class="content">
         <p id="post-content">{{ post.content | linebreaks }}</p>
         {% if post.comments %}
         {% if user.is_authenticated %}
         <button id="comment-btn" class="btn" type="button">Comment</button>
-        {% else %}<a id="signin-btn" class="btn" href="{% url 'account_login' %}?next={{ request.path }}">Sign in to Comment or Like</a>{% endif %}
+        {% else %}<a id="signin-btn" class="btn" href="{% url 'account_login' %}?next={{ request.path }}">Sign in to
+            Comment or Like</a>{% endif %}
         {% if post.comment_count != 0 %}
         <h2 class="comment-heading">Comments:</h2>
         {% else %}
@@ -37,40 +43,44 @@
             <span class="small">{% if user.is_authenticated %}<form class="comment-likes" method="POST" action="#">
                     {% csrf_token %}
                     <button class="like-btn" data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id }}"
-                        type="submit"><i class="fa-solid fa-thumbs-up {% if comment.id in liked_comments %}green{% endif %}"></i> {% if comment.like_count != 0 %}
+                        type="submit"><i
+                            class="fa-solid fa-thumbs-up {% if comment.id in liked_comments %}green{% endif %}"></i> {% if comment.like_count != 0 %}
                         {{comment.like_count }}{% endif %}</button>
-                </form>{% elif comment.like_count != 0 %}<i class="fa-solid fa-thumbs-up"></i> 
+                </form>{% elif comment.like_count != 0 %}<i class="fa-solid fa-thumbs-up"></i>
                 {{ comment.like_count }}{% endif %}
             </span>
             {% if user.is_authenticated %}
-            <span><button class="comment-reply-btn" type="button"
-                    data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id }}">Reply</button></span>{% endif %}
+            <span><button class="comment-reply-btn" type="button" data-post-slug="{{ post.slug }}"
+                    data-comment-id="{{ comment.id }}">Reply</button></span>{% endif %}
             {% if user.is_authenticated and comment.author == user %}
-            <span><button class="comment-edit-btn" type="button"
-                    data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id }}"
-                    data-comment="{{ comment.content }}">Edit Comment</button></form></span>
-            <span><button class="comment-delete-btn" type="button"
-                    data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id}}">Delete Comment</button></span>
+            <span><button class="comment-edit-btn" type="button" data-post-slug="{{ post.slug }}"
+                    data-comment-id="{{ comment.id }}" data-comment="{{ comment.content }}">Edit Comment</button></form>
+                </span>
+            <span><button class="comment-delete-btn" type="button" data-post-slug="{{ post.slug }}"
+                    data-comment-id="{{ comment.id}}">Delete Comment</button></span>
             {% endif %}
             {% for reply in comment.replies.all.ordered_by_likes %}
             <div class="each-reply">
-                <span class="comment-details small">On {{ reply.created_on | date }}, {{ reply.author.username }} replied to {{ reply.parent.author.username }}:</span>
+                <span class="comment-details small">On {{ reply.created_on | date }}, {{ reply.author.username }}
+                    replied to {{ reply.parent.author.username }}:</span>
                 <p class="reply-body">{{ reply.content | linebreaks }}</p>
                 <span class="small">{% if user.is_authenticated %}<form class="comment-likes" method="POST" action="#">
-                    {% csrf_token %}
-                    <button class="like-btn" data-post-slug="{{ post.slug }}" data-comment-id="{{ reply.id }}"
-                        type="submit"><i class="fa-solid fa-thumbs-up {% if reply.id in liked_comments %}green{% endif %}"></i> {% if reply.like_count != 0 %}
-                        {{ reply.like_count }}{% endif %}</button>
-                </form>{% elif reply.like_count != 0 %}<i class="fa-solid fa-thumbs-up"></i> 
-                {{ reply.like_count }}{% endif %}
-            </span>
-            {% if user.is_authenticated and reply.author == user %}
-            <span><button class="comment-edit-btn" type="button"
-                    data-post-slug="{{ post.slug }}" data-comment-id="{{ reply.id }}"
-                    data-comment="{{ reply.content }}">Edit Reply</button></form></span>
-            <span><button class="comment-delete-btn" type="button"
-                    data-post-slug="{{ post.slug }}" data-comment-id="{{ reply.id}}">Delete reply</button></span>
-            {% endif %}
+                        {% csrf_token %}
+                        <button class="like-btn" data-post-slug="{{ post.slug }}" data-comment-id="{{ reply.id }}"
+                            type="submit"><i
+                                class="fa-solid fa-thumbs-up {% if reply.id in liked_comments %}green{% endif %}"></i>
+                            {% if reply.like_count != 0 %}
+                            {{ reply.like_count }}{% endif %}</button>
+                    </form>{% elif reply.like_count != 0 %}<i class="fa-solid fa-thumbs-up"></i>
+                    {{ reply.like_count }}{% endif %}
+                </span>
+                {% if user.is_authenticated and reply.author == user %}
+                <span><button class="comment-edit-btn" type="button" data-post-slug="{{ post.slug }}"
+                        data-comment-id="{{ reply.id }}" data-comment="{{ reply.content }}">Edit Reply</button></form>
+                    </span>
+                <span><button class="comment-delete-btn" type="button" data-post-slug="{{ post.slug }}"
+                        data-comment-id="{{ reply.id}}">Delete reply</button></span>
+                {% endif %}
             </div>
             {% endfor %}
             {% endfor %}{% endif %}
