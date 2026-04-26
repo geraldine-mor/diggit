@@ -26,13 +26,14 @@ def contact(request):
             messages.add_message(request, messages.SUCCESS, 
                                  'Your message has been sent')
             return redirect('home')
-        else:
-            if request.user.is_authenticated:
-                contact_form = MessageForm(initial={
-                    "name": f"{request.user.first_name} {request.user.last_name}",
-                    "email": request.user.email })
-    else:     
-        contact_form = MessageForm()
+        
+    else:
+        if request.user.is_authenticated:
+            contact_form = MessageForm(initial={
+                "name": f"{request.user.first_name} {request.user.last_name}",
+                "email": request.user.email })
+        else:     
+            contact_form = MessageForm()
 
     return render(
         request,

@@ -186,6 +186,10 @@ h1 {
     display: inline-block; 
 }
 
+.category-labels span {
+    color: var(--dark-grey);
+}
+
 /*Single post view*/
 .single-post {
     max-width: 90%;
