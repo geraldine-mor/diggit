@@ -115,9 +115,9 @@
 </div>    
 
 <div id="comment-form" popover="auto" data-has-errors="{% if comment_form.errors %}true{% endif %}">
-    <form id="edit-create-comment" method="POST" action="{% url 'read_post' post.slug %}">
+    <form id="edit-create-comment" data-mode="create" method="POST" action="{% url 'read_post' post.slug %}">
         {% csrf_token %}
-        <h3>Leave a comment on {{ post.title }}</h3>
+        <h3 id="comment-title">Leave a comment on {{ post.title }}</h3>
         <p id="author-name-comment">You are commenting as {{ user.username }}</p>
         <p id="author-name-reply" class="hidden">You are replying as {{ user.username }}</p>
         {{ comment_form.content }}

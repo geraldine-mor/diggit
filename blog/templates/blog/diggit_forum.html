@@ -13,7 +13,7 @@
             </div>
 
             {% if user.is_authenticated %}
-            <button class="btn btn-primary" popovertarget="post-form">Create Post</button>
+            <button id="create-post" class="btn btn-primary">Create Post</button>
             {% else %}
             <a class="btn btn-primary" href="{% url 'account_login' %}?next={{ request.path }}">Sign in to
                 contribute</a>
@@ -46,10 +46,10 @@
                         </a>{% endif %}
 
                         {% if user.is_authenticated and post.author == user %}
-                        <span><button class="post-edit-btn" type="button" popovertarget="post-form"
+                        <span><button class="post-edit-btn" type="button"
                                 data-post-slug="{{ post.slug }}" data-title="{{ post.title }}"
                                 data-content="{{ post.content }}">Edit Post</button></span>
-                        <span><button class="post-delete-btn" type="button" popovertarget="post-delete"
+                        <span><button class="post-delete-btn" type="button"
                                 data-post-slug="{{ post.slug }}">Delete Post</button></span>
                         {% endif %}
                         <div class="d-flex card-footer"><span class="author">{% if post.author.is_superuser %}
@@ -91,7 +91,7 @@
             <span class="curren-page">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
 
             {% if page_obj.has_next %}
-            <a href="?page={{ page_obj.paginator.num_pages }}">Next</a>
+            <a href="?page={{ page_obj.paginator.next_page_number }}">Next</a>
             <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
             {% endif %}
         </span>
