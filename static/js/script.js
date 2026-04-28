@@ -165,3 +165,14 @@ function setCommentMode(mode, data = {}) {
 
     openCommentForm();
 }
+
+// Show character limit countdown on comments
+// Code derived from: https://stackoverflow.com/a/1250788/32259671
+
+$('#edit-create-comment #id_content').keyup(function () {
+    let left = 1000 - $(this).val().length;
+    if (left < 0) {
+        left = 0;
+    }
+    $('#counter').text(`${left}/1000`);
+});

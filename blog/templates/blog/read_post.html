@@ -121,6 +121,7 @@
         <p id="author-name-comment">You are commenting as {{ user.username }}</p>
         <p id="author-name-reply" class="hidden">You are replying as {{ user.username }}</p>
         {{ comment_form.content }}
+        <p id="counter">1000/1000</p>
         <input id="parent-id" type="hidden" name="parent_id" value="">
         <button id="comment-save" class="btn submit-btn" type="submit">Comment</button>
         <button id="comment-cancel" popovertarget="comment-form" popovertargetaction="hide" class="btn btn-primary"
