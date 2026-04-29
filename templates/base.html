@@ -76,10 +76,10 @@
         </nav>
     </header>
 
-    <main>
+    <main class="{% block body_style %}{% endblock %}">
         <div
-            class="login-state {% if request.resolver_match.url_name in 'home account_signup account_login account_logout' %}hidden{% endif %}">
-            {% if user.is_authenticated %}Welcome back {{ user.first_name }}
+            class="login-state {% if request.resolver_match.url_name in 'account_signup account_login account_logout' %}hidden{% endif %}">
+            {% if user.is_authenticated %}Welcome {{ user.first_name }}
             {% else %}Welcome Guest, please <a href="{% url 'account_login' %}?next={{ request.path }}" class="link">login</a> or <a
                 href="{% url 'account_signup' %}?next={{ request.path }}" class="link">register</a> to join the conversation {% endif %}
         </div>

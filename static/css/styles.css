@@ -17,6 +17,25 @@
     text-align: center;
     padding: 10px;
     font-family: var(--brand-font);
+    color: var(--light-grey);
+    background-color: rgba(0, 37, 0, 0.4);
+}
+
+body {
+    font-family: var(--body-font);
+    padding-top: 66px;
+    background-color: var(--light-grey);
+    color: var(--dark-grey);
+    height: 100vh;
+}
+
+/*Main Content*/
+main {
+   min-height: 100%;
+}
+
+h1 {
+    font-family: var(--brand-font);
 }
 
 /*Helper classes*/
@@ -24,6 +43,11 @@
     text-decoration: none;
     color: inherit;
     font-weight: bold;
+}
+
+.plain {
+    text-decoration: none;
+    color: inherit;
 }
 
 .hidden {
@@ -94,25 +118,16 @@
     color: var(--light-grey);
 }
 
-/*Main Content*/
-main {
-    padding-top: 66px;
-    padding-bottom: 48px;
-    background-color: var(--light-grey);
-    color: var(--dark-grey);
-    min-height: 100vh;
-}
-
-h1 {
-    font-family: var(--brand-font);
-}
-
 /*Homepage*/
+.home {
+    background: url(../images/home-banner.webp) no-repeat center center / cover;
+}
+
 .diggit-wordmark {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
 }
 
 .diggit-wordmark > img {
@@ -120,9 +135,9 @@ h1 {
 }
 
 .diggit-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
 .diggit-name {
@@ -131,9 +146,29 @@ h1 {
 }
 
 .diggit-tagline {
-  font-size: 16px;
-  color: var(--dark-grey);
-  letter-spacing: 0.1px;
+    font-size: 16px;
+    color: var(--dark-grey);
+}
+
+#home-backdrop {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.banner-overlay {
+    background-color: rgba(220, 224, 217, 0.7);
+    margin: 10px 0;
+    padding-top: 10px;
+}
+
+.highlight-card {
+    max-width: 90%;
+    background-color: rgba(220, 224, 217, 0.9);
+    text-decoration: none;
+    color: var(--forest);
+    border: 1px solid var(--brown);
+    border-radius: 5px;
+    margin: auto;
 }
 
 /*Blog Cards*/
@@ -175,11 +210,6 @@ h1 {
 .card hr {
     margin: 0.5rem 0;
     color: var(--brown);
-}
-
-.plain {
-    text-decoration: none;
-    color: inherit;
 }
 
 .date {
@@ -321,6 +351,7 @@ footer {
     min-height: 40px;
     background-color: var(--brown);
     color: var(--light-grey);
+    font-family: var(--brand-font);
 }
 
 footer ul {
@@ -350,12 +381,15 @@ footer ul {
     }
 
     .login-state { 
-        margin-top: 66px; /*Pushes content below navbar */
         text-align: end;
     }
 
         .post-image-feature {
         max-height: 350px;
+    }
+
+    .highlight-card {
+        max-width: 350px;
     }
 
 }
@@ -374,6 +408,29 @@ footer ul {
     .user-auth-footer {
         display: none;
     }
+
+    .highlight-card {
+        min-height: 173.44px;
+    }
+
+    #highlight-row {
+        margin-top: 10%;
+    }
+}
+
+/*Large screens and up*/
+@media screen and (min-width: 992px) {
+    .highlight-card {
+        min-height: 142.23px;
+    }
+}
+
+/*Laptops 1024px and up */
+@media screen and (min-width: 1024px) {
+    .highlight-card {
+        min-height: fit-content;
+    }
+    
 }
 
 /*XL screens and up*/
