@@ -1,0 +1,39 @@
+.submit-btn {
+    background-color: var(--green);
+    border: none;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background-color: transparent;
+    border: 2px solid var(--green);
+    padding: 4px 10px;
+}
+
+.card-btn {    
+    padding: 4px;
+}
+
+.btn-dk-grn {
+    background-color: var(--forest);
+    color: var(--light-grey);
+    border-radius: 5px;
+}
+
+.btn-dk-grn:hover {
+    background-color: var(--forest);
+    color: var(--green);
+}
+
+.post-btn {
+    width: 200px;
+    display: block;
+    margin: auto;   
+}
+
+/*Medium screens and up*/
+@media screen and (min-width: 768px) {
+    .post-btn {
+        margin-top: 28px;
+    }
+}

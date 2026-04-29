@@ -56,10 +56,12 @@ const closeOpenForms = () => {
 function postEdit(editButtons) {
     editButtons.click(function () {
         let postSlug = $(this).attr("data-post-slug");
+        let categories = $(this).attr("data-categories").split(",").map(Number);
         setPostMode("edit", {
             title: $(this).attr("data-title"),
             content: $(this).attr("data-content"),
-            slug: `/${postSlug}/edit_post/`
+            slug: `/${postSlug}/edit_post/`,
+            categories: categories
         });
     });
 }
@@ -81,16 +83,20 @@ function setPostMode(mode, data = {}) {
     $("#id_title").val("");
     $("#id_content").val("");
     $("#post-save").text("Save");
-    $("#edit-create-post").attr("action", "/create_post/");
+    $("#post-form-title").text("Create post")
 
     // Edit mode
     if (mode === "edit") {
+        $("#post-form-title").text("Edit post")
         $("#id_title").val(data.title);
         $("#id_content").val(data.content);
+        // Pre-check categories - code provided by Claude.ai
+        $("#id_categories input[type='checkbox']").each(function () {
+            $(this).prop("checked", data.categories.includes(parseInt($(this).val())));
+        });
         $("#post-save").text("Update");
         $("#edit-create-post").attr("action", data.slug);
         document.getElementById("post-form").showPopover();
-        console.log("got here")
     };
 }
 

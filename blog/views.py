@@ -28,7 +28,7 @@ def forum_list (request):
     :template: blog/diggit_forum.html
     """
     post_list = Post.objects.filter(status=1, post_type=1)
-    paginator = Paginator(post_list, 4)
+    paginator = Paginator(post_list, 6)
 
     page_number = request.GET.get("page")
     page_obj = paginator.get_page(page_number)

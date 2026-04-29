@@ -27,6 +27,9 @@
 
     <!--Custom CSS-->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
+
+    {% block extra_styles %}{% endblock %}
 
     <title>diggit {% block head_title %}{% endblock %}</title>
 </head>
@@ -76,7 +79,7 @@
         </nav>
     </header>
 
-    <main class="{% block body_style %}{% endblock %}">
+    <main class="flex-fill {% block body_style %}{% endblock %}">
         <div
             class="login-state {% if request.resolver_match.url_name in 'account_signup account_login account_logout' %}hidden{% endif %}">
             {% if user.is_authenticated %}Welcome {{ user.first_name }}
@@ -100,7 +103,7 @@
 
     </main>
 
-    <footer class="sticky-bottom">
+    <footer class="fixed-bottom">
         <ul class="user-auth-footer">
                     {% if user.is_authenticated %}
                     <li class="auth-item"><a href="{% url 'account_logout' %}?next={{ request.path }}" class="auth-link">Logout</a></li>
