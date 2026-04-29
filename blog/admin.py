@@ -5,7 +5,7 @@ from .models import Post, Comment, CommentLike, Category
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'status', 'created_on')
     search_fields = ('title', 'content')
-    list_filter = ('status',)
+    list_filter = ('status', 'post_type')
     exclude = ['excerpt',]
     filter_horizontal = ['categories',]
 

@@ -1,0 +1,146 @@
+[
+  {
+    "model": "diggit.post",
+    "pk": 6,
+    "fields": {
+      "author": 1,
+      "title": "Waking the Garden: Early Spring Soil Preparation Tips",
+      "content": "<h2>Preparing Your Soil for Spring</h2><p>As winter begins to fade, your garden slowly comes back to life. The foundation of any successful growing season lies in the health of your soil. Start by removing fallen branches, dead plant material, and weeds that may have taken hold during the colder months. This cleanup not only improves appearance but also reduces the risk of pests and disease.</p><p>Once cleared, assess your soil structure. Avoid digging if the soil is waterlogged—this can cause compaction and long-term damage. Instead, wait until it crumbles easily in your hand. Gently turn the top layer using a fork, allowing oxygen to penetrate and awaken microbial life.</p><p>Incorporate organic matter such as compost or well-rotted manure. This enriches the soil with nutrients and improves both drainage and moisture retention. If you're unsure of your soil's condition, consider a simple soil test to check pH and nutrient levels.</p><p>Finally, consider covering beds with cloches or fleece to gently warm the soil, encouraging early planting. A well-prepared soil bed now will reward you with vigorous, healthy growth throughout the season.</p>",
+      "status": 1,
+      "post_type": 0,
+      "created_on": "2026-03-05T09:12:00"
+    }
+  },
+  {
+    "model": "diggit.post",
+    "pk": 7,
+    "fields": {
+      "author": 1,
+      "title": "Spring Planting Guide: What to Sow in March",
+      "content": "<h2>Seeds to Start Now</h2><p>March marks the true beginning of the gardening year. With daylight hours increasing, it’s the perfect time to sow a variety of crops. Outdoors, hardy vegetables such as carrots, parsnips, spinach, and peas can be sown directly into prepared soil. Ensure the soil is workable and not overly wet.</p><p>Indoors or in a greenhouse, start tender crops like tomatoes, peppers, and aubergines. Use seed trays filled with fine compost and keep them in a warm, well-lit space. Consistent moisture is key, but avoid overwatering, which can lead to damping-off disease.</p><p>Label your seedlings carefully to avoid confusion later. As they grow, gradually acclimatize them to outdoor conditions through a process known as hardening off.</p><p>This is also a good time to plant onion sets and early potatoes. By staggering your sowing, you’ll ensure a continuous harvest throughout the year.</p>",
+      "status": 1,
+      "post_type": 0,
+      "created_on": "2026-03-18T10:45:00"
+    }
+  },
+  {
+    "model": "diggit.post",
+    "pk": 8,
+    "fields": {
+      "author": 1,
+      "title": "April Showers and Garden Power: Managing Spring Rain",
+      "content": "<h2>Making the Most of Rainfall</h2><p>April often brings unpredictable weather, with periods of heavy rain followed by sunshine. While water is essential for plant growth, too much can lead to problems such as waterlogging and root rot.</p><p>Ensure your garden has adequate drainage. Raised beds are particularly effective in areas prone to excess moisture. Adding organic matter improves soil structure, helping it retain just the right amount of water.</p><p>Mulching is another valuable technique. A layer of organic mulch, such as bark or straw, helps regulate soil moisture, prevent erosion, and suppress weeds.</p><p>Be vigilant for signs of fungal diseases, which thrive in damp conditions. Good spacing between plants allows air circulation, reducing the risk of infection.</p><p>With thoughtful management, spring rains can be harnessed to give your garden a strong and healthy start.</p>",
+      "status": 1,
+      "post_type": 0,
+      "created_on": "2026-04-10T08:30:00"
+    }
+  },
+  {
+    "model": "diggit.post",
+    "pk": 9,
+    "fields": {
+      "author": 1,
+      "title": "Late Spring Bloom Boost: Feeding Your Plants Naturally",
+      "content": "<h2>Natural Fertilizing Tips</h2><p>By late spring, plants are entering a period of rapid growth and increased nutrient demand. Feeding them properly at this stage can significantly enhance flowering and fruiting.</p><p>Organic fertilizers are an excellent choice for sustainable gardening. Compost tea, seaweed extract, and well-rotted manure provide a balanced supply of nutrients while supporting beneficial soil organisms.</p><p>Apply feeds during cooler parts of the day to avoid scorching plant leaves. Liquid feeds can be applied every couple of weeks, while slow-release organic matter continues to nourish the soil over time.</p><p>Pay attention to individual plant needs. Leafy crops benefit from nitrogen-rich feeds, while flowering plants require more potassium.</p><p>A thoughtful feeding routine will reward you with vibrant blooms, stronger plants, and improved resilience against pests and disease.</p>",
+      "status": 1,
+      "post_type": 0,
+      "created_on": "2025-05-22T07:55:00"
+    }
+  },
+  {
+    "model": "diggit.post",
+    "pk": 10,
+    "fields": {
+      "author": 1,
+      "title": "Summer Garden Success: Watering Wisely in the Heat",
+      "content": "<h2>Efficient Watering Techniques</h2><p>Summer brings warmth and long days, but also the challenge of keeping plants properly hydrated. Effective watering is about more than just frequency—it’s about technique.</p><p>Water deeply and less often to encourage roots to grow deeper into the soil. Shallow watering leads to weak root systems and drought-sensitive plants.</p><p>The best time to water is early morning, allowing moisture to soak in before the heat of the day. Evening watering is also acceptable but may increase the risk of fungal diseases if leaves remain damp overnight.</p><p>Mulching plays a crucial role in conserving moisture. Organic mulches reduce evaporation and keep soil temperatures stable.</p><p>Consider installing drip irrigation or soaker hoses for efficient water delivery. These systems minimize waste and ensure consistent hydration, especially during prolonged dry spells.</p>",
+      "status": 1,
+      "post_type": 0,
+      "created_on": "2025-06-15T06:40:00"
+    }
+  },
+  {
+    "model": "diggit.post",
+    "pk": 11,
+    "fields": {
+      "author": 1,
+      "title": "Companion Planting in High Summer: Natural Pest Control",
+      "content": "<h2>Plant Partnerships</h2><p>Companion planting is a time-tested technique that uses plant relationships to improve growth and deter pests. In the height of summer, when insect activity peaks, this approach becomes especially valuable.</p><p>For example, planting basil alongside tomatoes can enhance flavor and repel harmful insects. Marigolds are widely known for their ability to deter nematodes and aphids.</p><p>Diversity is key. A varied garden attracts beneficial insects such as ladybirds and pollinators, creating a balanced ecosystem.</p><p>Avoid monocultures, which can quickly become breeding grounds for pests. Instead, interplant crops and rotate them annually to disrupt pest life cycles.</p><p>By observing and working with nature, companion planting reduces the need for chemical interventions and promotes a healthier garden environment.</p>",
+      "status": 1,
+      "post_type": 0,
+      "created_on": "2025-07-08T11:20:00"
+    }
+  },
+  {
+    "model": "diggit.post",
+    "pk": 12,
+    "fields": {
+      "author": 1,
+      "title": "Harvest Time: Picking Vegetables at Their Peak",
+      "content": "<h2>When to Harvest</h2><p>Harvesting is one of the most rewarding aspects of gardening, but timing is crucial to ensure the best flavor and nutritional value.</p><p>Most vegetables are best picked in the early morning when they are fully hydrated. Leafy greens should be harvested young for tenderness, while root crops should be lifted once they reach a usable size.</p><p>Regular harvesting encourages continued production in crops like beans, courgettes, and tomatoes. Leaving produce on the plant too long can signal it to stop producing.</p><p>Use clean, sharp tools to avoid damaging plants and spreading disease. Handle produce gently to prevent bruising.</p><p>Learning to recognize peak ripeness comes with experience, but careful observation will guide you toward consistently excellent harvests.</p>",
+      "status": 1,
+      "post_type": 0,
+      "created_on": "2025-08-12T09:05:00"
+    }
+  },
+  {
+    "model": "diggit.post",
+    "pk": 13,
+    "fields": {
+      "author": 1,
+      "title": "Early Autumn Gardening: Preparing for Cooler Days",
+      "content": "<h2>Transitioning Seasons</h2><p>As summer fades, the garden enters a period of transition. Early autumn is an ideal time to prepare for cooler conditions while extending your growing season.</p><p>Remove spent crops and add them to your compost heap if disease-free. This clears space for cool-season vegetables such as kale, spinach, and lettuce.</p><p>Improve soil by adding compost or green manure crops, which protect and enrich the soil over winter.</p><p>Shorter days and cooler temperatures mean adjusting your watering routine. Plants require less frequent watering, but consistency remains important.</p><p>Planning ahead now ensures your garden remains productive and healthy well into the colder months.</p>",
+      "status": 1,
+      "post_type": 0,
+      "created_on": "2025-09-14T08:10:00"
+    }
+  },
+  {
+    "model": "diggit.post",
+    "pk": 14,
+    "fields": {
+      "author": 1,
+      "title": "October Garden Care: Mulching and Protection",
+      "content": "<h2>Protecting Your Soil</h2><p>October is the time to safeguard your garden against the approaching winter. One of the most effective methods is mulching.</p><p>Apply a thick layer of organic mulch such as straw, leaves, or bark around plants and over empty beds. This helps retain soil warmth, prevent erosion, and suppress weeds.</p><p>Mulch also provides habitat for beneficial organisms that improve soil health.</p><p>Consider protecting vulnerable plants with cloches, fleece, or cold frames. These structures shield plants from frost and extend the growing season.</p><p>Taking these steps now will ensure your garden emerges strong and ready in spring.</p>",
+      "status": 1,
+      "post_type": 0,
+      "created_on": "2025-10-21T07:25:00"
+    }
+  },
+  {
+    "model": "diggit.post",
+    "pk": 15,
+    "fields": {
+      "author": 1,
+      "title": "Late Autumn Tasks: Pruning and Tidying Up",
+      "content": "<h2>End-of-Season Maintenance</h2><p>Late autumn is the perfect time to tidy your garden and prepare it for winter dormancy. Start by pruning dead, damaged, or diseased branches from trees and shrubs.</p><p>Cut back perennials that have finished flowering, but consider leaving some seed heads for wildlife and winter interest.</p><p>Clean and store garden tools to prevent rust and prolong their lifespan. Drain hoses and protect outdoor taps from freezing temperatures.</p><p>Removing fallen leaves and debris reduces the risk of pests and diseases overwintering in your garden.</p><p>A well-maintained garden now will require far less work when spring returns.</p>",
+      "status": 1,
+      "post_type": 0,
+      "created_on": "2025-11-09T15:00:00"
+    }
+  },
+  {
+    "model": "diggit.post",
+    "pk": 16,
+    "fields": {
+      "author": 1,
+      "title": "Winter Garden Planning: Dreaming of Spring",
+      "content": "<h2>Planning Ahead</h2><p>Winter offers a valuable pause in the gardening calendar, providing time to reflect and plan. Review the past season—what thrived, what struggled, and what you’d like to change.</p><p>Sketch out your garden layout, considering crop rotation and companion planting principles. This helps maintain soil fertility and reduces pest problems.</p><p>Order seeds early to ensure availability of your preferred varieties. Consider trying something new to keep your garden exciting.</p><p>Use this time to read, learn, and deepen your understanding of gardening techniques.</p><p>Thoughtful planning now lays the groundwork for a successful and rewarding growing season ahead.</p>",
+      "status": 1,
+      "post_type": 0,
+      "created_on": "2025-12-03T18:30:00"
+    }
+  },
+  {
+    "model": "diggit.post",
+    "pk": 17,
+    "fields": {
+      "author": 1,
+      "title": "Midwinter Care: Looking After Tools and Indoor Plants",
+      "content": "<h2>Indoor Gardening Focus</h2><p>In the depths of winter, outdoor gardening slows significantly, but there is still plenty to be done. Indoor plants require consistent care, including adequate light, proper watering, and occasional feeding.</p><p>Wipe dust from leaves to maximize photosynthesis and check regularly for pests such as spider mites.</p><p>This is also the perfect time to maintain your tools. Clean, sharpen, and oil blades to keep them in excellent condition.</p><p>Organize your shed or storage space, ensuring everything is ready for the busy months ahead.</p><p>By staying engaged during winter, you’ll be fully prepared to step back into the garden when spring arrives.</p>",
+      "status": 1,
+      "post_type": 0,
+      "created_on": "2026-01-15T14:15:00"
+    }
+  }
+]
