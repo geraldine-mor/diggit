@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
+{% block head_title %}{% trans " | Digging Deeper" %}{% endblock head_title %}
 {% block content %}
 
 <!--Digging Deeper content-->
@@ -28,14 +30,14 @@
                     </div>
                     {% endif %}
 
-                    <div class="category-labels">
+                    <div class="category-labels p-2">
                         {% for category in post.categories.all %}
-                        <span style="background-color: {{ category.label_colour }};">{{ category.name }}</span>
+                        <span class="small p-1" style="background-color: {{ category.label_colour }};">{{ category.name }}</span>
                         {% endfor %}
                     </div>
 
                     <div class="card-body">
-                        <div class="card-text">{{ post.excerpt | linebreaks }}</div>
+                        <div class="card-text">{{ post.excerpt | safe }}</div>
                     </div>
 
                 {% if "..." in post.excerpt %}
@@ -70,18 +72,18 @@
 </div>
 
 <!--Code snippet derived from django docs: https://docs.djangoproject.com/en/6.0/topics/pagination/-->
-<div class="pagination">
+<div class="pagination mx-auto py-4">
     <span class="page-links">
         {% if page_obj.has_previous %}
-        <a href="?page=1">&laquo; First</a>
-        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        <a class="plain bold-hover" href="?page=1">&laquo; First</a>
+        <a class="plain bold-hover" href="?page={{ page_obj.previous_page_number }}">Previous</a>
         {% endif %}
 
-        <span class="curren-page">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+        <span class="current-page">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
 
         {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.paginator.next_page_number }}">Next</a>
-        <a href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
+        <a class="plain bold-hover" href="?page={{ page_obj.next_page_number }}">Next</a>
+        <a class="plain bold-hover" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a>
         {% endif %}
     </span>
 </div>
