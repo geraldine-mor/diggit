@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
-{% block head_title %}{% trans " | Diggit Forum" %}{% endblock %}
+{% block head_title %}{% trans " | Diggit Forum" %}{% endblock head_title %}
 
 {% block content %}
 
@@ -102,13 +103,13 @@
     </div>
 
     <!--Popover Forms-->
-    <div id="post-form" popover="auto" data-has-errors="{% if post_form.errors %}true{% endif %}">
+    <div id="post-form" class="p-2" popover="auto" data-has-errors="{% if post_form.errors %}true{% endif %}">
         <form id="edit-create-post" method="POST" action="{% url 'diggit_forum' %}" enctype="multipart/form-data">
             {% csrf_token %}
             <h3 id="post-form-title">Create post</h3>
             <p>You are posting as {{ user.username }}</p>
             <div class="form-field">
-                {{ post_form.title.label_tag }}
+                {{ post_form.title.label_tag }}<br>
                 {{ post_form.title }}
                 <span class="small red">{{ post_form.title.errors }}</span>
             </div>
@@ -122,25 +123,28 @@
                 {{ post_form.featured_image }}
                 <span class="small red">{{ post_form.featured_image.errors }}</span>
             </div>
-            <div class="form-field">
-                <span>Please select one or more of the following categories:</span>
+            <span>Please select one or more of the following categories:</span>
+            <div id="categories" class="form-field">
                 {{ post_form.categories }}
                 <span class="small red">{{ post_form.categories.errors }}</span>
             </div>
-            <button id="post-save" class="btn btn-primary" type="submit">Save</button>
-            <button id="post-form-cancel" class="btn btn-primary" popovertarget="post-form" popovertargetaction="hide"
+            <div class="d-flex justify-content-evenly mt-2">
+                <button id="post-save" class="btn btn-dk-grn" type="submit">Save</button>
+                <button id="post-form-cancel" class="btn btn-dk-grn" popovertarget="post-form" popovertargetaction="hide"
                 type="button">Cancel</button>
+            </div>
         </form>
     </div>
 
     <div id="post-delete" popover="auto">
         <h3>Are you sure you want to delete this post?</h3>
         <p><span class="red">Caution</span> this action cannot be reversed</p>
-        <button id="post-delete-cancel" class="btn btn-primary" popovertarget="post-delete" popovertargetaction="hide"
+        <div class="d-flex justify-content-evenly">
+            <button id="post-delete-cancel" class="btn btn-dk-grn" popovertarget="post-delete" popovertargetaction="hide"
             type="button">Cancel</button>
-        <a id="confirm-post-delete" class="btn btn-primary" href="#">Delete</a>
+            <a id="confirm-post-delete" class="btn btn-dk-grn href="#">Delete</a>
+        </div>  
     </div>
-
 </div>
 
     {% endblock %}

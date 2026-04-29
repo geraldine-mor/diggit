@@ -4,7 +4,7 @@
 
 {% block head_title %}{% trans " | Sign In" %}{% endblock head_title %}
 
-{% block body_style %}login d-flex flex-column{% endblock %}
+{% block body_style %}login d-flex flex-column{% endblock body_style%}
 
 {% block content %}
     <div class="body-container flex-fill">
@@ -15,18 +15,19 @@
                 <a class="link" href="{{ signup_url }}?next={{ request.GET.next }}">
                 here</a></p>
         
-            <form method="post" action="{% url 'account_login' %}">
+            <form method="post">
                 {% csrf_token %}
                 <div class="form-field">
                     {{ form.login.label_tag }}<br>
                     {{ form.login }}
                     <span class="small red">{{ form.login.errors }}</span>
                 </div>
-                <div class="form-field">
+                <div class="form-field mb-2">
                     {{ form.password.label_tag }}<br>
                     {{ form.password }}
                     <span class="small red">{{ form.password.errors }}</span>
                 </div>
+                <button class="btn submit-btn" type="submit">Sign In</button>
             </form>
         </div>    
     </div>

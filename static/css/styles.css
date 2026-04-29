@@ -216,6 +216,29 @@ h1 {
     text-align: center;
 }
 
+#post-form {
+    border: 1px solid var(--brown);
+    border-radius: 5px;
+    max-width: 95%;
+    background-color: var(--light-grey);
+}
+
+textarea {
+    max-width: 100%;
+    resize: vertical;
+}
+
+#categories {
+    column-count: 2;
+}
+
+#post-delete {
+    border: 1px solid var(--brown);
+    border-radius: 5px;
+    max-width: 95%;
+    background-color: var(--light-grey);
+}
+
 /*Blog Cards*/
 .card {
     color: var(--dark-grey);
