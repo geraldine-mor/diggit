@@ -51,9 +51,9 @@
                 
                 <div class="comment card-body">
                     {% if post.comment_count != 0 %}
-                    <a href="{% url 'read_post' post.slug %}">
+                    <a class="plain" href="{% url 'read_post' post.slug %}">
                         <p class="small">{{ post.comment_count }}
-                        <i class="fa-regular fa-comments"></i></p>
+                        <i class="fa-regular fa-comments bold-hover"></i></p>
                     </a>
                     <p class="small">On {{ post.first_comment.created_on | date }}
                         {{ post.first_comment.author.username }} wrote:</p>

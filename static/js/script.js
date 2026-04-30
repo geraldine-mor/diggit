@@ -25,6 +25,8 @@ $(document).ready(function () {
 
     commentReply($(".comment-reply-btn"));
 
+    replyEdit($(".reply-edit-btn"));
+
     $("#comment-btn").click(() => {
         setCommentMode("create");
     });
@@ -116,8 +118,10 @@ function commentDelete(deleteButtons) {
     deleteButtons.click(function () {
         const postSlug = $(this).attr("data-post-slug");
         const commentId = $(this).attr("data-comment-id");
+        const type = $(this).attr("data-type");
         closePopovers();
         document.getElementById("comment-delete").showPopover();
+        $("#comment-delete h3").text(`Are you sure you want to delete this ${type}?`);
         $("#confirm-comment-delete").attr("href", `/${postSlug}/delete_comment/${commentId}`);
     });
 };
@@ -136,10 +140,23 @@ function commentLike(commentLikeButtons) {
 function commentReply(replyButtons) {
     replyButtons.click(function () {
         setCommentMode("reply", {
-            parentId: $(this).attr("data-comment-id")
+            parentId: $(this).attr("data-comment-id"),
+            author: $(this).attr("data-comment-author")
         });
     });
 };
+
+function replyEdit(replyEditButtons) {
+    replyEditButtons.click(function () {
+        const postSlug = $(this).attr("data-post-slug");
+        const commentId = $(this).attr("data-comment-id");
+        setCommentMode("reply-edit", {
+            content: $(this).attr("data-comment"),
+            slug: `/${postSlug}/edit_comment/${commentId}`,
+            author: $(this).attr("data-comment-author")
+        })
+    })
+}
 
 function setCommentMode(mode, data = {}) {
 
@@ -148,6 +165,8 @@ function setCommentMode(mode, data = {}) {
     // Default settings (create form)
     $("#parent-id").val("");
     $("#id_content").val("");
+    $("#comment-title").show();
+    $("#reply-title").hide();
     $("#author-name-comment").show();
     $("#author-name-reply").hide();
     $("#comment-save").text("Comment");
@@ -158,6 +177,8 @@ function setCommentMode(mode, data = {}) {
     if (mode === "reply") {
         $("#parent-id").val(data.parentId);
         $("#comment-save").text("Reply");
+        $("#comment-title").hide();
+        $("#reply-title").text("You are replying to " + data.author).show();
         $("#author-name-comment").hide();
         $("#author-name-reply").show();
     }
@@ -165,8 +186,21 @@ function setCommentMode(mode, data = {}) {
     // For edits
     if (mode === "edit") {
         $("#id_content").val(data.content);
+        updateCounter();
         $("#comment-save").text("Update");
         $("#edit-create-comment").attr("action", data.slug)
+    }
+
+    // For reply edits
+    if (mode == "reply-edit") {
+        $("#id_content").val(data.content);
+        updateCounter();
+        $("#comment-title").hide();
+        $("#reply-title").text("You are replying to " + data.author).show();
+        $("#author-name-comment").hide();
+        $("#author-name-reply").show();
+        $("#comment-save").text("Update");
+        $("#edit-create-comment").attr("action", data.slug);
     }
 
     openCommentForm();
@@ -175,10 +209,16 @@ function setCommentMode(mode, data = {}) {
 // Show character limit countdown on comments
 // Code derived from: https://stackoverflow.com/a/1250788/32259671
 
-$('#edit-create-comment #id_content').keyup(function () {
-    let left = 1000 - $(this).val().length;
-    if (left < 0) {
-        left = 0;
-    }
-    $('#counter').text(`${left}/1000`);
-});
+function updateCounter() {
+    let left = 1000 - $('#edit-create-comment #id_content').val().length;
+        if (left < 0) {
+            left = 0;
+        }
+        $('#counter').text(`${left}/1000`);
+}
+
+function characterCount() {
+    $('#edit-create-comment #id_content').keyup(function () {
+        updateCounter();
+    });
+}
