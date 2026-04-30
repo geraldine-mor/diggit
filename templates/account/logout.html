@@ -1,28 +1,22 @@
 {% extends "base.html" %}
 {% load allauth i18n %}
-{% block head_title %}
-{% trans "Sign Out" %}
-{% endblock head_title %}
+{% block head_title %}{% trans " | Sign Out" %}{% endblock head_title %}
+{% url 'account_logout' as action_url %}
+
+{% block body_style %}logout d-flex flex-column{% endblock body_style %}
 
 {% block content %}
-<div class="body-container">
-    {% element h1 %}
-    {% trans "Sign Out" %}
-    {% endelement %}
-    {% element p %}
-    {% trans 'Are you sure you want to sign out?' %}
-    {% endelement %}
-    {% url 'account_logout' as action_url %}
-    {% element form method="post" action=action_url no_visible_fields=True %}
-    {% slot body %}
-    {% csrf_token %}
-    {{ redirect_field }}
-    {% endslot %}
-    {% slot actions %}
-    {% element button type="submit" %}
-    {% trans 'Sign Out' %}
-    {% endelement %}
-    {% endslot %}
-    {% endelement %}
+<div class="body-container flex-fill">
+    <div id="form-card" class="card p-4">
+        <h1>Sign Out</h1>
+        <p class="lead">Are you sure you want to leave?</p>
+        <form method="POST" action="{{ action_url }}">
+            {% csrf_token %}
+            {{ form.as_p}}
+            <button class="btn submit-btn" type="submit">Sign Out</button>
+       </form>
+       
+    </div>
 </div>
 {% endblock content %}
+    

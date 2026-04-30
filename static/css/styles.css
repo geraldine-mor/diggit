@@ -466,6 +466,11 @@ textarea:focus-visible {
     max-width: 95%;
 }
 
+/*Logout Form*/
+.logout {
+    background: url(../images/login.webp) no-repeat center center / cover;
+}
+
 /*Footer*/
 footer {
     min-height: 40px;
