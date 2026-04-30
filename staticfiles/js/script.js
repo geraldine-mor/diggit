@@ -1,204 +1,224 @@
 $(document).ready(function () {
 
-    // Replaced with popover for consistencey and easier styling
-    // $("#comment-btn").click(function(){
-    //     $("#comment-form").show();
-    // });
-
-    // $("#comment-close").click(function(){
-    //     $("#comment-form").hide();
-    // });
-
     // Clear the post form on cancel
     $("#post-form-cancel").click(function () {
         $("#post-form>form")[0].reset();
+        // Provided by Claude.ai to ensure form clears on cancel where there are errors.
+        window.location.href = window.location.pathname;
     });
 
-    const formErrors = document.querySelectorAll('[data-has-errors="true"]');
+    // Check for form errors and open the relevant popover
+    const formErrors = $('[data-has-errors="true"]');
     if (formErrors.length > 0) {
-        errorPopover = formErrors[0];
-        errorPopover.showPopover();
+        formErrors[0].showPopover();
     };
 
-    const editButtons = document.getElementsByClassName("post-edit-btn");
-    if (editButtons.length > 0) {
-        postEdit(editButtons);
-    };
+    postEdit($(".post-edit-btn"));
 
-    const deleteButtons = document.getElementsByClassName("post-delete-btn");
-    if (deleteButtons.length > 0) {
-        postDelete(deleteButtons);
-    };
+    postDelete($(".post-delete-btn"));
 
-    const commentEditButtons = document.getElementsByClassName("comment-edit-btn");
-    if (commentEditButtons.length > 0) {
-        commentEdit(commentEditButtons);
-    };
+    commentEdit($(".comment-edit-btn"));
 
-    const commentDeleteButtons = document.getElementsByClassName("comment-delete-btn");
-    if (commentDeleteButtons.length > 0) {
-        commentDelete(commentDeleteButtons);
-    };
+    commentDelete($(".comment-delete-btn"));
 
-    const commentLikeButtons = document.getElementsByClassName("like-btn");
-    if (commentLikeButtons.length > 0) {
-        commentLike(commentLikeButtons);
-    };
+    commentLike($(".like-btn"));
 
-    const commentReplyButtons = document.getElementsByClassName("comment-reply-btn");
-    if (commentReplyButtons.length > 0) {
-        commentReply(commentReplyButtons);
-    }
+    commentReply($(".comment-reply-btn"));
 
-    const commentButton = document.getElementById("comment-btn");
-    if (commentButton) {
-        comment(commentButton);
-    }
+    replyEdit($(".reply-edit-btn"));
+
+    $("#comment-btn").click(() => {
+        setCommentMode("create");
+    });
+
+    $("#create-post").click(() => {
+        setPostMode("create");
+        document.getElementById("post-form").showPopover();
+    });
 
 });
 
+// Close any open comment popovers
+const closePopovers = () => {
+    document.getElementById("comment-form").hidePopover();
+    document.getElementById("comment-delete").hidePopover();
+}
+
+// Open the comment popover
+const openCommentForm = () => { document.getElementById("comment-form").showPopover(); }
+
+//Close any open popovers on the read_post template
+const closeOpenForms = () => {
+    console.log("closeOpenForms called")
+    document.getElementById("post-form").hidePopover();
+    document.getElementById("post-delete").hidePopover();
+}
+
+// Update the new post fprm for edits
 function postEdit(editButtons) {
-    const postTitle = document.getElementById("id_title");
-    const postContent = document.getElementById("id_content");
-    const postSave = document.getElementById("post-save");
-    const postForm = document.getElementById("edit-create-post");
-
-    for (let button of editButtons) {
-        button.addEventListener("click", (e) => {
-            let postSlug = e.target.getAttribute("data-post-slug");
-            postTitle.value = e.target.getAttribute("data-title");
-            postContent.value = e.target.getAttribute("data-content");
-            postSave.innerText = "Update";
-            postForm.setAttribute("action", `/${postSlug}/edit_post/`);
+    editButtons.click(function () {
+        let postSlug = $(this).attr("data-post-slug");
+        let categories = $(this).attr("data-categories").split(",").map(Number);
+        setPostMode("edit", {
+            title: $(this).attr("data-title"),
+            content: $(this).attr("data-content"),
+            slug: `/${postSlug}/edit_post/`,
+            categories: categories
         });
-    };
-}
-
-function postDelete(deleteButtons) {
-    const postDelete = document.getElementById("confirm-post-delete");
-
-    for (let button of deleteButtons) {
-        button.addEventListener("click", (e) => {
-            let postSlug = e.target.getAttribute("data-post-slug");
-            postDelete.setAttribute("href", `/${postSlug}/delete_post/`);
-        });
-    };
-}
-
-function comment(button) {
-    const commentPopover = document.getElementById("comment-form");
-    const deletePopover = document.getElementById("comment-delete");
-
-    button.addEventListener("click", () => {
-        deletePopover.hidePopover();
-        commentPopover.hidePopover();
-        setCommentMode("create");
-        commentPopover.showPopover();
     });
 }
 
-function commentEdit(commentEditButtons) {
+function postDelete(deleteButtons) {
+    deleteButtons.click(function () {
+        closeOpenForms();
+        let postSlug = $(this).attr("data-post-slug");
+        $("#confirm-post-delete").attr("href", `/${postSlug}/delete_post/`);
+        document.getElementById("post-delete").showPopover();
+    });
+}
 
-    for (let button of commentEditButtons) {
-        button.addEventListener("click", (e) => {
-            const postSlug = e.currentTarget.getAttribute("data-post-slug");
-            const commentId = e.currentTarget.getAttribute("data-comment-id");
-            const content = e.currentTarget.getAttribute("data-comment");
-            const commentPopover = document.getElementById("comment-form");
-            const deletePopover = document.getElementById("comment-delete");
+function setPostMode(mode, data = {}) {
+    console.log("setPostMode called", mode)
+    closeOpenForms();
 
-            deletePopover.hidePopover();
-            commentPopover.hidePopover();
+    // Reset defaults
+    $("#id_title").val("");
+    $("#id_content").val("");
+    $("#post-save").text("Save");
+    $("#post-form-title").text("Create post")
 
-            setCommentMode("edit", {
-                commentId: commentId,
-                content: content,
-                slug: `/${postSlug}/edit_comment/${commentId}`
-            });
-            commentPopover.showPopover();
-        })
+    // Edit mode
+    if (mode === "edit") {
+        $("#post-form-title").text("Edit post")
+        $("#id_title").val(data.title);
+        $("#id_content").val(data.content);
+        // Pre-check categories - code provided by Claude.ai
+        $("#id_categories input[type='checkbox']").each(function () {
+            $(this).prop("checked", data.categories.includes(parseInt($(this).val())));
+        });
+        $("#post-save").text("Update");
+        $("#edit-create-post").attr("action", data.slug);
+        document.getElementById("post-form").showPopover();
     };
 }
+
+function commentEdit(commentEditButtons) {
+    commentEditButtons.click(function () {
+        const postSlug = $(this).attr("data-post-slug");
+        const commentId = $(this).attr("data-comment-id");
+
+        setCommentMode("edit", {
+            content: $(this).attr("data-comment"),
+            slug: `/${postSlug}/edit_comment/${commentId}`
+        });
+    });
+};
 
 function commentDelete(deleteButtons) {
-    const commentDelete = document.getElementById("confirm-comment-delete");
-    const commentPopover = document.getElementById("comment-form");
-    const deletePopover = document.getElementById("comment-delete");
+    deleteButtons.click(function () {
+        const postSlug = $(this).attr("data-post-slug");
+        const commentId = $(this).attr("data-comment-id");
+        const type = $(this).attr("data-type");
+        closePopovers();
+        document.getElementById("comment-delete").showPopover();
+        $("#comment-delete h3").text(`Are you sure you want to delete this ${type}?`);
+        $("#confirm-comment-delete").attr("href", `/${postSlug}/delete_comment/${commentId}`);
+    });
+};
 
-    for (let button of deleteButtons) {
-        button.addEventListener("click", (e) => {
-            let postSlug = e.target.getAttribute("data-post-slug");
-            let commentId = e.target.getAttribute("data-comment-id");
-            commentPopover.hidePopover();
-            deletePopover.showPopover();
-            commentDelete.setAttribute("href", `/${postSlug}/delete_comment/${commentId}`);
-        });
-    };
-}
-
+// Apply event listeners to the like buttons, close any open popovers and set the like url
 function commentLike(commentLikeButtons) {
-    const commentPopover = document.getElementById("comment-form");
-    const deletePopover = document.getElementById("comment-delete");
+    commentLikeButtons.click(function () {
+        const postSlug = $(this).attr("data-post-slug");
+        const commentId = $(this).attr("data-comment-id");
+        closePopovers();
+        $(this).parent().attr("action", `/${postSlug}/like_comment/${commentId}`);
+    });
+};
 
-    for (let button of commentLikeButtons) {
-        button.addEventListener("click", (e) => {
-            let postSlug = e.target.closest(".like-btn").getAttribute("data-post-slug");
-            let commentId = e.target.closest(".like-btn").getAttribute("data-comment-id");
-            commentPopover.hidePopover();
-            deletePopover.hidePopover();
-            e.target.closest(".comment-likes").setAttribute("action", `/${postSlug}/like_comment/${commentId}`);
-        });
-    };
-}
-
+// Apply event listeners to the reply buttons and set reply mode
 function commentReply(replyButtons) {
-    const commentPopover = document.getElementById("comment-form");
-    const deletePopover = document.getElementById("comment-delete");
-
-    for (let button of replyButtons) {
-        button.addEventListener("click", (e) => {
-            const parentId = e.currentTarget.getAttribute("data-comment-id");
-
-            deletePopover.hidePopover();
-            commentPopover.hidePopover();
-
-            setCommentMode("reply", {
-                parentId: parentId
-            });
-            commentPopover.showPopover();
+    replyButtons.click(function () {
+        setCommentMode("reply", {
+            parentId: $(this).attr("data-comment-id"),
+            author: $(this).attr("data-comment-author")
         });
-    };
+    });
+};
+
+function replyEdit(replyEditButtons) {
+    replyEditButtons.click(function () {
+        const postSlug = $(this).attr("data-post-slug");
+        const commentId = $(this).attr("data-comment-id");
+        setCommentMode("reply-edit", {
+            content: $(this).attr("data-comment"),
+            slug: `/${postSlug}/edit_comment/${commentId}`,
+            author: $(this).attr("data-comment-author")
+        })
+    })
 }
 
 function setCommentMode(mode, data = {}) {
-    const commentForm = document.getElementById("edit-create-comment");
-    const parentField = document.getElementById("parent-id");
-    const content = document.getElementById("id_content");
-    const saveBtn = document.getElementById("comment-save");
-    const commentText = document.getElementById("author-name-comment");
-    const replyText = document.getElementById("author-name-reply");
+
+    closePopovers();
 
     // Default settings (create form)
-    parentField.value = "";
-    content.value = "";
-    commentText.classList.remove("hidden");
-    replyText.classList.add("hidden");
-    saveBtn.innerText = "Comment";
+    $("#parent-id").val("");
+    $("#id_content").val("");
+    $("#comment-title").show();
+    $("#reply-title").hide();
+    $("#author-name-comment").show();
+    $("#author-name-reply").hide();
+    $("#comment-save").text("Comment");
 
-    commentForm.dataset.mode = mode;
+    $("#edit-create-comment").attr("data-mode", mode)
 
     // For replies
     if (mode === "reply") {
-        parentField.value = data.parentId;
-        saveBtn.innerText = "Reply";
-        commentText.classList.add("hidden");
-        replyText.classList.remove("hidden");
+        $("#parent-id").val(data.parentId);
+        $("#comment-save").text("Reply");
+        $("#comment-title").hide();
+        $("#reply-title").text("You are replying to " + data.author).show();
+        $("#author-name-comment").hide();
+        $("#author-name-reply").show();
     }
 
     // For edits
     if (mode === "edit") {
-        content.value = data.content;
-        saveBtn.innerText = "Update";
-        commentForm.setAttribute("action", data.slug)
+        $("#id_content").val(data.content);
+        updateCounter();
+        $("#comment-save").text("Update");
+        $("#edit-create-comment").attr("action", data.slug)
     }
+
+    // For reply edits
+    if (mode == "reply-edit") {
+        $("#id_content").val(data.content);
+        updateCounter();
+        $("#comment-title").hide();
+        $("#reply-title").text("You are replying to " + data.author).show();
+        $("#author-name-comment").hide();
+        $("#author-name-reply").show();
+        $("#comment-save").text("Update");
+        $("#edit-create-comment").attr("action", data.slug);
+    }
+
+    openCommentForm();
+}
+
+// Show character limit countdown on comments
+// Code derived from: https://stackoverflow.com/a/1250788/32259671
+
+function updateCounter() {
+    let left = 1000 - $('#edit-create-comment #id_content').val().length;
+        if (left < 0) {
+            left = 0;
+        }
+        $('#counter').text(`${left}/1000`);
+}
+
+function characterCount() {
+    $('#edit-create-comment #id_content').keyup(function () {
+        updateCounter();
+    });
 }

@@ -1,0 +1,62 @@
+:root {
+    --brown: #261617;
+    --forest: #002500;
+    --light-grey: #DCE0D9;
+    --dark-grey: #13171C;
+    --green: #52E620;
+    --brand-font: "PT mono", monospace;
+    --heading-font: "Slabo 27px", serif;
+    --body-font: "Dosis", sans-serif;
+}
+
+.submit-btn {
+    background-color: var(--green);
+    border: none;
+    border-radius: 5px;
+}
+
+.submit-btn:hover {
+    background-color: transparent;
+    border: 2px solid var(--green);
+    padding: 4px 10px;
+}
+
+.card-btn {    
+    padding: 4px;
+}
+
+.btn-dk-grn {
+    background-color: var(--forest);
+    color: var(--light-grey);
+    border-radius: 5px;
+}
+
+.btn-dk-grn:hover {
+    background-color: var(--forest);
+    color: var(--green);
+}
+
+.post-btn {
+    width: 200px;
+    display: block;
+    margin: auto;   
+}
+
+.like-btn, .text-btn {
+    border: none;
+    background-color: transparent;
+    color: var(--dark-grey);
+}
+
+.like-btn:hover, .text-btn:hover {
+    color: var(--green);
+}
+
+
+
+/*Medium screens and up*/
+@media screen and (min-width: 768px) {
+    .post-btn {
+        margin-top: 28px;
+    }
+}
