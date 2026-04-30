@@ -23,7 +23,6 @@
 
 body {
     font-family: var(--body-font);
-    padding-top: 66px;
     background-color: var(--light-grey);
     color: var(--dark-grey);
     min-height: 100vh;
@@ -31,6 +30,7 @@ body {
 
 main {
    height: 100%;
+   margin-top: 66px;
 }
 
 h1 {
@@ -355,6 +355,27 @@ textarea:focus-visible {
 
 .each-reply {
     margin-left: 2rem;
+}
+
+/*Contact Page*/
+.contact {
+    background: url(../images/contact.webp) no-repeat center center / cover;
+}
+
+.contact-overlay {
+    background-color: rgba(220, 224, 217, 0.8);
+    min-height: 100vh;
+    min-width: 100%;
+    padding-top: 10px;
+    margin-bottom: 40px;
+}
+
+#contact-form {
+    max-width: 320px;
+}
+
+#contact-form input {
+    width: 292px;
 }
 
 /*Signup Form*/

@@ -1,42 +1,47 @@
 {% extends 'base.html' %}
+{% load i18n %}
+
+{% block head_title %}{% trans " | Contact" %}{% endblock head_title %}
+{% block body_style %}contact{% endblock %}
 
 {% block content %}
 
-<div>
-    <h1>Contact Us</h1>
+<div class="container contact-overlay">
+    <h1 class="">Contact Us</h1>
     <p>Here at diggit, we really appreciate any feedback you have as to how we can improve the site or your experience.
         Please let us know if there is anything we can do better</p>
     <p>Feel free to reach out by email or fill out the contact form below.
         We aim to reply within 2-3 days</p>
     <p><i class="fa-regular fa-envelope"></i>: info@diggit.com</p>
+    <div id="contact-form" class="mx-auto">
+        <form method="POST" action="{% url 'contact' %}">
+            {% csrf_token %}
+            {% if user.is_authenticated %}
+            {{ contact_form.name.as_hidden }}
+            {{ contact_form.email.as_hidden }}
+            {% else %}
+            <div class="form-field">
+                {{ contact_form.name.label_tag}}<br>
+                {{ contact_form.name }}
+                <span class="small red">{{ contact_form.name.errors}}</span>
+            </div>
+            <div class="form-field">
+                {{ contact_form.email.label_tag}}<br>
+                {{ contact_form.email }}
+                <span class="small red">{{ contact_form.email.errors}}</span>
+            </div>
+            {% endif %}
+            <div class="form-field">
+                {{ contact_form.message.label_tag}}<br>
+                {{ contact_form.message }}
+                <span class="small red">{{ contact_form.message.errors}}</span>
+            </div>
+
+            <button class="btn btn-dk-grn" type="submit">Send Message</button>
+        </form>
+    </div>
 </div>
 
-<div id="contact-form">
-    <form method="POST" action="{% url 'contact' %}">
-        {% csrf_token %}
-        {% if user.is_authenticated %}
-        {{ contact_form.name.as_hidden }}
-        {{ contact_form.email.as_hidden }}
-        {% else %}
-        <div class="form-field">
-            {{ contact_form.name.label_tag}}<br>
-            {{ contact_form.name }}
-            <span class="small red">{{ contact_form.name.errors}}</span>
-        </div>
-        <div class="form-field">
-            {{ contact_form.email.label_tag}}<br>
-            {{ contact_form.email }}
-            <span class="small red">{{ contact_form.email.errors}}</span>
-        </div>
-        {% endif %}
-        <div class="form-field">
-            {{ contact_form.message.label_tag}}<br>
-            {{ contact_form.message }}
-            <span class="small red">{{ contact_form.message.errors}}</span>
-        </div>
 
-        <button type="submit">Send Message</button>
-    </form>
-</div>
 
 {% endblock %}

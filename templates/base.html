@@ -46,7 +46,7 @@
                 </a>
                 <ul class="user-auth-desktop me-auto navbar-nav flex-row">
                     {% if user.is_authenticated %}
-                    <li class="auth-item"><a href="{% url 'account_logout' %}?next={{ request.path }}" class="auth-link">Logout</a></li>
+                    <li class="auth-item"><a href="{% url 'account_logout' %}?next={{ request.path }}" class="nav-link">Logout</a></li>
                     {% else %}
                     <li class="nav-item"><a href="{% url 'account_login' %}?next={{ request.path }}" class="nav-link">Login</a></li>
                     <li class="nav-item"><a href="{% url 'account_signup' %}?next={{ request.path }}" class="nav-link">Join</a>
@@ -107,7 +107,7 @@
     <footer class="fixed-bottom">
         <ul class="user-auth-footer">
                     {% if user.is_authenticated %}
-                    <li class="auth-item"><a href="{% url 'account_logout' %}?next={{ request.path }}" class="auth-link">Logout</a></li>
+                    <li class="auth-item"><a href="{% url 'account_logout' %}?next={{ request.path }}" class="auth-link plain">Logout</a></li>
                     {% else %}
                     <li class="auth-item"><a href="{% url 'account_login' %}?next={{ request.path }}" class="auth-link plain">Login</a></li>
                     <li class="auth-item"><a href="{% url 'account_signup' %}?next={{ request.path }}" class="auth-link plain">Register</a>
