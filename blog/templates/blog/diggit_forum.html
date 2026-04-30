@@ -68,7 +68,7 @@
                         {% if post.comment_count != 0 %}
                         <div class="comment">
                             <a class="plain" href="{% url 'read_post' post.slug %}">
-                                <p class="small">{{ post.comment_count }} <i class="fa-regular fa-comments"></i></p>
+                                <p class="small">{{ post.comment_count }} <i class="fa-regular fa-comments bold-hover"></i></p>
                                 <p class="small">On {{ post.first_comment.created_on | date }}
                                     {{ post.first_comment.author.username }} wrote:</p>
                                 <p class="comment-body">{{ post.first_comment.content }}</p>
