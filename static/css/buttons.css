@@ -8,7 +8,18 @@
     --heading-font: "Slabo 27px", serif;
     --body-font: "Dosis", sans-serif;
 }
+/*--------------------Navbar Buttons*/
+.navbar-toggler {
+    border: none;
+    color: var(--green);
+    font-size: 1.2rem;
+}
 
+.navbar-toggler:focus { 
+    box-shadow: none; /*Remove Bootstrap effects*/
+}
+
+/*-------------------Form Buttons*/
 .submit-btn {
     background-color: var(--green);
     border: none;
@@ -52,8 +63,20 @@
     color: var(--green);
 }
 
+.back-btn {
+    background-color: var(--forest);
+    color: var(--light-grey);
+    display: block;
+    max-width: 150px;
+}
 
+.back-btn:hover {
+    color: var(--green);
+    background-color: var(--forest);
+    font-weight: bold;
+}
 
+/*--------------------Media Queries*/
 /*Medium screens and up*/
 @media screen and (min-width: 768px) {
     .post-btn {
