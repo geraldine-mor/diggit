@@ -1,6 +1,9 @@
-# Choices stored in own file to be available to admin.py
-STATUS = ((0, "Draft"), (1, "Published"), (2, "Hidden")) 
-POST_TYPE = ((0, "Blog"), (1, "Forum")) 
+"""
+Choices stored in their own file to be available across models
+and for planned admin panel adjustments
+"""
+STATUS = ((0, "Draft"), (1, "Published"), (2, "Hidden"))
+POST_TYPE = ((0, "Blog"), (1, "Forum"))
 COLOUR_CHOICES = (
     ("#D9BAAF", "Beige"), ("#C3C2C2", "Grey"), ("#A7CFFF", "Blue"),
     ("#B6E2CF", "Mint"), ("#77CCBB", "Duckegg"), ("#26C6DA", "Turquoise"),
