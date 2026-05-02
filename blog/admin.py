@@ -1,13 +1,15 @@
 from django.contrib import admin
 from django.utils.text import Truncator
+from django_summernote.admin import SummernoteModelAdmin
 from .models import Post, Comment, CommentLike, Category
 
-class PostAdmin(admin.ModelAdmin):
+class PostAdmin(SummernoteModelAdmin):
     list_display = ('title', 'status', 'created_on')
     search_fields = ('title', 'content')
-    list_filter = ('status', 'post_type')
+    list_filter = ('status', 'post_type', 'created_on')
     exclude = ['excerpt',]
     filter_horizontal = ['categories',]
+    summernote_fields = ('content',)
 
 
 class CommentAdmin(admin.ModelAdmin):

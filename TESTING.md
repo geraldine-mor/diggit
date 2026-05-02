@@ -7,15 +7,7 @@
 
 ### HTML
 
-⚠️ Work in progress ⚠️
-
-1. [*recommended*] If you are using the live deployed site URLs, validate using this link: https://validator.w3.org/#validate_by_uri
-2. Otherwise, if you are copying/pasting your HTML code manually, use this link: https://validator.w3.org/#validate_by_input
-
-It's recommended to validate the live pages (all of them) using the deployed URL. This will give you a custom URL as well, which you can use below on your testing documentation. It makes it easier to return back to a page for validating it again in the future. The URL will look something like this:
-
-
-I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files. There were errors initially with several of the files, detailed below with their fixes.
+I used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files. There were errors initially with several of the files, detailed below with their fixes.
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
@@ -26,7 +18,7 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | templates | [home.html](https://github.com/geraldine-mor/diggit/blob/main/templates/home.html) | [Link to validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdiggit-938ea2f476b2.herokuapp.com%2F#textarea) | ![screenshot of validation no errors](documentation/validation/home-html.png) |  |
 | templates | [login.html](https://github.com/geraldine-mor/diggit/blob/main/templates/account/login.html) | [Link to validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdiggit-938ea2f476b2.herokuapp.com%2Faccounts%2Flogin%2F%3Fnext%3D%2Fdiggit_forum%2F) | ![screenshot of validation no errors](documentation/validation/login-html.png) |  |
 | templates | [logout.html](https://github.com/geraldine-mor/diggit/blob/main/templates/account/logout.html) | [Link to validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdiggit-938ea2f476b2.herokuapp.com%2Faccounts%2Flogout%2F%3Fnext%3D%2F) | ![screenshot of validation no errors](documentation/validation/logout-html.png) |  |
-| templates | [signup.html](https://github.com/geraldine-mor/diggit/blob/main/templates/account/signup.html) | ⚠️ Link (if applicable) | ![screenshot of validation no errors](documentation/validation/html-templates-signup.png) | ⚠️ Notes (if applicable) |
+| templates | [signup.html](https://github.com/geraldine-mor/diggit/blob/main/templates/account/signup.html) | [Link to validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdiggit-938ea2f476b2.herokuapp.com%2Faccounts%2Fsignup%2F%3Fnext%3D%2F) | ![screenshot of validation no errors](documentation/validation/signup-html.png) |  |
 
 **Initial Errors**
 | Page | Errors | Actions Taken |
@@ -62,7 +54,7 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate m
 
 ### Python
 
-⚠️ INSTRUCTIONS ⚠️
+⚠️ Work in Progress ⚠️
 
 The [CI Python Linter](https://pep8ci.herokuapp.com) can be used two different ways.
 
