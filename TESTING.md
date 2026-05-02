@@ -3,12 +3,6 @@
 > [!NOTE]  
 > Return back to the [README.md](README.md) file.
 
-⚠️ INSTRUCTIONS ⚠️
-
-In the following sections, you need to convince the assessors that you have conducted enough manual testing to legitimately believe that the site works well. Essentially, in this part, you should go over all of your project's features, and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-⚠️ --- END --- ⚠️
-
 ## Code Validation
 
 ### HTML
@@ -21,19 +15,18 @@ In the following sections, you need to convince the assessors that you have cond
 It's recommended to validate the live pages (all of them) using the deployed URL. This will give you a custom URL as well, which you can use below on your testing documentation. It makes it easier to return back to a page for validating it again in the future. The URL will look something like this:
 
 
-I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files.
+I have used the recommended [HTML W3C Validator](https://validator.w3.org) to validate all of my HTML files. There were errors initially with several of the files, detailed below with their fixes.
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
-| blog | [digging_deeper.html](https://github.com/geraldine-mor/diggit/blob/main/blog/templates/blog/digging_deeper.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-blog-digging_deeper.png) | Trailing slash on void elements info is caused by the cloudinary field, I have no way to remove. |
-| blog | [diggit_forum.html](https://github.com/geraldine-mor/diggit/blob/main/blog/templates/blog/diggit_forum.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-blog-diggit_forum.png) | Trailing slash on void elements info is caused by the cloudinary field, I have no way to remove.  |
-| blog | [read_post.html](https://github.com/geraldine-mor/diggit/blob/main/blog/templates/blog/read_post.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-blog-read_post.png) | Trailing slash on void elements info is caused by the cloudinary field, I have no way to remove. |
-| contact | [contact.html](https://github.com/geraldine-mor/diggit/blob/main/contact/templates/contact/contact.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-contact-contact.png) | ⚠️ Notes (if applicable) |
-| templates | [home.html](https://github.com/geraldine-mor/diggit/blob/main/templates/home.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-home.png) | ⚠️ Notes (if applicable) |
-| templates | [login.html](https://github.com/geraldine-mor/diggit/blob/main/templates/account/login.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-login.png) | ⚠️ Notes (if applicable) |
-| templates | [logout.html](https://github.com/geraldine-mor/diggit/blob/main/templates/account/logout.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-logout.png) | ⚠️ Notes (if applicable) |
-| templates | [signup.html](https://github.com/geraldine-mor/diggit/blob/main/templates/account/signup.html) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/html-templates-signup.png) | ⚠️ Notes (if applicable) |
-
+| blog | [digging_deeper.html](https://github.com/geraldine-mor/diggit/blob/main/blog/templates/blog/digging_deeper.html) | [Link to validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdiggit-938ea2f476b2.herokuapp.com%2Fdigging_deeper%2F#textarea) | ![screenshot of validation no errors](documentation/validation/digging-deeper-html.png) | Trailing slash on void elements info is caused by the cloudinary field, I have no way to remove. |
+| blog | [diggit_forum.html](https://github.com/geraldine-mor/diggit/blob/main/blog/templates/blog/diggit_forum.html) | [Link to validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdiggit-938ea2f476b2.herokuapp.com%2Fdiggit_forum%2F#textarea) | ![screenshot of validation no errors](documentation/validation) | Trailing slash on void elements info is caused by the cloudinary field, I have no way to remove.  |
+| blog | [read_post.html](https://github.com/geraldine-mor/diggit/blob/main/blog/templates/blog/read_post.html) | [Sample validation link](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdiggit-938ea2f476b2.herokuapp.com%2Fapril-showers-and-garden-power-managing-spring-rai%2F#textarea) | ![screenshot of validation no errors](documentation/validation/html-blog-read_post.png) | Trailing slash on void elements info is caused by the cloudinary field, I have no way to remove. |
+| contact | [contact.html](https://github.com/geraldine-mor/diggit/blob/main/contact/templates/contact/contact.html) | [Link to validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdiggit-938ea2f476b2.herokuapp.com%2Fcontact%2F) | ![screenshot of validation no errors](documentation/validation/contact-html.png) | ⚠️ Notes (if applicable) |
+| templates | [home.html](https://github.com/geraldine-mor/diggit/blob/main/templates/home.html) | [Link to validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdiggit-938ea2f476b2.herokuapp.com%2F#textarea) | ![screenshot of validation no errors](documentation/validation/home-html.png) |  |
+| templates | [login.html](https://github.com/geraldine-mor/diggit/blob/main/templates/account/login.html) | ⚠️ Link (if applicable) | ![screenshot of validation no errors](documentation/validation/html-templates-login.png) | ⚠️ Notes (if applicable) |
+| templates | [logout.html](https://github.com/geraldine-mor/diggit/blob/main/templates/account/logout.html) | ⚠️ Link (if applicable) | ![screenshot of validation no errors](documentation/validation/html-templates-logout.png) | ⚠️ Notes (if applicable) |
+| templates | [signup.html](https://github.com/geraldine-mor/diggit/blob/main/templates/account/signup.html) | ⚠️ Link (if applicable) | ![screenshot of validation no errors](documentation/validation/html-templates-signup.png) | ⚠️ Notes (if applicable) |
 
 **Initial Errors**
 | Page | Errors | Actions Taken |
@@ -42,36 +35,21 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 | [signup.html](https://github.com/geraldine-mor/diggit/blob/main/templates/account/signup.html) | ![screenshot of signup validation errors](documentation/validation-errors/signup-validation-fail.png) | Assigned the id "id_password_helptext"to the password instructions `<div>` |
 | [diggit_forum.html](https://github.com/geraldine-mor/diggit/blob/main/blog/templates/blog/diggit_forum.html) | ![screenshot of diggit forum validation errors](documentation/validation-errors/diggit-forum-validation-errors.png) | Most of the errors were caused by `{{ post.excerpt \| linebreaks}}` being in a `<p>` element and creating another nested `<p>` element ![screenshot of nested paragraph elements](documentation/validation-errors/nested-p-elements.png) I changed this to a `<div>`. <br>Closed the `<div class="forum-backdrop">` to resolve the remaining errors |
 | [digging_deeper.html](https://github.com/geraldine-mor/diggit/blob/main/blog/templates/blog/digging_deeper.html) | ![screenshot of digging deeper validation issues](documentation/validation-errors/digging-deeper-validation-errors.png) | A repeat of the issue from diggit_forum.html regarding the double `<p>` elements dealt with the same way.<br> The duplicate id of card-footer was changed to a class.<br> Links were rearranged to remove nesting rule violation |
-| [read_post.html](https://github.com/geraldine-mor/diggit/blob/main/blog/templates/blog/read_post.html) | ![screenshot of read post validation errors](documentation/validation-errors/read-post-validation-errors.png) | Several `<p>` tags were changed to `<div>`<br>`<span>` containing a `<form>` was changed to `<div>`<br>Extra `</form>` elements removed<br>`{% endfor %}` relocated to outside the `</div>` because it was causing erroneous unclosed `<div>` errors.
-
-
-
+| [read_post.html](https://github.com/geraldine-mor/diggit/blob/main/blog/templates/blog/read_post.html) | ![screenshot of read post validation errors](documentation/validation-errors/read-post-validation-errors.png) | Several `<p>` tags were changed to `<div>`<br>`<span>` containing a `<form>` was changed to `<div>`<br>Extra `</form>` elements removed<br>`{% endfor %}` relocated to outside the `</div>` because it was causing erroneous unclosed `<div>` errors. |
+| [read_post.html](https://github.com/geraldine-mor/diggit/blob/main/blog/templates/blog/read_post.html) | ![screenshot of read post validation errors](documentation/validation-errors/read-post-errors-2.png) | Default placeholder text added to empty headings, replaced all `<h3>` elements with either `<h2` or `<p>` to avoid heading discrepancies between blog posts and forum posts |
+| [login.html](https://github.com/geraldine-mor/diggit/blob/main/templates/account/login.html) | ![screenshot of login validation errors](documentation/validation-errors/login-html-error.png) | Created a hidden span to apply the id to since the password helptext is not appropriate in this instance |
 
 ### CSS
 
-⚠️ INSTRUCTIONS ⚠️
+I used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator?uri=https://diggit-938ea2f476b2.herokuapp.com) to validate all of my CSS files.
 
-1. [*recommended*] If you are using the live deployed site, use this link: https://jigsaw.w3.org/css-validator/#validate_by_uri
-2. If you are copying/pasting your CSS code, use this link: https://jigsaw.w3.org/css-validator/#validate_by_input
+When testing via URL, I received 122 errors relating to Bootstrap and 947 warnings so I decided to validate by direct input instead:
+![screenshot of inital errors](documentation/validation-errors/css-validation-errors.png)
 
-It's recommended to validate the live site for your primary CSS file on the deployed URL. This will give you a custom URL as well, which you can use below on your testing documentation. It makes it easier to return back to a page for validating it again in the future. The URL will look something like this:
-
-- https://jigsaw.w3.org/css-validator/validator?uri=https://diggit-938ea2f476b2.herokuapp.com
-
-If you have additional/multiple CSS files, then individual "[validation by input](https://jigsaw.w3.org/css-validator/#validate_by_input)" is recommended for the extra CSS files.
-
-**IMPORTANT**: Third-Party tools
-
-If you're using external libraries/frameworks (e.g: Bootstrap, Materialize, Font Awesome, etc.), then sometimes the tool will attempt to also validate these, even though it's not part of your own actual code that you wrote. You are not required to validate the external libraries or frameworks!
-
-⚠️ --- END --- ⚠️
-
-I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
-
-| Directory | File | URL | Screenshot | Notes |
-| --- | --- | --- | --- | --- |
-| static | [styles.css](https://github.com/geraldine-mor/diggit/blob/main/static/css/styles.css) | ⚠️ Link (if applicable) | ![screenshot](documentation/validation/css-static-styles.png) | ⚠️ Notes (if applicable) |
-
+| Directory | File |  Screenshot | Notes |
+| --- | --- | --- | --- |
+| static | [styles.css](https://github.com/geraldine-mor/diggit/blob/main/static/css/styles.css) |  ![screenshot of validated css](documentation/validation/validated-styles-css.png) | The warnings relate to the imported fonts and css variables not being checked |
+| static | [buttons.css](https://github.com/geraldine-mor/diggit/blob/main/static/css/buttons.css) | ![screenshot of validated css](documentation/validation/validates-buttons-css.png) | The warnings all relate to css variables not being checked due to their dynamic nature |
 
 ### JavaScript
 
@@ -135,7 +113,7 @@ You do not have to validate files from the `migrations/` or `pycache/` folders! 
 
 🛑 --- END --- 🛑
 
-I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files.
+I used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files. There were errors initially with several of the files, detailed below with their fixes.
 
 | Directory | File | URL | Screenshot | Notes |
 | --- | --- | --- | --- | --- |
@@ -146,7 +124,7 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | blog | [tests.py](https://github.com/geraldine-mor/diggit/blob/main/blog/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/tests.py) | ![screenshot](documentation/validation/py-blog-tests.png) | ⚠️ Notes (if applicable) |
 | blog | [urls.py](https://github.com/geraldine-mor/diggit/blob/main/blog/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/urls.py) | ![screenshot](documentation/validation/py-blog-urls.png) | ⚠️ Notes (if applicable) |
 | blog | [utils.py](https://github.com/geraldine-mor/diggit/blob/main/blog/utils.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/utils.py) | ![screenshot](documentation/validation/py-blog-utils.png) | ⚠️ Notes (if applicable) |
-| blog | [views.py](https://github.com/geraldine-mor/diggit/blob/main/blog/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/views.py) | ![screenshot](documentation/validation/py-blog-views.png) | ⚠️ Notes (if applicable) |
+| blog | [views.py](https://github.com/geraldine-mor/diggit/blob/main/blog/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/views.py) | ![screenshot of validation no errors](documentation/validation/blog-views.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/53964b9c1e8613668d3d21269ba00d8bf28b8fff) |
 | contact | [admin.py](https://github.com/geraldine-mor/diggit/blob/main/contact/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/admin.py) | ![screenshot](documentation/validation/py-contact-admin.png) | ⚠️ Notes (if applicable) |
 | contact | [forms.py](https://github.com/geraldine-mor/diggit/blob/main/contact/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/forms.py) | ![screenshot](documentation/validation/py-contact-forms.png) | ⚠️ Notes (if applicable) |
 | contact | [models.py](https://github.com/geraldine-mor/diggit/blob/main/contact/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/models.py) | ![screenshot](documentation/validation/py-contact-models.png) | ⚠️ Notes (if applicable) |
@@ -157,6 +135,11 @@ I have used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com
 | diggit | [urls.py](https://github.com/geraldine-mor/diggit/blob/main/diggit/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/diggit/urls.py) | ![screenshot](documentation/validation/py-diggit-urls.png) | ⚠️ Notes (if applicable) |
 |  | [manage.py](https://github.com/geraldine-mor/diggit/blob/main/manage.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/manage.py) | ![screenshot](documentation/validation/py--manage.png) | ⚠️ Notes (if applicable) |
 
+**Initial Errors**
+| File | Errors | Actions Taken |
+| --- | --- | --- |
+| blog/views.py | ![screenshot of validation errors](documentation/validation-errors/blog-views-errors.png) | For all line too long errors, I was able to break the line at a parentheses opening. For the whitespace, blank line and continuation indenting, I simply added or removed the issue as required. |
+| blog/views.py | ![screenshot of validation errors](documentation/validation-errors/blog-views-errors-2.png) | Folowing code review and commenting, I had these errors and performed the same actions as before to rectify them. | 
 
 ## Responsiveness
 

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load allauth account %}
 {% url 'account_login' as login_url %}
 
 {% block head_title %}{% trans " | Sign In" %}{% endblock head_title %}
@@ -7,29 +8,42 @@
 {% block body_style %}login d-flex flex-column{% endblock body_style%}
 
 {% block content %}
-    <div class="body-container flex-fill">
-        <div class="form-card card p-4">
-            <h1>Sign In</h1>
-    
-            <p class="lead">If you do not yet have an account, please sign up 
-                <a class="link" href="{{ signup_url }}?next={{ request.GET.next }}">
-                here</a></p>
-        
-            <form method="post">
-                {% csrf_token %}
-                <div class="form-field">
-                    {{ form.login.label_tag }}<br>
-                    {{ form.login }}
-                    <span class="small red">{{ form.login.errors }}</span>
-                </div>
-                <div class="form-field mb-2">
-                    {{ form.password.label_tag }}<br>
-                    {{ form.password }}
-                    <span class="small red">{{ form.password.errors }}</span>
-                </div>
-                <button class="btn submit-btn" type="submit">Sign In</button>
-            </form>
-        </div>    
-    </div>
-{% endblock content %}
+<div class="body-container flex-fill">
+    <div class="form-card card p-4">
+        <h1>Sign In</h1>
 
+        <p class="lead">If you do not yet have an account, please sign up
+            <a class="link" href="{{ signup_url }}?next={{ request.GET.next }}">
+                here</a>
+        </p>
+
+        <form method="post">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+            <div class="red">
+                {% for error in form.non_field_errors %}
+                <p>{{ error }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+            <div class="form-field">
+                {{ form.login.label_tag }}<br>
+                {{ form.login }}
+                <span class="small red">{{ form.login.errors }}</span>
+            </div>
+            <div class="form-field">
+                {{ form.password.label_tag }}<br>
+                {{ form.password }}
+                <span class="small red">{{ form.password.errors }}</span>
+                <span id="id_password_helptext" class="hidden"></span>
+            </div>
+            <div class="mb-2">
+                {{ form.remember.label_tag }}
+                {{ form.remember }}                
+            </div>
+            <button class="btn submit-btn" type="submit">Sign In</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
