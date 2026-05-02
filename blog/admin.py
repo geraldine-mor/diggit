@@ -3,6 +3,7 @@ from django.utils.text import Truncator
 from django_summernote.admin import SummernoteModelAdmin
 from .models import Post, Comment, CommentLike, Category
 
+
 class PostAdmin(SummernoteModelAdmin):
     """
     Admin configuration for Post
@@ -11,8 +12,8 @@ class PostAdmin(SummernoteModelAdmin):
     list_display = ('title', 'status', 'created_on')
     search_fields = ('title', 'content')
     list_filter = ('status', 'post_type', 'created_on')
-    exclude = ['excerpt',]
-    filter_horizontal = ['categories',]
+    exclude = ['excerpt', ]
+    filter_horizontal = ['categories', ]
     summernote_fields = ('content',)
 
 
@@ -27,7 +28,7 @@ class CommentAdmin(admin.ModelAdmin):
     def comment_preview(self, obj):
         preview = Truncator(obj.content)
         return preview.chars(50)
-    
+
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', 'label_colour')
