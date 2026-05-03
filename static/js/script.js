@@ -152,7 +152,7 @@ function commentDelete(deleteButtons) {
         const type = $(this).attr("data-type");
         closePopovers();
         document.getElementById("comment-delete").showPopover();
-        $("#comment-delete h3").text(`Are you sure you want to delete this ${type}?`);
+        $("#comment-delete h2").text(`Are you sure you want to delete this ${type}?`);
         $("#confirm-comment-delete").attr("href", `/${postSlug}/delete_comment/${commentId}`);
     });
 }

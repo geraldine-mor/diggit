@@ -10,11 +10,9 @@ Developer: Geraldine Morey ([geraldine-mor](https://www.github.com/geraldine-mor
 [![GitHub repo size](https://img.shields.io/github/repo-size/geraldine-mor/diggit)](https://www.github.com/geraldine-mor/diggit)
 [![badge](https://img.shields.io/badge/deployment-Heroku-purple)](https://diggit-938ea2f476b2.herokuapp.com/)
 
-⚠️ PROJECT INTRODUCTION AND RATIONALE⚠️
+It is human nature to grow things and the majority of people have a garden of some description even if it is only a pot plant at home. Most community led garden advice forums tend to be Facebook groups, Reddit threads or visually unappealing and often difficult to use. Diggit is different. It doesn't try to do too much, it has a single purpose: provide an online community for gardeners.  
 
-It is human nature to grow things and the majority of people have a garden of some description even if it is only a pot plant at home. Most community led garden advice forums tend to be Facebook groups, Reddit threads or visually unappealing and often difficult to use. diggit is different. It doesn't try to do too much, it has a single purpose: provide an online community for gardeners.  
-
-diggit is a gardening forum aimed at gardeners of all levels, from first-time growers to seasoned horticulturalists. It is an online allotment or potting shed, a place for sharing ideas and asking questions or simply reading the expert's advice in the 'Digging Deeper' section. It allows users to upload images and ask "what's this?" or "what should I do?" with the community suggesting answers and voting for the best answers via likes. User posts are not confined to questions, they can share useful tips or brag about their own horticultural successes. Digging Deeper allows the site owner to share specially curated, seasonally appropriate, professional content to ensure that there is always a trusted knowledge source for the users.
+Diggit is a gardening forum aimed at gardeners of all levels, from first-time growers to seasoned horticulturalists. It is an online allotment or potting shed, a place for sharing ideas and asking questions or simply reading the expert's advice in the 'Digging Deeper' section. It allows users to upload images and ask "what's this?" or "what should I do?" with the community suggesting answers and voting for the best answers via likes. User posts are not confined to questions, they can share useful tips or brag about their own horticultural successes. Digging Deeper allows the site owner to share specially curated, seasonally appropriate, professional content to ensure that there is always a trusted knowledge source for the users.
 
 During project idea discussions with my course facilitator, Tindy, we segued into general garden chat which gave me the idea to create a garden tips/questions sharing platform. This idea grew in my mind over the following days and became diggit: Ask what you need or sow a few seeds.
 
@@ -53,7 +51,7 @@ of general social media platforms.
 | Guests want to browse the site content without the need to register | Convert guest users into registered users | Conflict | High quality user experiences encourages registration as a desire not a necessity | 
 | Registered users need a quick and easy way to ask questions or share advice | Maintain high content standards to ensure trust | Conflict | Introduce community guidelines at registration to allow instant posting. Admin action is on violation rather than approving each post | 
 | Users want trusted expert advice | Stand out from generic social media groups | Full | Digging Deeper provides both expert advice for the user and a USP for the site |
-| Users want safe and appropriate content | User generated content reduces burden on site admins | Partial Conflict | Enable user reporting of unsafe or inappropriate content |
+| Users want safe and appropriate content | User generated content reduces burden on site admins | Partial Conflict | Users can message admin to report any content issues via the contact page |
 | Users want to feel heard and receive responses | Build a self-sustaining community | Full | Likes and comments build a strong community environment while providing timely feedback to users | 
 | Users want intuitive site navigation | Reduce bounce rate | Full | Intuitive navigation design directly reduces bounce rate |
 | Admin users need a simple and intuitive way of managing content | Maintain high content standards | Full | Django's built in admin panel provides an accessible management interface | 
@@ -65,11 +63,11 @@ _As an owner-operated platform, the business goals and admin user's needs are la
 **[Features](#features)** (see below)
 
 **Functional Requirements**
-- Authentication and access control: registration, login, logout, login state, guest restrictions
+- Authentication and access control: registration, login, logout, login state, role-based restrictions. Unauthenticated users are redirected to the login page if they attempt to access restricted functionality directly.
 - CRUD for posts: create, read, update, delete 
 - CRUD for comments: create, read, update, delete
 - Role-based permissions: guest, registered user, admin
-- Admin functionality: admin panel, content deletion, image management, Digging Deeper blog
+- Admin functionality: admin panel, content deletion, Digging Deeper blog
 - User feedback: confirmation prior to and after deletion, confirmation or error messages for post and comment saves, visual distinction for clickable items
 - Data validation: user-facing forms include input validation and clear error messaging
 
@@ -83,12 +81,12 @@ Static content — hardcoded, requires development to update:
 
 Admin managed — maintained via Django admin panel:
 - Digging Deeper blog posts
-- Categories (names, colours, images)
+- Categories 
 
 User generated — created dynamically by registered users:
-- Posts (text, optional image, categories)
+- Posts (text, image (optional), categories)
 - Comments and replies
-- Likes and reactions
+- Likes
 
 System generated:
 - User feedback messages
@@ -100,42 +98,42 @@ System generated:
  - Images: Images only accepted in ⚠️ .png or .jpg ⚠️ format ⚠️ and are limited to 1MB in size ⚠️
  - Categories: Limited to 20 in order to provide colour options that are guaranteed to meet accessibility contrast requirements
  - Language: Currently only english language supported.
- - Content moderation: Reactive content moderation allows for fast posting but opens the site to damaging content. Report button and a list of excluded words and phrases will try to control this.
+ - Content moderation: Reactive content moderation allows for fast posting but opens the site to damaging content.
  - Media types: Audio and video files are not currently supported.
- - ⚠️ External links: Users are encouraged to share brand and supplier names rather than links in the community guidelines. ⚠️  
+ - External links: Users are asked not to share external links in the community guidelines. ⚠️ Llnks in posts & comments are plain text and not clickable ⚠️
 
 #### 3. Structure
 
 **Information Architecture**
 - **Navigation Menu**:
-  - Links to Home, Digging Deeper, Community Posts, Register and login/logout (⚠️Contact⚠️).
+  - Links to Home, Digging Deeper, Community Posts, Register/login/logout and Contact.
 - **Hierarchy**:
   - Homepage offers a brief welcoming introduction with options to continue as guest or login.
-  - Community posts are displayed clearly in reverse chronological and popularity order, filterable by category tag. Each posts shows title, image (if used), author, category labels and created date 
-  - Digging Deeper posts are displayed clearly with prominent filtering or search options.
-  - Clear call-to-action buttons for account creation and engagement (e.g., commenting).
+  - Community posts are displayed clearly in reverse chronological order Each posts shows title, image (if used), author, category labels and created date. Limited to 6 post previews per page.
+  - Digging Deeper posts are displayed clearly in reverse chronological order. Limited to 4 post previews per page.
+  - Clear call-to-action buttons for account creation and engagement (e.g. commenting).
 
 **User Flow**<br>
 Guest users:
 1. Guest users land on homepage, continue to browse posts → browse community posts and comments.
 2. Navigate to Digging Deeper posts for more expert advice.
-3. Report offensive content by registering for and account or through admin contact.
+3. Report offensive content by messaging admin on the contact page.
 4. Create account to leave a comment or post → accept community guidelines and login.
 
-Registeres users:
-1. Registerered users land on homepage, login to account → browse community posts and comments.
+Registered users:
+1. Registered users land on homepage, login to account → browse community posts and comments.
 2. React to posts and comments. 
 3. Navigate to Digging Deeper posts for more expert advice.
-4. Report offensive content through report button.
-5. Create, update or delete posts, comments and replies → receive confirmation messages throughout.
-6. Log out to protect account.
+4. Create, update or delete posts, comments and replies → receive confirmation messages throughout.
+5. Log out to protect account.
 
 Admin users:
 1. Login as admin → browse community posts to ensure guidelines are met.
 2. Navigate to the admin panel → create, update or delete Digging Deeper articles.
-3. Manage users → delete any in breach of community rules
-4. Manage user content → review reported content, delete any inappropriate content.
-5. Manage post categories → create, update and delete categories as needed.
+3. Manage users → delete any in breach of community rules.
+4. Read user's messages → take action as appropriate.
+5. Manage user content → review content, delete any inappropriate content.
+6. Manage post categories → create, update and delete categories as needed.
 
 #### 4. Skeleton
 
@@ -145,9 +143,18 @@ Admin users:
 
 **Navigation Design** 
 
-The navigation bar contains links to all pages as well as information about the user's login state. All users can see  options to login or register. When a user is logged in, a message reading "Logged in as: 'Username'" displays immediately below the navbar and the login link is replaced with a logout link. 
+The navigation bar contains links to all pages as well as information about the user's login state. All users can see options to login or register. When a user is logged in, a message reading "Welcome: 'First Name'" displays immediately below the navbar and the login link is replaced with a logout link.
 
-Admin users also have access to an additional link to the admin panel alongside the logout option. The navigation menu collapses on mobile and tablet for better usability but the login/logout links and status remain visible when the menu is collapsed.
+On smaller screens the login/register/logout links are placed in the footer.
+
+Admin users also have access to an additional link to the admin panel alongside the naviagtion links. The navigation menu collapses on mobile and tablet for better usability.
+
+### Design Decisions
+Several decisions were made during development that deviate from conventional UX patterns:
+ - **Reactive Content Moderation**: Most community platforms implement a moderation queue, requiring admin approval before user-generated content is published. Diggit takes a reactive approach, allowing posts and comments to go live immediately - as would be expected with a social network/media platform. This decision prioritises user experience — forcing users to wait for approval creates friction and discourages participation, particularly in the early stages of a community. The trade-off is accepted: users are presented with and must acknowledge the community guidelines at registration, and the contact form and admin panel provide the tools needed to act swiftly on any violations. 
+ - **Popovers Instead of Modals for CRUD Actions**: Initial wireframes planned for modals to house the edit and delete forms for posts and comments. During development, popovers were chosen instead. Modals interrupt the user's context by overlaying the entire page, whereas popovers anchor directly to the element being acted on, keeping the user oriented within the content. This felt more appropriate for a community forum where users may be managing their contributions mid-conversation. The trade-off is that popovers offer less visual prominence than modals, but clear labelling and consistent placement mitigate this.
+ - **Links Rendered as Plain Text**: User-submitted content in posts and comments does not render hyperlinks as clickable anchors. This is a deliberate security decision — clickable links in user-generated content introduce risks including phishing, spam and malicious redirects that are difficult to moderate reactively. Users are advised of this in the community guidelines. The trade-off is a minor reduction in convenience for users sharing legitimate resources, but this is considered acceptable given the community's focus on gardening advice rather than resource sharing.
+ - **Authentication Links in Footer on Mobile**: On smaller screens, the login, logout and register links are moved from the navigation bar to the footer rather than being housed in the hamburger menu alongside the page navigation links. This decision was made to keep the mobile navigation menu clean and focused on page navigation. Authentication is a secondary action for most visits — users are either already logged in or are browsing as a guest — and the footer remains accessible without scrolling on most content pages. The trade-off is a slight departure from the convention of keeping all navigation in one place on mobile, but the login state indicator in the navbar ensures users are never unaware of their current status.
 
 #### 5. Surface
 
@@ -204,12 +211,11 @@ I used [Google Fonts](https://fonts.google.com/)to select a monospace font for t
 - [PT Mono](https://fonts.google.com/specimen/PT+Mono) was used for the branding and main headings.
 - [Dosis](https://fonts.google.com/specimen/Dosis?preview.script=Latn) was used for the main content.
 - [Slabo 27px](https://fonts.google.com/specimen/Slabo+27px?preview.script=Latn) was used for headings and emphasis.
-- ⚠️ --- May need another font for comments etc --- ⚠️
 - [Font Awesome](https://fontawesome.com) icons were used throughout the site, such as the burger menu icon in the navbar.
 
 ## Wireframes
 
-To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
+To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes. The finished site deviated somewhat from the initial designs as plans changed.
 I used [Whimsical](https://whimsical.com/ger-s-workspace48/diggit-Kj1maBK5a39CKjbMMnXobr) to design my site wireframes.
 
 | Page | Mobile | Tablet | Desktop |
@@ -223,7 +229,9 @@ I used [Whimsical](https://whimsical.com/ger-s-workspace48/diggit-Kj1maBK5a39CKj
 | 404 | ![screenshot of 404 page on mobile](documentation/wireframes/404-mobile.png) | ![screenshot of 404 page on tablet](documentation/wireframes/404-tablet.png) | ![screenshot of 404 page on desktop](documentation/wireframes/404-desktop.png) |
 
 ### Modals
-This project uses a number of modals for various authentication and CRUD functions.
+Initial planning included a range of modals for authentication forms and CRUD actions. In reality the authentication forms are templates and I used popovers rather than modals to house the CRUD forms.
+
+The general design idea remains the same though.
 
 | Modal | Mockup |
 | --- | --- |
@@ -237,6 +245,8 @@ This project uses a number of modals for various authentication and CRUD functio
 | Delete comment | ![screenshot of delete comment modal](documentation/modals/delete-comment.png) |
 | Report post | ![screenshot of report post modal](documentation/modals/report-post.png) |
 | Report comment | ![screenshot of report comment modal](documentation/modals/report-comment.png) |
+
+_Report post and report comment were part of the initial planning but were descoped during development_
 
 ## User Stories
 
@@ -258,101 +268,85 @@ This project uses a number of modals for various authentication and CRUD functio
 | As a site admin | I can access an admin panel | so that I can control the content across the site | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
 | As a site admin | I can delete user content | so that I can ensure community guidelines are adhered to | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
 | As a logged in user | I can comment on posts | so that I can contribute to the discussion or answer a question | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) | 
-| As a site admin | I can upload and change the default and blog images | so that I can keep the site fresh and attractive | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
+| As a site admin | I can upload and change the blog images | so that I can keep the site fresh and attractive | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
 | As a guest | I can read comments | so that I can benefit from user's experience and decide if I want to join | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
 | As a user | I can contact the site admin | so that I can report an issue or ask a question | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
 | As a logged in user | I can edit or delete my comments | so that I can correct or remove comments that no longer represent me | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
 | As a guest | I can read a brief introduction to the site | so that I can decide to browse as a guest or signup | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
 | As a logged in user | I can react to comments | so that I can help the community identify the most helpful answers | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
 | As a post author | I can upload an image | so that I can ask questions or give advice about my own experiences | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
-| As a user | I can filter posts by category | so that I can find relevant content faster | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
-| As a user | I can report harmful content | so that site moderators can review and take action | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
 | As a user | I can see the most popular comments first | so that the most helpful answers are easy to find | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
+| As a user | I want to return to the page I was viewing after signup/login | so that I can continue interacting with the content | ![Should Have](https://img.shields.io/badge/Should_Have-ff8c00) |
 | As a logged in user | I can reply to comments | so that I can add more insight to the conversation | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
-| As a user | I can sort posts by date or popularity | so that I can find the most recent or most engaging content easily | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
-| As a logged in user | I can react to posts | so that I can quickly share my feelings without needing to comment | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
 | As a user | I can expect that multiple posts will spread over several pages | so that I can maintain a clean easy to use interface | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
-| As a user | I can signup to the newsletter | so that keep up to date with community news | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
-| As a user | I can search the site content by keyword | so that I can quickly find what I'm looking for | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
+| As a user | I can assign categories to my post | so that it can be discovered by other users | ![Could Have](https://img.shields.io/badge/Could_Have-1d76db) |
+| As a user | I can sort posts by date or popularity | so that I can find the most recent or most engaging content easily | ![Won't Have](https://img.shields.io/badge/Won't_Have-6e6e6e) |
+| As a logged in user | I can react to posts | so that I can quickly share my feelings without needing to comment | ![Won't Have](https://img.shields.io/badge/Won't_Have-6e6e6e) |
+| As a user | I can filter posts by category | so that I can find relevant content faster | ![Won't Have](https://img.shields.io/badge/Won't_Have-6e6e6e) |
+| As a user | I can report harmful content | so that site moderators can review and take action | ![Won't Have](https://img.shields.io/badge/Won't_Have-6e6e6e) |
+| As a user | I can signup to the newsletter | so that keep up to date with community news | ![Won't Have](https://img.shields.io/badge/Won't_Have-6e6e6e) |
+| As a user | I can search the site content by keyword | so that I can quickly find what I'm looking for | ![Won't Have](https://img.shields.io/badge/Won't_Have-6e6e6e) |
+| As a user | I can choose a default image for my post | so that it is visually more engaging | ![Won't Have](https://img.shields.io/badge/Won't_Have-6e6e6e) |
 
-⚠️ ![Won't Have](https://img.shields.io/badge/Won't_Have-6e6e6e)⚠️
 
 ## Features
-
-⚠️ --- Work in Progress --- ⚠️
-
-- Digging Deeper blog page
-- Comments and replies
-    * Edit/delete own comments
-- User registration
-    * Code of conduct 
-- User login & log out
-- Visible login state
-- Open individual posts (either own page view or expand to fill)
-- User post creation form
-    * Post edit and delete buttons
-- Post filters
-- Post Search
-- Admin Panel (handled by django)
-- Bespoke 404 page with home and/or back button
-- Image upload
-- Comment likes
-- Like counter
-- Order comments / posts by like count
-- Pagination
-- Newsletter sign up 
-- Content report button
-
 
 ### Existing Features
 
 | Feature | Notes | Screenshot |
 | --- | --- | --- |
-| Register | Authentication is handled by allauth, allowing users to register accounts. | ![screenshot](documentation/features/register.png) |
-| Login | Authentication is handled by allauth, allowing users to log in to their existing accounts. | ![screenshot](documentation/features/login.png) |
-| Logout | Authentication is handled by allauth, allowing users to log out of their accounts. | ![screenshot](documentation/features/logout.png) |
-| Blog List | The homepage displays basic information about blog posts, including image, title, author, date, and a brief excerpt. | ![screenshot](documentation/features/blog-list.png) |
-| View Post | Users can view the full blog post details, including any comments. | ![screenshot](documentation/features/view-post.png) |
-| Pagination | Blog posts are displayed in pages, with six posts per page. This provides better navigation for users through the post list. | ![screenshot](documentation/features/pagination.png) |
-| Add Comments | Authenticated visitors can comment on blog posts; comments require approval before being published. | ![screenshot](documentation/features/add-comment.png) |
-| Edit Comments | Authenticated visitors can edit their own comments. | ![screenshot](documentation/features/edit-comment.png) |
-| Delete Comments | Authenticated visitors can delete their own comments. | ![screenshot](documentation/features/delete-comment.png) |
-| Comment Approvals | Admins can approve or disapprove comments submitted by users before they are visible on the blog post. | ![screenshot](documentation/features/comment-approval.png) |
-| Create Post | Site owners can create/publish blog posts, including setting a featured image using Cloudinary, all from the Django admin dashboard. | ![screenshot](documentation/features/create-post.png) |
-| Update Post | Site owners can update/manage blog posts from the Django admin dashboard. | ![screenshot](documentation/features/update-post.png) |
-| Delete Post | Site owners can delete blog posts from the Django admin dashboard. | ![screenshot](documentation/features/delete-post.png) |
-| About Page | The About page displays the latest information about the site author, along with the option for visitors to send collaboration requests. | ![screenshot](documentation/features/about.png) |
-| Collaboration Requests | Visitors can submit collaboration requests from the *About* page, which are later reviewed by the admin. | ![screenshot](documentation/features/collaboration.png) |
-| User Feedback | Clear and obvious Django messages are used to provide feedback to user actions. | ![screenshot](documentation/features/messages.png) |
-| Heroku Deployment | The site is fully deployed to Heroku, making it accessible online and easy to manage. | ![screenshot](documentation/features/heroku.png) |
-| 404 | The 404 error page will indicate when a user has navigated to a page that doesn't exist, replacing the default Heroku 404 page with one that ties into the site's look and feel. | ![screenshot](documentation/features/404.png) |
+| Register | Authentication is handled by allauth, allowing users to register for an account. New users are presented with the community code of conduct and must acknowledge it before completing registration. | ![screenshot of signin page](documentation/features/register.png) |
+| Login | Authentication is handled by allauth, allowing users to log in to their existing accounts. Users are returned to the page they were viewing prior to login. | ![screenshot of login page](documentation/features/login.png) |
+| Logout | Authentication is handled by allauth, allowing users to log out of their accounts. | ![screenshot of logout page](documentation/features/logout.png) |
+| Login State | The navigation bar reflects the user's current login state at all times, showing different options depending on whether the user is logged in or out. | ![screenshot of logged in user login state](documentation/features/login-state.png) ![screenshot of logged out user login state](documentation/features/logged-out.png) ![screenshot of admin user login state](documentation/features/admin-state.png) |
+| Digging Deeper Blog | The Digging Deeper page displays professional gardening advice post previews created by site admins, including image, title, author, and date. | ![screenshot of digging deeper page](documentation/features/digging-deeper.png) |
+| Diggit Forum | The Diggit Forum community post feed displays previews of posts created by registered users, allowing guests to browse tips and questions from the community. | ![screenshot of diggit forum](documentation/features/diggit-forum.png) |
+| View Post | Users can open an individual post to read the full content and view its comments. | ![screenshot of expanded post](documentation/features/read-post.png) |
+| Create Post | Logged in users can create their own posts to ask questions or share tips with the gardening community, including uploading an image. | ![screenshot of post creation form](documentation/features/create-post.png) |
+| Edit Post | Logged in users can edit their own posts at any time. | ![screenshotofedit post form](documentation/features/edit-post.png) |
+| Delete Post | Logged in users can delete their own posts at any time. | ![screenshot of delete post form](documentation/features/delete-post.png) |
+| Add Comment | Logged in users can comment on any post to contribute to the discussion. Guests without an account can only read comments. | ![screenshot of add comment form](documentation/features/add-comment.png) |
+| Edit Comment | Logged in users can edit their own comments. | ![screenshot of edit comment form](documentation/features/edit-comment.png) |
+| Delete Comment | Logged in users can delete their own comments. | ![screenshot of delete comment form](documentation/features/delete-comment.png) |
+| Comment Likes | Logged in users can like comments to help the community identify the most helpful answers. | ![screenshot of comment likes](documentation/features/comment-likes.png) |
+| Comment Ordering | Comments are ordered by like count so that the most helpful responses are displayed first. | ![screenshot of timestamp ordering](documentation/features/datetime-order.png) ![screenshot of likes affecting order](documentation/features/comment-likes.png) |
+| Replies | Logged in users can reply directly to comments to add further insight to a conversation. | ![screenshot](documentation/features/replies.png) |
+| Pagination | Post preview pages are paginated to keep the interface clean and easier to navigate. | ![screenshot of pagination controls](documentation/features/pagination.png) |
+| Contact Form | Users can contact the site admin to report an issue or ask a question via a dedicated contact form. | ![screenshot of contact form](documentation/features/contact.png) |
+| Admin Panel | Site admins have access to the Django admin panel to manage all site content and ensure community guidelines are upheld. | ![screenshot of admin panel](documentation/features/admin-panel.png) |
+| Admin - Create Blog Post | Site admins can create and publish Digging Deeper posts, including uploading a featured image, from the Django admin panel. | ![screenshot of admin create post form](documentation/features/admin-blog.png) |
+| Admin - Edit Blog Post | Site admins can edit existing Digging Deeper posts to keep content accurate and up to date. | ![screenshot of admin edit post form](documentation/features/admin-edit.png) |
+| Admin - Delete Blog Post | Site admins can delete Digging Deeper posts and user-generated content to ensure community guidelines are upheld. | ![screenshot of admin delete page](documentation/features/admin-delete.png) |
+| ⚠️404 Page⚠️ | A custom 404 page is displayed when a user navigates to a non-existent page, maintaining the site's look and feel and providing a clear route back to the homepage. | ![screenshot](documentation/features/404.png) |
+| Homepage | The homepage provides a welcoming introduction to the diggit community, a brief description of the platform's purpose, and three call-to-action cards directing users to Ask the Community, Share your Wins, and explore the Digging Deeper expert blog. The layout is designed to immediately communicate the site's purpose to new visitors and provide clear onward navigation without the need to register. | ![screenshot of homepage](documentation/features/home.png) |
+| User Feedback | Clear and obvious Django messages are used to provide feedback to users for both successful and unsuccessful actions. Feedback messages are triggered by post and comment create, update and delete, login and logout. | ![screenshot](documentation/features/messages.png) |
 
 ### Future Features
 
-⚠️ INSTRUCTIONS ⚠️
-
-Do you have additional ideas that you'd like to include on your project in the future? Fantastic, list them here! It's always great to have plans for future improvements. Consider adding any helpful links or notes to help remind you in the future, if you revisit the project in a couple years.
-
-A few examples are listed below to align with possible ways to improve on the sample walkthrough project, to give you some inspiration.
-
-⚠️ --- END ---⚠️
-
-- **Post Categories/Tags**: Allow users to categorize and tag blog posts, making it easier for visitors to filter content based on their interests.
+- **Post Category Default Images**: Allow users to select a default category image to enhance their posts where they don't have an image.
+- **Category Filtering**: Allow users to filter the post lists based on post categories
 - **Post Search Functionality**: Add a search bar for users to quickly find posts by keywords or phrases.
-- **Post Likes/Dislikes or Upvotes**: Implement a "like" or "upvote" system for blog posts to encourage user engagement and give feedback to the author.
-- **User Profiles**: Create personalized user profiles where authenticated users can view their comments, liked posts, and account information.
-- **Comment Replies & Threads**: Enable users to reply to comments, creating nested comment threads for better discussions.
-- **Post Sharing**: Add social media sharing buttons (e.g., Twitter, Facebook, LinkedIn) for users to share blog posts.
-- **Notifications**: Implement a notification system that alerts users when their comments are approved, when new comments are made on a post they've commented on, or when new posts are published.
+- **Post Likes and ordering**: Implement a "like" or "reactions" system for the posts to provide instant feedback and allow ordering by popularity.
+- **User Profiles**: Create personalised user profiles where authenticated users can view their comments, liked posts, and account information.
+- **User Feed**: Allow users to share posts to their feed for easy reference.
+- **User Following**: Implement a system to allow users to "follow" fellow users that appeal to them.
+- **Nested Threads**: Enable replies to replies with clear thread following.
+- **In-built enforcement of community rules**: Enable post screening for prhibited words and/or phrases.
+- **Notifications**: Implement a notification system that alerts users when there is new content or if their posts have received a comment.
 - **Email Subscriptions**: Allow users to subscribe to receive email notifications for new posts, updates, or newsletters.
+- **Report Content**: Add a button directly to posts and comments to implement reported behaviour (greyed out, links desabled) with admin review required.
 - **Post Analytics**: Provide post authors with analytics such as views, time spent reading, and engagement rates.
 - **Multilingual Support**: Add the ability to write and view blog posts in multiple languages, broadening the audience.
 - **Related Posts Recommendations**: Show related posts at the bottom of a blog post to encourage further reading and keep users engaged.
-- **Content Flagging/Reporting**: Allow users to flag or report inappropriate content (comments or posts) for moderation.
-- **SEO Optimization**: Implement features for SEO, such as meta tags, custom URLs, and keywords for better search engine ranking.
 - **User Dashboard**: Provide users with a dashboard to track their activity, such as comments made, likes received, and blog posts they’ve interacted with.
 - **Admin Dashboard Analytics**: Provide site admins with an analytics dashboard showing user activity, popular posts, most commented articles, etc.
 - **Custom Themes for Users**: Allow users to customize the visual theme of the site (colors, fonts, etc.) to suit their preferences.
+- **Mobile App**: Develop the site into a mobile app for users to have a better experience on the go.
+- **Social login**: Enable users to login via their Google or social media accounts.
+- **Draft Posts**: Allow users to save posts as drafts to be completed later.
+- **Post Scheduling**: Allow admins to schedule posts for efficiency and ease of use.
+- **Diggit Calendar**: Develop a gardener's year calendar with important jobs and planting schedules clearly marked and searchable.
+- **Plant Database Integration**: Develop a searchable plant database with planting and care information which is also taggable directly from the posts.  
 
 ## Tools & Technologies
 
@@ -378,47 +372,38 @@ A few examples are listed below to align with possible ways to improve on the sa
 | [![badge](https://img.shields.io/badge/W3Schools-grey?logo=w3schools&logoColor=04AA6D)](https://www.w3schools.com) | Tutorials/Reference Guide |
 | [![badge](https://img.shields.io/badge/StackOverflow-grey?logo=stackoverflow&logoColor=F58025)](https://stackoverflow.com) | Troubleshooting and Debugging |
 | [![badge](https://img.shields.io/badge/favicon.io-grey?logo=fi&logoColor=209CEE)](https://favicon.io) | Generating the favicon. |
-| [![badge](https://img.shields.io/badge/Claude-grey?logo=claude&logoColor=D97757)](https://claude.ai) | Help debug, troubleshoot, and explain things. |
-
-⚠️ NOTE ⚠️
-
-Want to add more?
-
-- Tutorial: https://shields.io/badges/static-badge
-- Icons/Logos: https://simpleicons.org
-  - FYI: not all logos are available to use
-
-🛑 --- END --- 🛑
-
-⚠️ --- Work in Progress --- ⚠️
+| [![badge](https://img.shields.io/badge/Claude-grey?logo=claude&logoColor=D97757)](https://claude.ai) | Help plan, explain things and assist with documentation. |
+| [![badge](https://img.shields.io/badge/dbdiagram.io-grey?)](https://dbdiagram.io/home) | Construct ERD |
+| [![badge](https://img.shields.io/badge/Whimsical-grey?)](https://whimsical.com/) | Wireframes |
 
 ## Database Design
 
 ### Data Model
 
-The main model for this project is the post - either admin created blogs or user created forum posts. Five other models interact with the post model in the form of User, Reactions, Comments, Comment Reactions and Categories.
+The central model is Post, which handles both the admin created Digging Deeper blog posts and the user generated forum posts, differentiated by the `post_type` field.
 
-There is also a model for messaging the site admin so that user messages are visible and actionable directly from the admin panel.
+Post connects to User as author and to Category through a Post_category junction table forming a many-to-many relationship. 
 
-I used [dbdiagram.io](https://dbdiagram.io/d/diggit-69cf9ba58089629684134784) to create the ERD.
+The Comment model links to both Post and User and includes a self-referencing `parent` field to support replies.
+
+CommentLikes links to Comment and User to track per-user likes.
+
+The User model is Django's built-in model. The is_superuser field is depicted in the ERD as `role` to highlight its function in controlling access to the admin panel and differentiating site admins from regular users.
+
+Finally the Message model is independent of the Post structure and stores contact form submissions with a `read` field allowing admins to track actioned messages.
+
+I used [dbdiagram.io](https://dbdiagram.io/d/diggit-69cf9ba58089629684134784) to create the ERD and referenced it throughout the build.
 
 ![screenshot](documentation/erd.png)
 
-
-⚠️ RECOMMENDED ⚠️
-
-Alternatively, or in addition to, a more comprehensive ERD can be auto-generated once you're at the end of your development stages, just before you submit. Follow the steps below to obtain a thorough ERD that you can include. Feel free to leave the steps below in the README for future use to yourself.
-
-⚠️ --- END --- ⚠️
-
-I have used `pygraphviz` and `django-extensions` to auto-generate an ERD.
+At the end of the project I used `pygraphviz` and `django-extensions` to auto-generate an ERD.
 
 The steps taken were as follows:
 - In the terminal: `sudo apt update`
 - then: `sudo apt-get install python3-dev graphviz libgraphviz-dev pkg-config`
 - then type `Y` to proceed
-- then: `pip3 install django-extensions pygraphviz`
-- in my `settings.py` file, I added the following to my `INSTALLED_APPS`:
+- then: `uv pip install pygraphviz`
+- in my `settings.py` file, I made sure the following was in my `INSTALLED_APPS`:
 ```python
 INSTALLED_APPS = [
     ...
@@ -426,10 +411,9 @@ INSTALLED_APPS = [
     ...
 ]
 ```
-- back in the terminal: `python3 manage.py graph_models -a -o erd.png`
-- drag the new `erd.png` file into my `documentation/` folder
-- removed `'django_extensions',` from my `INSTALLED_APPS`
-- finally, in the terminal: `pip3 uninstall django-extensions pygraphviz -y`
+- back in the terminal: `python3 manage.py graph_models -a -o advanced-erd.png`
+- drag the new `advanced-erd.png` file into my `documentation/` folder
+- finally, in the terminal: `uv pip uninstall pygraphviz -y`
 
 ![screenshot](documentation/advanced-erd.png)
 
@@ -439,13 +423,7 @@ source: [medium.com](https://medium.com/@yathomasi1/1-using-django-extensions-to
 
 ### GitHub Projects
 
-⚠️ TIP ⚠️
-
-Consider adding screenshots of your Projects Board(s), Issues (open and closed), and Milestone tasks.
-
-⚠️ --- END ---⚠️
-
-[GitHub Projects](https://www.github.com/geraldine-mor/codestar_blog/projects) served as an Agile tool for this project. Through it, EPICs, User Stories, issues/bugs, and Milestone tasks were planned, then subsequently tracked on a regular basis using the Kanban project board.
+[GitHub Projects](https://github.com/users/geraldine-mor/projects/8) served as an Agile tool for this project. Through it, EPICs, User Stories, issues/bugs, and Milestone tasks were planned, then subsequently tracked on a regular basis using the Kanban project board.
 
 ![screenshot](documentation/gh-projects.png)
 
@@ -455,26 +433,29 @@ Consider adding screenshots of your Projects Board(s), Issues (open and closed),
 
 | Link | Screenshot |
 | --- | --- |
-| [![GitHub issues](https://img.shields.io/github/issues-search/geraldine-mor/diggit?query=is%3Aissue%20is%3Aopen%20-label%3Abug&label=Open%20Issues&color=yellow)](https://www.github.com/geraldine-mor/diggit/issues?q=is%3Aissue%20is%3Aopen%20-label%3Abug) | ![screenshot](documentation/gh-issues-open.png) |
+| [![GitHub issues](https://img.shields.io/github/issues-search/geraldine-mor/diggit?query=is%3Aissue%20is%3Aopen%20-label%3Abug&label=Open%20Issues&color=yellow)](https://www.github.com/geraldine-mor/diggit/issues?q=is%3Aissue%20is%3Aopen%20-label%3Abug) | ⚠️![screenshot](documentation/gh-issues-open.png) ⚠️|
 | [![GitHub closed issues](https://img.shields.io/github/issues-search/geraldine-mor/diggit?query=is%3Aissue%20is%3Aclosed%20-label%3Abug&label=Closed%20Issues&color=green)](https://www.github.com/geraldine-mor/diggit/issues?q=is%3Aissue%20is%3Aclosed%20-label%3Abug) | ![screenshot](documentation/gh-issues-closed.png) |
 
 ### MoSCoW Prioritization
 
-I've decomposed my Epics into User Stories for prioritizing and implementing them. Using this approach, I was able to apply "MoSCoW" prioritization and labels to my User Stories within the Issues tab.
+I decomposed my Epics into User Stories for prioritizing and implementing them. Using this approach, I was able to apply "MoSCoW" prioritization at project level.
 
-- **Must Have**: guaranteed to be delivered - required to Pass the project (*max ~60% of stories*)
-- **Should Have**: adds significant value, but not vital (*~20% of stories*)
-- **Could Have**: has small impact if left out (*the rest ~20% of stories*)
+Each user story was written to address one or more of the business goals and primary user needs indentified in the strategy plane, ensuring that all development work could be traced back to a defined project objective.
+
+- **Must Have**: guaranteed to be delivered 
+- **Should Have**: adds significant value, but not vital 
+- **Could Have**: has small impact if left out 
 - **Won't Have**: not a priority for this iteration - future features
+
+When user stories were moved into a milestone (or sprint), they were re-categorised within the timebox. Labels were used to denote the EPIC, MoSCoW classification and Story Points.
+
+![screenshot of milestones](documentation/gh-milestones.png)
+![screenshot of issue history](documentation/gh-issue-history.png)
 
 ## Testing
 
 > [!NOTE]  
 > For all testing, please refer to the [TESTING.md](TESTING.md) file.
-
-## Deployment
-
-The live deployed application can be found deployed on [Heroku](https://gm-codestar-blog-fd27c1e92e9f.herokuapp.com).
 
 ## Deployment
 
@@ -493,13 +474,6 @@ Deployment steps are as follows, after account setup:
 > [!IMPORTANT]  
 > This is a sample only; you would replace the values with your own if cloning/forking my repository.
 
-🛑 !!! ATTENTION geraldine-mor !!! 🛑
-
-⚠️ DO NOT update the environment variables to your own! These should never be public; only use the demo values below! ⚠️
-⚠️ Replace the keys below with your own actual keys used; example: if not using Cloudinary, then remove those keys, or replace with whatever ones you're using. ⚠️
-
-🛑 --- END --- 🛑
-
 | Key | Value |
 | --- | --- |
 | `CLOUDINARY_URL` | user-inserts-own-cloudinary-url |
@@ -515,11 +489,11 @@ Heroku needs some additional files in order to deploy properly.
 
 You can install this project's **[requirements.txt](requirements.txt)** (*where applicable*) using:
 
-- `pip3 install -r requirements.txt`
+- `uv pip install -r requirements.txt`
 
 If you have your own packages that have been installed, then the requirements file needs updated using:
 
-- `pip3 freeze --local > requirements.txt`
+- `uv pip freeze > requirements.txt`
 
 The **[Procfile](Procfile)** can be created with the following command:
 
@@ -528,22 +502,14 @@ The **[Procfile](Procfile)** can be created with the following command:
 
 The **[.python-version](.python-version)** file tells Heroku the specific version of Python to use when running your application.
 
-- `3.12` (or similar)
+- `3.13` (or similar)
 
 For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
 
-Either (*recommended*):
+- Select Github as the **deployment method**, you may need to log in to your GitHub, choose your app repository.  
 
-- Select **Automatic Deployment** from the Heroku app.
+- Select **Manual Deploy** from the Heroku app, deploying the main branch only after setting `DEBUG=False`. It is not adviseable to use automatic deploys in order to avoid deploying the site with `DEBUG=True`.
 
-Or:
-
-- In the Terminal/CLI, connect to Heroku using this command: `heroku login -i`
-- Set the remote for Heroku: `heroku git:remote -a app_name` (*replace `app_name` with your app name*)
-- After performing the standard Git `add`, `commit`, and `push` to GitHub, you can now type:
-	- `git push heroku main`
-
-The project should now be connected and deployed to Heroku!
 
 ### Cloudinary API
 
@@ -583,9 +549,9 @@ This project uses the [WhiteNoise](https://whitenoise.readthedocs.io/en/latest/)
 To include WhiteNoise in your own projects:
 
 - Install the latest WhiteNoise package:
-    - `pip install whitenoise`
+    - `uv pip install whitenoise`
 - Update the `requirements.txt` file with the newly installed package:
-    - `pip freeze --local > requirements.txt`
+    - `uv pip freeze > requirements.txt`
 - Edit your `settings.py` file and add WhiteNoise to the `MIDDLEWARE` list, above all other middleware (apart from Django’s "SecurityMiddleware"):
 
 ```python
@@ -597,27 +563,18 @@ MIDDLEWARE = [
     # any additional middleware
 ]
 ```
-
-
 ### Local Development
 
 This project can be cloned or forked in order to make a local copy on your own system.
 
 For either method, you will need to install any applicable packages found within the [requirements.txt](requirements.txt) file.
 
-- `pip3 install -r requirements.txt`.
+- `uv pip install -r requirements.txt`.
 
 You will need to create a new file called `env.py` at the root-level, and include the same environment variables listed above from the Heroku deployment steps.
 
 > [!IMPORTANT]  
 > This is a sample only; you would replace the values with your own if cloning/forking my repository.
-
-🛑 !!! ATTENTION geraldine-mor !!! 🛑
-
-⚠️ DO NOT update the environment variables to your own! These should never be public; only use the demo values below! ⚠️
-⚠️ Replace the keys below with your own actual keys used; example: if not using Cloudinary | AWS, then replace those keys with whatever keys you're using. ⚠️
-
-🛑 --- END --- 🛑
 
 Sample `env.py` file:
 
@@ -677,7 +634,7 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 
 ### Local VS Deployment
 
-⚠️ INSTRUCTIONS ⚠️
+⚠️ --- Work in progress --- ⚠️
 
 Use this space to discuss any differences between the local version you've developed, and the live deployment site. Generally, there shouldn't be [m]any major differences, so if you honestly cannot find any differences, feel free to use the following example:
 
@@ -687,90 +644,89 @@ There are no remaining major differences between the local version when compared
 
 ## Credits
 
-⚠️ INSTRUCTIONS ⚠️
-
-In the following sections, you need to reference where you got your content, media, and any extra help. It is common practice to use code from other repositories and tutorials (which is totally acceptable), however, it is important to be very specific about these sources to avoid potential plagiarism.
-
-⚠️ --- END ---⚠️
-
 ### Content
-
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to provide attribution links for any borrowed code snippets, elements, and resources. Ideally, you should provide an actual link to every resource used, not just a generic link to the main site. If you've used multiple components from the same source (such as Bootstrap), then you only need to list it once, but if it's multiple Codepen samples, then you should list each example individually. If you've used AI for some assistance (such as ChatGPT or Perplexity), be sure to mention that as well. A few examples have been provided below to give you some ideas.
-
-Eventually you'll want to learn how to use Git branches. Here's a helpful tutorial called [Learn Git Branching](https://learngitbranching.js.org) to bookmark for later.
-
-⚠️ --- END ---⚠️
 
 | Source | Notes |
 | --- | --- |
+| [Codestar Blog](https://codeinstitute.net) | Code Institute walkthrough project inspiration |
 | [Markdown Builder](https://markdown.2bn.dev) | Help generating Markdown files |
-| [Chris Beams](https://chris.beams.io/posts/git-commit) | "How to Write a Git Commit Message" |
-| [I Think Therefore I Blog](https://codeinstitute.net) | Code Institute walkthrough project inspiration |
+| [dbdiagram.io](https://dbdiagram.io/d/69cf9ba58089629684134784) | Creating the ERD |
+| [DBML](https://dbml.dbdiagram.io/docs/) | DBML syntax help | 
+| [Coolors](https://coolors.co/dce0d9-261617-002500-52e620) | Colour palette |
+| [Google Fonts](https://fonts.google.com/) | Fonts |
 | [Bootstrap](https://getbootstrap.com) | Various components / responsive front-end framework |
 | [Cloudinary API](https://cloudinary.com) | Cloud storage for static/media files |
 | [Whitenoise](https://whitenoise.readthedocs.io) | Static file service |
-| [Python Tutor](https://pythontutor.com) | Additional Python help |
-| [ChatGPT](https://chatgpt.com) | Help with code logic and explanations |
+| [Stack Overflow](https://stackoverflow.com/questions/44837733/how-to-make-add-replies-to-comments-in-django) | Comment Replies |
+| [Django](https://docs.djangoproject.com/en/6.0/ref/models/constraints/) | Constraints - unique likes |
+| [MDN](https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/Django/Models) | Using unique constraint |
+| [Stack Overflow](https://stackoverflow.com/questions/60523103/why-save-method-has-another-save-method-with-super-in-django-model) | Using the save() method to update signup form |
+| [w3 Schools](https://www.w3schools.com/django/django_admin_set_list_display.php) | Using ModelAdmin to set up the admin panel |
+| [Django Forum](https://forum.djangoproject.com/t/cant-create-link-to-admin-page-in-my-template/12533/7) | Link to admin page from site |
+| [Django](https://docs.djangoproject.com/en/5.2/ref/templates/builtins/#ref-templates-builtins-filters) | Date filter to remove time from date stamp |
+| [Stack Overflow](https://stackoverflow.com/questions/22767509/python-get-the-x-first-words-in-a-string) | Returning the first x words - excerpt helper function |
+| [Stack Overflow](https://stackoverflow.com/questions/5618878/how-to-convert-list-to-string) | Turning the list back into a string |
+| [Django Extensions](https://django-extensions.readthedocs.io/en/latest/field_extensions.html) | AutoSlugField - to ensure unique slugs where posts have the same title |
+| [Django](https://docs.djangoproject.com/en/6.0/ref/contrib/admin/) | Exclude excerpt from admin post form | 
+| [Stack Overflow](https://stackoverflow.com/a/12308807) | Customising the signup form |
+| [Django](https://docs.djangoproject.com/en/5.2/ref/forms/widgets/) | Djangos form widgets |
+| [Bootstrap](https://getbootstrap.com/docs/5.1/forms/checks-radios/) | Toggle switch (signup form) |
+| [w3 Schools](https://www.w3schools.com/cssref/pr_pos_overflow.php) | Scrollable terms and conditions |
+| [Django](https://docs.djangoproject.com/en/5.2/ref/forms/api/#django.forms.Form.label_suffix) | Remove colon from form label |
+| [Stack Overflow](https://stackoverflow.com/a/63551565) | request.resolver_match.url_name conditional display based on url |
+| [w3 Schools](https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_att_popover2) | Popovers used for forms |
+| [Django](https://github.com/django/django/blob/main/django/utils/text.py#L224) | Truncator to show preview of comment in admin panel |
+| [Cloudinary](https://cloudinary.com/documentation/django_helper_methods_tutorial) | Image uploads | 
+| [Django](https://docs.djangoproject.com/en/6.0/topics/http/file-uploads/) | request.FILES to accept image uploads |
+| [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/closest) | .closest() method used on like buttons (replaced by $(this).parent) | 
+| [Django](https://docs.djangoproject.com/en/6.0/ref/models/querysets/#exists) | Using .exists() with querysets to toggle user likes |
+| [Django](https://docs.djangoproject.com/en/6.0/ref/models/querysets/#django.db.models.query.QuerySet.create) | Working with querysets specifically .create() and .delete() for toggling the CommentLike instance per user | 
+| [Medium](https://medium.com/@akshatgadodia/chapter-8-extending-querysets-with-custom-methods-in-django-orm-d0b13f05408f) | Custom querysets and methods used for comment ordering |
+| [Django Forum](https://forum.djangoproject.com/t/model-methods-custom-managers-queryset-when-to-use-them/7028/3) | Custom querysets and methods used for comment ordering |
+| [Medium](https://python.plainenglish.io/enhancing-security-and-maintainability-custom-managers-and-querysets-in-django-638f77e69117) | Custom querysets and methods used for comment ordering |
+| [Stack Overflow](https://stackoverflow.com/questions/806835/django-redirect-to-previous-page-after-login) | Return to same page following login/signup/logout |
+| [Django](https://docs.djangoproject.com/en/6.0/topics/auth/default/) | Login required decorator |
+| [Django](https://docs.djangoproject.com/en/dev/ref/forms/api/#dynamic-initial-values) | Form initial values to avoid asking the user for name and email on the contact form |
+| [MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/showPopover) | Show/hide popover manually in JS |
+| [Django](https://docs.djangoproject.com/en/6.0/topics/pagination/) | Pagination in function based views |
+| [Django](https://docs.djangoproject.com/en/5.2/ref/forms/widgets/#checkboxselectmultiple) | Checkbox field for categories on the create post form |
+| [Claude](https://claude.ai) | Help with code logic and explanations, documentation and planning. |
 
 ### Media
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to provide attribution links to any media files borrowed from elsewhere (images, videos, audio, etc.). If you're the owner (or a close acquaintance) of some/all media files, then make sure to specify this information. Let the assessors know that you have explicit rights to use the media files within your project. Ideally, you should provide an actual link to every media file used, not just a generic link to the main site, unless it's AI-generated artwork.
-
-Looking for some media files? Here are some popular sites to use. The list of examples below is by no means exhaustive.
-
-- Images
-    - [Pexels](https://www.pexels.com)
-    - [Unsplash](https://unsplash.com)
-    - [Pixabay](https://pixabay.com)
-    - [Lorem Picsum](https://picsum.photos) (placeholder images)
-    - [Wallhere](https://wallhere.com) (wallpaper / backgrounds)
-    - [This Person Does Not Exist](https://thispersondoesnotexist.com) (reload to get a new person)
-- Audio
-    - [Audio Micro](https://www.audiomicro.com/free-sound-effects)
-    - [Button Clicks](https://www.zapsplat.com/sound-effect-category/button-clicks)
-    - [Lasers & Weapons](https://www.zapsplat.com/sound-effect-category/lasers-and-weapons/page/5)
-    - [Puzzle Music](https://soundimage.org/puzzle-music)
-    - [Camtasia Audio](https://library.techsmith.com/camtasia/assets/Audio)
-- Video
-    - [Videvo](https://www.videvo.net)
-- Image Compression
-    - [TinyPNG](https://tinypng.com) (for images <5MB)
-    - [CompressPNG](https://compresspng.com) (for images >5MB)
-
-A few examples have been provided below to give you some ideas on how to do your own Media credits.
-
-⚠️ --- END ---⚠️
+⚠️ --- Work in Progress --- ⚠️
 
 | Source | Notes |
 | --- | --- |
 | [favicon.io](https://favicon.io) | Generating the favicon |
-| [I Think Therefore I Blog](https://codeinstitute.net) | Sample images provided from the walkthrough projects |
 | [Font Awesome](https://fontawesome.com) | Icons used throughout the site |
-| [Pexels](https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg) | Hero image |
-| [Wallhere](https://c.wallhere.com/images/9c/c8/da4b4009f070c8e1dfee43d25f99-2318808.jpg!d) | Background wallpaper |
-| [Pixabay](https://cdn.pixabay.com/photo/2017/09/04/16/58/passport-2714675_1280.jpg) | Background wallpaper |
-| [DALL-E 3](https://openai.com/index/dall-e-3) | AI generated artwork |
+| [Adobe Stock](https://as1.ftcdn.net/v2/jpg/16/01/00/92/1000_F_1601009208_6OIfBMxLi3sEUC3DLK3wdmxzGlbY0lgW.jpg) | Diggit logo |
+| [Freepik](https://www.freepik.com/free-photo/shot-white-bench-park_17465507.htm#fromView=search&page=1&position=5&uuid=1d759506-28fd-461d-b3fe-94d64b5c0d87&query=garden) | Homepage backdrop |
+| [Magnific](https://www.magnific.com/free-photo/ripe-strawberry-hanging-from-plant_426972403.htm#fromView=search&page=1&position=4&uuid=7994d07b-3c9e-4ca9-a723-45b484f5ca95&query=strawberry+plant) | Strawberry plant |
+| [Adobe Stock](https://as2.ftcdn.net/v2/jpg/01/71/50/01/1000_F_171500112_9tRgKpwBkuh7pk4cAgug8PnnO48wxpbw.jpg) | April showers post |
+| [Adobe Stock](https://as2.ftcdn.net/v2/jpg/03/81/19/89/1000_F_381198933_gtRts0ctYpFqRyWyMVTcGtKOnFNGSPgz.jpg) | Late autumn tasks post |
+| [Adobe Stock](https://as2.ftcdn.net/v2/jpg/05/95/19/51/1000_F_595195179_2Kg8OrTxSiuNj9Eq733MA5pzddOjPeoW.jpg) | October garden care post |
+| [Pexels](https://www.pexels.com/photo/fresh-organic-vegetables-and-fruits-display-35974369/) | Harvest time post |
+| [Pexels](https://www.pexels.com/photo/vibrant-pink-tulip-garden-in-full-bloom-33455563/) | Late spring bloom post |
+| [Pexels](https://www.pexels.com/photo/a-woman-watering-the-plants-5622495/) | Summer garden success post |
+| [Pexels](https://www.pexels.com/photo/close-up-on-a-ladybug-sitting-on-an-aubrieta-flower-21967399/) | Companion planting post | 
+| [Adobe Stock](https://stock.adobe.com/ie/images/grass-path-with-bench-and-perennials-in-the-vlinderhof-a-garden-designed-by-piet-oudolf/477594224) | Winter garden planning post |
+| [Adobe Stock](https://stock.adobe.com/ie/images/garden-wheelbarrow-with-leaves-or-cleaning-city-park-in-spring-at-sunny-day/445546304) | Waking the garden post |
+| [Adobe Stock](https://stock.adobe.com/ie/images/gardener-in-a-green-apron-cleaning-a-dirty-metal-spade-with-a-wooden-brush-hands-maintaining-gardening-tools-on-a-rustic-outdoor-table/1967485573) | Midwinter care post |
+| [Freepik](https://www.magnific.com/free-photo/top-view-gardening-tools-flower-pot_13560868.htm#fromView=search&page=1&position=1&uuid=3be56098-870b-46a7-9dec-d12d9d0dbea2&query=seedlings) | Spring planting guide post |
+| [Pexels](https://www.pexels.com/photo/lush-garden-in-mississauga-with-blooming-flowers-33402974/) | Contact page backdrop |
+| [Adobe Stock](https://stock.adobe.com/ie/images/wooden-garden-gate-stands-invitingly-open-along-a-stone-pathway-leading-into-a-lush-green-paradise-illuminated-by-bright-sun-flare-filtering-through-large-trees/1918821068) | Login/Logout backdrop |
+| [Adobe Stock](https://stock.adobe.com/ie/images/patio-garden-with-containers-full-of-colorful-flowers-container-gardening-and-flower-display-idea/517647406) | Signup backdrop |
+| [Claude](https://claude.ai) | Blog post contents |
 | [TinyPNG](https://tinypng.com) | Compressing images < 5MB |
 | [CompressPNG](https://compresspng.com) | Compressing images > 5MB |
-| [CloudConvert](https://cloudconvert.com/webp-converter) | Converting images to `.webp` |
+| [ImageResizer](https://imageresizer.com/) | Resizing, compressing and converting images to `.webp` |
+| [This Person Does Not Exist](https://thispersondoesnotexist.com) | User generation |
 
 ### Acknowledgements
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to provide attribution and acknowledgement to any supports that helped, encouraged, or supported you throughout the development stages of this project. It's always lovely to appreciate those that help us grow and improve our developer skills. A few examples have been provided below to give you some ideas.
-
-⚠️ --- END ---⚠️
-
-- I would like to thank my Code Institute mentor, [Tim Nelson](https://www.github.com/TravelTimN) for the support throughout the development of this project.
-- I would like to thank the [Code Institute](https://codeinstitute.net) Tutor Team for their assistance with troubleshooting and debugging some project issues.
-- I would like to thank the [Code Institute Slack community](https://code-institute-room.slack.com) and [Code Institute Discord community](https://discord-portal.codeinstitute.net) for the moral support; it kept me going during periods of self doubt and impostor syndrome.
+- I would like to thank [Tim Nelson](https://www.github.com/TravelTimN) for [Markdown Builder](https://markdown.2bn.dev).
+- I would like to thank the [Code Institute](https://codeinstitute.net) for the instruction provided to get me here.
+- I would like to thank the [Code Institute Discord community](https://discord-portal.codeinstitute.net) and [Future Coders of The World](https://discord.gg/uFbJcW9rv) for the moral support; it kept me going during periods of self doubt and impostor syndrome.
 - I would like to thank my partner, for believing in me, and allowing me to make this transition into software development.
-- I would like to thank my employer, for supporting me in my career development change towards becoming a software developer.
-
-
- 
+- I would like to thank my Code Institute facilitators Tindy Chan who helped me to come up with the idea and Marko Tot who encouraged me to keep going. 
