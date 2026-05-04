@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body_style %}lost{% endblock %}
+
+{% block content %}
+<section id="error-overlay">
+    <div class="card error-card p-4">
+        <h1>Uh Oh!</h1>
+        <h2>Page not found</h2>
+        <p class="lead">The link you clicked appears to be broken</p>
+        <a href="{% url 'home' %}" class="btn btn-dk-grn">Return Home</a>
+    </div>
+</section>
+
+{% endblock %}

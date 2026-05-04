@@ -30,8 +30,6 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="{% static 'css/buttons.css' %}">
 
-    {% block extra_styles %}{% endblock %}
-
     <title>diggit {% block head_title %}{% endblock %}</title>
 </head>
 
@@ -106,15 +104,16 @@
 
     <footer class="fixed-bottom">
         <ul class="user-auth-footer">
-                    {% if user.is_authenticated %}
-                    <li class="auth-item"><a href="{% url 'account_logout' %}?next={{ request.path }}" class="auth-link plain">Logout</a></li>
-                    {% else %}
-                    <li class="auth-item"><a href="{% url 'account_login' %}?next={{ request.path }}" class="auth-link plain">Login</a></li>
-                    <li class="auth-item"><a href="{% url 'account_signup' %}?next={{ request.path }}" class="auth-link plain">Register</a>
-                    </li>
-                    {% endif %}
-                </ul>
-
+            {% if user.is_authenticated %}
+            <li class="auth-item"><a href="{% url 'account_logout' %}?next={{ request.path }}" class="auth-link plain">Logout</a></li>
+            {% else %}
+            <li class="auth-item"><a href="{% url 'account_login' %}?next={{ request.path }}" class="auth-link plain">Login</a></li>
+            <li class="auth-item"><a href="{% url 'account_signup' %}?next={{ request.path }}" class="auth-link plain">Register</a>
+            </li>
+            {% endif %}
+        </ul>
+        <p class="small me-2">© Copyright <a class="link" href="https://github.com/geraldine-mor" rel="noopener" target="_blank"
+            aria-label="Github overview for Geraldine Morey (opens in a new tab)">Geraldine Morey</a></p>  
     </footer>
 
     <!--jQuery CDN-->

@@ -102,16 +102,6 @@ h2, h3 {
     max-height: 40px;
 }
 
-.navbar-toggler {
-    border: none;
-    color: var(--green);
-    font-size: 1.2rem;
-}
-
-.navbar-toggler:focus {
-    box-shadow: none;
-}
-
 .nav-link {
     color: var(--light-grey);
 }
@@ -336,19 +326,6 @@ textarea:focus-visible {
     margin-bottom: 0.5rem;
 }
 
-.back-btn {
-    background-color: var(--forest);
-    color: var(--light-grey);
-    display: block;
-    max-width: 150px;
-}
-
-.back-btn:hover {
-    color: var(--green);
-    background-color: var(--forest);
-    font-weight: bold;
-}
-
 #post-content {
     font-family: var(--body-font);
 }
@@ -376,6 +353,11 @@ textarea:focus-visible {
 
 #contact-form input {
     width: 292px;
+}
+
+/*404 page*/
+.lost {
+    background: url(../images/lost-error.webp) no-repeat center center / cover ;
 }
 
 /*Signup Form*/
@@ -442,6 +424,7 @@ textarea:focus-visible {
     background-color: rgba(0, 37, 0, 0.2);
 }
 
+/*Copied from Dev Tools to alter the toggleswitch appearance*/
 .form-switch .form-check-input:focus {
     --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
 }

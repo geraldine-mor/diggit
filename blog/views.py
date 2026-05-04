@@ -142,6 +142,16 @@ def home_page(request):
     return render(request, 'home.html')
 
 
+def error(request):
+    """
+    Renders the 404 page for development purposes
+
+    **Template**
+    :template:`404.html`
+    """
+    return render(request, '404.html')
+
+
 def read_post(request, slug):
     """
     Display a single instance of :model:`blog.Post`
