@@ -32,10 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['.herokuapp.com', '127.0.0.1',]
 
-
-# Application definition
-
-# Taken directly from allauth docs 
+# Allauth authentication backends
 # See https://docs.allauth.org/en/latest/installation/quickstart.html
 AUTHENTICATION_BACKENDS = [
     # Needed to login by username in Django admin, regardless of `allauth`
@@ -45,6 +42,7 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -97,7 +95,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'diggit.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases

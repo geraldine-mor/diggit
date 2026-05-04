@@ -8,7 +8,6 @@ from .models import Post, Comment, CommentLike
 from .forms import CommentForm, PostForm
 
 
-# Create your views here.
 class PostList(generic.ListView):
     """
     Display a filtered list of instances of :model:`blog.Post`
@@ -34,7 +33,7 @@ def forum_list(request):
     ``page_obj``
         A paginated list of 6 instances of :model:`blog.Post`
     ``post_form``
-        The form to add or edit a post
+        An instance of :form:`PostForm`
 
     **Template**
     :template:`blog/diggit_forum.html`
@@ -88,7 +87,8 @@ def edit_post(request, slug):
     ``post``
         The forum post that the user is editing
     ``post_form``
-        The form to edit a post
+        An instance of :form:`PostForm`, pre-populated with existing
+        post data
 
     **Template**
     :template:`blog/read_post.html` for successful edits
@@ -152,7 +152,7 @@ def read_post(request, slug):
     ``post``
         An instance of :model:`blog.Post`
     ``comment_form``
-        The form to add a comment
+        An instance of :form:`CommentForm`
     ``liked_comments``
         List of comments liked by the user
     ``comments``

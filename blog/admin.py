@@ -6,7 +6,7 @@ from .models import Post, Comment, CommentLike, Category
 
 class PostAdmin(SummernoteModelAdmin):
     """
-    Admin configuration for Post
+    Admin configuration for :model:`Post`
     Uses Summernote rich text editor for content field
     """
     list_display = ('title', 'status', 'created_on')
@@ -19,7 +19,7 @@ class PostAdmin(SummernoteModelAdmin):
 
 class CommentAdmin(admin.ModelAdmin):
     """
-    Admin configuration for Comment
+    Admin configuration for :model:`Comment`
     Uses Truncator to produce a short preview for the admin list view
     """
     list_display = ('comment_preview', 'created_on')
@@ -31,6 +31,7 @@ class CommentAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    """Admin configuration for :model:`Category`"""
     list_display = ('name', 'label_colour')
 
 

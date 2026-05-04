@@ -1,7 +1,8 @@
 from django.db import models
 
-# Create your models here.
+
 class Message(models.Model):
+    """Represents a message sent to the site admin"""
     name = models.CharField(max_length=30)
     email = models.EmailField()
     message = models.TextField()
@@ -11,6 +12,5 @@ class Message(models.Model):
     class Meta:
         ordering = ["read", "-created_on"]
 
-    
     def __str__(self):
         return f"{self.message}"

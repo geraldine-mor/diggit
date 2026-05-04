@@ -2,17 +2,18 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import MessageForm
 
-# Create your views here.
+
 def contact(request):
     """
-    Display a contact form for :model: `contact.Message`
+    Display a contact form and handle submission for :model:`Message`
 
     **Context**
     ``contact_form`` 
-        The form to send a message to the site admin   
+        An instance of :form:`MessageForm`, pre-populated for
+        authenticated users 
 
     **Template**
-    :template: contact/contact.html
+    :template:`contact/contact.html`
     """
 
     if request.method == "POST":
