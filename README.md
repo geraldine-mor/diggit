@@ -721,7 +721,6 @@ There are no remaining major differences between the local version when compared
 | [TinyPNG](https://tinypng.com) | Compressing images < 5MB |
 | [CompressPNG](https://compresspng.com) | Compressing images > 5MB |
 | [ImageResizer](https://imageresizer.com/) | Resizing, compressing and converting images to `.webp` |
-| [This Person Does Not Exist](https://thispersondoesnotexist.com) | User generation |
 
 ### Acknowledgements
 
