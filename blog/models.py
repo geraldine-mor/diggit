@@ -49,12 +49,12 @@ class Post(models.Model):
 
     def __str__(self):
         return f"{self.title}"
-    
+
     def first_comment(self):
-         """
-         Return the most-liked, top-level comment
-         """
-         return self.comments.top_level().ordered_by_likes().first()
+        """
+        Return the most-liked, top-level comment
+        """
+        return self.comments.top_level().ordered_by_likes().first()
 
     def comment_count(self):
         return self.comments.count()
@@ -84,7 +84,7 @@ class CommentQuerySet(models.QuerySet):
 
     def top_level(self):
         return self.filter(parent=None)
-    
+
 
 class Comment(models.Model):
     """
