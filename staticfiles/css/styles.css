@@ -358,6 +358,22 @@ textarea:focus-visible {
 /*404 page*/
 .lost {
     background: url(../images/lost-error.webp) no-repeat center center / cover ;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#error-overlay {
+    background-color: rgba(220, 224, 217, 0.5);
+    flex-grow: 1;
+    padding-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-card {
+    max-width: 95%;
 }
 
 /*Signup Form*/
@@ -466,6 +482,10 @@ footer ul {
     margin-bottom: 0;
 }
 
+footer > p {
+    text-align: end;
+}
+
 /*Small screens 576px an up*/
 @media screen and (min-width: 576px) {
     main {
@@ -511,6 +531,10 @@ footer ul {
 
     #highlight-row {
         margin-top: 10%;
+    }
+
+    footer > p {
+        margin-top: 5px;
     }
 }
 

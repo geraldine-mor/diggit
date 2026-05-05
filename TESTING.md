@@ -19,6 +19,7 @@ I used the recommended [HTML W3C Validator](https://validator.w3.org) to validat
 | templates | [login.html](https://github.com/geraldine-mor/diggit/blob/main/templates/account/login.html) | [Link to validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdiggit-938ea2f476b2.herokuapp.com%2Faccounts%2Flogin%2F%3Fnext%3D%2Fdiggit_forum%2F) | ![screenshot of validation no errors](documentation/validation/login-html.png) |  |
 | templates | [logout.html](https://github.com/geraldine-mor/diggit/blob/main/templates/account/logout.html) | [Link to validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdiggit-938ea2f476b2.herokuapp.com%2Faccounts%2Flogout%2F%3Fnext%3D%2F) | ![screenshot of validation no errors](documentation/validation/logout-html.png) |  |
 | templates | [signup.html](https://github.com/geraldine-mor/diggit/blob/main/templates/account/signup.html) | [Link to validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fdiggit-938ea2f476b2.herokuapp.com%2Faccounts%2Fsignup%2F%3Fnext%3D%2F) | ![screenshot of validation no errors](documentation/validation/signup-html.png) |  |
+| 404 | [404.html](https://github.com/geraldine-mor/diggit/blob/main/templates/404.html) | [Link to validator]()
 
 **Initial Errors**
 | Page | Errors | Actions Taken |
