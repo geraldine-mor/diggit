@@ -1,5 +1,6 @@
 """Helper functions for diggit/blog"""
 
+
 def excerpt_generator(content):
     """
     Creates a 30 word excerpt for display on preview post lists
