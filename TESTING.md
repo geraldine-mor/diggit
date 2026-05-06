@@ -115,10 +115,10 @@ I tested my deployed project to check for responsiveness issues.
 
 ## Device Testing
 
-| Page | Mobile | Tablet | Desktop | Notes |
+| Page | Mobile iPhone SE <br>(iOS 26.4.2)| Tablet 5th Gen iPad <br>(OS 15.4.1)| Desktop Ubuntu <br>22" Dell Monitor | Notes |
 | --- | --- | --- | --- | --- |
 | Home | ![screenshot](documentation/device/home-mobile.png) | ![screenshot](documentation/device/home-tablet.png) | ![screenshot](documentation/device/home-desktop.png) |  |
-| Diggit Forum | ![screenshot](documentation/device/diggit-forum-mobile.png) | ![screenshot](documentation/device/diggit-forum-tablet.png) | ![screenshot](documentation/device/diggit-forum-desktop.png) |  |
+| Diggit Forum | ![screenshot](documentation/device/diggit-forum-mobile.png) | ![screenshot](documentation/device/diggit-forum-tablet.png) | ![screenshot](documentation/device/diggit-forum-desktop.png) | Forms were visible on the tablet. Issue and fix documented in this [bug](https://github.com/geraldine-mor/diggit/issues/65) |
 | Digging Deeper | ![screenshot](documentation/device/digging-deeper-mobile.png) | ![screenshot](documentation/device/digging-deeper-tablet.png) | ![screenshot](documentation/device/digging-deeper-desktop.png) |  |
 | Read Post (blog) | ![screenshot](documentation/device/rp-blog-mobile.png) | ![screenshot](documentation/device/rp-blog-tablet.png) | ![screenshot](documentation/device/rp-blog-desktop.png) |  |
 | Read Post (forum) | ![screenshot](documentation/device/rp-forum-mobile.png) | ![screenshot](documentation/device/rp-forum-tablet.png) | ![screenshot](documentation/device/rp-forum-desktop.png) |  |
@@ -127,7 +127,7 @@ I tested my deployed project to check for responsiveness issues.
 | Signup | ![screenshot](documentation/device/signup-mobile.png) | ![screenshot](documentation/device/signup-tablet.png) | ![screenshot](documentation/device/signup-desktop.png) |  |
 | Login | ![screenshot](documentation/device/login-mobile.png) | ![screenshot](documentation/device/login-tablet.png) | ![screenshot](documentation/device/login-desktop.png) |  |
 | Logout | ![screenshot](documentation/device/logout-mobile.png) | ![screenshot](documentation/device/logout-tablet.png) | ![screenshot](documentation/device/logout-desktop.png) |  |
-| Add Post | ![screenshot](documentation/device/add-post-mobile.png) | ![screenshot](documentation/device/add-post-tablet.png) | ![screenshot](documentation/device/add-post-desktop.png) |  |
+| Add Post | ![screenshot](documentation/device/add-post-mobile.png) | ![screenshot](documentation/device/add-post-tablet.png) | ![screenshot](documentation/device/add-post-desktop.png) | The post form was initially larger than the phone viewport and was not scrolling. Details and fix are documented in this [bug](https://github.com/geraldine-mor/diggit/issues/66) |
 | Edit Post | ![screenshot](documentation/device/edit-post-mobile.png) | ![screenshot](documentation/device/edit-post-tablet.png) | ![screenshot](documentation/device/edit-post-desktop.png) |  |
 | Add Comment | ![screenshot](documentation/device/add-comment-mobile.png) | ![screenshot](documentation/device/add-comment-tablet.png) | ![screenshot](documentation/device/add-comment-desktop.png) |  |
 | Edit Comment | ![screenshot](documentation/device/edit-comment-mobile.png) | ![screenshot](documentation/device/edit-comment-tablet.png) | ![screenshot](documentation/device/edit-comment-desktop.png) |  |
