@@ -1,13 +1,3 @@
-:root {
-    --brown: #261617;
-    --forest: #002500;
-    --light-grey: #DCE0D9;
-    --dark-grey: #13171C;
-    --green: #52E620;
-    --brand-font: "PT mono", monospace;
-    --heading-font: "Slabo 27px", serif;
-    --body-font: "Dosis", sans-serif;
-}
 /*--------------------Navbar Buttons*/
 .navbar-toggler {
     border: none;
@@ -50,7 +40,7 @@
 .post-btn {
     width: 200px;
     display: block;
-    margin: auto;   
+    margin: 0 auto;   
 }
 
 .like-btn, .text-btn {
@@ -74,12 +64,4 @@
     color: var(--green);
     background-color: var(--forest);
     font-weight: bold;
-}
-
-/*--------------------Media Queries*/
-/*Medium screens and up*/
-@media screen and (min-width: 768px) {
-    .post-btn {
-        margin-top: 28px;
-    }
 }
