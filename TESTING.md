@@ -115,62 +115,60 @@ I tested my deployed project to check for responsiveness issues.
 
 ## Device Testing
 
+| Page | Mobile | Tablet | Desktop | Notes |
+| --- | --- | --- | --- | --- |
+| Home | ![screenshot](documentation/device/home-mobile.png) | ![screenshot](documentation/device/home-tablet.png) | ![screenshot](documentation/device/home-desktop.png) |  |
+| Diggit Forum | ![screenshot](documentation/device/diggit-forum-mobile.png) | ![screenshot](documentation/device/diggit-forum-tablet.png) | ![screenshot](documentation/device/diggit-forum-desktop.png) |  |
+| Digging Deeper | ![screenshot](documentation/device/digging-deeper-mobile.png) | ![screenshot](documentation/device/digging-deeper-tablet.png) | ![screenshot](documentation/device/digging-deeper-desktop.png) |  |
+| Read Post (blog) | ![screenshot](documentation/device/rp-blog-mobile.png) | ![screenshot](documentation/device/rp-blog-tablet.png) | ![screenshot](documentation/device/rp-blog-desktop.png) |  |
+| Read Post (forum) | ![screenshot](documentation/device/rp-forum-mobile.png) | ![screenshot](documentation/device/rp-forum-tablet.png) | ![screenshot](documentation/device/rp-forum-desktop.png) |  |
+| Contact | ![screenshot](documentation/device/contact-mobile.png) | ![screenshot](documentation/device/contact-tablet.png) | ![screenshot](documentation/device/contact-desktop.png) |  |
+| 404 | ![screenshot](documentation/device/404-mobile.png) | ![screenshot](documentation/device/404-tablet.png) | ![screenshot](documentation/device/404-desktop.png) |  |
+| Signup | ![screenshot](documentation/device/signup-mobile.png) | ![screenshot](documentation/device/signup-tablet.png) | ![screenshot](documentation/device/signup-desktop.png) |  |
+| Login | ![screenshot](documentation/device/login-mobile.png) | ![screenshot](documentation/device/login-tablet.png) | ![screenshot](documentation/device/login-desktop.png) |  |
+| Logout | ![screenshot](documentation/device/logout-mobile.png) | ![screenshot](documentation/device/logout-tablet.png) | ![screenshot](documentation/device/logout-desktop.png) |  |
+| Add Post | ![screenshot](documentation/device/add-post-mobile.png) | ![screenshot](documentation/device/add-post-tablet.png) | ![screenshot](documentation/device/add-post-desktop.png) |  |
+| Edit Post | ![screenshot](documentation/device/edit-post-mobile.png) | ![screenshot](documentation/device/edit-post-tablet.png) | ![screenshot](documentation/device/edit-post-desktop.png) |  |
+| Add Comment | ![screenshot](documentation/device/add-comment-mobile.png) | ![screenshot](documentation/device/add-comment-tablet.png) | ![screenshot](documentation/device/add-comment-desktop.png) |  |
+| Edit Comment | ![screenshot](documentation/device/edit-comment-mobile.png) | ![screenshot](documentation/device/edit-comment-tablet.png) | ![screenshot](documentation/device/edit-comment-desktop.png) |  |
 
 ## Browser Compatibility
-
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to discuss testing the live/deployed site on various browsers. Consider testing at least 3 different browsers, if available on your system. You DO NOT need to use all of the browsers below, just pick any 3 (minimum).
-
-Recommended browsers to consider:
-- [Chrome](https://www.google.com/chrome)
-- [Firefox (Developer Edition)](https://www.mozilla.org/firefox/developer)
-- [Edge](https://www.microsoft.com/edge)
-- [Safari](https://support.apple.com/downloads/safari)
-- [Brave](https://brave.com/download)
-- [Opera](https://www.opera.com/download)
-
-**IMPORTANT**: You must provide screenshots of the browsers you've tested, to "prove" that you've actually tested them.
-
-Please note, there are services out there that can test multiple browser compatibilities at the same time. Some of these are paid services, but some are free. If you use these, you must provide a link to the source used for attribution, and multiple screenshots of the results.
-
-⚠️ --- END --- ⚠️
 
 I've tested my deployed project on multiple browsers to check for compatibility issues.
 
 | Page | Chrome | Firefox | Safari | Notes |
 | --- | --- | --- | --- | --- |
-| Register | ![screenshot](documentation/browsers/chrome-register.png) | ![screenshot](documentation/browsers/firefox-register.png) | ![screenshot](documentation/browsers/safari-register.png) | Works as expected |
-| Login | ![screenshot](documentation/browsers/chrome-login.png) | ![screenshot](documentation/browsers/firefox-login.png) | ![screenshot](documentation/browsers/safari-login.png) | Works as expected |
-| Home | ![screenshot](documentation/browsers/chrome-home.png) | ![screenshot](documentation/browsers/firefox-home.png) | ![screenshot](documentation/browsers/safari-home.png) | Works as expected |
-| Add Blog | ![screenshot](documentation/browsers/chrome-add-blog.png) | ![screenshot](documentation/browsers/firefox-add-blog.png) | ![screenshot](documentation/browsers/safari-add-blog.png) | Works as expected |
-| Edit Blog | ![screenshot](documentation/browsers/chrome-edit-blog.png) | ![screenshot](documentation/browsers/firefox-edit-blog.png) | ![screenshot](documentation/browsers/safari-edit-blog.png) | Works as expected |
-| Blog Post | ![screenshot](documentation/browsers/chrome-blog-post.png) | ![screenshot](documentation/browsers/firefox-blog-post.png) | ![screenshot](documentation/browsers/safari-blog-post.png) | Works as expected |
-| 404 | ![screenshot](documentation/browsers/chrome-404.png) | ![screenshot](documentation/browsers/firefox-404.png) | ![screenshot](documentation/browsers/safari-404.png) | Works as expected |
+| Home | ![screenshot](documentation/browser/home-chrome.png) | ![screenshot](documentation/browser/home-firefox.png) | ![screenshot](documentation/browser/home-safari.png) |  |
+| Diggit Forum | ![screenshot](documentation/browser/diggit-forum-chrome.png) | ![screenshot](documentation/browser/diggit-forum-firefox.png) | ![screenshot](documentation/browser/diggit-forum-safari.png) |  |
+| Digging Deeper | ![screenshot](documentation/browser/digging-deeper-chrome.png) | ![screenshot](documentation/browser/digging-deeper-firefox.png) | ![screenshot](documentation/browser/digging-deeper-safari.png) |  |
+| Read Post (blog) | ![screenshot](documentation/browser/rp-blog-chrome.png) | ![screenshot](documentation/browser/rp-blog-firefox.png) | ![screenshot](documentation/browser/rp-blog-safari.png) |  |
+| Read Post (forum) | ![screenshot](documentation/browser/rp-forum-chrome.png) | ![screenshot](documentation/browser/rp-forum-firefox.png) | ![screenshot](documentation/browser/rp-forum-safari.png) |  |
+| Contact | ![screenshot](documentation/browser/contact-chrome.png) | ![screenshot](documentation/browser/contact-firefox.png) | ![screenshot](documentation/browser/contact-safari.png) |  |
+| 404 | ![screenshot](documentation/browser/404-chrome.png) | ![screenshot](documentation//404-firefox.png) | ![screenshot](documentation/browser/404-safari.png) |  |
+| Signup | ![screenshot](documentation/browser/signup-chrome.png) | ![screenshot](documentation/browser/signup-firefox.png) | ![screenshot](documentation/browser/signup-safari.png) |  |
+| Login | ![screenshot](documentation/browser/login-chrome.png) | ![screenshot](documentation/browser/login-firefox.png) | ![screenshot](documentation/browser/login-safari.png) |  |
+| Logout | ![screenshot](documentation/browser/logout-chrome.png) | ![screenshot](documentation/browser/logout-firefox.png) | ![screenshot](documentation/browser/logout-safari.png) |  |
+| Add Post | ![screenshot](documentation/browser/add-post-chrome.png) | ![screenshot](documentation/browser/add-post-firefox.png) | ![screenshot](documentation/browser/add-post-safari.png) |  |
+| Edit Post | ![screenshot](documentation/browser/edit-post-chrome.png) | ![screenshot](documentation/browser/edit-post-firefox.png) | ![screenshot](documentation/browser/edit-post-safari.png) |  |
+| Add Comment | ![screenshot](documentation/browser/add-comment-chrome.png) | ![screenshot](documentation/browser/add-comment-firefox.png) | ![screenshot](documentation/browser/add-comment-safari.png) |  |
+| Edit Comment | ![screenshot](documentation/browser/edit-comment-chrome.png) | ![screenshot](documentation/browser/edit-comment-firefox.png) | ![screenshot](documentation/browser/edit-comment-safari.png) |  |
 
 ## Lighthouse Audit
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to discuss testing the live/deployed site's Lighthouse Audit reports. Avoid testing the local version (Gitpod/VSCode/etc.), as this can have knock-on effects for performance. If you don't have "Lighthouse" in your Developer Tools, it can be added as an [extension](https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk).
-
-Unless your project is a single-page application (SPA), you should test Lighthouse Audit results for all of your pages, for both *mobile* and *desktop*.
-
-**IMPORTANT**: You must provide screenshots of the results, to "prove" that you've actually tested them.
-
-⚠️ --- END --- ⚠️
-
-I've tested my deployed project using the Lighthouse Audit tool to check for any major issues. Some warnings are outside of my control, and mobile results tend to be lower than desktop.
+I tested my deployed project using the Lighthouse Audit tool to check for any major issues. Some warnings are outside of my control, and mobile results tend to be lower than desktop.
 
 | Page | Mobile | Desktop |
 | --- | --- | --- |
-| Register | ![screenshot](documentation/lighthouse/mobile-register.png) | ![screenshot](documentation/lighthouse/desktop-register.png) |
-| Login | ![screenshot](documentation/lighthouse/mobile-login.png) | ![screenshot](documentation/lighthouse/desktop-login.png) |
 | Home | ![screenshot](documentation/lighthouse/mobile-home.png) | ![screenshot](documentation/lighthouse/desktop-home.png) |
-| Add Blog | ![screenshot](documentation/lighthouse/mobile-add-blog.png) | ![screenshot](documentation/lighthouse/desktop-add-blog.png) |
-| Edit Blog | ![screenshot](documentation/lighthouse/mobile-edit-blog.png) | ![screenshot](documentation/lighthouse/desktop-edit-blog.png) |
-| Blog Post | ![screenshot](documentation/lighthouse/mobile-blog-post.png) | ![screenshot](documentation/lighthouse/desktop-blog-post.png) |
+| Diggit Forum | ![screenshot](documentation/lighthouse/mobile-diggit-forum.png) | ![screenshot](documentation/lighthouse/desktop-diggit-forum.png) |
+| Digging Deeper | ![screenshot](documentation/lighthouse/mobile-digging-deeper.png) | ![screenshot](documentation/lighthouse/desktop-digging-deeper.png) |
+| Read Post (blog) | ![screenshot](documentation/lighthouse/mobile-rp-blog.png) | ![screenshot](documentation/lighthouse/desktop-rp-blog.png) |
+| Read Post (forum) | ![screenshot](documentation/lighthouse/mobile-rp-forum.png) | ![screenshot](documentation/lighthouse/desktop-rp-forum.png) |
+| Contact | ![screenshot](documentation/lighthouse/mobile-contact.png) | ![screenshot](documentation/lighthouse/desktop-contact.png) |
 | 404 | ![screenshot](documentation/lighthouse/mobile-404.png) | ![screenshot](documentation/lighthouse/desktop-404.png) |
+| Signup | ![screenshot](documentation/lighthouse/mobile-signup.png) | ![screenshot](documentation/lighthouse/desktop-signup.png) |
+| Login | ![screenshot](documentation/lighthouse/mobile-login.png) | ![screenshot](documentation/lighthouse/desktop-login.png) |
+| Logout | ![screenshot](documentation/lighthouse/mobile-logout.png) | ![screenshot](documentation/lighthouse/desktop-logout.png) |
 
 ## Defensive Programming
 
@@ -442,6 +440,8 @@ Any remaining open issues can be tracked [here](https://www.github.com/geraldine
 | --- | --- |
 | The project is designed to be responsive from `320px` and upwards, in line with the material taught on the course LMS. Minor layout inconsistencies may occur on extra-wide (e.g. 4k/8k monitors), or smart-display devices (e.g. Nest Hub, Smart Watches, Gameboy Color, etc.), as these resolutions are outside the project’s scope, as taught by Code Institute. | ![screenshot](documentation/issues/poor-responsiveness.png) |
 | Validation errors on "signup.html" coming from the Django Allauth package. | ![screenshot](documentation/issues/allauth.png) |
+| User posts created or edited in the admin panel render with `<p>` tags visible due to the use of Summernote rich text editor in the admin panel, versus a plain textarea on the user-facing form. This is a low-risk edge case as admin users receive site training at handover. Keeping plain text input on the user form intentionally prevents users from 
+injecting HTML directly. Differences in format are handled in the template.| ![screenshot](documentation/admin-post-error.png) |
 
 > [!IMPORTANT]  
 > There are no remaining bugs that I am aware of, though, even after thorough testing, I cannot rule out the possibility.
