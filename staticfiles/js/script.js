@@ -7,8 +7,6 @@
  */
 
 $(document).ready(function () {
-    console.log(typeof $);
-    console.log($);
 
     // Clear the post form on cancel
     $("#post-form-cancel").click(function () {
