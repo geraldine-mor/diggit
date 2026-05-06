@@ -4,11 +4,12 @@
 {% url 'account_signup' as action_url %}
 
 {% block head_title %}{% trans " | Signup" %}{% endblock head_title %}
+{% block body_style %}d-flex flex-column{% endblock %}
 
 {% block content %}
 <div id="signup-backdrop">
     <div class="overlay">
-        <div id="form-card" class="card p-3 mx-2 my-5">
+        <div id="form-card" class="card p-3 mx-2 my-2">
             <div class="card-text">
                 <h1 class="text-center">Sign Up</h1>
                 <p>Already have an account? Then please<a class="link" href="{% url 'account_login' %}?next={{ request.GET.next }}"> sign in</a></p>

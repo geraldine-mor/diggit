@@ -705,6 +705,10 @@ There are no remaining major differences between the local version when compared
 | [Magnific](https://www.magnific.com/free-photo/ripe-strawberry-hanging-from-plant_426972403.htm#fromView=search&page=1&position=4&uuid=7994d07b-3c9e-4ca9-a723-45b484f5ca95&query=strawberry+plant) | Strawberry plant |
 | [Pexels](https://www.pexels.com/photo/serene-overgrown-meadow-in-rural-taiwan-29698253/) | Overgrown grass |
 | [Adobe Stock](https://as2.ftcdn.net/v2/jpg/01/71/50/01/1000_F_171500112_9tRgKpwBkuh7pk4cAgug8PnnO48wxpbw.jpg) | April showers post |
+| [Pexels](https://www.pexels.com/photo/tranquil-autumn-scene-with-wooden-fence-and-trees-34266490/) | Shady fence | 
+| [Pexels](https://www.pexels.com/photo/gray-steel-watering-can-beside-brown-wooden-fence-5919766/) | Raised bed |
+| [Pexels](https://www.pexels.com/photo/vegetables-on-the-soil-5503338/) | Compost bin |
+| [Pexels](https://www.pexels.com/photo/close-up-shot-of-hosta-sieboldiana-leaves-9379214/) | Hosta slugs |
 | [Adobe Stock](https://as2.ftcdn.net/v2/jpg/03/81/19/89/1000_F_381198933_gtRts0ctYpFqRyWyMVTcGtKOnFNGSPgz.jpg) | Late autumn tasks post |
 | [Pikwizard](https://pikwizard.com/photo/sunlit-planting-onion-bulbs-with-metal-trowel-in-rich-soil-closeup-for-spring-garden/6168844f5eb786ff8d926733247b0281/) | October garden care post |
 | [Pexels](https://www.pexels.com/photo/fresh-organic-vegetables-and-fruits-display-35974369/) | Harvest time post |
@@ -724,6 +728,7 @@ There are no remaining major differences between the local version when compared
 | [TinyPNG](https://tinypng.com) | Compressing images < 5MB |
 | [CompressPNG](https://compresspng.com) | Compressing images > 5MB |
 | [ImageResizer](https://imageresizer.com/) | Resizing, compressing and converting images to `.webp` |
+| Developer's Own Images | Apple tree, damaged brassica and pitcher plant |
 
 ### Acknowledgements
 

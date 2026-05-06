@@ -2,17 +2,19 @@
 {% load i18n %}
 
 {% block head_title %}{% trans " | Contact" %}{% endblock head_title %}
-{% block body_style %}contact{% endblock %}
+{% block body_style %}contact d-flex flex-column{% endblock %}
 
 {% block content %}
 
-<div class="container contact-overlay">
-    <h1 class="">Contact Us</h1>
-    <p>Here at diggit, we really appreciate any feedback you have as to how we can improve the site or your experience.
-        Please let us know if there is anything we can do better</p>
-    <p>Feel free to reach out by email or fill out the contact form below.
-        We aim to reply within 2-3 days</p>
-    <p><i class="fa-regular fa-envelope"></i>: info@diggit.com</p>
+<div class="container contact-overlay py-3">
+    <div id="contact-text">
+        <h1 class="">Contact Us</h1>
+        <p>Here at diggit, we really appreciate any feedback you have as to how we can improve the site or your experience.
+            Please let us know if there is anything we can do better</p>
+        <p>Feel free to reach out by email or fill out the contact form below.
+            We aim to reply within 2-3 days</p>
+        <p><i class="fa-regular fa-envelope"></i>: info@diggit.com</p>
+    </div>
     <div id="contact-form" class="mx-auto">
         <form method="POST" action="{% url 'contact' %}">
             {% csrf_token %}

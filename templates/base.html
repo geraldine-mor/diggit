@@ -47,7 +47,7 @@
                     <li class="auth-item"><a href="{% url 'account_logout' %}?next={{ request.path }}" class="nav-link">Logout</a></li>
                     {% else %}
                     <li class="nav-item"><a href="{% url 'account_login' %}?next={{ request.path }}" class="nav-link">Login</a></li>
-                    <li class="nav-item"><a href="{% url 'account_signup' %}?next={{ request.path }}" class="nav-link">Join</a>
+                    <li class="nav-item"><a href="{% url 'account_signup' %}?next={{ request.path }}" class="nav-link">Register</a>
                     </li>
                     {% endif %}
                 </ul>

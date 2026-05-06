@@ -93,23 +93,28 @@ I used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to 
 
 ## Responsiveness
 
-⚠️ --- Work in Progress --- ⚠️
-
-If you have tested the project on your actual mobile phone or tablet, consider also including screenshots of these as well. It showcases a higher level of manual tests, and can be seen as a positive inclusion!
-
-⚠️ --- END --- ⚠️
-
-I've tested my deployed project to check for responsiveness issues.
+I tested my deployed project to check for responsiveness issues.
 
 | Page | Mobile | Tablet | Desktop | Notes |
 | --- | --- | --- | --- | --- |
-| Register | ![screenshot](documentation/responsiveness/mobile-register.png) | ![screenshot](documentation/responsiveness/tablet-register.png) | ![screenshot](documentation/responsiveness/desktop-register.png) | Works as expected |
+| Home | ![screenshot](documentation/responsiveness/mobile-home.png) | ![screenshot](documentation/responsiveness/tablet-home.png) | ![screenshot](documentation/responsiveness/desktop-home.png) | Works as expected, full size screenshot of mobile looks odd because the footer is fixed |
+| Diggit Forum| ![screenshot](documentation/responsiveness/mobile-diggit-forum.png) | ![screenshot](documentation/responsiveness/tablet-diggit-forum.png) | ![screenshot](documentation/responsiveness/desktop-diggit-forum.png) | Works as expected |
+| Digging Deeper | ![screenshot](documentation/responsiveness/mobile-digging-deeper.png) | ![screenshot](documentation/responsiveness/tablet-digging-deeper.png) | ![screenshot](documentation/responsiveness/desktop-digging-deeper.png) | Works as expected |
+| Read Post (blog)| ![screenshot](documentation/responsiveness/mobile-read-post.png) | ![screenshot](documentation/responsiveness/tablet-read-post.png) | ![screenshot](documentation/responsiveness/desktop-read-post.png) | Works as expected |
+| Read Post (forum) | ![screenshot](documentation/responsiveness/mobile-rp-forum.png) | ![screenshot](documentation/responsiveness/tablet-rp-forum.png) | ![screenshot](documentation/responsiveness/desktop-rp-forum.png) | Works as expected |
+| Contact | ![screenshot](documentation/responsiveness/mobile-contact.png) | ![screenshot](documentation/responsiveness/tablet-contact.png) | ![screenshot](documentation/responsiveness/desktop-contact.png) | Works as expected |
+| Signup | ![screenshot](documentation/responsiveness/mobile-signup.png) | ![screenshot](documentation/responsiveness/tablet-signup.png) | ![screenshot](documentation/responsiveness/desktop-signup.png) | Works as expected |
 | Login | ![screenshot](documentation/responsiveness/mobile-login.png) | ![screenshot](documentation/responsiveness/tablet-login.png) | ![screenshot](documentation/responsiveness/desktop-login.png) | Works as expected |
-| Home | ![screenshot](documentation/responsiveness/mobile-home.png) | ![screenshot](documentation/responsiveness/tablet-home.png) | ![screenshot](documentation/responsiveness/desktop-home.png) | Works as expected |
-| Add Blog | ![screenshot](documentation/responsiveness/mobile-add-blog.png) | ![screenshot](documentation/responsiveness/tablet-add-blog.png) | ![screenshot](documentation/responsiveness/desktop-add-blog.png) | Works as expected |
-| Edit Blog | ![screenshot](documentation/responsiveness/mobile-edit-blog.png) | ![screenshot](documentation/responsiveness/tablet-edit-blog.png) | ![screenshot](documentation/responsiveness/desktop-edit-blog.png) | Works as expected |
-| Blog Post | ![screenshot](documentation/responsiveness/mobile-blog-post.png) | ![screenshot](documentation/responsiveness/tablet-blog-post.png) | ![screenshot](documentation/responsiveness/desktop-blog-post.png) | Works as expected |
+| Login | ![screenshot](documentation/responsiveness/mobile-login.png) | ![screenshot](documentation/responsiveness/tablet-login.png) | ![screenshot](documentation/responsiveness/desktop-login.png) | Works as expected |
+| Logout | ![screenshot](documentation/responsiveness/mobile-logout.png) | ![screenshot](documentation/responsiveness/tablet-logout.png) | ![screenshot](documentation/responsiveness/desktop-logout.png) | Works as expected |
 | 404 | ![screenshot](documentation/responsiveness/mobile-404.png) | ![screenshot](documentation/responsiveness/tablet-404.png) | ![screenshot](documentation/responsiveness/desktop-404.png) | Works as expected |
+| Add Post | ![screenshot](documentation/responsiveness/mobile-add-post.png) | ![screenshot](documentation/responsiveness/tablet-add-post.png) | ![screenshot](documentation/responsiveness/desktop-add-post.png) | Works as expected |
+| Edit Post | ![screenshot](documentation/responsiveness/mobile-edit-post.png) | ![screenshot](documentation/responsiveness/tablet-edit-post.png) | ![screenshot](documentation/responsiveness/desktop-edit-post.png) | Works as expected |
+| Add Comment | ![screenshot](documentation/responsiveness/mobile-add-comment.png) | ![screenshot](documentation/responsiveness/tablet-add-comment.png) | ![screenshot](documentation/responsiveness/desktop-add-comment.png) | Works as expected |
+| Edit Comment | ![screenshot](documentation/responsiveness/mobile-edit-comment.png) | ![screenshot](documentation/responsiveness/tablet-edit-comment.png) | ![screenshot](documentation/responsiveness/desktop-edit-comment.png) | Works as expected |
+
+## Device Testing
+
 
 ## Browser Compatibility
 
