@@ -49,16 +49,20 @@ $(document).ready(function () {
 });
 // Close any open popovers to ensure only one comment-related popover is visible at a time
 const closePopovers = () => {
-    document.getElementById("comment-form").hidePopover();
-    document.getElementById("comment-delete").hidePopover();
+    ["comment-form", "comment-delete"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el.matches(":popover-open")) el.hidePopover()
+    });
 };
 
 const openCommentForm = () => { document.getElementById("comment-form").showPopover(); };
 
 // Close any open popovers to ensure only one post-related popover is visible at a time
 const closeOpenForms = () => {
-    document.getElementById("post-form").hidePopover();
-    document.getElementById("post-delete").hidePopover();
+    ["post-form", "post-delete"].forEach(id => {
+        const el = document.getElementById(id);
+        if (el.matches(":popover-open")) el.hidePopover()
+    });
 };
 
 /**
