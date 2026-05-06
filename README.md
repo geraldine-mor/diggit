@@ -703,17 +703,19 @@ There are no remaining major differences between the local version when compared
 | [Adobe Stock](https://as1.ftcdn.net/v2/jpg/16/01/00/92/1000_F_1601009208_6OIfBMxLi3sEUC3DLK3wdmxzGlbY0lgW.jpg) | Diggit logo |
 | [Freepik](https://www.freepik.com/free-photo/shot-white-bench-park_17465507.htm#fromView=search&page=1&position=5&uuid=1d759506-28fd-461d-b3fe-94d64b5c0d87&query=garden) | Homepage backdrop |
 | [Magnific](https://www.magnific.com/free-photo/ripe-strawberry-hanging-from-plant_426972403.htm#fromView=search&page=1&position=4&uuid=7994d07b-3c9e-4ca9-a723-45b484f5ca95&query=strawberry+plant) | Strawberry plant |
+| [Pexels](https://www.pexels.com/photo/serene-overgrown-meadow-in-rural-taiwan-29698253/) | Overgrown grass |
 | [Adobe Stock](https://as2.ftcdn.net/v2/jpg/01/71/50/01/1000_F_171500112_9tRgKpwBkuh7pk4cAgug8PnnO48wxpbw.jpg) | April showers post |
 | [Adobe Stock](https://as2.ftcdn.net/v2/jpg/03/81/19/89/1000_F_381198933_gtRts0ctYpFqRyWyMVTcGtKOnFNGSPgz.jpg) | Late autumn tasks post |
-| [Adobe Stock](https://as2.ftcdn.net/v2/jpg/05/95/19/51/1000_F_595195179_2Kg8OrTxSiuNj9Eq733MA5pzddOjPeoW.jpg) | October garden care post |
+| [Pikwizard](https://pikwizard.com/photo/sunlit-planting-onion-bulbs-with-metal-trowel-in-rich-soil-closeup-for-spring-garden/6168844f5eb786ff8d926733247b0281/) | October garden care post |
 | [Pexels](https://www.pexels.com/photo/fresh-organic-vegetables-and-fruits-display-35974369/) | Harvest time post |
-| [Pexels](https://www.pexels.com/photo/vibrant-pink-tulip-garden-in-full-bloom-33455563/) | Late spring bloom post |
-| [Pexels](https://www.pexels.com/photo/a-woman-watering-the-plants-5622495/) | Summer garden success post |
+| [Pexels](https://www.pexels.com/photo/decorative-clock-in-serene-garden-setting-36091191/) | Chelsea flower show post |
+| [Pexels](https://www.pexels.com/photo/vibrant-floral-garden-in-full-bloom-36825680/) | Summer garden post |
 | [Pexels](https://www.pexels.com/photo/close-up-on-a-ladybug-sitting-on-an-aubrieta-flower-21967399/) | Companion planting post | 
 | [Adobe Stock](https://stock.adobe.com/ie/images/grass-path-with-bench-and-perennials-in-the-vlinderhof-a-garden-designed-by-piet-oudolf/477594224) | Winter garden planning post |
 | [Adobe Stock](https://stock.adobe.com/ie/images/garden-wheelbarrow-with-leaves-or-cleaning-city-park-in-spring-at-sunny-day/445546304) | Waking the garden post |
 | [Adobe Stock](https://stock.adobe.com/ie/images/gardener-in-a-green-apron-cleaning-a-dirty-metal-spade-with-a-wooden-brush-hands-maintaining-gardening-tools-on-a-rustic-outdoor-table/1967485573) | Midwinter care post |
 | [Freepik](https://www.magnific.com/free-photo/top-view-gardening-tools-flower-pot_13560868.htm#fromView=search&page=1&position=1&uuid=3be56098-870b-46a7-9dec-d12d9d0dbea2&query=seedlings) | Spring planting guide post |
+| [Pexels](https://www.pexels.com/photo/green-potted-plants-inside-the-house-9707262/) | Winter Houseplants post |
 | [Pexels](https://www.pexels.com/photo/lush-garden-in-mississauga-with-blooming-flowers-33402974/) | Contact page backdrop |
 | [Adobe Stock](https://stock.adobe.com/ie/images/wooden-garden-gate-stands-invitingly-open-along-a-stone-pathway-leading-into-a-lush-green-paradise-illuminated-by-bright-sun-flare-filtering-through-large-trees/1918821068) | Login/Logout backdrop |
 | [Adobe Stock](https://stock.adobe.com/ie/images/patio-garden-with-containers-full-of-colorful-flowers-container-gardening-and-flower-display-idea/517647406) | Signup backdrop |

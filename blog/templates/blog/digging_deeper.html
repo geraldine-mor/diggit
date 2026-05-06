@@ -24,9 +24,9 @@
 
                     {% if post.featured_image %}
                     <div class="post-image">
-                        {% load cloudinary %}
-                        {% cloudinary post.featured_image quality='auto' crop='pad' background='gen_fill:ignore-foreground_true' alt=post.title %}
-                        <!-- <img src="{{ post.featured_image.url }}" alt="{{ post.title }}"> -->
+                        <!-- {% load cloudinary %}
+                        {% cloudinary post.featured_image quality='auto' crop='pad' background='gen_fill:ignore-foreground_true' alt=post.title %} -->
+                        <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                     </div>
                     {% endif %}
 

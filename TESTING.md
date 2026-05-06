@@ -55,16 +55,6 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate m
 
 ### Python
 
-⚠️ Work in Progress ⚠️
-
-You must strive to fix all Python lines that are too long (>80 characters). In rare cases where you cannot break the lines [*without breaking the functionality*], adding "`  # noqa`" (*NO Quality Assurance*) to the end of those lines will ignore linting validation. Do not use "`  # noqa`" all over your project just to clear down validation errors! This can still cause a project to fail, for failing to fix actual PEP8 validation errors.
-
-Sometimes variables can get too long, or excessive `if/else` conditional statements. These are acceptable instances to use the "`  # noqa`" comment.
-
-When trying to fix "line too long" errors, try to avoid using `/` to split lines. A better approach would be to use any type of opening bracket, and hit `<Enter>` just after that. Any opening bracket type will work: `(`, `[`, `{`. By using an opening bracket, Python knows where to appropriately indent the next line of code, without having to *guess* for yourself and attempt to "tab" to the correct indentation level.
-
-⚠️ --- END --- ⚠️
-
 I used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate all of my Python files. There were errors initially with several of the files, detailed below with their fixes.
 
 | Directory | File | URL | Screenshot | Notes |
@@ -73,17 +63,17 @@ I used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to 
 | blog | [choices.py](https://github.com/geraldine-mor/diggit/blob/main/blog/choices.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/choices.py) | ![screenshot of validation no errors](documentation/validation/blog-choices.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/8001e4f3539d24ed25c8dd26f272e1f781da68d7) |
 | blog | [forms.py](https://github.com/geraldine-mor/diggit/blob/main/blog/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/forms.py) | ![screenshot of validation no errors](documentation/validation/blog-forms.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/8001e4f3539d24ed25c8dd26f272e1f781da68d7) |
 | blog | [models.py](https://github.com/geraldine-mor/diggit/blob/main/blog/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/models.py) | ![screenshot](documentation/validation/blog-models.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/6db1ccf434734e50f18b317b8fd925b22857de5a) |
-| blog | [tests.py](https://github.com/geraldine-mor/diggit/blob/main/blog/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/tests.py) | ![screenshot](documentation/validation/py-blog-tests.png) | ⚠️ Notes (if applicable) |
+| ⚠️ blog | [tests.py](https://github.com/geraldine-mor/diggit/blob/main/blog/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/tests.py) | ![screenshot](documentation/validation/py-blog-tests.png) | ⚠️ Notes (if applicable) |
 | blog | [urls.py](https://github.com/geraldine-mor/diggit/blob/main/blog/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/urls.py) | ![screenshot](documentation/validation/blog-urls.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/6db1ccf434734e50f18b317b8fd925b22857de5a) |
 | blog | [utils.py](https://github.com/geraldine-mor/diggit/blob/main/blog/utils.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/utils.py) | ![screenshot](documentation/validation/blog-utils.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/a6c82cc94753a3c0e6ecf7f92051308993ab1bd0) |
 | blog | [views.py](https://github.com/geraldine-mor/diggit/blob/main/blog/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/views.py) | ![screenshot of validation no errors](documentation/validation/blog-views.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/53964b9c1e8613668d3d21269ba00d8bf28b8fff) |
 | contact | [admin.py](https://github.com/geraldine-mor/diggit/blob/main/contact/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/admin.py) | ![screenshot](documentation/validation/contact-admin.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/a6c82cc94753a3c0e6ecf7f92051308993ab1bd0) |
 | contact | [forms.py](https://github.com/geraldine-mor/diggit/blob/main/contact/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/forms.py) | ![screenshot](documentation/validation/contact-forms.png) |  |
 | contact | [models.py](https://github.com/geraldine-mor/diggit/blob/main/contact/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/models.py) | ![screenshot](documentation/validation/contact-models.png) |  |
-| contact | [tests.py](https://github.com/geraldine-mor/diggit/blob/main/contact/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/tests.py) | ![screenshot](documentation/validation/py-contact-tests.png) | ⚠️ Notes (if applicable) |
+| ⚠️ contact | [tests.py](https://github.com/geraldine-mor/diggit/blob/main/contact/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/tests.py) | ![screenshot](documentation/validation/py-contact-tests.png) | ⚠️ Notes (if applicable) |
 | contact | [urls.py](https://github.com/geraldine-mor/diggit/blob/main/contact/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/urls.py) | ![screenshot](documentation/validation/contact-urls.png) |  |
 | contact | [views.py](https://github.com/geraldine-mor/diggit/blob/main/contact/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/views.py) | ![screenshot](documentation/validation/contact-views.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/a6c82cc94753a3c0e6ecf7f92051308993ab1bd0) |
-| diggit | [settings.py](https://github.com/geraldine-mor/diggit/blob/main/diggit/settings.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/diggit/settings.py) | ![screenshot](documentation/validation/py-diggit-settings.png) | ⚠️ Notes (if applicable) |
+| diggit | [settings.py](https://github.com/geraldine-mor/diggit/blob/main/diggit/settings.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/diggit/settings.py) | ![screenshot](documentation/validation/settings.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/2fc7d342b57d3bdb771ca52346e86442010edcd3) |
 | diggit | [urls.py](https://github.com/geraldine-mor/diggit/blob/main/diggit/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/diggit/urls.py) | ![screenshot](documentation/validation/urls.png) |  |
 
 **Initial Errors**
@@ -103,19 +93,7 @@ I used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to 
 
 ## Responsiveness
 
-⚠️ INSTRUCTIONS ⚠️
-
-Use this space to discuss testing the live/deployed site on various device sizes.
-
-The minimum requirement is to test the following 3 sizes:
-
-- Mobile
-- Tablet
-- Desktop
-
-**IMPORTANT**: You must provide screenshots of your results, to "prove" that you've actually tested them.
-
-Using the [amiresponsive](http://ami.responsivedesign.is) mockup images (*or similar*) does not meet the requirements. Consider using some of the built-in device sizes from the Developer Tools.
+⚠️ --- Work in Progress --- ⚠️
 
 If you have tested the project on your actual mobile phone or tablet, consider also including screenshots of these as well. It showcases a higher level of manual tests, and can be seen as a positive inclusion!
 
