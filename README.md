@@ -18,7 +18,7 @@ During project idea discussions with my course facilitator, Tindy, we segued int
 
 **Site Mockups**
 
-⚠️![screenshot](documentation/mockup.png)
+![screenshot](documentation/mockup.png)
 
 source: [diggit amiresponsive](https://ui.dev/amiresponsive?url=https://diggit-938ea2f476b2.herokuapp.com/)
 ## UX
@@ -95,12 +95,12 @@ System generated:
 
 **Content Constraints**
  - Title length: Post titles restricted to 200 characters
- - Images: Images only accepted in ⚠️ .png or .jpg ⚠️ format ⚠️ and are limited to 1MB in size ⚠️
+ - Images: Images up to 10MB as per Cloudinary
  - Categories: Limited to 20 in order to provide colour options that are guaranteed to meet accessibility contrast requirements
  - Language: Currently only english language supported.
  - Content moderation: Reactive content moderation allows for fast posting but opens the site to damaging content.
  - Media types: Audio and video files are not currently supported.
- - External links: Users are asked not to share external links in the community guidelines. ⚠️ Llnks in posts & comments are plain text and not clickable ⚠️
+ - External links: Users are asked not to share external links in the community guidelines. Llnks added in posts & comments are displayed as plain text.
 
 #### 3. Structure
 
@@ -317,7 +317,7 @@ _Report post and report comment were part of the initial planning but were desco
 | Admin - Create Blog Post | Site admins can create and publish Digging Deeper posts, including uploading a featured image, from the Django admin panel. | ![screenshot of admin create post form](documentation/features/admin-blog.png) |
 | Admin - Edit Blog Post | Site admins can edit existing Digging Deeper posts to keep content accurate and up to date. | ![screenshot of admin edit post form](documentation/features/admin-edit.png) |
 | Admin - Delete Blog Post | Site admins can delete Digging Deeper posts and user-generated content to ensure community guidelines are upheld. | ![screenshot of admin delete page](documentation/features/admin-delete.png) |
-| ⚠️404 Page⚠️ | A custom 404 page is displayed when a user navigates to a non-existent page, maintaining the site's look and feel and providing a clear route back to the homepage. | ![screenshot](documentation/features/404.png) |
+| 404 Page | A custom 404 page is displayed when a user navigates to a non-existent page, maintaining the site's look and feel and providing a clear route back to the homepage. | ![screenshot](documentation/features/404.png) |
 | Homepage | The homepage provides a welcoming introduction to the diggit community, a brief description of the platform's purpose, and three call-to-action cards directing users to Ask the Community, Share your Wins, and explore the Digging Deeper expert blog. The layout is designed to immediately communicate the site's purpose to new visitors and provide clear onward navigation without the need to register. | ![screenshot of homepage](documentation/features/home.png) |
 | User Feedback | Clear and obvious Django messages are used to provide feedback to users for both successful and unsuccessful actions. Feedback messages are triggered by post and comment create, update and delete, login and logout. | ![screenshot](documentation/features/messages.png) |
 
@@ -634,12 +634,6 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 
 ### Local VS Deployment
 
-⚠️ --- Work in progress --- ⚠️
-
-Use this space to discuss any differences between the local version you've developed, and the live deployment site. Generally, there shouldn't be [m]any major differences, so if you honestly cannot find any differences, feel free to use the following example:
-
-⚠️ --- END --- ⚠️
-
 There are no remaining major differences between the local version when compared to the deployed version online.
 
 ## Credits
@@ -690,11 +684,12 @@ There are no remaining major differences between the local version when compared
 | [MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/showPopover) | Show/hide popover manually in JS |
 | [Django](https://docs.djangoproject.com/en/6.0/topics/pagination/) | Pagination in function based views |
 | [Django](https://docs.djangoproject.com/en/5.2/ref/forms/widgets/#checkboxselectmultiple) | Checkbox field for categories on the create post form |
+| [oddbird](https://github.com/oddbird/popover-polyfill) | Popoverfill |
+| [Cloudinary](https://cloudinary.com/documentation/resizing_and_cropping) | Cropping and optimizing images |
+| [MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/env) | env(safe-area-inset-bottom) css function |
 | [Claude](https://claude.ai) | Help with code logic and explanations, documentation and planning. |
 
 ### Media
-
-⚠️ --- Work in Progress --- ⚠️
 
 | Source | Notes |
 | --- | --- |
@@ -729,6 +724,9 @@ There are no remaining major differences between the local version when compared
 | [CompressPNG](https://compresspng.com) | Compressing images > 5MB |
 | [ImageResizer](https://imageresizer.com/) | Resizing, compressing and converting images to `.webp` |
 | Developer's Own Images | Apple tree, damaged brassica and pitcher plant |
+
+### AI Use
+⚠️ --- Work in Progress --- ⚠️
 
 ### Acknowledgements
 
