@@ -157,18 +157,20 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 
 I tested my deployed project using the Lighthouse Audit tool to check for any major issues. Some warnings are outside of my control, and mobile results tend to be lower than desktop.
 
-| Page | Mobile | Desktop |
-| --- | --- | --- |
-| Home | ![screenshot](documentation/lighthouse/home-mobile.png) | ![screenshot](documentation/lighthouse/home-desktop.png) |
-| Diggit Forum | ![screenshot](documentation/lighthouse/diggit-forum-mobile.png) | ![screenshot](documentation/lighthouse/diggit-forum-desktop.png) |
-| Digging Deeper | ![screenshot](documentation/lighthouse/digging-deeper-mobile.png) | ![screenshot](documentation/lighthouse/digging-deeper-desktop.png) |
-| Read Post (blog) | ![screenshot](documentation/lighthouse/rp-blog-mobile.png) | ![screenshot](documentation/lighthouse/rp-blog-desktop.png) |
-| Read Post (forum) | ![screenshot](documentation/lighthouse/rp-forum-mobile.png) | ![screenshot](documentation/lighthouse/rp-forum-desktop.png) |
-| Contact | ![screenshot](documentation/lighthouse/contact-mobile.png) | ![screenshot](documentation/lighthouse/contact-desktop.png) |
-| 404 | ![screenshot](documentation/lighthouse/404-mobile.png) | ![screenshot](documentation/lighthouse/404-desktop.png) |
-| Signup | ![screenshot](documentation/lighthouse/signup-mobile.png) | ![screenshot](documentation/lighthouse/signup-desktop.png) |
-| Login | ![screenshot](documentation/lighthouse/login-mobile.png) | ![screenshot](documentation/lighthouse/login-desktop.png) |
-| Logout | ![screenshot](documentation/lighthouse/logout-mobile.png) | ![screenshot](documentation/lighthouse/logout-desktop.png) |
+Issues that could be rectified are documented [here](https://github.com/geraldine-mor/diggit/issues/68) with their respective fixes.
+
+| Page | Mobile | Desktop | 
+| --- | --- | --- | 
+| Home | ![screenshot](documentation/lighthouse/home-mobile.png) | ![screenshot](documentation/lighthouse/home-desktop.png) |  
+| Diggit Forum | ![screenshot](documentation/lighthouse/diggit-forum-mobile.png) | ![screenshot](documentation/lighthouse/diggit-forum-desktop.png) |  
+| Digging Deeper | ![screenshot](documentation/lighthouse/digging-deeper-mobile.png) | ![screenshot](documentation/lighthouse/digging-deeper-desktop.png) |  
+| Read Post (blog) | ![screenshot](documentation/lighthouse/rp-blog-mobile.png) | ![screenshot](documentation/lighthouse/rp-blog-desktop.png) |  
+| Read Post (forum) | ![screenshot](documentation/lighthouse/rp-forum-mobile.png) | ![screenshot](documentation/lighthouse/rp-forum-desktop.png) |  
+| Contact | ![screenshot](documentation/lighthouse/contact-mobile.png) | ![screenshot](documentation/lighthouse/contact-desktop.png) |  
+| 404 | ![screenshot](documentation/lighthouse/404-mobile.png) | ![screenshot](documentation/lighthouse/404-desktop.png) |  
+| Signup | ![screenshot](documentation/lighthouse/signup-mobile.png) | ![screenshot](documentation/lighthouse/signup-desktop.png) |  
+| Login | ![screenshot](documentation/lighthouse/login-mobile.png) | ![screenshot](documentation/lighthouse/login-desktop.png) |  
+| Logout | ![screenshot](documentation/lighthouse/logout-mobile.png) | ![screenshot](documentation/lighthouse/logout-desktop.png) |  
 
 ## Defensive Programming
 
