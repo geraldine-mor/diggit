@@ -159,16 +159,16 @@ I tested my deployed project using the Lighthouse Audit tool to check for any ma
 
 | Page | Mobile | Desktop |
 | --- | --- | --- |
-| Home | ![screenshot](documentation/lighthouse/mobile-home.png) | ![screenshot](documentation/lighthouse/desktop-home.png) |
-| Diggit Forum | ![screenshot](documentation/lighthouse/mobile-diggit-forum.png) | ![screenshot](documentation/lighthouse/desktop-diggit-forum.png) |
-| Digging Deeper | ![screenshot](documentation/lighthouse/mobile-digging-deeper.png) | ![screenshot](documentation/lighthouse/desktop-digging-deeper.png) |
-| Read Post (blog) | ![screenshot](documentation/lighthouse/mobile-rp-blog.png) | ![screenshot](documentation/lighthouse/desktop-rp-blog.png) |
-| Read Post (forum) | ![screenshot](documentation/lighthouse/mobile-rp-forum.png) | ![screenshot](documentation/lighthouse/desktop-rp-forum.png) |
-| Contact | ![screenshot](documentation/lighthouse/mobile-contact.png) | ![screenshot](documentation/lighthouse/desktop-contact.png) |
-| 404 | ![screenshot](documentation/lighthouse/mobile-404.png) | ![screenshot](documentation/lighthouse/desktop-404.png) |
-| Signup | ![screenshot](documentation/lighthouse/mobile-signup.png) | ![screenshot](documentation/lighthouse/desktop-signup.png) |
-| Login | ![screenshot](documentation/lighthouse/mobile-login.png) | ![screenshot](documentation/lighthouse/desktop-login.png) |
-| Logout | ![screenshot](documentation/lighthouse/mobile-logout.png) | ![screenshot](documentation/lighthouse/desktop-logout.png) |
+| Home | ![screenshot](documentation/lighthouse/home-mobile.png) | ![screenshot](documentation/lighthouse/home-desktop.png) |
+| Diggit Forum | ![screenshot](documentation/lighthouse/diggit-forum-mobile.png) | ![screenshot](documentation/lighthouse/diggit-forum-desktop.png) |
+| Digging Deeper | ![screenshot](documentation/lighthouse/digging-deeper-mobile.png) | ![screenshot](documentation/lighthouse/digging-deeper-desktop.png) |
+| Read Post (blog) | ![screenshot](documentation/lighthouse/rp-blog-mobile.png) | ![screenshot](documentation/lighthouse/rp-blog-desktop.png) |
+| Read Post (forum) | ![screenshot](documentation/lighthouse/rp-forum-mobile.png) | ![screenshot](documentation/lighthouse/rp-forum-desktop.png) |
+| Contact | ![screenshot](documentation/lighthouse/contact-mobile.png) | ![screenshot](documentation/lighthouse/contact-desktop.png) |
+| 404 | ![screenshot](documentation/lighthouse/404-mobile.png) | ![screenshot](documentation/lighthouse/404-desktop.png) |
+| Signup | ![screenshot](documentation/lighthouse/signup-mobile.png) | ![screenshot](documentation/lighthouse/signup-desktop.png) |
+| Login | ![screenshot](documentation/lighthouse/login-mobile.png) | ![screenshot](documentation/lighthouse/login-desktop.png) |
+| Logout | ![screenshot](documentation/lighthouse/logout-mobile.png) | ![screenshot](documentation/lighthouse/logout-desktop.png) |
 
 ## Defensive Programming
 
