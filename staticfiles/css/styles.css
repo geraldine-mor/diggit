@@ -30,7 +30,7 @@ body {
 
 main {
    margin-top: 66px;
-   margin-bottom: 69px;
+   margin-bottom: 47px;
    font-size: large;
 }
 
@@ -44,7 +44,6 @@ h2, h3 {
 
 .pagination {
     max-width: fit-content;
-    margin-bottom: 50px;
 }
 
 .alert {
@@ -131,7 +130,7 @@ h2, h3 {
 }
 
 .auth-item {
-    margin: 4px 8px;
+    margin: 4px 8px 0;
 }
 
 #admin-link {
@@ -516,6 +515,10 @@ footer > p {
     text-align: end;
 }
 
+.copyright {
+    font-size: 10px;
+}
+
 /*Small screens 576px an up*/
 @media screen and (min-width: 576px) {
     main {
@@ -584,8 +587,8 @@ footer > p {
         width: 100%;
     }
 
-    footer > p {
-        margin-top: 5px;
+    .copyright {
+        margin-top: 12px;
     }
 }
 
