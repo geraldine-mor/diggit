@@ -115,7 +115,7 @@ I tested my deployed project to check for responsiveness issues.
 
 ## Device Testing
 
-| Page | Mobile iPhone SE <br>(iOS 26.4.2)| Tablet 5th Gen iPad <br>(OS 15.4.1)| Desktop Ubuntu <br>22" Dell Monitor | Notes |
+| Page | Mobile <br>iPhone SE <br> 375px x 549px| Tablet <br> 5th Gen iPad <br> 768px x 898px| Desktop Ubuntu <br>22" Dell Monitor <br> 1680px x 963px | Notes |
 | --- | --- | --- | --- | --- |
 | Home | ![screenshot](documentation/device/home-mobile.png) | ![screenshot](documentation/device/home-tablet.png) | ![screenshot](documentation/device/home-desktop.png) |  |
 | Diggit Forum | ![screenshot](documentation/device/diggit-forum-mobile.png) | ![screenshot](documentation/device/diggit-forum-tablet.png) | ![screenshot](documentation/device/diggit-forum-desktop.png) | Forms were visible on the tablet. Issue and fix documented in this [bug](https://github.com/geraldine-mor/diggit/issues/65) |
@@ -134,24 +134,24 @@ I tested my deployed project to check for responsiveness issues.
 
 ## Browser Compatibility
 
-I've tested my deployed project on multiple browsers to check for compatibility issues.
+I've tested my deployed project on multiple browsers to check for compatibility issues. All works as expected. There are differences in how the form fields display when focused - this is browser default behaviour and is acceptable.
 
-| Page | Chrome | Firefox | Safari | Notes |
-| --- | --- | --- | --- | --- |
-| Home | ![screenshot](documentation/browser/home-chrome.png) | ![screenshot](documentation/browser/home-firefox.png) | ![screenshot](documentation/browser/home-safari.png) |  |
-| Diggit Forum | ![screenshot](documentation/browser/diggit-forum-chrome.png) | ![screenshot](documentation/browser/diggit-forum-firefox.png) | ![screenshot](documentation/browser/diggit-forum-safari.png) |  |
-| Digging Deeper | ![screenshot](documentation/browser/digging-deeper-chrome.png) | ![screenshot](documentation/browser/digging-deeper-firefox.png) | ![screenshot](documentation/browser/digging-deeper-safari.png) |  |
-| Read Post (blog) | ![screenshot](documentation/browser/rp-blog-chrome.png) | ![screenshot](documentation/browser/rp-blog-firefox.png) | ![screenshot](documentation/browser/rp-blog-safari.png) |  |
-| Read Post (forum) | ![screenshot](documentation/browser/rp-forum-chrome.png) | ![screenshot](documentation/browser/rp-forum-firefox.png) | ![screenshot](documentation/browser/rp-forum-safari.png) |  |
-| Contact | ![screenshot](documentation/browser/contact-chrome.png) | ![screenshot](documentation/browser/contact-firefox.png) | ![screenshot](documentation/browser/contact-safari.png) |  |
-| 404 | ![screenshot](documentation/browser/404-chrome.png) | ![screenshot](documentation//404-firefox.png) | ![screenshot](documentation/browser/404-safari.png) |  |
-| Signup | ![screenshot](documentation/browser/signup-chrome.png) | ![screenshot](documentation/browser/signup-firefox.png) | ![screenshot](documentation/browser/signup-safari.png) |  |
-| Login | ![screenshot](documentation/browser/login-chrome.png) | ![screenshot](documentation/browser/login-firefox.png) | ![screenshot](documentation/browser/login-safari.png) |  |
-| Logout | ![screenshot](documentation/browser/logout-chrome.png) | ![screenshot](documentation/browser/logout-firefox.png) | ![screenshot](documentation/browser/logout-safari.png) |  |
-| Add Post | ![screenshot](documentation/browser/add-post-chrome.png) | ![screenshot](documentation/browser/add-post-firefox.png) | ![screenshot](documentation/browser/add-post-safari.png) |  |
-| Edit Post | ![screenshot](documentation/browser/edit-post-chrome.png) | ![screenshot](documentation/browser/edit-post-firefox.png) | ![screenshot](documentation/browser/edit-post-safari.png) |  |
-| Add Comment | ![screenshot](documentation/browser/add-comment-chrome.png) | ![screenshot](documentation/browser/add-comment-firefox.png) | ![screenshot](documentation/browser/add-comment-safari.png) |  |
-| Edit Comment | ![screenshot](documentation/browser/edit-comment-chrome.png) | ![screenshot](documentation/browser/edit-comment-firefox.png) | ![screenshot](documentation/browser/edit-comment-safari.png) |  |
+| Page | Chrome | Firefox | Safari <br> (iPhone SE)| Opera | 
+| --- | --- | --- | --- | --- | 
+| Home | ![screenshot](documentation/browser/home-chrome.png) | ![screenshot](documentation/browser/home-firefox.png) | ![screenshot](documentation/browser/home-safari.png) | ![screenshot](documentation/browser/home-opera.png) | 
+| Diggit Forum | ![screenshot](documentation/browser/diggit-forum-chrome.png) | ![screenshot](documentation/browser/diggit-forum-firefox.png) | ![screenshot](documentation/browser/diggit-forum-safari.png) | ![screenshot](documentation/browser/diggit-forum-opera.png) | 
+| Digging Deeper | ![screenshot](documentation/browser/digging-deeper-chrome.png) | ![screenshot](documentation/browser/digging-deeper-firefox.png) | ![screenshot](documentation/browser/digging-deeper-safari.png) | ![screenshot](documentation/browser/digging-deeper-opera.png) | 
+| Read Post (blog) | ![screenshot](documentation/browser/rp-blog-chrome.png) | ![screenshot](documentation/browser/rp-blog-firefox.png) | ![screenshot](documentation/browser/rp-blog-safari.png) | ![screenshot](documentation/browser/rp-blog-opera.png) | 
+| Read Post (forum) | ![screenshot](documentation/browser/rp-forum-chrome.png) | ![screenshot](documentation/browser/rp-forum-firefox.png) | ![screenshot](documentation/browser/rp-forum-safari.png) | ![screenshot](documentation/browser/rp-forum-opera.png) | 
+| Contact | ![screenshot](documentation/browser/contact-chrome.png) | ![screenshot](documentation/browser/contact-firefox.png) | ![screenshot](documentation/browser/contact-safari.png) | ![screenshot](documentation/browser/contact-opera.png) | 
+| 404 | ![screenshot](documentation/browser/404-chrome.png) | ![screenshot](documentation/browser/404-firefox.png) | ![screenshot](documentation/browser/404-safari.png) | ![screenshot](documentation/browser/404-opera.png) | 
+| Signup | ![screenshot](documentation/browser/signup-chrome.png) | ![screenshot](documentation/browser/signup-firefox.png) | ![screenshot](documentation/browser/signup-safari.png) | ![screenshot](documentation/browser/signup-opera.png) | 
+| Login | ![screenshot](documentation/browser/login-chrome.png) | ![screenshot](documentation/browser/login-firefox.png) | ![screenshot](documentation/browser/login-safari.png) | ![screenshot](documentation/browser/login-opera.png) | 
+| Logout | ![screenshot](documentation/browser/logout-chrome.png) | ![screenshot](documentation/browser/logout-firefox.png) | ![screenshot](documentation/browser/logout-safari.png) | ![screenshot](documentation/browser/logout-opera.png) | 
+| Add Post | ![screenshot](documentation/browser/add-post-chrome.png) | ![screenshot](documentation/browser/add-post-firefox.png) | ![screenshot](documentation/browser/add-post-safari.png) | ![screenshot](documentation/browser/logout-opera.png) | 
+| Edit Post | ![screenshot](documentation/browser/edit-post-chrome.png) | ![screenshot](documentation/browser/edit-post-firefox.png) | ![screenshot](documentation/browser/edit-post-safari.png) | ![screenshot](documentation/browser/edit-post-opera.png) | 
+| Add Comment | ![screenshot](documentation/browser/add-comment-chrome.png) | ![screenshot](documentation/browser/add-comment-firefox.png) | ![screenshot](documentation/browser/add-comment-safari.png) | ![screenshot](documentation/browser/add-comment-opera.png) | 
+| Edit Comment | ![screenshot](documentation/browser/edit-comment-chrome.png) | ![screenshot](documentation/browser/edit-comment-firefox.png) | ![screenshot](documentation/browser/edit-comment-safari.png) | ![screenshot](documentation/browser/edit-comment-opera.png) | 
 
 ## Lighthouse Audit
 
