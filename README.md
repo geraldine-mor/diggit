@@ -704,6 +704,7 @@ There are no remaining major differences between the local version when compared
 | [Pexels](https://www.pexels.com/photo/gray-steel-watering-can-beside-brown-wooden-fence-5919766/) | Raised bed |
 | [Pexels](https://www.pexels.com/photo/vegetables-on-the-soil-5503338/) | Compost bin |
 | [Pexels](https://www.pexels.com/photo/close-up-shot-of-hosta-sieboldiana-leaves-9379214/) | Hosta slugs |
+| [Pexels](https://www.pexels.com/photo/close-up-of-a-cute-forest-mouse-in-nature-30374722/) | Mouse |
 | [Adobe Stock](https://as2.ftcdn.net/v2/jpg/03/81/19/89/1000_F_381198933_gtRts0ctYpFqRyWyMVTcGtKOnFNGSPgz.jpg) | Late autumn tasks post |
 | [Pikwizard](https://pikwizard.com/photo/sunlit-planting-onion-bulbs-with-metal-trowel-in-rich-soil-closeup-for-spring-garden/6168844f5eb786ff8d926733247b0281/) | October garden care post |
 | [Pexels](https://www.pexels.com/photo/fresh-organic-vegetables-and-fruits-display-35974369/) | Harvest time post |

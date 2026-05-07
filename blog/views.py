@@ -94,11 +94,18 @@ def edit_post(request, slug):
     :template:`blog/read_post.html` for successful edits
     :template:`blog/diggit_forum.html` for unsuccessful edits
     """
+    post = get_object_or_404(Post, slug=slug)
+    if post.author != request.user:
+        messages.add_message(
+            request, messages.ERROR,
+            'You can only edit your own posts.'
+        )
+        return redirect('diggit_forum')
+    
     if request.method == "POST":
-        post = get_object_or_404(Post, slug=slug)
         post_form = PostForm(request.POST, request.FILES, instance=post)
 
-        if post.author == request.user and post_form.is_valid():
+        if post_form.is_valid():
             post = post_form.save()
             messages.add_message(request, messages.SUCCESS, 'Post Updated!')
             return HttpResponseRedirect(reverse('read_post', args=[slug]))
@@ -235,11 +242,19 @@ def edit_comment(request, slug, comment_id):
     **Template**
     Redirects to :template:`blog/read_post.html`
     """
+    comment = get_object_or_404(Comment, pk=comment_id)
+    if comment.author != request.user:
+        messages.add_message(
+            request, messages.ERROR,
+            'You can only edit your own comments.'
+        )
+        return HttpResponseRedirect(reverse('read_post', args=[slug]))
+   
     if request.method == "POST":
-        comment = get_object_or_404(Comment, pk=comment_id)
+        
         comment_form = CommentForm(data=request.POST, instance=comment)
 
-        if comment.author == request.user and comment_form.is_valid():
+        if comment_form.is_valid():
             comment = comment_form.save()
             messages.add_message(
                 request, messages.SUCCESS, 'Comment Updated!')
