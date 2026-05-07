@@ -20,7 +20,7 @@
     {% if post.featured_image %}
     <div class="post-image-feature">
         {% load cloudinary %}
-        {% cloudinary post.featured_image quality='auto' crop='pad' background='gen_fill:ignore-foreground_true' alt=post.title %}
+        {% cloudinary post.featured_image quality='auto' fetch_format='auto' crop='lfill' alt=post.title %}
     </div>
     {% endif %} 
 
