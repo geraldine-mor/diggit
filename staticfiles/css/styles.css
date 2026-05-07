@@ -505,6 +505,7 @@ footer {
     background-color: var(--brown);
     color: var(--light-grey);
     font-family: var(--brand-font);
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 footer ul {
