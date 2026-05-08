@@ -288,7 +288,15 @@ Below are the results from the full coverage report on my application that I've 
 
 ⚠️ INSTRUCTIONS ⚠️
 
-Use this section to list any known issues you ran into while writing your Python unit tests. Remember to include screenshots (where possible), and a solution to the issue (if known). This can be used for both "fixed" and "unresolved" issues. Remove this sub-section entirely if you somehow didn't run into any issues while working with your tests.
+Testing forms with ManyToMany relationships presented an unexpected challenge. Unlike simple field validation, ModelMultipleChoiceField requires the related objects to exist in the test database and be referenced by primary key. 
+
+```Bash 
+AssertionError: False is not true : <ul class="errorlist"><li>categories<ul class="errorlist" id="id_categories_error"><li>Enter a list of values.</li></ul></li></ul>
+
+AssertionError: False is not true : <ul class="errorlist"><li>categories<ul class="errorlist" id="id_categories_error"><li>Select a valid choice. 1 is not one of the available choices.</li></ul></li></ul>
+
+AssertionError: False is not true : <ul class="errorlist"><li>categories<ul class="errorlist" id="id_categories_error"><li>“Miscellaneous” is not a valid value.</li></ul></li></ul>
+```
 
 ⚠️ --- END --- ⚠️
 

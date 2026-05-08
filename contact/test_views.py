@@ -1,10 +1,9 @@
 from django.urls import reverse
 from django.test import TestCase
 from .forms import MessageForm
-from .models import Message
 
 
-class TestContactViews(TestCase):
+class TestContactView(TestCase):
 
     def test_render_contact_page(self):
         """
