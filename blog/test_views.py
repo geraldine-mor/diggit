@@ -56,6 +56,12 @@ class TestForumListView(TestCase):
         )
         self.post.save()
 
+        self.categories = Category(
+            name="Miscellaneous",
+            label_colour="#000000" 
+        )
+        self.categories.save()
+
     def test_render_blog_page(self):
         """
         Test that the Diggit forum page renders with posts
@@ -64,6 +70,25 @@ class TestForumListView(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertIn(self.post, response.context["page_obj"])
+
+    def test_create_post_form_submission(self):
+        """
+        Test for submitting a valid post form
+        """
+        self.client.login(username="JohnSmith", password="JSPassword")
+        data = {
+            'title': 'Test User post',
+            'content': 'Test user generated content',
+            'categories': [1]
+        }
+        response = self.client.post(
+            reverse('diggit_forum'), data, follow=True)
+        self.assertRedirects(
+            response,
+            '/test-user-post/' 
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b"Post created", response.content)
 
     
 class TestHomePageView(TestCase):
@@ -115,3 +140,20 @@ class TestReadPostView(TestCase):
         response = self.client.get(reverse('read_post', args=[slug]))
 
         self.assertEqual(response.status_code, 404)
+
+    def test_comment_form_submission(self):
+        """
+        Test for submitting a valid comment form
+        """
+        self.client.login(username="JohnSmith", password="JSPassword")
+        data = {
+            'content': 'Test comment content',
+        }
+        response = self.client.post(
+            reverse('read_post', args=["test-post"]), data, follow=True)
+        self.assertRedirects(
+            response,
+            '/test-post/' 
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertIn(b"Comment saved", response.content)
