@@ -174,8 +174,6 @@ Issues that could be rectified are documented [here](https://github.com/geraldin
 
 ## Defensive Programming
 
-⚠️ Work in Progress ⚠️
-
 Defensive programming was manually tested with the below user acceptance testing:
 
 | Page | Expectation | Test | Expected Result | Result | Screenshot |
@@ -264,20 +262,16 @@ I have conducted a series of automated tests on my application.
 
 ### Python (Unit Testing)
 
-⚠️ INSTRUCTIONS ⚠️
+⚠️ Work in Progress ⚠️
 
-Adjust the code below (file names, function names, etc.) to match your own project files/folders. Use these notes loosely when documenting your own Python Unit tests, and remove/adjust where applicable.
+I used Django's built-in unit testing framework to test the application's functionality. In order to run the tests, I ran the following command in the terminal each time:
 
-⚠️ SAMPLE ⚠️
-
-I have used Django's built-in unit testing framework to test the application functionality. In order to run the tests, I ran the following command in the terminal each time:
-
-- `python3 manage.py test name-of-app`
+- `python3 manage.py test blog`
 
 To create the coverage report, I would then run the following commands:
 
-- `pip3 install coverage`
-- `pip3 freeze --local > requirements.txt`
+- `uv pip install coverage`
+- `uv pip freeze > requirements.txt`
 - `coverage run --omit="*/site-packages/*,*/migrations/*,*/__init__.py,env.py,.env" manage.py test`
 - `coverage report`
 
