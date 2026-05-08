@@ -187,7 +187,7 @@ Defensive programming was manually tested with the below user acceptance testing
 | | A user cannot register with a username already in use | Tried to create a 2nd account with username "Barker" | Form refuses submission and displays error message | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/signup-username.png) |
 | Login | A user cannot login with incorrect credentials | Tried to login with valid username and incorrect password, incorrect username and valid password and both details incorrect | Form refuses submission and displays error message | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/login-validation.png) |
 |  | Logged out users visiting restricted URLs are redirected to login | While logged out, navigated directly to /slugs-are-destroying-my-hostas/edit_post/  | Redirects to login page | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/redirect.png) |
-| Logout | After logging out, restricted pages cannot be accessed | Logged out, then used the back button to attempt to access admin dashboard | Access is denied, login requested | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/logout.png) |
+| Logout | After logging out, restricted pages cannot be accessed | Logged out, then used the back button to attempt to access admin dashboard | Access is denied, login requested | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/admin-login-request.png) |
 | Diggit Forum |  |  |  |  |
 | Create Post | Logged out users cannot create posts even if hidden popover is manually triggered through DOM manipulation | Using DevTools in mobile view, manually added `popovertarget="post-form"` and `popovertargetaction="show"` attributes to the nav-toggle button to expose the hidden post-form popover while logged out | The form may visually display, but form submission is rejected because the user is unauthenticated | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/add-post-logged-out.png) |
 |  | A user cannot submit a post with any of the required fields missing (title, content and category) | Tried to submit the form with each of the required fields missing | Form refuses submission and displays error message | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/field-required-add-post.png) |  
@@ -208,52 +208,52 @@ Defensive programming was manually tested with the below user acceptance testing
 | Comment Likes | A logged out user cannot like comments | While logged out, inspected the comment section and attempted to locate or trigger the like control using DevTools | Like controls are not rendered for unauthenticated users and no like action can be triggered | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/no-like-button.png) |
 |  | A logged out user cannot force a like by entering a like comment URL | Tried to navigate to a like comment URL while logged out | Like not registered, redirects to login page | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/like-comment-redirect.png) |
 |  | A user cannot like the same comment more than once | Liked a comment, then tried to like it again | Second like toggles the like off, count does not increment | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/liked-comment.png) |
-| Replies |  Logged out users cannot reply to comments even if hidden popover is manually triggered through DOM manipulation | Using DevTools in mobile view, manually added `popovertarget="comment-form"` and `popovertargetaction="show"` attributes to the nav-toggle button to expose the hidden comment-form popover while logged out | The form may visually display, but without any reply functionality | ⚠️ | ![screenshot](documentation/defensive) | 
+| Replies |  Logged out users cannot reply to comments even if hidden popover is manually triggered through DOM manipulation | Using DevTools in mobile view, manually added `popovertarget="comment-form"` and `popovertargetaction="show"` attributes to the nav-toggle button to expose the hidden comment-form popover while logged out | The form may visually display, but without any reply functionality | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/comment-reply.png) | 
 | Admin Features |  |  |  |  |
-| Admin Panel | A logged out user cannot navigate directly to the admin panel via the URL | Tried to access /admin/ while logged out | Access denied, admin panel login displays | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/logout.png) |
+| Admin Panel | A logged out user cannot navigate directly to the admin panel via the URL | Tried to access /admin/ while logged out | Access denied, admin panel login displays | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/admin-login-request.png) |
 |  | A standard logged in user cannot navigate directly to the admin panel via the URL | Tried to access /admin/ while logged in as a standard user | Access denied, admin panel login displays with error message | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/standard-user-admin.png) |
-| Create Blog Post | A non-admin user cannot navigate directly to the blog post creation URL | Tried to navigate to /admin/blog/post/add/ while logged in as a standard user and while logged out | Access is denied and login requested | ⚠️ | ![screenshot](documentation/defensive) |
-| Edit Blog Post | A non-admin user cannot edit Digging Deeper posts via URL manipulation | Tried to navigate to an admin blog post edit URL while logged in as a standard user and while logged out | Access is denied and login requested | ⚠️ | ![screenshot](documentation/defensive) |
-| Delete Blog Post | A non-admin user cannot delete Digging Deeper posts via URL manipulation | Tried to navigate to an admin blog post edit URL while logged in as a standard user and while logged out | Access is denied and login requested | ⚠️ | ![screenshot](documentation/defensive) |
-| Contact Form & Miscellaneous |  |  |  |  |
-| Contact Form | A user cannot submit the form with any empty fields | Tried to submit the contact form leaving each field blank | Form validation on the form fields prevents submission and displays error messages | ⚠️ | ![screenshot](documentation/defensive) |
-|  | Form should reject malformed email addresses | Tried to submit "happy" in the email field | Form type validation on the email field prevents submission and displays an error message | ⚠️ | ![screenshot](documentation/defensive) |
-| 404 Page | Navigating to a non-existent URL displays a custom 404 page rather than a server error | Navigated to a made-up URL (e.g., /frog/) | Custom 404 page displays with navigation back to homepage | ⚠️ | ![screenshot](documentation/defensive) |
-
+| Create Blog Post | A non-admin user cannot navigate directly to the blog post creation URL | Tried to navigate to /admin/blog/post/add/ while logged in as a standard user and while logged out | Access is denied and login requested | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/admin-login-request.png) |
+| Edit Blog Post | A non-admin user cannot edit Digging Deeper posts via URL manipulation | Tried to navigate to an admin blog post edit URL while logged in as a standard user and while logged out | Access is denied and login requested | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/admin-login-request.png) |
+| Delete Blog Post | A non-admin user cannot delete Digging Deeper posts via URL manipulation | Tried to navigate to an admin blog post edit URL while logged in as a standard user and while logged out | Access is denied and login requested | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/admin-login-request.png) |
+| Contact Form |  |  |  |  |
+| Contact Form | A user cannot submit the form with any empty fields | Tried to submit the contact form leaving each field blank | Form validation on the form fields prevents submission and displays error messages | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/contact-form.png) |
+|  | Form should reject malformed email addresses | Tried to submit "happy" in the email field | Form type validation on the email field prevents submission and displays an error message | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/contact-email.png) |
+| Miscellaneous |  |  |  |  |
+| 404 Page | Navigating to a non-existent URL displays a custom 404 page rather than a server error | Navigated to a made-up URL (e.g., /frog/) | Custom 404 page displays with navigation back to homepage | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/404.png) |
 
 
 ## User Story Testing
 
-⚠️ INSTRUCTIONS ⚠️
-
-Testing User Stories is actually quite simple, once you've already got the stories defined on your README.
-
-Most of your project's **Features** should already align with the **User Stories**, so this should be as simple as creating a table with the User Story, matching with the re-used screenshot from the respective Feature.
-
-⚠️ --- END --- ⚠️
-
 | Target | Expectation | Outcome | Screenshot |
 | --- | --- | --- | --- |
-| As a blog owner | I would like to create new blog posts with a title, featured image, and content | so that I can share my experiences with my audience. | ![screenshot](documentation/features/feature01.png) |
-| As a blog owner | I would like to update existing blog posts | so that I can correct or add new information to my previous stories. | ![screenshot](documentation/features/feature02.png) |
-| As a blog owner | I would like to delete blog posts | so that I can remove outdated or irrelevant content from my blog. | ![screenshot](documentation/features/feature03.png) |
-| As a blog owner | I would like to retrieve a list of all my published blog posts | so that I can manage them from a central dashboard. | ![screenshot](documentation/features/feature04.png) |
-| As a blog owner | I would like to preview a post as draft before publishing it | so that I can ensure formatting and content appear correctly. | ![screenshot](documentation/features/feature05.png) |
-| As a blog owner | I would like to review comments before they are published | so that I can filter out spam or inappropriate content. | ![screenshot](documentation/features/feature06.png) |
-| As a blog owner | I would like to approve or reject comments from users | so that I can maintain control over the discussion on my posts. | ![screenshot](documentation/features/feature07.png) |
-| As a blog owner | I would like to view a list of all comments (both approved and pending) | so that I can manage user engagement effectively. | ![screenshot](documentation/features/feature08.png) |
-| As a blog owner | I would like to edit or delete user comments | so that I can clean up or remove inappropriate responses after they've been posted. | ![screenshot](documentation/features/feature09.png) |
-| As a registered user | I would like to log in to the site | so that I can leave comments on blog posts. | ![screenshot](documentation/features/feature10.png) |
-| As a registered user | I would like to register for an account | so that I can become part of the community and engage with the blog. | ![screenshot](documentation/features/feature11.png) |
-| As a registered user | I would like to leave a comment on a blog post | so that I can share my thoughts or ask questions about the owner's experiences. | ![screenshot](documentation/features/feature12.png) |
-| As a registered user | I would like my comment to show my name and the timestamp | so that others can see who I am and when I left the comment. | ![screenshot](documentation/features/feature13.png) |
-| As a registered user | I would like to receive a notification or message saying my comment is pending approval | so that I understand it hasn't been posted immediately. | ![screenshot](documentation/features/feature14.png) |
-| As a registered user | I would like to edit or delete my own comments | so that I can fix mistakes or retract my statement. | ![screenshot](documentation/features/feature15.png) |
-| As a guest user | I would like to read blog posts without registering | so that I can enjoy the content without needing to log in. | ![screenshot](documentation/features/feature16.png) |
-| As a guest user | I would like to browse past posts | so that I can explore the blog's full content history. | ![screenshot](documentation/features/feature17.png) |
-| As a guest user | I would like to register for an account | so that I can participate in the community by leaving comments on posts. | ![screenshot](documentation/features/feature18.png) |
-| As a guest user | I would like to see the names of other commenters on posts | so that I can get a sense of community interaction before registering. | ![screenshot](documentation/features/feature19.png) |
-| As a user | I would like to see a 404 error page if I get lost | so that it's obvious that I've stumbled upon a page that doesn't exist. | ![screenshot](documentation/features/feature20.png) |
+| As a guest | I can view Digging Deeper posts | so that I can access professional gardening advice | ![Screenshot](documentation/features/digging-deeper.png) |
+| As a site admin | I can create Digging Deeper posts | so that I can share professional advice with the community | ![Screenshot](documentation/features/admin-blog.png) |
+| As a site admin | I can edit and delete the Digging Deeper posts | so that I can keep the content accurate and up to date | ![Screenshot](documentation/features/admin-edit.png) | 
+| As a registered user | I can comment on Digging Deeper posts | so that I can join the conversation | ![Screenshot](documentation/features/add-comment.png) | 
+| As a guest | I can register for an account | so that I can participate in the community | ![Screenshot](documentation/features/register.png) |
+| As a registering user | I can read and acknowledge the community guidelines | so that I understand the rules before posting | ![Screenshot](documentation/features/guidelines.png) |
+| As a registered user | I can log in to my account | so that I can access my personalised content and actions | ![Screenshot](documentation/features/login.png) |
+| As a logged in user | I can log out of my account | so that my account stays secure | ![Screenshot](documentation/features/logout.png) |
+| As a user | I can see my current login state | so that I always know whether I am logged in or out | ![Screenshot](documentation/features/login-state.png) |
+| As a guest | I can browse user's posts | so that I can read community tips and decide whether to join | ![Screenshot](documentation/features/browse-diggit-forum.png) |
+| As a user | I can view an individual post and its comments | so that I can read the full content and discussion | ![Screenshot](documentation/features/read-post.png)|
+| As a logged in user | I can create a post | so that I can ask questions or share tips with the gardening community | ![Screenshot](documentation/features/create-post.png) |
+| As a logged in user | I can edit or delete my posts | so that I have full control of the content I created | ![Screenshot](documentation/features/edit-post.png) |
+| As a site admin | I can access an admin panel | so that I can control the content across the site | ![Screenshot](documentation/features/admin-panel.png) |
+| As a site admin | I can delete user content | so that I can ensure community guidelines are adhered to | ![Screenshot](documentation/features/admin-delete.png) |
+| As a logged in user | I can comment on posts | so that I can contribute to the discussion or answer a question | ![Screenshot](documentation/features/add-comment.png) | 
+| As a site admin | I can upload and change the blog images | so that I can keep the site fresh and attractive | ![Screenshot](documentation/features/image-changes.png) |
+| As a guest | I can read comments | so that I can benefit from user's experience and decide if I want to join | ![Screenshot](documentation/features/read-comments.png) |
+| As a user | I can contact the site admin | so that I can report an issue or ask a question | ![Screenshot](documentation/features/contact.png) |
+| As a logged in user | I can edit or delete my comments | so that I can correct or remove comments that no longer represent me | ![Screenshot](documentation/features/edit-comment.png) |
+| As a guest | I can read a brief introduction to the site | so that I can decide to browse as a guest or signup | ![Screenshot](documentation/features/home.png) |
+| As a logged in user | I can react to comments | so that I can help the community identify the most helpful answers | ![Screenshot](documentation/features/comment-likes.png) |
+| As a post author | I can upload an image | so that I can ask questions or give advice about my own experiences | ![Screenshot](documentation/features/image-upload.png) |
+| As a user | I can see the most popular comments first | so that the most helpful answers are easy to find | ![Screenshot](documentation/features/datetime-order.png) ![Screenshot](documentation/features/comment-likes.png)|
+| As a user | I want to return to the page I was viewing after signup/login | so that I can continue interacting with the content | ![Screenshot](documentation/features/next.png) |
+| As a logged in user | I can reply to comments | so that I can add more insight to the conversation | ![Screenshot](documentation/features/replies.png) |
+| As a user | I can expect that multiple posts will spread over several pages | so that I can maintain a clean easy to use interface | ![Screenshot](documentation/features/pagination.png) |
+| As a user | I can assign categories to my post | so that it can be discovered by other users | ![Screenshot](documentation/features/categories.png) |
 
 ## Automated Testing
 
