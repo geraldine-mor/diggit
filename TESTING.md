@@ -176,41 +176,6 @@ Issues that could be rectified are documented [here](https://github.com/geraldin
 
 ⚠️ Work in Progress ⚠️
 
-Defensive programming (defensive design) is extremely important! When building projects that accept user inputs or forms, you should always test the level of security for each form field. Examples of this could include (but not limited to):
-
-All Projects:
-
-- Users cannot submit an empty form (add the `required` attribute)
-- Users must enter valid field types (ensure the correct input `type=""` is used)
-- Users cannot brute-force a URL to navigate to a restricted pages
-
-Python Projects:
-
-- Users cannot perform CRUD functionality if not authenticated (if login functionality exists)
-- User-A should not be able to manipulate data belonging to User-B, or vice versa
-- Non-Authenticated users should not be able to access pages that require authentication
-- Standard users should not be able to access pages intended for superusers/admins
-
-You'll want to test all functionality on your application, whether it's a standard form, or CRUD functionality, for data manipulation on a database. Try to access various pages on your site as different user types (User-A, User-B, guest user, admin, superuser). You should include any manual tests performed, and the expected results/outcome.
-
-Testing should be replicable (can someone else replicate the same outcome?). Ideally, tests cases should focus on each individual section of every page on the website. Each test case should be specific, objective, and step-wise replicable.
-
-Instead of adding a general overview saying that everything works fine, consider documenting tests on each element of the page (eg. button clicks, input box validation, navigation links, etc.) by testing them in their "happy flow", their "bad/exception flow", mentioning the expected and observed results, and drawing a parallel between them where applicable.
-
-Consider using the following format for manual test cases:
-
-- Expected Outcome / Test Performed / Result Received / Fixes Implemented
-
-- **Expected**: "Feature is expected to do X when the user does Y."
-- **Testing**: "Tested the feature by doing Y."
-- (either) **Result**: "The feature behaved as expected, and it did Y."
-- (or) **Result**: "The feature did not respond to A, B, or C."
-- **Fix**: "I did Z to the code because something was missing."
-
-Use the table below as a basic start, and expand on it using the logic above.
-
-⚠️ --- END --- ⚠️
-
 Defensive programming was manually tested with the below user acceptance testing:
 
 | Page | Expectation | Test | Expected Result | Result | Screenshot |
@@ -228,17 +193,17 @@ Defensive programming was manually tested with the below user acceptance testing
 |  | A user cannot submit a post with any of the required fields missing (title, content and category) | Tried to submit the form with each of the required fields missing | Form refuses submission and displays error message | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/field-required-add-post.png) |  
 | Edit Post | Logged out users cannot edit any post by directly entering the URL | Tried to access a post edit URL while logged out | Access denied, redirects to login page | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/edit-post-redirect.png) |
 | | A logged in user cannot edit another user's post by directly entering the URL | Logged in as User A and navigated to User B's edit URL | Access denied, error message displayed to user | ![Pass](https://img.shields.io/badge/Pass-00aa00) <br> Required update to views, see [commit](https://github.com/geraldine-mor/diggit/commit/3516b6848eed78af6eabcea3e0bea0fa03296eac) | ![screenshot](documentation/defensive/edit-own-posts-only.png) |
-| Delete Post | Logged out users cannot delete posts even if hidden popover is manually triggered through DOM manipulation | Using DevTools in mobile view, manually added `popovertarget="post-delete"` and `popovertargetaction="show"` attributes to the nav-toggle button to expose the hidden post-delete popover while logged out | The form may visually display, but post deletion fails with no data to build the delete URL | ⚠️ | ![screenshot](documentation/defensive) |
-| | Logged out users cannot delete posts by directly entering the URL | Tried to access a post delete URL while logged out | Access denied, redirects to login page | ⚠️ | ![screenshot](documentation/defensive) |
-| | A logged in user cannot delete another user's post by entering the URL | Tried to navigate directly to a delete post URL of User B while logged in as User A | Access denied, error message displays to user | ⚠️ | ![screenshot](documentation/defensive) |
+| Delete Post | Logged out users cannot delete posts even if hidden popovers and delete URLs are manually injected through DOM manipulation | Using DevTools in mobile view, manually added `popovertarget="post-delete"` and `popovertargetaction="show"` attributes to the nav-toggle button to expose the hidden post-delete popover while logged out, then manually injected the delete-post URL into the confirmation button | The delete confirmation popover may visually display and contain a valid delete URL, but unauthenticated users are prevented from deleting posts | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/post-delete.png) |
+| | Logged out users cannot delete posts by directly entering the URL | Tried to access a post delete URL while logged out | Access denied, redirects to login page | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/delete-post-redirect.png) |
+| | A logged in user cannot delete another user's post by entering the URL | Tried to navigate directly to a delete post URL of User B while logged in as User A | Access denied, error message displays to user | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/no-delete-message.png) |
 | Comments |  |  |  |  |
-| Add Comment | Logged out users cannot add comments even if hidden popover is manually triggered through DOM manipulation | Using DevTools in mobile view, manually added `popovertarget="comment-form"` and `popovertargetaction="show"` attributes to the nav-toggle button to expose the hidden comment-form popover while logged out | The form may visually display, but form submission is rejected because the user is unauthenticated  | ⚠️ | ![screenshot](documentation/defensive) |
-|  | A user cannot submit an empty comment | Tried to submit a comment form with no content | Form validation on the form field prevents submission and displays error message | ⚠️ | ![screenshot](documentation/defensive) |
-| Edit Comment | A user cannot edit another user's comment by entering an edit comment URL | Tried to navigate directly to an edit comment URL of User B while logged in as User A | Access denied, error message displays to user | ⚠️ | ![screenshot](documentation/defensive) |
-|  | A logged out user cannot edit a user's comment by entering an edit comment URL | Tried to access an edit comment URL while logged out | Access denied, redirects to login page | ⚠️ | ![screenshot](documentation/defensive) |
-| Delete Comment | Logged out users cannot delete comments even if hidden popover is manually triggered through DOM manipulation | Using DevTools in mobile view, manually added `popovertarget="comment-delete"` and `popovertargetaction="show"` attributes to the nav-toggle button to expose the hidden comment-delete popover while logged out | The form may visually display, but comment deletion fails with no data to build the delete URL | ⚠️ | ![screenshot](documentation/defensive) |
-| | Logged out users cannot delete comments by directly entering the URL | Tried to access a comment delete URL while logged out | Access denied, redirects to login page | ⚠️ | ![screenshot](documentation/defensive) |
-| | A logged in user cannot delete another user's post by entering the URL | Tried to navigate directly to a delete comment URL of User B while logged in as User A | Access denied, error message displays to user | ⚠️ | ![screenshot](documentation/defensive) | 
+| Add Comment | Logged out users cannot add comments even if hidden popover is manually triggered through DOM manipulation | Using DevTools in mobile view, manually added `popovertarget="comment-form"` and `popovertargetaction="show"` attributes to the nav-toggle button to expose the hidden comment-form popover while logged out | The form may visually display, but form submission is rejected because the user is unauthenticated  | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/comment-form-logged-out.png) |
+|  | A user cannot submit an empty comment | Tried to submit a comment form with no content | Form validation on the form field prevents submission and displays error message | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/empty-comment.png) |
+| Edit Comment | A user cannot edit another user's comment by entering an edit comment URL | Tried to navigate directly to an edit comment URL of User B while logged in as User A | Access denied, error message displays to user | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/edit-own-comment.png) |
+|  | A logged out user cannot edit a user's comment by entering an edit comment URL | Tried to access an edit comment URL while logged out | Access denied, redirects to login page | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/edit-comment-redirect.png) |
+| Delete Comment | Logged out users cannot delete comments even if hidden popovers and delete URLs are manually injected through DOM manipulation | Using DevTools in mobile view, manually added `popovertarget="comment-delete"` and `popovertargetaction="show"` attributes to the nav-toggle button to expose the hidden comment-delete popover while logged out, then manually injected the delete-comment URL into the confirmation button | The delete confirmation popover may visually display and contain a valid delete URL, but unauthenticated users are prevented from deleting comments | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/comment-delete.png) |
+| | Logged out users cannot delete comments by directly entering the URL | Tried to access a comment delete URL while logged out | Access denied, redirects to login page | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/delete-comment-redirect.png) |
+| | A logged in user cannot delete another user's post by entering the URL | Tried to navigate directly to a delete comment URL of User B while logged in as User A | Access denied, error message displays to user | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/comment-delete-fail.png) | 
 | Comment Likes and Replies |  |  |  |  |
 | Comment Likes | A logged out user cannot like a comment | Tried to like a comment by clicking the like button while logged out | Button is not active for logged out users, so no like registered | ⚠️ | ![screenshot](documentation/defensive) |
 |  | A logged out user cannot force a like by entering a like comment URL | Tried to navigate to a like comment URL while logged out | Like not registered, redirects to login page | ⚠️ | ![screenshot](documentation/defensive) |
@@ -296,90 +261,6 @@ I have conducted a series of automated tests on my application.
 
 > [!NOTE]  
 > I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
-
-### JavaScript (Jest Testing)
-
-⚠️ INSTRUCTIONS ⚠️
-
-Adjust the code below (file names, function names, etc.) to match your own project files/folders. Use these notes loosely when documenting your own Jest procedures, and remove/adjust where applicable.
-
-- Installing Node.js (**Windows**)
-  - https://codeinstitute.s3.eu-west-1.amazonaws.com/nodejs-installation-guides/Installing+and+maintaining+NodeJS+(Windows).pdf
-- Installing Node.js (**MacOS**)
-  - https://codeinstitute.s3.eu-west-1.amazonaws.com/nodejs-installation-guides/Installing+and+maintaining+NodeJS+(MacOS).pdf
-
-⚠️ SAMPLE ⚠️
-
-I have used the [Jest](https://jestjs.io) JavaScript testing framework to test the application functionality. In order to work with Jest, I first had to initialize NPM.
-
-- `npm init`
-- Hit `<enter>` for all options, except for **test command:**, just type `jest`.
-
-Add Jest to a list called **Dev Dependencies** in a dev environment:
-
-- `npm install --save-dev jest`
-
-**IMPORTANT**: Initial configurations
-
-When creating test files, the name of the file needs to be `file-name.test.js` in order for Jest to properly work. Without the following, Jest won't properly run the tests:
-
-- `npm install -D jest-environment-jsdom`
-
-Due to a change in Jest's default configuration, you'll need to add the following code to the top of the `.test.js` file:
-
-```js
-/**
- * @jest-environment jsdom
- */
-
-/* jshint esversion: 11, jquery: true */
-/* global jest, require, describe, beforeEach, afterEach, test, expect, global */
-
-const { test, expect } = require("@jest/globals");
-const { function1, function2, function3, etc. } = require("../script-name");
-
-beforeAll(() => {
-    let fs = require("fs");
-    let fileContents = fs.readFileSync("index.html", "utf-8");
-    document.open();
-    document.write(fileContents);
-    document.close();
-});
-```
-
-Remember to adjust the `fs.readFileSync()` to the specific file you'd like you test. The example above is testing the `index.html` file.
-
-Finally, at the bottom of the script file where your primary scripts are written, include the following at the very bottom of the file. Make sure to include the name of all of your functions that are being tested in the `.test.js` file.
-
-```js
-/* jshint esversion: 11, jquery: true */
-/* global module */
-if (typeof module !== "undefined") module.exports = {
-    function1, function2, function3, etc
-};
-```
-
-Now that these steps have been undertaken, further tests can be written, and be expected to fail initially. Write JS code that can get the tests to pass as part of the Red-Green refactor process. Once ready, to run the tests, use this command:
-
-- `npm test`
-
-**NOTE**: To obtain a coverage report, use the following command:
-
-- `npm test --coverage`
-
-Below are the results from the tests that I've written for this application:
-
-| Test Suites | Tests | Screenshot |
-| --- | --- | --- |
-| 1 passed | 16 passed | ![screenshot](documentation/automation/jest-coverage.png) |
-
-#### Jest Test Issues
-
-⚠️ INSTRUCTIONS ⚠️
-
-Use this section to list any known issues you ran into while writing your Jest tests. Remember to include screenshots (where possible), and a solution to the issue (if known). This can be used for both "fixed" and "unresolved" issues. Remove this sub-section entirely if you somehow didn't run into any issues while working with Jest.
-
-⚠️ --- END --- ⚠️
 
 ### Python (Unit Testing)
 
