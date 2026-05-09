@@ -161,11 +161,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Allauth setting configuration
 # https://docs.allauth.org/en/dev/account/configuration.html
 
-ACCOUNT_SIGNUP_FIELDS = [
-    'email*',
-    'username*',
-    'password1*',
-    'password2*',
-]
-
-ACCOUNT_SIGNUP_FORM_CLASS = 'blog.forms.SignupForm'
+ACCOUNT_FORMS = {'signup': 'blog.forms.SignupForm',}
