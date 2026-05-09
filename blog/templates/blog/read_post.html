@@ -52,7 +52,8 @@
 
             {% for comment in comments %}
             <div class="each-comment">
-                <span class="comment-details small">On {{ comment.created_on | date }}, {{ comment.author.username }}
+                <span class="comment-details small">On {{ comment.created_on | date }}, {% if not comment.author.is_superuser %}
+                        {{ comment.author.username }}{% else %}Claude Digsby{% endif %} 
                     wrote:</span>
                 
                 <div class="comment-body">{{ comment.content | linebreaks }}</div>

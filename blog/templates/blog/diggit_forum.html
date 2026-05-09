@@ -76,7 +76,8 @@
                                     <p class="small">{{ post.comment_count }} <i
                                             class="fa-regular fa-comments bold-hover"></i></p>
                                     <p class="small">On {{ post.first_comment.created_on | date }}
-                                        {{ post.first_comment.author.username }} wrote:</p>
+                                        {% if not post.first_comment.author.is_superuser %}
+                                        {{ post.first_comment.author.username }}{% else %}Claude Digsby{% endif %} wrote:</p>
                                     <p class="comment-body">{{ post.first_comment.content }}</p>
                                 </a>
                                 <span>{% if post.first_comment.like_count != 0 %}<i class="fa-solid fa-thumbs-up"></i>

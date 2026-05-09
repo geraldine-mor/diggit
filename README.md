@@ -725,6 +725,7 @@ There are no remaining major differences between the local version when compared
 | [Pexels](https://www.pexels.com/photo/lush-garden-in-mississauga-with-blooming-flowers-33402974/) | Contact page backdrop |
 | [Adobe Stock](https://stock.adobe.com/ie/images/wooden-garden-gate-stands-invitingly-open-along-a-stone-pathway-leading-into-a-lush-green-paradise-illuminated-by-bright-sun-flare-filtering-through-large-trees/1918821068) | Login/Logout backdrop |
 | [Adobe Stock](https://stock.adobe.com/ie/images/patio-garden-with-containers-full-of-colorful-flowers-container-gardening-and-flower-display-idea/517647406) | Signup backdrop |
+| [This person does not exist](https://www.thispersondoesnotexist.cc/) | Claude Digsby Bio Image |
 | [Pexels](https://www.pexels.com/photo/abandoned-land-full-of-trees-and-green-grass-11573626/) | 404 backdrop |
 | [Claude](https://claude.ai) | Blog post contents |
 | [TinyPNG](https://tinypng.com) | Compressing images < 5MB |
