@@ -233,7 +233,7 @@ textarea {
 }
 
 textarea:focus-visible {
-        outline: var(--brown) auto 1px;
+    outline: var(--brown) auto 1px;
 }
 
 #categories {
@@ -316,7 +316,6 @@ textarea:focus-visible {
 
 #comment-form, #comment-delete {
     background-color: #f2f4f1;
-    
 }
 
 #counter {
@@ -476,16 +475,12 @@ blockquote > span {
 
 /*Copied from Dev Tools to alter the toggleswitch appearance*/
 .form-switch .form-check-input:focus {
-    --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e");
-}
-
-.form-switch .form-check-input:focus {
     --bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
 }
 
-/*Login Form*/
-.login {
-    background: url(../images/login.webp) no-repeat center center / cover ;;
+/*Login/Logout*/
+.login, .logout{
+    background: url(../images/login.webp) no-repeat center center / cover;
 }
 
 .body-container {
@@ -497,11 +492,6 @@ blockquote > span {
 
 .form-card {
     max-width: 95%;
-}
-
-/*Logout Form*/
-.logout {
-    background: url(../images/login.webp) no-repeat center center / cover;
 }
 
 /*Footer*/
@@ -546,7 +536,6 @@ footer > p {
     .highlight-card {
         max-width: 350px;
     }
-
 }
 
 /*Medium screens and up*/
@@ -557,7 +546,7 @@ footer > p {
 
     .card, .page-title {
         max-width: 700px;
-        margin: 0 auto 0;
+        margin: 0 auto;
     }
 
     .user-auth-desktop {
