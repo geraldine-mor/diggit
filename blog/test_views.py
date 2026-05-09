@@ -58,7 +58,7 @@ class TestForumListView(TestCase):
 
         self.categories = Category(
             name="Miscellaneous",
-            label_colour="#000000" 
+            label_colour="#000000"
         )
         self.categories.save()
 
@@ -85,7 +85,7 @@ class TestForumListView(TestCase):
             reverse('diggit_forum'), data, follow=True)
         self.assertRedirects(
             response,
-            '/test-user-post/' 
+            '/test-user-post/'
         )
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Post created", response.content)
@@ -94,19 +94,19 @@ class TestForumListView(TestCase):
         """
         Test that logged out users can't create a post
         """
-        
+
         data = {
             'title': 'Logged Out Test',
             'content': 'Test user generated content',
             'categories': [1]
         }
         response = self.client.post(reverse('diggit_forum'), data)
-            
+
         self.assertEqual(response.status_code, 200)
         self.assertFalse(
             Post.objects.filter(title="Logged Out Test").exists())
 
-    
+
 class TestHomePageView(TestCase):
 
     def test_render_home_page(self):
@@ -144,7 +144,7 @@ class TestReadPostView(TestCase):
         Test that read_post returns 200 for a valid slug
         """
         response = self.client.get(
-            reverse('read_post',args=[self.post.slug]))
+            reverse('read_post', args=[self.post.slug]))
 
         self.assertEqual(response.status_code, 200)
 
@@ -170,7 +170,7 @@ class TestReadPostView(TestCase):
                     args=[self.post.slug]), data, follow=True)
         self.assertRedirects(
             response,
-            f"/{self.post.slug}/" 
+            f"/{self.post.slug}/"
         )
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Comment saved", response.content)
@@ -208,7 +208,7 @@ class TestEditPostView(TestCase):
 
         self.categories = Category(
             name="Miscellaneous",
-            label_colour="#000000" 
+            label_colour="#000000"
         )
         self.categories.save()
 
@@ -226,7 +226,7 @@ class TestEditPostView(TestCase):
             'edit_post', args=[self.post.slug]), data, follow=True)
         self.assertRedirects(
             response,
-            f"/{self.post.slug}/" 
+            f"/{self.post.slug}/"
         )
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Post Updated!", response.content)
@@ -247,16 +247,16 @@ class TestEditPostView(TestCase):
             'edit_post', args=[self.post.slug]), data, follow=True)
         self.assertRedirects(
             response,
-            '/diggit_forum/' 
+            '/diggit_forum/'
         )
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"You can only edit your own posts.", response.content)
         self.assertFalse(
             Post.objects.filter(content="Change post content").exists())
-        
+
 
 class TestDeletePostView(TestCase):
-    
+
     def setUp(self):
         self.user_a = User.objects.create_user(
             first_name="John",
@@ -294,13 +294,13 @@ class TestDeletePostView(TestCase):
             'delete_post', args=[self.post.slug]), follow=True)
         self.assertRedirects(
             response,
-            '/diggit_forum/' 
+            '/diggit_forum/'
         )
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Post deleted!", response.content)
         self.assertFalse(
             Post.objects.filter(title="Test post").exists())
-        
+
     def test_user_b_cannot_delete_user_a_post(self):
         """
         Test that logged in users can't delete other user's posts
@@ -310,13 +310,13 @@ class TestDeletePostView(TestCase):
             'delete_post', args=[self.post.slug]), follow=True)
         self.assertRedirects(
             response,
-            '/diggit_forum/' 
+            '/diggit_forum/'
         )
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"You cannot delete this post!", response.content)
         self.assertTrue(
             Post.objects.filter(title="Test post").exists())
-        
+
 
 class TestEditCommentView(TestCase):
 
@@ -351,7 +351,7 @@ class TestEditCommentView(TestCase):
         self.comment = Comment.objects.create(
             post=self.post,
             author=self.user_b,
-            content="Test comment",    
+            content="Test comment"
         )
         self.comment.save()
 
@@ -366,7 +366,7 @@ class TestEditCommentView(TestCase):
             data, follow=True)
         self.assertRedirects(
             response,
-            f"/{self.post.slug}/" 
+            f"/{self.post.slug}/"
         )
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Comment Updated!", response.content)
@@ -384,16 +384,17 @@ class TestEditCommentView(TestCase):
             data, follow=True)
         self.assertRedirects(
             response,
-            f"/{self.post.slug}/" 
+            f"/{self.post.slug}/"
         )
         self.assertEqual(response.status_code, 200)
-        self.assertIn(b"You can only edit your own comments.", response.content)
+        self.assertIn(
+            b"You can only edit your own comments.", response.content)
         self.assertFalse(
             Comment.objects.filter(content="Change comment content").exists())
 
 
 class TestDeleteCommentView(TestCase):
-    
+
     def setUp(self):
         self.user_a = User.objects.create_user(
             first_name="John",
@@ -425,7 +426,7 @@ class TestDeleteCommentView(TestCase):
         self.comment = Comment.objects.create(
             post=self.post,
             author=self.user_b,
-            content="Test comment",    
+            content="Test comment"
         )
         self.comment.save()
 
@@ -435,18 +436,18 @@ class TestDeleteCommentView(TestCase):
         """
         self.client.login(username="JaneDoe", password="JDPassword")
         response = self.client.post(reverse(
-            'delete_comment', 
-            args=[self.post.slug, self.comment.id]), 
+            'delete_comment',
+            args=[self.post.slug, self.comment.id]),
             follow=True)
         self.assertRedirects(
             response,
-            f"/{self.post.slug}/" 
+            f"/{self.post.slug}/"
         )
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"Comment deleted!", response.content)
         self.assertFalse(
             Comment.objects.filter(content="Test comment").exists())
-        
+
     def test_user_a_cannot_delete_user_b_comment(self):
         """
         Test that logged in users can't delete other user's comments
@@ -457,7 +458,7 @@ class TestDeleteCommentView(TestCase):
             args=[self.post.slug, self.comment.id]), follow=True)
         self.assertRedirects(
             response,
-            f"/{self.post.slug}/" 
+            f"/{self.post.slug}/"
         )
         self.assertEqual(response.status_code, 200)
         self.assertIn(b"You cannot delete this comment!", response.content)

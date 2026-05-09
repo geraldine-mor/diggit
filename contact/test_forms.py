@@ -10,8 +10,8 @@ class TestMessageForm(TestCase):
         """
         message_form = MessageForm(
             {'name': 'John Smith',
-            'email': 'js@email.com',
-            'message': 'Hello, test message'}
+             'email': 'js@email.com',
+             'message': 'Hello, test message'}
         )
         self.assertTrue(message_form.is_valid())
 
@@ -21,8 +21,8 @@ class TestMessageForm(TestCase):
         """
         message_form = MessageForm(
             {'name': '',
-            'email': 'js@email.com',
-            'message': 'Hello, test message'}
+             'email': 'js@email.com',
+             'message': 'Hello, test message'}
         )
         self.assertFalse(message_form.is_valid())
 
@@ -33,8 +33,8 @@ class TestMessageForm(TestCase):
         """
         message_form = MessageForm(
             {'name': 'Jonathan Richard Jefferson-Smith',
-            'email': 'js@email.com',
-            'message': 'Hello, test message'}
+             'email': 'js@email.com',
+             'message': 'Hello, test message'}
         )
         self.assertFalse(message_form.is_valid())
 
@@ -44,8 +44,8 @@ class TestMessageForm(TestCase):
         """
         message_form = MessageForm(
             {'name': 'John Smith',
-            'email': '',
-            'message': 'Hello, test message'}
+             'email': '',
+             'message': 'Hello, test message'}
         )
         self.assertFalse(message_form.is_valid())
 

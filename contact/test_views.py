@@ -14,8 +14,7 @@ class TestContactView(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIsInstance(
             response.context['contact_form'], MessageForm)
-        
-    
+
     def test_form_submission(self):
         """
         Test for submitting a valid form
@@ -27,7 +26,7 @@ class TestContactView(TestCase):
         }
         response = self.client.post(
             reverse('contact'), data, follow=True)
-        
+
         self.assertRedirects(
             response,
             '/',

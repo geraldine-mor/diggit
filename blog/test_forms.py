@@ -8,7 +8,7 @@ class TestPostForm(TestCase):
     def setUp(self):
         self.categories = Category(
             name="Miscellaneous",
-            label_colour="#000000" 
+            label_colour="#000000"
         )
         self.categories.save()
 
@@ -17,7 +17,7 @@ class TestPostForm(TestCase):
         Test that the form is valid when title,
         content and category fields are completed
         """
-        
+
         post_form = PostForm(
             {'title': 'Post Title',
              'content': 'Post content',
@@ -57,6 +57,7 @@ class TestPostForm(TestCase):
              'categories': []}
         )
         self.assertFalse(post_form.is_valid())
+
 
 class TestCommentForm(TestCase):
 
