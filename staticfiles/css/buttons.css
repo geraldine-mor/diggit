@@ -50,7 +50,7 @@
 }
 
 .like-btn:hover, .text-btn:hover {
-    color: var(--green);
+    color: #00aa00;;
 }
 
 .back-btn {

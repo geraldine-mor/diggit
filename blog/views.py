@@ -101,7 +101,7 @@ def edit_post(request, slug):
             'You can only edit your own posts.'
         )
         return redirect('diggit_forum')
-    
+
     if request.method == "POST":
         post_form = PostForm(request.POST, request.FILES, instance=post)
 
@@ -239,9 +239,9 @@ def edit_comment(request, slug, comment_id):
             'You can only edit your own comments.'
         )
         return HttpResponseRedirect(reverse('read_post', args=[slug]))
-   
+
     if request.method == "POST":
-        
+
         comment_form = CommentForm(data=request.POST, instance=comment)
 
         if comment_form.is_valid():
