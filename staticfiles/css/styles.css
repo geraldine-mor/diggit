@@ -179,6 +179,7 @@ h2, h3 {
     min-width: 100%;
     flex-grow: 1;
     background-color: rgba(220, 224, 217, 0.5);
+    padding-bottom: 47px;
 }
 
 #home-banner {
@@ -567,16 +568,17 @@ footer > p {
         display: none;
     }
 
+    #home-backdrop {
+        padding-bottom: 40px;
+    }
+
     #highlight-row {
         height: 175px;
+        margin-top: 10%;
     }
 
     .highlight-card {
         height: 100%;
-    }
-
-    #highlight-row {
-        margin-top: 10%;
     }
 
     #comment-form, #comment-delete {
