@@ -37,12 +37,12 @@ I used the recommended [HTML W3C Validator](https://validator.w3.org) to validat
 I used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator/validator?uri=https://diggit-938ea2f476b2.herokuapp.com) to validate all of my CSS files.
 
 When testing via URL, I received 122 errors relating to Bootstrap and 947 warnings so I decided to validate by direct input instead:
-![screenshot of inital errors](documentation/validation-errors/css-validation-errors.png)
+![screenshot of initial errors](documentation/validation-errors/css-validation-errors.png)
 
 | Directory | File |  Screenshot | Notes |
 | --- | --- | --- | --- |
 | static | [styles.css](https://github.com/geraldine-mor/diggit/blob/main/static/css/styles.css) |  ![screenshot of validated css](documentation/validation/validated-styles-css.png) | The warnings relate to the imported fonts and css variables not being checked |
-| static | [buttons.css](https://github.com/geraldine-mor/diggit/blob/main/static/css/buttons.css) | ![screenshot of validated css](documentation/validation/validates-buttons-css.png) | The warnings all relate to css variables not being checked due to their dynamic nature |
+| static | [buttons.css](https://github.com/geraldine-mor/diggit/blob/main/static/css/buttons.css) | ![screenshot of validated css](documentation/validation/validated-buttons-css.png) | The warnings all relate to css variables not being checked due to their dynamic nature |
 
 ### JavaScript
 
@@ -63,14 +63,18 @@ I used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to 
 | blog | [choices.py](https://github.com/geraldine-mor/diggit/blob/main/blog/choices.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/choices.py) | ![screenshot of validation no errors](documentation/validation/blog-choices.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/8001e4f3539d24ed25c8dd26f272e1f781da68d7) |
 | blog | [forms.py](https://github.com/geraldine-mor/diggit/blob/main/blog/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/forms.py) | ![screenshot of validation no errors](documentation/validation/blog-forms.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/8001e4f3539d24ed25c8dd26f272e1f781da68d7) |
 | blog | [models.py](https://github.com/geraldine-mor/diggit/blob/main/blog/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/models.py) | ![screenshot](documentation/validation/blog-models.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/6db1ccf434734e50f18b317b8fd925b22857de5a) |
-| ⚠️ blog | [tests.py](https://github.com/geraldine-mor/diggit/blob/main/blog/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/tests.py) | ![screenshot](documentation/validation/py-blog-tests.png) | ⚠️ Notes (if applicable) |
+| blog | [test_forms.py](https://github.com/geraldine-mor/diggit/blob/main/blog/test_forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/refs/heads/main/blog/test_forms.py) | ![screenshot](documentation/validation/blog-test-forms.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/fbd16b56121164f90eacaf99b15d9d35f334e4f9)  |
+| blog | [test_models.py](https://github.com/geraldine-mor/diggit/blob/main/blog/test_models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/refs/heads/main/blog/test_models.py) | ![screenshot](documentation/validation/blog-test-models.png) |  |
+| blog | [test_views.py](https://github.com/geraldine-mor/diggit/blob/main/blog/test_views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/refs/heads/main/blog/test_views.py) | ![screenshot](documentation/validation/blog-test-views.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/fbd16b56121164f90eacaf99b15d9d35f334e4f9) |
 | blog | [urls.py](https://github.com/geraldine-mor/diggit/blob/main/blog/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/urls.py) | ![screenshot](documentation/validation/blog-urls.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/6db1ccf434734e50f18b317b8fd925b22857de5a) |
 | blog | [utils.py](https://github.com/geraldine-mor/diggit/blob/main/blog/utils.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/utils.py) | ![screenshot](documentation/validation/blog-utils.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/a6c82cc94753a3c0e6ecf7f92051308993ab1bd0) |
 | blog | [views.py](https://github.com/geraldine-mor/diggit/blob/main/blog/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/blog/views.py) | ![screenshot of validation no errors](documentation/validation/blog-views.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/53964b9c1e8613668d3d21269ba00d8bf28b8fff) |
 | contact | [admin.py](https://github.com/geraldine-mor/diggit/blob/main/contact/admin.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/admin.py) | ![screenshot](documentation/validation/contact-admin.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/a6c82cc94753a3c0e6ecf7f92051308993ab1bd0) |
 | contact | [forms.py](https://github.com/geraldine-mor/diggit/blob/main/contact/forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/forms.py) | ![screenshot](documentation/validation/contact-forms.png) |  |
 | contact | [models.py](https://github.com/geraldine-mor/diggit/blob/main/contact/models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/models.py) | ![screenshot](documentation/validation/contact-models.png) |  |
-| ⚠️ contact | [tests.py](https://github.com/geraldine-mor/diggit/blob/main/contact/tests.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/tests.py) | ![screenshot](documentation/validation/py-contact-tests.png) | ⚠️ Notes (if applicable) |
+| contact | [test_forms.py](https://github.com/geraldine-mor/diggit/blob/main/contact/test_forms.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/refs/heads/main/contact/test_forms.py) | ![screenshot](documentation/validation/contact-test-forms.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/fbd16b56121164f90eacaf99b15d9d35f334e4f9)  |
+| contact | [test_models.py](https://github.com/geraldine-mor/diggit/blob/main/contact/test_models.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/refs/heads/main/contact/test_models.py) | ![screenshot](documentation/validation/contact-test-models.png) |  |
+| contact | [test_views.py](https://github.com/geraldine-mor/diggit/blob/main/contact/test_views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/refs/heads/main/contact/test_views.py) | ![screenshot](documentation/validation/contact-test-views.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/fbd16b56121164f90eacaf99b15d9d35f334e4f9) |
 | contact | [urls.py](https://github.com/geraldine-mor/diggit/blob/main/contact/urls.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/urls.py) | ![screenshot](documentation/validation/contact-urls.png) |  |
 | contact | [views.py](https://github.com/geraldine-mor/diggit/blob/main/contact/views.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/contact/views.py) | ![screenshot](documentation/validation/contact-views.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/a6c82cc94753a3c0e6ecf7f92051308993ab1bd0) |
 | diggit | [settings.py](https://github.com/geraldine-mor/diggit/blob/main/diggit/settings.py) | [PEP8 CI Link](https://pep8ci.herokuapp.com/https://raw.githubusercontent.com/geraldine-mor/diggit/main/diggit/settings.py) | ![screenshot](documentation/validation/settings.png) | Code corrections [commit](https://github.com/geraldine-mor/diggit/commit/2fc7d342b57d3bdb771ca52346e86442010edcd3) |
@@ -83,13 +87,13 @@ I used the recommended [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to 
 | blog/choices.py | ![screenshot of validation errors](documentation/validation-errors/blog-choices-errors.png) | Simple whitespace and blank line errors, easily corrected |
 | blog/forms.py | ![screenshot of validation errors](documentation/validation-errors/blog-forms-errors.png) | Simple whitespace and blank line errors were easily corrected, line too long error rectified by breaking the line at an opening curly brace |
 | blog/views.py | ![screenshot of validation errors](documentation/validation-errors/blog-views-errors.png) | For all line too long errors, I was able to break the line at a parentheses opening. For the whitespace, blank line and continuation indenting, I simply added or removed the issue as required. |
-| blog/views.py | ![screenshot of validation errors](documentation/validation-errors/blog-views-errors-2.png) | Folowing code review and commenting, I had these errors and performed the same actions as before to rectify them. | 
+| blog/views.py | ![screenshot of validation errors](documentation/validation-errors/blog-views-errors-2.png) | Following code review and commenting, I had these errors and performed the same actions as before to rectify them. | 
 | blog/models.py | ![screenshot of validation errors](documentation/validation-errors/blog-models-errors.png) | Blank lines were deleted and indentation errors corrected |
 | blog/urls.py | ![screenshot of validation errors](documentation/validation-errors/blog-urls-errors.png) | Line too long errors corrected by breaking the tuple over several lines |
 | blog/utils.py | ![screenshot of validation errors](documentation/validation-errors/blog-utils-errors.png) | Added extra line before function |
 | contact/admin.py | ![screenshot of validation errors](documentation/validation-errors/contact-admin-error.png) | Added new line at end of file | 
 | contact/views.py | ![screenshot of validation errors](documentation/validation-errors/contact-views-errors.png) | Deleted whitespaces and broke the f-string over 2 lines | 
-| settings.py | ![screenshot of validation errors](documentation/validation-errors/settings-errors.png) | Added whitespace after ',' in the 2 places indicated. Added `# noqa` at the end of the 4 too lng lines | 
+| settings.py | ![screenshot of validation errors](documentation/validation-errors/settings-errors.png) | Added whitespace after ',' in the 2 places indicated. Added `# noqa` at the end of the 4 too long lines | 
 
 ## Responsiveness
 
@@ -219,7 +223,6 @@ Defensive programming was manually tested with the below user acceptance testing
 | Miscellaneous |  |  |  |  |
 | 404 Page | Navigating to a non-existent URL displays a custom 404 page rather than a server error | Navigated to a made-up URL (e.g., /frog/) | Custom 404 page displays with navigation back to homepage | ![Pass](https://img.shields.io/badge/Pass-00aa00) | ![screenshot](documentation/defensive/404.png) |
 
-
 ## User Story Testing
 
 | Target | Expectation | Outcome | Screenshot |
@@ -262,8 +265,6 @@ I have conducted a series of automated tests on my application.
 
 ### Python (Unit Testing)
 
-⚠️ Work in Progress ⚠️
-
 I used Django's built-in unit testing framework to test the application's functionality. In order to run the tests, I ran the following command in the terminal each time:
 
 - `python3 manage.py test blog`
@@ -286,8 +287,6 @@ Below are the results from the full coverage report on my application that I've 
 
 #### Unit Test Issues
 
-⚠️ INSTRUCTIONS ⚠️
-
 Testing forms with ManyToMany relationships presented an unexpected challenge. Unlike simple field validation, ModelMultipleChoiceField requires the related objects to exist in the test database and be referenced by primary key. 
 
 ```Bash 
@@ -298,23 +297,7 @@ AssertionError: False is not true : <ul class="errorlist"><li>categories<ul clas
 AssertionError: False is not true : <ul class="errorlist"><li>categories<ul class="errorlist" id="id_categories_error"><li>“Miscellaneous” is not a valid value.</li></ul></li></ul>
 ```
 
-⚠️ --- END --- ⚠️
-
 ## Bugs
-
-⚠️ INSTRUCTIONS ⚠️
-
-Nobody likes bugs,... except the assessors! Projects seem more suspicious if a student doesn't properly track their bugs. If you're about to submit your project without any bugs listed below, you should ask yourself why you're doing this course in the first place, if you're able to build this entire application without running into any bugs. The best thing you can do for any project is to document your bugs! Not only does it show the true stages of development, but think of it as breadcrumbs for yourself in the future, should you encounter the same/similar bug again, it acts as a gentle reminder on what you did to fix the bug.
-
-If/when you encounter bugs during the development stages of your project, you should document them here, ideally with a screenshot explaining what the issue was, and what you did to fix the bug.
-
-Alternatively, an improved way to manage bugs is to use the built-in **[Issues](https://www.github.com/geraldine-mor/diggit/issues)** tracker on your GitHub repository. This can be found at the top of your repository, the tab called "Issues".
-
-If using the Issues tracker for bug management, you can simplify the documentation process for testing. Issues allow you to directly paste screenshots into the issue page without having to first save the screenshot locally. You can add labels to your issues (e.g. `bug`), assign yourself as the owner, and add comments/updates as you progress with fixing the issue(s). Once you've solved the issue/bug, you should then "Close" it.
-
-When showcasing your bug tracking for assessment, you can use the following examples below.
-
-⚠️ --- END --- ⚠️
 
 ### Fixed Bugs
 
@@ -327,14 +310,6 @@ All previously closed/fixed bugs can be tracked [here](https://www.github.com/ge
 ![screenshot](documentation/bugs/gh-issues-closed.png)
 
 ### Unfixed Bugs
-
-⚠️ INSTRUCTIONS ⚠️
-
-You will need to mention any unfixed bugs and why they are not fixed upon submission of your project. This section should include shortcomings of the frameworks or technologies used. Although time can be a big variable to consider, paucity of time and difficulty understanding implementation is not a valid reason to leave bugs unfixed. Where possible, you must fix all outstanding bugs, unless outside of your control.
-
-If you've identified any unfixed bugs, no matter how small, be sure to list them here! It's better to be honest and list them, because if it's not documented and an assessor finds the issue, they need to know whether or not you're aware of them as well, and why you've not corrected/fixed them.
-
-⚠️ --- END --- ⚠️
 
 [![GitHub issue custom search](https://img.shields.io/github/issues-search/geraldine-mor/diggit?query=is%3Aissue%2Bis%3Aopen%2Blabel%3Abug&label=Unfixed%20Bugs&color=red)](https://www.github.com/geraldine-mor/diggit/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
 
