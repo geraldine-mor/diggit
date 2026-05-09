@@ -346,7 +346,13 @@ _Report post and report comment were part of the initial planning but were desco
 - **Draft Posts**: Allow users to save posts as drafts to be completed later.
 - **Post Scheduling**: Allow admins to schedule posts for efficiency and ease of use.
 - **Diggit Calendar**: Develop a gardener's year calendar with important jobs and planting schedules clearly marked and searchable.
-- **Plant Database Integration**: Develop a searchable plant database with planting and care information which is also taggable directly from the posts.  
+- **Plant Database Integration**: Develop a searchable plant database with planting and care information which is also taggable directly from the posts. 
+- **Notice Board**: A place for users to post services or links that are useful to the community.
+- **Marketplace**: Users can post adverts for item they are looking to donate, swap or sell.
+- **Site Shop**: Admin can upload products to the site shop where they could sell gardening books, seeds, tools, branded merchandise and gardening inspired gifts. 
+- **Images in comments**: It would be useful in future to add the ability to upload images in the comments.
+- **Emoji Keyboard**: Emojis only currently available to mobile and tablet users, enhance desktop experience by adding an emoji keyboard.
+- **UX Improvements**: Add open in place for forum posts and ensure that the page loads in the same place after comment and likes saves.
 
 ## Tools & Technologies
 
