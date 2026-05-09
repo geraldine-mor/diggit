@@ -364,6 +364,10 @@ blockquote > span {
     font-size: 1rem !important;
 }
 
+.liked {
+    color: #00aa00;
+}
+
 /*Contact Page*/
 .contact {
     background: url(../images/contact.webp) no-repeat center center / cover;

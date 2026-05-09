@@ -14,7 +14,7 @@ It is human nature to grow things and the majority of people have a garden of so
 
 Diggit is a gardening forum aimed at gardeners of all levels, from first-time growers to seasoned horticulturalists. It is an online allotment or potting shed, a place for sharing ideas and asking questions or simply reading the expert's advice in the 'Digging Deeper' section. It allows users to upload images and ask "what's this?" or "what should I do?" with the community suggesting answers and voting for the best answers via likes. User posts are not confined to questions, they can share useful tips or brag about their own horticultural successes. Digging Deeper allows the site owner to share specially curated, seasonally appropriate, professional content to ensure that there is always a trusted knowledge source for the users.
 
-During project idea discussions with my course facilitator, Tindy, we segued into general garden chat which gave me the idea to create a garden tips/questions sharing platform. This idea grew in my mind over the following days and became diggit: Ask what you need or sow a few seeds.
+During project idea discussions with my course facilitator, Tindy, we segued into general garden chat which gave me the idea to create a garden tips/questions sharing platform. This idea grew in my mind over the following days and became Diggit: Ask what you need or sow a few seeds.
 
 **Site Mockups**
 
@@ -29,7 +29,7 @@ source: [diggit amiresponsive](https://ui.dev/amiresponsive?url=https://diggit-9
 
 **Purpose**
 
-diggit exists to give gardeners of all levels a dedicated, visually engaging space 
+Diggit exists to give gardeners of all levels a dedicated, visually engaging space 
 to share knowledge, ask questions and access expert advice — free from the noise 
 of general social media platforms.
 
@@ -39,10 +39,10 @@ of general social media platforms.
 - Guests need an attractive and user friendly site to explore gardening questions and tips without the need to register but delivered in a manner designed to induce a desire to join in the discussion.
 
 **Business Goals**
-- Establish diggit as the primary resource for gardeners looking for peer advice and expert guidance in one place.
+- Establish Diggit as the primary resource for gardeners looking for peer advice and expert guidance in one place.
 - Grow an active community where user generated content reduces the burden on the site owner to produce all the content.
 - Convert guest browsers into registered members through a compelling and welcoming user experience.
-- Maintain editorial standards through Digging Deeper expert advice to differentiate diggit from generic social media gardening groups.
+- Maintain editorial standards through Digging Deeper expert advice to differentiate Diggit from generic social media gardening groups.
 <br><br>
 
 **Needs-objectives mapping**
@@ -56,7 +56,7 @@ of general social media platforms.
 | Users want intuitive site navigation | Reduce bounce rate | Full | Intuitive navigation design directly reduces bounce rate |
 | Admin users need a simple and intuitive way of managing content | Maintain high content standards | Full | Django's built in admin panel provides an accessible management interface | 
 
-_As an owner-operated platform, the business goals and admin user's needs are largely the same_
+_As an owner-operated platform, the business goals and admin users' needs are largely the same_
 
 #### 2. Scope
 
@@ -100,7 +100,7 @@ System generated:
  - Language: Currently only english language supported.
  - Content moderation: Reactive content moderation allows for fast posting but opens the site to damaging content.
  - Media types: Audio and video files are not currently supported.
- - External links: Users are asked not to share external links in the community guidelines. Llnks added in posts & comments are displayed as plain text.
+ - External links: Users are asked not to share external links in the community guidelines. Llnks added in posts and comments are displayed as plain text.
 
 #### 3. Structure
 
@@ -147,7 +147,7 @@ The navigation bar contains links to all pages as well as information about the 
 
 On smaller screens the login/register/logout links are placed in the footer.
 
-Admin users also have access to an additional link to the admin panel alongside the naviagtion links. The navigation menu collapses on mobile and tablet for better usability.
+Admin users also have access to an additional link to the admin panel alongside the navigation links. The navigation menu collapses on mobile and tablet for better usability.
 
 ### Design Decisions
 Several decisions were made during development that deviate from conventional UX patterns:
@@ -206,7 +206,7 @@ A fixed palette of 20 colours was created for the category labels, to ensure hig
 
 ### Typography
 
-I used [Google Fonts](https://fonts.google.com/)to select a monospace font for the diggit branding and used [Fontjoy](https://fontjoy.com/) to find pairings that I liked. The same dark charcoal grey was chosen for the body text ![#13171C](https://img.shields.io/badge/%2313171C-13171C)
+I used [Google Fonts](https://fonts.google.com/)to select a monospace font for the Diggit branding and used [Fontjoy](https://fontjoy.com/) to find pairings that I liked. The same dark charcoal grey was chosen for the body text ![#13171C](https://img.shields.io/badge/%2313171C-13171C)
 
 - [PT Mono](https://fonts.google.com/specimen/PT+Mono) was used for the branding and main headings.
 - [Dosis](https://fonts.google.com/specimen/Dosis?preview.script=Latn) was used for the main content.
@@ -223,17 +223,17 @@ I used [Whimsical](https://whimsical.com/ger-s-workspace48/diggit-Kj1maBK5a39CKj
 | Home | ![screenshot of homepage on mobile](documentation/wireframes/home-mobile.png) | ![screenshot of homepage on tablet](documentation/wireframes/home-tablet.png) | ![screenshot of homepage on desktop](documentation/wireframes/home-desktop.png) |
 | Digging Deeper Blog | ![screenshot of blog page on mobile](documentation/wireframes/blog-mobile.png) | ![screenshot of blog page on tablet](documentation/wireframes/blog-tablet.png) | ![screenshot of blog page on desktop](documentation/wireframes/blog-desktop.png) |
 | Diggit Forum | ![screenshot of Forum on mobile](documentation/wireframes/forum-mobile.png) | ![screenshot of Forum on tablet](documentation/wireframes/forum-tablet.png) | ![screenshot of Forum on desktop](documentation/wireframes/forum-desktop.png) |
-| Expanded View | ![screenshot of expanded view on mobile](documentation/wireframes/expanded-mobile.png) | ![screenshot of expanded view on tablet](documentation/wireframes/expanded-tablet.png) | ![screenshot of expanded view on desktop](documentation/wireframes/expanded-desktop.png) |
+| Single Post View | ![screenshot of expanded view on mobile](documentation/wireframes/expanded-mobile.png) | ![screenshot of expanded view on tablet](documentation/wireframes/expanded-tablet.png) | ![screenshot of expanded view on desktop](documentation/wireframes/expanded-desktop.png) |
 | Create Post | ![screenshot of create post on mobile](documentation/wireframes/create-post-mobile.png) | ![screenshot of create post on tablet](documentation/wireframes/create-post-tablet.png) | ![screenshot of create post on desktop](documentation/wireframes/create-post-desktop.png) |
 | Contact | ![screenshot of contact form on mobile](documentation/wireframes/contact-mobile.png) | ![screenshot of contact form on tablet](documentation/wireframes/contact-tablet.png) | ![screenshot of contact form on desktop](documentation/wireframes/contact-desktop.png) |
 | 404 | ![screenshot of 404 page on mobile](documentation/wireframes/404-mobile.png) | ![screenshot of 404 page on tablet](documentation/wireframes/404-tablet.png) | ![screenshot of 404 page on desktop](documentation/wireframes/404-desktop.png) |
 
-### Modals
+### Authentication & CRUD UI Planning
 Initial planning included a range of modals for authentication forms and CRUD actions. In reality the authentication forms are templates and I used popovers rather than modals to house the CRUD forms.
 
 The general design idea remains the same though.
 
-| Modal | Mockup |
+| Form | Mockup |
 | --- | --- |
 | Register | ![screenshot of registration modal](documentation/modals/register.png) |
 | Login | ![screenshot of login modal](documentation/modals/login.png) |
@@ -250,7 +250,7 @@ _Report post and report comment were part of the initial planning but were desco
 
 ## User Stories
 
-| Target | Expectation | Outcome | Prority |
+| Target | Expectation | Outcome | Priority |
 | --- | --- | --- | --- |
 | As a guest | I can view Digging Deeper posts | so that I can access professional gardening advice | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
 | As a site admin | I can create Digging Deeper posts | so that I can share professional advice with the community | ![Must Have](https://img.shields.io/badge/Must_Have-ff0000) |
@@ -318,7 +318,7 @@ _Report post and report comment were part of the initial planning but were desco
 | Admin - Edit Blog Post | Site admins can edit existing Digging Deeper posts to keep content accurate and up to date. | ![screenshot of admin edit post form](documentation/features/admin-edit.png) |
 | Admin - Delete Blog Post | Site admins can delete Digging Deeper posts and user-generated content to ensure community guidelines are upheld. | ![screenshot of admin delete page](documentation/features/admin-delete.png) |
 | 404 Page | A custom 404 page is displayed when a user navigates to a non-existent page, maintaining the site's look and feel and providing a clear route back to the homepage. | ![screenshot](documentation/features/404.png) |
-| Homepage | The homepage provides a welcoming introduction to the diggit community, a brief description of the platform's purpose, and three call-to-action cards directing users to Ask the Community, Share your Wins, and explore the Digging Deeper expert blog. The layout is designed to immediately communicate the site's purpose to new visitors and provide clear onward navigation without the need to register. | ![screenshot of homepage](documentation/features/home.png) |
+| Homepage | The homepage provides a welcoming introduction to the Diggit community, a brief description of the platform's purpose, and three call-to-action cards directing users to Ask the Community, Share your Wins, and explore the Digging Deeper expert blog. The layout is designed to immediately communicate the site's purpose to new visitors and provide clear onward navigation without the need to register. | ![screenshot of homepage](documentation/features/home.png) |
 | User Feedback | Clear and obvious Django messages are used to provide feedback to users for both successful and unsuccessful actions. Feedback messages are triggered by post and comment create, update and delete, login and logout. | ![screenshot](documentation/features/messages.png) |
 
 ### Future Features
@@ -331,7 +331,7 @@ _Report post and report comment were part of the initial planning but were desco
 - **User Feed**: Allow users to share posts to their feed for easy reference.
 - **User Following**: Implement a system to allow users to "follow" fellow users that appeal to them.
 - **Nested Threads**: Enable replies to replies with clear thread following.
-- **In-built enforcement of community rules**: Enable post screening for prhibited words and/or phrases.
+- **Built-in enforcement of community rules**: Enable post screening for prohibited words and/or phrases.
 - **Notifications**: Implement a notification system that alerts users when there is new content or if their posts have received a comment.
 - **Email Subscriptions**: Allow users to subscribe to receive email notifications for new posts, updates, or newsletters.
 - **Report Content**: Add a button directly to posts and comments to implement reported behaviour (greyed out, links desabled) with admin review required.
@@ -404,7 +404,7 @@ I used [dbdiagram.io](https://dbdiagram.io/d/diggit-69cf9ba58089629684134784) to
 
 At the end of the project I used `pygraphviz` and `django-extensions` to auto-generate an ERD.
 
-The steps taken were as follows:
+The steps I took are as follows:
 - In the terminal: `sudo apt update`
 - then: `sudo apt-get install python3-dev graphviz libgraphviz-dev pkg-config`
 - then type `Y` to proceed
@@ -439,7 +439,7 @@ source: [medium.com](https://medium.com/@yathomasi1/1-using-django-extensions-to
 
 | Link | Screenshot |
 | --- | --- |
-| [![GitHub issues](https://img.shields.io/github/issues-search/geraldine-mor/diggit?query=is%3Aissue%20is%3Aopen%20-label%3Abug&label=Open%20Issues&color=yellow)](https://www.github.com/geraldine-mor/diggit/issues?q=is%3Aissue%20is%3Aopen%20-label%3Abug) | ⚠️![screenshot](documentation/gh-issues-open.png) ⚠️|
+| [![GitHub issues](https://img.shields.io/github/issues-search/geraldine-mor/diggit?query=is%3Aissue%20is%3Aopen%20-label%3Abug&label=Open%20Issues&color=yellow)](https://www.github.com/geraldine-mor/diggit/issues?q=is%3Aissue%20is%3Aopen%20-label%3Abug) | ![screenshot](documentation/gh-issues-open.png) |
 | [![GitHub closed issues](https://img.shields.io/github/issues-search/geraldine-mor/diggit?query=is%3Aissue%20is%3Aclosed%20-label%3Abug&label=Closed%20Issues&color=green)](https://www.github.com/geraldine-mor/diggit/issues?q=is%3Aissue%20is%3Aclosed%20-label%3Abug) | ![screenshot](documentation/gh-issues-closed.png) |
 
 ### MoSCoW Prioritization
@@ -514,7 +514,7 @@ For Heroku deployment, follow these steps to connect your own GitHub repository 
 
 - Select Github as the **deployment method**, you may need to log in to your GitHub, choose your app repository.  
 
-- Select **Manual Deploy** from the Heroku app, deploying the main branch only after setting `DEBUG=False`. It is not adviseable to use automatic deploys in order to avoid deploying the site with `DEBUG=True`.
+- Select **Manual Deploy** from the Heroku app, deploying the main branch only after setting `DEBUG=False`. It is not advisable to use automatic deploys in order to avoid deploying the site with `DEBUG=True`.
 
 
 ### Cloudinary API
@@ -733,11 +733,39 @@ There are no remaining major differences between the local version when compared
 | Developer's Own Images | Apple tree, damaged brassica and pitcher plant |
 
 ### AI Use
-⚠️ --- Work in Progress --- ⚠️
+I worked mainly with [claude.ai](https://claude.ai).
+
+#### Planning
+During the planning phase, AI served mainly as a sounding board — helping me stress-test the overall concept against the assessment criteria, identify gaps, and keep scope from drifting. It was also useful for time-consuming, repetitive tasks, such as running accessibility checks across the full colour palette.
+
+Rather than generating content or making decisions for me, the most valuable thing the AI did at this stage was surface possibilities I hadn't considered, which I could then research and evaluate independently.
+| ![screenshot](documentation/claude-planning.png) | ![screenshot](documentation/claude-colours.png) | ![screenshot](documentation/claude-user-mapping.png) |
+| --- | --- | --- |
+
+#### Troubleshooting and Explanations
+
+During the build, I used AI primarily for debugging. I set a personal rule of working in "Socratic mode" — asking the AI to guide me with questions rather than provide direct solutions. This kept the learning intact while still moving things forward when I was stuck.
+Many errors turned out to be simple syntax mistakes or typos, which the AI was quick to identify. The more valuable moments came when a Google search had drawn a blank and I needed to know what to search for, not just the answer itself — being pointed in the right direction made a significant difference.
+
+| ![screenshot](documentation/claude-typo.png) | ![screenshot](documentation/sample-claude.png) |
+| --- | --- |
+
+#### Content Creation
+For content that a client would typically supply in a real-world project, I used AI freely. In this case that meant the Digging Deeper blog posts and the sample forum posts, both generated as .json files. The initial blog content was too thin and was later improved by asking the AI to produce fuller, more professional versions. Getting clean output into Summernote required routing the text through a plain text editor first to strip formatting and hidden HTML.
+
+| ![screenshot](documentation/claude-json.png) |
+| --- | 
+
+#### Testing
+For automated testing, I provided the AI with the app's models, views, and forms and asked it to suggest a list of relevant tests. This gave me a structured starting point, which I then worked through systematically, prioritising authentication and CRUD functionality. As with troubleshooting, I found the Socratic approach most effective — being guided toward the right testing patterns rather than given ready-made code helped me understand and adapt the tests properly.
+
+| ![screenshot](documentation/claude-test-suggestions.png) | ![screenshot](documentation/claude-test-help.png) |
+| --- | --- |
 
 ### Acknowledgements
 
 - I would like to thank [Tim Nelson](https://www.github.com/TravelTimN) for [Markdown Builder](https://markdown.2bn.dev).
+- I would like to thank my mentor Tom Cowen for his time and advice. 
 - I would like to thank the [Code Institute](https://codeinstitute.net) for the instruction provided to get me here.
 - I would like to thank the [Code Institute Discord community](https://discord-portal.codeinstitute.net) and [Future Coders of The World](https://discord.gg/uFbJcW9rv) for the moral support; it kept me going during periods of self doubt and impostor syndrome.
 - I would like to thank my partner, for believing in me, and allowing me to make this transition into software development.

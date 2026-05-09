@@ -61,7 +61,7 @@
                     <form class="comment-likes" method="POST" action="#">
                         {% csrf_token %}
                         <button class="like-btn" data-post-slug="{{ post.slug }}" data-comment-id="{{ comment.id }}"
-                            type="submit"><i class="fa-solid fa-thumbs-up {% if comment.id in liked_comments %}green{% endif %}"></i> 
+                            type="submit"><i class="fa-solid fa-thumbs-up {% if comment.id in liked_comments %}liked{% endif %}"></i> 
                             {% if comment.like_count != 0 %}{{comment.like_count }}{% endif %}</button>
                     </form>
                     {% elif comment.like_count != 0 %}<i class="fa-solid fa-thumbs-up"></i>
@@ -92,7 +92,7 @@
                         <form class="comment-likes" method="POST" action="#">
                             {% csrf_token %}
                             <button class="like-btn" data-post-slug="{{ post.slug }}" data-comment-id="{{ reply.id }}"
-                                type="submit"><i class="fa-solid fa-thumbs-up {% if reply.id in liked_comments %}green{% endif %}"></i>
+                                type="submit"><i class="fa-solid fa-thumbs-up {% if reply.id in liked_comments %}liked{% endif %}"></i>
                                 {% if reply.like_count != 0 %}{{ reply.like_count }}{% endif %}</button>
                         </form>{% elif reply.like_count != 0 %}<i class="fa-solid fa-thumbs-up"></i>
                         {{ reply.like_count }}{% endif %}
