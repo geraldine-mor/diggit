@@ -320,6 +320,7 @@ _Report post and report comment were part of the initial planning but were desco
 | 404 Page | A custom 404 page is displayed when a user navigates to a non-existent page, maintaining the site's look and feel and providing a clear route back to the homepage. | ![screenshot](documentation/features/404.png) |
 | Homepage | The homepage provides a welcoming introduction to the Diggit community, a brief description of the platform's purpose, and three call-to-action cards directing users to Ask the Community, Share your Wins, and explore the Digging Deeper expert blog. The layout is designed to immediately communicate the site's purpose to new visitors and provide clear onward navigation without the need to register. | ![screenshot of homepage](documentation/features/home.png) |
 | User Feedback | Clear and obvious Django messages are used to provide feedback to users for both successful and unsuccessful actions. Feedback messages are triggered by post and comment create, update and delete, login and logout. | ![screenshot](documentation/features/messages.png) |
+| Username Field Validation | During peer testing it became apparent that natural behaviour is to use an email address as a username. Since the username is displayed publicly across the site, form validation was added to prevent this. | ![screenshot](documentation/defensive/email-username-validation.png) |
 
 ### Future Features
 
